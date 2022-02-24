@@ -13,4 +13,4 @@ kernelspec:
   name: python3
 ---
 
-# The Simple Harmonic Oscillator
+# What is Modeling?

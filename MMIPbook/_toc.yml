@@ -11,6 +11,6 @@ chapters:
     - file: content/0_course/assessments
     - file: content/0_course/environment
     - file: content/0_course/resources
-- file: content/1_sho/SHO
-  sections:
-      - file: content/1_sho/what_is_the_sho
+- file: content/1_modeling/what_is_modeling
+  # sections:
+  #     - file: content/1_modeling/what_is_the_sho

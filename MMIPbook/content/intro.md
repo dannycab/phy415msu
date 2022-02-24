@@ -20,6 +20,7 @@ kernelspec:
 In this course, you will learn to:
 
 * Develop models and stuff
+* Collaborate
 
 
 

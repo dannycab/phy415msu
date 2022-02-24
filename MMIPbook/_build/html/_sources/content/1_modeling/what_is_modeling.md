@@ -13,4 +13,4 @@ kernelspec:
   name: python3
 ---
 
-# What is the SHO?
+# What is Modeling?

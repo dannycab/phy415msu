@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to Mathematical Modeling in Physics &#8212; Mathematical Modeling in Physics</title>
+    <title>Mathematical Modeling in Physics</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -50,7 +50,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Syllabus" href="0_course/syllabus.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -67,85 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+<div class="col-12 col-md-2 bd-sidebar site-navigation show single-page" id="site-navigation">
     
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
-      
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
-        
-      
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Mathematical Modeling in Physics</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
-   Welcome to Mathematical Modeling in Physics
-  </a>
- </li>
-</ul>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="0_course/syllabus.html">
-   Syllabus
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="0_course/goals.html">
-     Course Goals
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="0_course/design.html">
-     Course Design
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="0_course/assessments.html">
-     Assessments
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="0_course/environment.html">
-     Classroom Environment
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="0_course/resources.html">
-     Resources
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="1_modeling/what_is_modeling.html">
-   What is Modeling?
-  </a>
- </li>
-</ul>
-
-    </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
 </div>
 
 
@@ -160,36 +82,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
         <div class="col pl-md-4 topbar-main">
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
             
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        <a class="dropdown-buttons"
-            href="../_sources/content/intro.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/content/intro.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
             <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
@@ -239,6 +132,51 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="content/intro.html#document-content/0_course/syllabus">
+   Syllabus
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toctree-l2 toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="content/intro.html#document-content/0_course/goals">
+     Course Goals
+    </a>
+   </li>
+   <li class="toctree-l2 toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="content/intro.html#document-content/0_course/design">
+     Course Design
+    </a>
+   </li>
+   <li class="toctree-l2 toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="content/intro.html#document-content/0_course/assessments">
+     Assessments
+    </a>
+   </li>
+   <li class="toctree-l2 toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="content/intro.html#document-content/0_course/environment">
+     Classroom Environment
+    </a>
+   </li>
+   <li class="toctree-l2 toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="content/intro.html#document-content/0_course/resources">
+     Resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="content/intro.html#document-content/1_modeling/what_is_modeling">
+   What is Modeling?
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -251,6 +189,51 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="content/intro.html#document-content/0_course/syllabus">
+   Syllabus
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toctree-l2 toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="content/intro.html#document-content/0_course/goals">
+     Course Goals
+    </a>
+   </li>
+   <li class="toctree-l2 toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="content/intro.html#document-content/0_course/design">
+     Course Design
+    </a>
+   </li>
+   <li class="toctree-l2 toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="content/intro.html#document-content/0_course/assessments">
+     Assessments
+    </a>
+   </li>
+   <li class="toctree-l2 toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="content/intro.html#document-content/0_course/environment">
+     Classroom Environment
+    </a>
+   </li>
+   <li class="toctree-l2 toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="content/intro.html#document-content/0_course/resources">
+     Resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="content/intro.html#document-content/1_modeling/what_is_modeling">
+   What is Modeling?
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -263,13 +246,33 @@ const thebe_selector_output = ".output, .cell_output"
 <p>In this course, you will learn to:</p>
 <ul class="simple">
 <li><p>Develop models and stuff</p></li>
+<li><p>Collaborate</p></li>
 </ul>
 <p>The rest of this JupyterBook is (currently) organized as follows:</p>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="0_course/syllabus.html">Syllabus</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_modeling/what_is_modeling.html">What is Modeling?</a></li>
-</ul>
+<span id="document-content/0_course/syllabus"></span><div class="tex2jax_ignore mathjax_ignore section" id="syllabus">
+<h2>Syllabus<a class="headerlink" href="#syllabus" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<span id="document-content/0_course/goals"></span><div class="tex2jax_ignore mathjax_ignore section" id="course-goals">
+<h3>Course Goals<a class="headerlink" href="#course-goals" title="Permalink to this headline">¶</a></h3>
+</div>
+<span id="document-content/0_course/design"></span><div class="tex2jax_ignore mathjax_ignore section" id="course-design">
+<h3>Course Design<a class="headerlink" href="#course-design" title="Permalink to this headline">¶</a></h3>
+</div>
+<span id="document-content/0_course/assessments"></span><div class="tex2jax_ignore mathjax_ignore section" id="assessments">
+<h3>Assessments<a class="headerlink" href="#assessments" title="Permalink to this headline">¶</a></h3>
+</div>
+<span id="document-content/0_course/environment"></span><div class="tex2jax_ignore mathjax_ignore section" id="classroom-environment">
+<h3>Classroom Environment<a class="headerlink" href="#classroom-environment" title="Permalink to this headline">¶</a></h3>
+</div>
+<span id="document-content/0_course/resources"></span><div class="tex2jax_ignore mathjax_ignore section" id="resources">
+<h3>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<span id="document-content/1_modeling/what_is_modeling"></span><div class="tex2jax_ignore mathjax_ignore section" id="what-is-modeling">
+<h2>What is Modeling?<a class="headerlink" href="#what-is-modeling" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 </div>
 
@@ -298,13 +301,6 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="0_course/syllabus.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Syllabus</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             
         </div>

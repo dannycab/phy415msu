@@ -3,7 +3,8 @@
 
 title: Mathematical Modeling in Physics
 author: Danny Caballero
-logo: logo.png
+logo: assets/images/logo.png
+copyright: "2022"
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -17,11 +18,11 @@ latex:
 
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
-  - references.bib
+  - content/references.bib
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
+  url: https://github.com/dannycab/phy415msu/  # Online location of your book
   path_to_book: MMIPbook  # Optional path to your book, relative to the repository root
   branch: main  # Which branch of the repository should be used when creating links (optional)
 

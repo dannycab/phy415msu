@@ -13,4 +13,7 @@ update:
 rebuild:
 	jupyter-book build --all ${BOOK_DIR}
 
+view:
+	open ${BOOK_DIR}${BUILD_DIR}/index.html
+
 all: rebuild pdf rebuild web

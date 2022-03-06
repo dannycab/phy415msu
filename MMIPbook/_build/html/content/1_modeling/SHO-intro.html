@@ -48,6 +48,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Jupyter Notebook files" href="notebooks.html" />
@@ -91,7 +93,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Welcome to Mathematical Modeling in Physics
+   Welcome to Mathematical Modeling in Physics - Under Construction
   </a>
  </li>
 </ul>
@@ -254,6 +256,31 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-sho-model">
+   The SHO model
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finding-the-general-solution">
+     Finding the general solution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-order-of-your-differential-equation-matters">
+     The order of your differential equation matters
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -266,35 +293,102 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-sho-model">
+   The SHO model
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finding-the-general-solution">
+     Finding the general solution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-order-of-your-differential-equation-matters">
+     The order of your differential equation matters
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="the-simple-harmonic-oscillator">
-<span id="file-types-notebooks"></span><h1>The Simple Harmonic Oscillator<a class="headerlink" href="#the-simple-harmonic-oscillator" title="Permalink to this headline">¶</a></h1>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span>
-</pre></div>
+  <p id="id1"><dl class="citation">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id4">1</a></span></dt>
+<dd><p>Paul J Nahin. <em>Dr. Euler's fabulous formula</em>. Princeton University Press, 2011.</p>
+</dd>
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id4">2</a></span></dt>
+<dd><p>David Stipp. <em>A most elegant equation: Euler's formula and the beauty of mathematics</em>. Hachette UK, 2017.</p>
+</dd>
+</dl>
+</p>
+<div class="tex2jax_ignore mathjax_ignore section" id="the-simple-harmonic-oscillator">
+<h1>The Simple Harmonic Oscillator<a class="headerlink" href="#the-simple-harmonic-oscillator" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-sho-model">
+<h2>The SHO model<a class="headerlink" href="#the-sho-model" title="Permalink to this headline">¶</a></h2>
+<p>From these observations we find that a reasonable force model for a 1D spring system is given by:</p>
+<div class="math notranslate nohighlight">
+\[F_{spring} = -k |x-x_0|\]</div>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> is the spring constant for the spring and <span class="math notranslate nohighlight">\(x_0\)</span> is the equilibrium location. As we know from Newton’s second law, if we can argue that this force is the only force or the dominant behavior we are trying to model in a mechanical situation, we have the following ordinary differential equation:</p>
+<div class="math notranslate nohighlight">
+\[F_{net} = F_{spring}\]</div>
+<div class="math notranslate nohighlight">
+\[m\ddot{x} = -k|x-x_0|\]</div>
+<p>Without much loss, we can recast the problem in terms of the distance from equilbirium (<span class="math notranslate nohighlight">\(s=|x-x_0|\)</span>). <em>As you will learn this is not a problem from vertically hanging springs near the surface of the Earth because the graviational force is constant and depends on the mass of the hanging weight.</em></p>
+<div class="admonition-the-sho-mathematical-model admonition">
+<p class="admonition-title">The SHO mathematical model</p>
+<div class="math notranslate nohighlight">
+\[m\ddot{s} = -ks\]</div>
 </div>
+<div class="section" id="finding-the-general-solution">
+<h3>Finding the general solution<a class="headerlink" href="#finding-the-general-solution" title="Permalink to this headline">¶</a></h3>
+<p>We can solve this using our typical approach to 2D linear ODEs; guess the form of the solution and check it.</p>
+<div class="math notranslate nohighlight">
+\[\ddot{s} = -\frac{k}{m}s\]</div>
+<p>Assume: <span class="math notranslate nohighlight">\(s(t) = A\exp(i\omega t)\)</span> As we will learn this form is a good guess for linear ODEs. This gives:</p>
+<div class="math notranslate nohighlight">
+\[\ddot{s} = -\omega^2\;A\exp(i\omega t)\]</div>
+<p>So that,</p>
+<div class="math notranslate nohighlight">
+\[-\omega^2\;A\exp(i\omega t) = -\frac{k}{m}A\exp(i\omega t)\]</div>
+<p>This solution is consistent with the model (i.e., solves the differential equation) if we set <span class="math notranslate nohighlight">\(\omega\)</span> and notice it is exclusively positive:</p>
+<div class="math notranslate nohighlight">
+\[\omega^2 = \frac{k}{m} &gt; 0\]</div>
+<p>Thus, <span class="math notranslate nohighlight">\(s(t) = A\exp(i\sqrt{\frac{k}{m}} t)\)</span> is <strong>a solution</strong> to this problem. Notice we have to set <span class="math notranslate nohighlight">\(A\)</span> using initial conditions for the problem. This is called a <strong>initial value problem</strong> in mathematics. You likely have heard about the Euler formulation; it is one of the most important relationships in mathematics <span id="id4">[<a class="reference internal" href="#id2" title="Paul J Nahin. Dr. Euler's fabulous formula. Princeton University Press, 2011.">Nahin, 2011</a>, <a class="reference internal" href="#id3" title="David Stipp. A most elegant equation: Euler's formula and the beauty of mathematics. Hachette UK, 2017.">Stipp, 2017</a>]</span>. We will get into it more later. It appears below:</p>
+<div class="admonition-leonhard-euler-s-famous-formula admonition">
+<p class="admonition-title">Leonhard Euler’s famous formula</p>
+<div class="math notranslate nohighlight">
+\[\exp{i\theta} = \cos{\theta} + i \sin{\theta}\]</div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-</pre></div>
+<p>Thus, we know that our solution gives rise to real sinusoidal solutions of the form:</p>
+<div class="math notranslate nohighlight">
+\[s(t) = A\left(cos{\sqrt{\frac{k}{m}} t} + i\sin{\sqrt{\frac{k}{m}} t}\right)\]</div>
+<p>This probably doesn’t look quite right…there’s an <span class="math notranslate nohighlight">\(i\)</span> in the solution for real physical motion! We will get to that, but we need the initial conditions to do so. More importantly, there’s only one free parameter in our current solution, <span class="math notranslate nohighlight">\(A\)</span>. Given that this equation is <strong>a solution, is it the only solution?</strong></p>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-</pre></div>
+<div class="section" id="the-order-of-your-differential-equation-matters">
+<h3>The order of your differential equation matters<a class="headerlink" href="#the-order-of-your-differential-equation-matters" title="Permalink to this headline">¶</a></h3>
+<p>You probably already know that our general solution for the SHO is:</p>
+<div class="math notranslate nohighlight">
+\[s(t) = A\exp(i\sqrt{\frac{k}{m}} t) + B\exp(-i\sqrt{\frac{k}{m}} t)\]</div>
+<p>Or written in a way that is more often presented:</p>
+<div class="math notranslate nohighlight">
+\[s(t) = A'\cos(\sqrt{\frac{k}{m}} t) + B'\sin(\sqrt{\frac{k}{m}} t)\]</div>
+<p>where we have made clear that the free parameters <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are not equal to <span class="math notranslate nohighlight">\(A'\)</span> and <span class="math notranslate nohighlight">\(B'\)</span>, respectively. Regardless, notice there’s two free parameters in these formula. That is because we are solving a <strong>two dimensional</strong> linear ODE. Because there’s two derivatives on <span class="math notranslate nohighlight">\(s\)</span> (i.e., <span class="math notranslate nohighlight">\(\ddot{s}\)</span>), we expect to have two free parameters that are set by the intial conditions. This is characteristic of an <strong>initial value problem</strong>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Important Tip</p>
+<p>The number of free parameters that are set by problem conditions in an initial value problem is determined by the order of the differential equation.</p>
+<p>Second order? Two conditions needed. Two free parameters to determine. Fourth order? Four conditions needed. Four free parameters to determine.</p>
 </div>
 </div>
 </div>

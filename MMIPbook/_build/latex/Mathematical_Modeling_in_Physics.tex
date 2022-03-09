@@ -84,7 +84,7 @@
         
 
 \title{Mathematical Modeling in Physics}
-\date{Mar 07, 2022}
+\date{Mar 09, 2022}
 \release{}
 \author{Danny Caballero}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -922,41 +922,63 @@ Second order? Two conditions needed. Two free parameters to determine. Fourth or
 \end{sphinxadmonition}
 
 
-\section{Jupyter Notebook files}
-\label{\detokenize{content/1_modeling/notebooks:jupyter-notebook-files}}\label{\detokenize{content/1_modeling/notebooks:file-types-notebooks}}\label{\detokenize{content/1_modeling/notebooks::doc}}
-\sphinxAtStartPar
-You can create content with Jupyter notebooks.
-For example, the content for the current page is contained in \sphinxcode{\sphinxupquote{this notebook file}}.
-
-\begin{sphinxShadowBox}
-\sphinxstylesidebartitle{}
-
-\sphinxAtStartPar
-If you’d like to write in plain\sphinxhyphen{}text files, but still keep a notebook structure, you can write
-Jupyter notebooks with MyST Markdown, which are then automatically converted to notebooks.
-See \DUrole{xref,myst}{} for more details.
-\end{sphinxShadowBox}
-
-\sphinxAtStartPar
-Jupyter Book supports all Markdown that is supported by Jupyter Notebook.
-This is mostly a flavour of Markdown called \sphinxhref{https://commonmark.org/}{CommonMark Markdown} with minor modifications.
-For more information about writing Jupyter\sphinxhyphen{}flavoured Markdown in Jupyter Book, see \DUrole{xref,myst}{}.
-
-
-\subsection{Code blocks and image outputs}
-\label{\detokenize{content/1_modeling/notebooks:code-blocks-and-image-outputs}}
-\sphinxAtStartPar
-Jupyter Book will also embed your code blocks and output in your book.
-For example, here’s some sample Matplotlib code:
-
+\section{Numerically Integrating the SHO model}
+\label{\detokenize{content/1_modeling/SHO-numerical:numerically-integrating-the-sho-model}}\label{\detokenize{content/1_modeling/SHO-numerical::doc}}
 \begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
 
 \begin{sphinxuseclass}{cell_input}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{k+kn}{from} \PYG{n+nn}{matplotlib} \PYG{k+kn}{import} \PYG{n}{rcParams}\PYG{p}{,} \PYG{n}{cycler}
-\PYG{k+kn}{import} \PYG{n+nn}{matplotlib}\PYG{n+nn}{.}\PYG{n+nn}{pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
 \PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
-\PYG{n}{plt}\PYG{o}{.}\PYG{n}{ion}\PYG{p}{(}\PYG{p}{)}
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib}\PYG{n+nn}{.}\PYG{n+nn}{pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+
+\PYG{o}{\PYGZpc{}}\PYG{k}{matplotlib} inline
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{x0} \PYG{o}{=} \PYG{l+m+mf}{1.0} \PYG{c+c1}{\PYGZsh{}\PYGZsh{} Initial position}
+\PYG{n}{v0} \PYG{o}{=} \PYG{l+m+mf}{0.0} \PYG{c+c1}{\PYGZsh{}\PYGZsh{} Initial velocity}
+
+\PYG{n}{omega} \PYG{o}{=} \PYG{l+m+mi}{2} \PYG{c+c1}{\PYGZsh{}\PYGZsh{} Angular freq. of SHO}
+
+\PYG{n}{tf} \PYG{o}{=} \PYG{l+m+mi}{5} \PYG{c+c1}{\PYGZsh{}\PYGZsh{} Model time}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{AnalyticalSolutionSHO}\PYG{p}{(}\PYG{n}{tf}\PYG{p}{,} \PYG{n}{deltat}\PYG{p}{,} \PYG{n}{amp}\PYG{p}{,} \PYG{n}{omega}\PYG{p}{,} \PYG{n}{t0} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{phase} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{:}
+    
+    \PYG{k}{if} \PYG{n}{t0} \PYG{o}{\PYGZlt{}} \PYG{n}{tf}\PYG{p}{:}
+        
+        \PYG{n}{t} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{n}{t0}\PYG{p}{,}\PYG{n}{tf}\PYG{p}{,}\PYG{n}{deltat}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{}\PYGZsh{} equal steps}
+        \PYG{n}{x} \PYG{o}{=} \PYG{n}{amp}\PYG{o}{*}\PYG{n}{np}\PYG{o}{.}\PYG{n}{cos}\PYG{p}{(}\PYG{n}{omega}\PYG{o}{*}\PYG{n}{t}\PYG{o}{+}\PYG{n}{phase}\PYG{p}{)}
+        
+        \PYG{k}{return} \PYG{n}{t}\PYG{p}{,}\PYG{n}{x}
+    
+    \PYG{k}{else}\PYG{p}{:}
+        
+        \PYG{k}{raise} \PYG{n+ne}{ValueError}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Final time is before start time.}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{t}\PYG{p}{,}\PYG{n}{x} \PYG{o}{=} \PYG{n}{AnalyticalSolutionSHO}\PYG{p}{(}\PYG{n}{tf}\PYG{p}{,} \PYG{l+m+mf}{0.02}\PYG{p}{,} \PYG{n}{x0}\PYG{p}{,} \PYG{n}{omega}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{n}{x}\PYG{p}{)}
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimInput}
@@ -964,186 +986,335 @@ For example, here’s some sample Matplotlib code:
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{g+gt}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}}
-\PYG{n+ne}{ModuleNotFoundError}\PYG{g+gWhitespace}{                       }Traceback (most recent call last)
-\PYG{n}{Input} \PYG{n}{In} \PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{,} \PYG{o+ow}{in} \PYG{o}{\PYGZlt{}}\PYG{n}{module}\PYG{o}{\PYGZgt{}}
-\PYG{n+ne}{\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZgt{} }\PYG{l+m+mi}{1} \PYG{k+kn}{from} \PYG{n+nn}{matplotlib} \PYG{k+kn}{import} \PYG{n}{rcParams}\PYG{p}{,} \PYG{n}{cycler}
-\PYG{g+gWhitespace}{      }\PYG{l+m+mi}{2} \PYG{k+kn}{import} \PYG{n+nn}{matplotlib}\PYG{n+nn}{.}\PYG{n+nn}{pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
-\PYG{g+gWhitespace}{      }\PYG{l+m+mi}{3} \PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
-
-\PYG{n+ne}{ModuleNotFoundError}: No module named \PYGZsq{}matplotlib\PYGZsq{}
+[\PYGZlt{}matplotlib.lines.Line2D at 0x1115d6c50\PYGZgt{}]
 \end{sphinxVerbatim}
+
+\noindent\sphinxincludegraphics{{SHO-numerical_4_1}.png}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}\begin{equation*}
+\begin{split}\ddot{x} = -\omega x\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}\dfrac{d^2x}{dt^2} = -\omega x\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Introduce \(u=\dot{x}\), so that \(\dot{u}=\ddot{x}\). We can produce two coupled, linear, first order, ODEs:
+\begin{equation*}
+\begin{split}\dot{u} = -\omega x\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}\dot{x} = u\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Imagine we allow ourselves to take a small step in time \(\Delta t\), how would \(u\) and \(x\) change in that time?
+\begin{equation*}
+\begin{split}\dot{x} = \dfrac{dx}{dt} = \lim_{\Delta t \rightarrow 0} \dfrac{x(t+\Delta t) - x(t)}{\Delta t} = u\end{split}
+\end{equation*}
+\sphinxAtStartPar
+So that,
+\begin{equation*}
+\begin{split}x(t+\Delta t) \approx u\Delta t + x(t)\end{split}
+\end{equation*}
+\sphinxAtStartPar
+Similarly,
+\$\(u(t+\Delta t) \approx -\omega x \Delta t + u(t)\)\$
+
+
+\subsection{Developing a Numerical Routine}
+\label{\detokenize{content/1_modeling/SHO-numerical:developing-a-numerical-routine}}
+\sphinxAtStartPar
+Notice we have two equations that describe how to obtain new values of location (\(x\)) and velocity (\(u\)) at a time \(t+\Delta t\) given information about the system at some earlier time, \(t\), (or at the least, considering the location and velocity at time \(t\)), which we take as a pair of \sphinxstylestrong{update equations} where the equality holds:
+\begin{equation*}
+\begin{split}x(t+\Delta t) = u\Delta t + x(t)\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}u(t+\Delta t) = -\omega x \Delta t + u(t)\end{split}
+\end{equation*}
+\sphinxAtStartPar
+That is, they can potentially tell us at least in a short time \(\Delta t\) that we can estimate the velocity (\(u\)) and location (\(x\)) of the oscillator. \sphinxstyleemphasis{We have not shown these can be used repeatedly to produce an estimated trajectory yet.} As you might expect, these are better update equations when \(\Delta t\) is small. But there’s another ambiguity:
+\begin{equation*}
+\begin{split}x(t+\Delta t) = \underbrace{u}_{\mathtt{?}}\Delta t + x(t)\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}u(t+\Delta t) = -\omega \underbrace{x}_{\mathtt{?}} \Delta t + u(t)\end{split}
+\end{equation*}
+\sphinxAtStartPar
+The quantities with the underbrace are ambiguous. Do we use the values of \(x\) and \(u\) at a time \(t\), \(t+\Delta t\), or something else?!
+
+
+\subsubsection{The choice matters}
+\label{\detokenize{content/1_modeling/SHO-numerical:the-choice-matters}}
+\sphinxAtStartPar
+Let’s illustrate this with making different choices using the following routine:
+
+\begin{sphinxadmonition}{note}{Basic ODE Integration Routine}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{initialCond0} \PYG{o}{=} \PYG{n}{VAL0}
+\PYG{n}{initialCond1} \PYG{o}{=} \PYG{n}{VAL1}
+\PYG{o}{.}\PYG{o}{.}\PYG{o}{.}
+\PYG{n}{initialCondN} \PYG{o}{=} \PYG{n}{VALN}
+
+\PYG{n}{startTime} \PYG{o}{=} \PYG{n}{START}
+\PYG{n}{stopTime} \PYG{o}{=} \PYG{n}{STOP}
+\PYG{n}{steps} \PYG{o}{=}  \PYG{n}{STEPS}
+\PYG{n}{deltaT} \PYG{o}{=} \PYG{p}{(}\PYG{n}{stopTime}\PYG{o}{\PYGZhy{}}\PYG{n}{startTime}\PYG{p}{)}\PYG{o}{/}\PYG{n}{steps}
+
+\PYG{n}{t} \PYG{o}{=} \PYG{n}{startTime}
+
+\PYG{k}{while} \PYG{n}{t} \PYG{o}{\PYGZlt{}} \PYG{n}{stopTime}\PYG{p}{:}
+
+    \PYG{n}{updatedVal0} \PYG{o}{=} \PYG{n}{updateEqn0}\PYG{p}{(}\PYG{p}{)}
+    \PYG{n}{updatedVal1} \PYG{o}{=} \PYG{n}{updateEqn1}\PYG{p}{(}\PYG{p}{)}
+    \PYG{o}{.}\PYG{o}{.}\PYG{o}{.}
+    \PYG{n}{updatedValN} \PYG{o}{=} \PYG{n}{updateEqnN}\PYG{p}{(}\PYG{p}{)}
+    
+    \PYG{n}{store}\PYG{p}{(}\PYG{n}{updatedVals}\PYG{p}{)}
+    
+    \PYG{n}{t} \PYG{o}{+}\PYG{o}{=} \PYG{n}{deltaT}
+\end{sphinxVerbatim}
+\end{sphinxadmonition}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+This might seem quite abstract, so let’s make a table of choices for our integration routines:
+
+
+\begin{savenotes}\sphinxattablestart
+\centering
+\begin{tabulary}{\linewidth}[t]{|T|T|T|T|}
+\hline
+\sphinxstyletheadfamily 
+\sphinxAtStartPar
+Approach
+&\sphinxstyletheadfamily 
+\sphinxAtStartPar
+Value of x
+&\sphinxstyletheadfamily 
+\sphinxAtStartPar
+Value of u
+&\sphinxstyletheadfamily 
+\sphinxAtStartPar
+Considerations
+\\
+\hline
+\sphinxAtStartPar
+1
+&
+\sphinxAtStartPar
+\(x(t)\)
+&
+\sphinxAtStartPar
+\(u(t)\)
+&
+\sphinxAtStartPar
+We have both of these values to start
+\\
+\hline
+\sphinxAtStartPar
+2
+&
+\sphinxAtStartPar
+\(x(t)\)
+&
+\sphinxAtStartPar
+\(u(t+\Delta t)\)
+&
+\sphinxAtStartPar
+For this, we will need a \(u(t+\Delta t)\) estimate first
+\\
+\hline
+\sphinxAtStartPar
+3
+&
+\sphinxAtStartPar
+\(x(t+\Delta t)\)
+&
+\sphinxAtStartPar
+\(u(t)\)
+&
+\sphinxAtStartPar
+Hmm…we will need a \(x(t+\Delta t)\) estimate first
+\\
+\hline
+\sphinxAtStartPar
+4
+&
+\sphinxAtStartPar
+\(x(t+\Delta t)\)
+&
+\sphinxAtStartPar
+\(u(t+\Delta t)\)
+&
+\sphinxAtStartPar
+Well this doesn’t seem possible to get both estimates at the same time!
+\\
+\hline
+\end{tabulary}
+\par
+\sphinxattableend\end{savenotes}
+
+\sphinxAtStartPar
+It looks like we can try approach 1, 2, and 3 without much fuss. Let’s write a few functions.
+
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{N} \PYG{o}{=} \PYG{l+m+mi}{100}
+\PYG{n}{steps} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{N}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{n}{deltaT} \PYG{o}{=} \PYG{n}{tf}\PYG{o}{/}\PYG{n}{N}
+\PYG{n}{time} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{tf}\PYG{p}{,}\PYG{n}{N}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}Approach 1}
+\PYG{n}{xVals1} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}
+\PYG{n}{uVals1} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}
+
+\PYG{n}{xVals1}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{x0}
+\PYG{n}{uVals1}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{v0}
+
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{steps}\PYG{p}{:}
+    
+    \PYG{n}{uVals1}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{uVals1}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+} \PYG{n}{xVals1}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{*}\PYG{n}{deltaT}
+    \PYG{n}{xVals1}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{xVals1}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{omega}\PYG{o}{*}\PYG{n}{uVals1}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{*}\PYG{n}{deltaT}
+
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,} \PYG{n}{x}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{time}\PYG{p}{,} \PYG{n}{xVals1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}\PYGZhy{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x1117d1000\PYGZgt{}]
+\end{sphinxVerbatim}
+
+\noindent\sphinxincludegraphics{{SHO-numerical_10_1}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
 \end{sphinxuseclass}
-\begin{sphinxuseclass}{cell}
-\begin{sphinxuseclass}{tag_remove-stdout}\begin{sphinxVerbatimInput}
-
-\begin{sphinxuseclass}{cell_input}
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{c+c1}{\PYGZsh{} Fixing random state for reproducibility}
-\PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{seed}\PYG{p}{(}\PYG{l+m+mi}{19680801}\PYG{p}{)}
-
-\PYG{n}{N} \PYG{o}{=} \PYG{l+m+mi}{10}
-\PYG{n}{data} \PYG{o}{=} \PYG{p}{[}\PYG{n}{np}\PYG{o}{.}\PYG{n}{logspace}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{100}\PYG{p}{)} \PYG{o}{+} \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{randn}\PYG{p}{(}\PYG{l+m+mi}{100}\PYG{p}{)} \PYG{o}{+} \PYG{n}{ii} \PYG{k}{for} \PYG{n}{ii} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}\PYG{p}{]}
-\PYG{n}{data} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{data}\PYG{p}{)}\PYG{o}{.}\PYG{n}{T}
-\PYG{n}{cmap} \PYG{o}{=} \PYG{n}{plt}\PYG{o}{.}\PYG{n}{cm}\PYG{o}{.}\PYG{n}{coolwarm}
-\PYG{n}{rcParams}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{axes.prop\PYGZus{}cycle}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{cycler}\PYG{p}{(}\PYG{n}{color}\PYG{o}{=}\PYG{n}{cmap}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{N}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}
-
-
-\PYG{k+kn}{from} \PYG{n+nn}{matplotlib}\PYG{n+nn}{.}\PYG{n+nn}{lines} \PYG{k+kn}{import} \PYG{n}{Line2D}
-\PYG{n}{custom\PYGZus{}lines} \PYG{o}{=} \PYG{p}{[}\PYG{n}{Line2D}\PYG{p}{(}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{n}{cmap}\PYG{p}{(}\PYG{l+m+mf}{0.}\PYG{p}{)}\PYG{p}{,} \PYG{n}{lw}\PYG{o}{=}\PYG{l+m+mi}{4}\PYG{p}{)}\PYG{p}{,}
-                \PYG{n}{Line2D}\PYG{p}{(}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{n}{cmap}\PYG{p}{(}\PYG{l+m+mf}{.5}\PYG{p}{)}\PYG{p}{,} \PYG{n}{lw}\PYG{o}{=}\PYG{l+m+mi}{4}\PYG{p}{)}\PYG{p}{,}
-                \PYG{n}{Line2D}\PYG{p}{(}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{n}{cmap}\PYG{p}{(}\PYG{l+m+mf}{1.}\PYG{p}{)}\PYG{p}{,} \PYG{n}{lw}\PYG{o}{=}\PYG{l+m+mi}{4}\PYG{p}{)}\PYG{p}{]}
-
-\PYG{n}{fig}\PYG{p}{,} \PYG{n}{ax} \PYG{o}{=} \PYG{n}{plt}\PYG{o}{.}\PYG{n}{subplots}\PYG{p}{(}\PYG{n}{figsize}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{)}\PYG{p}{)}
-\PYG{n}{lines} \PYG{o}{=} \PYG{n}{ax}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{data}\PYG{p}{)}
-\PYG{n}{ax}\PYG{o}{.}\PYG{n}{legend}\PYG{p}{(}\PYG{n}{custom\PYGZus{}lines}\PYG{p}{,} \PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Cold}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Medium}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Hot}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{)}\PYG{p}{;}
-\end{sphinxVerbatim}
-
-\end{sphinxuseclass}\end{sphinxVerbatimInput}
-
-\end{sphinxuseclass}
-\end{sphinxuseclass}
-\sphinxAtStartPar
-Note that the image above is captured and displayed in your site.
-
-\begin{sphinxuseclass}{cell}
-\begin{sphinxuseclass}{tag_popout}
-\begin{sphinxuseclass}{tag_remove-input}
-\begin{sphinxuseclass}{tag_remove-stdout}
-\end{sphinxuseclass}
-\end{sphinxuseclass}
-\end{sphinxuseclass}
-\end{sphinxuseclass}
-\begin{sphinxShadowBox}
-\sphinxstylesidebartitle{\sphinxstylestrong{You can also pop out content to the side!}}
-
-\sphinxAtStartPar
-For more information on how to do this,
-check out the \DUrole{xref,std,std-ref}{layout/sidebar} section.
-\end{sphinxShadowBox}
-
-
-\subsection{Removing content before publishing}
-\label{\detokenize{content/1_modeling/notebooks:removing-content-before-publishing}}
-\sphinxAtStartPar
-You can also remove some content before publishing your book to the web.
-For reference, \sphinxcode{\sphinxupquote{you can download the notebook content for this page}}.
-
-\sphinxAtStartPar
-You can \sphinxstylestrong{remove only the code} so that images and other output still show up.
-
-\begin{sphinxuseclass}{cell}
-\begin{sphinxuseclass}{tag_hide-input}
-\end{sphinxuseclass}
-\end{sphinxuseclass}
-\sphinxAtStartPar
-Which works well if you’d like to quickly display cell output without cluttering your content with code.
-This works for any cell output, like a Pandas DataFrame.
-
-\begin{sphinxuseclass}{cell}
-\begin{sphinxuseclass}{tag_hide-input}
-\end{sphinxuseclass}
-\end{sphinxuseclass}
-\sphinxAtStartPar
-See \DUrole{xref,std,std-ref}{hiding/remove\sphinxhyphen{}content} for more information about hiding and removing content.
-
-
-\subsection{Interactive outputs}
-\label{\detokenize{content/1_modeling/notebooks:interactive-outputs}}
-\sphinxAtStartPar
-We can do the same for \sphinxstyleemphasis{interactive} material. Below we’ll display a map
-using \sphinxhref{https://python-visualization.github.io/folium/}{folium}. When your book is built,
-the code for creating the interactive map is retained.
-
-\begin{sphinxShadowBox}
-\sphinxstylesidebartitle{}
-
-\sphinxAtStartPar
-\sphinxstylestrong{This will only work for some packages.} They need to be able to output standalone
-HTML/Javascript, and not
-depend on an underlying Python kernel to work.
-\end{sphinxShadowBox}
-
 \begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
 
 \begin{sphinxuseclass}{cell_input}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{k+kn}{import} \PYG{n+nn}{folium}
-\PYG{n}{m} \PYG{o}{=} \PYG{n}{folium}\PYG{o}{.}\PYG{n}{Map}\PYG{p}{(}
-    \PYG{n}{location}\PYG{o}{=}\PYG{p}{[}\PYG{l+m+mf}{45.372}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{121.6972}\PYG{p}{]}\PYG{p}{,}
-    \PYG{n}{zoom\PYGZus{}start}\PYG{o}{=}\PYG{l+m+mi}{12}\PYG{p}{,}
-    \PYG{n}{tiles}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Stamen Terrain}\PYG{l+s+s1}{\PYGZsq{}}
-\PYG{p}{)}
+\PYG{n}{xVals2} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}
+\PYG{n}{uVals2} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}
 
-\PYG{n}{folium}\PYG{o}{.}\PYG{n}{Marker}\PYG{p}{(}
-    \PYG{n}{location}\PYG{o}{=}\PYG{p}{[}\PYG{l+m+mf}{45.3288}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{121.6625}\PYG{p}{]}\PYG{p}{,}
-    \PYG{n}{popup}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Mt. Hood Meadows}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
-    \PYG{n}{icon}\PYG{o}{=}\PYG{n}{folium}\PYG{o}{.}\PYG{n}{Icon}\PYG{p}{(}\PYG{n}{icon}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{cloud}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-\PYG{p}{)}\PYG{o}{.}\PYG{n}{add\PYGZus{}to}\PYG{p}{(}\PYG{n}{m}\PYG{p}{)}
+\PYG{n}{xVals2}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{x0}
+\PYG{n}{uVals2}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{v0}
 
-\PYG{n}{folium}\PYG{o}{.}\PYG{n}{Marker}\PYG{p}{(}
-    \PYG{n}{location}\PYG{o}{=}\PYG{p}{[}\PYG{l+m+mf}{45.3311}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{121.7113}\PYG{p}{]}\PYG{p}{,}
-    \PYG{n}{popup}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Timberline Lodge}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
-    \PYG{n}{icon}\PYG{o}{=}\PYG{n}{folium}\PYG{o}{.}\PYG{n}{Icon}\PYG{p}{(}\PYG{n}{color}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{green}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-\PYG{p}{)}\PYG{o}{.}\PYG{n}{add\PYGZus{}to}\PYG{p}{(}\PYG{n}{m}\PYG{p}{)}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{steps}\PYG{p}{:}
+    
+    \PYG{n}{uVals2}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{uVals2}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+} \PYG{n}{xVals2}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{*}\PYG{n}{deltaT}
+    \PYG{n}{xVals2}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{xVals2}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{omega}\PYG{o}{*}\PYG{n}{uVals2}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{*}\PYG{n}{deltaT}
 
-\PYG{n}{folium}\PYG{o}{.}\PYG{n}{Marker}\PYG{p}{(}
-    \PYG{n}{location}\PYG{o}{=}\PYG{p}{[}\PYG{l+m+mf}{45.3300}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{121.6823}\PYG{p}{]}\PYG{p}{,}
-    \PYG{n}{popup}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Some Other Location}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}
-    \PYG{n}{icon}\PYG{o}{=}\PYG{n}{folium}\PYG{o}{.}\PYG{n}{Icon}\PYG{p}{(}\PYG{n}{color}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{red}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{icon}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{info\PYGZhy{}sign}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-\PYG{p}{)}\PYG{o}{.}\PYG{n}{add\PYGZus{}to}\PYG{p}{(}\PYG{n}{m}\PYG{p}{)}
-
-\PYG{n}{m}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,} \PYG{n}{x}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{time}\PYG{p}{,} \PYG{n}{xVals2}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}\PYGZhy{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x111844250\PYGZgt{}]
+\end{sphinxVerbatim}
+
+\noindent\sphinxincludegraphics{{SHO-numerical_11_1}.png}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
 \end{sphinxuseclass}
-
-\subsection{Rich outputs from notebook cells}
-\label{\detokenize{content/1_modeling/notebooks:rich-outputs-from-notebook-cells}}
-\sphinxAtStartPar
-Because notebooks have rich text outputs, you can store these in
-your Jupyter Book as well! For example, here is the command line help
-menu, see how it is nicely formatted.
-
 \begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
 
 \begin{sphinxuseclass}{cell_input}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{o}{!}jupyter\PYGZhy{}book build \PYGZhy{}\PYGZhy{}help
+\PYG{n}{xVals3} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}
+\PYG{n}{uVals3} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}
+
+\PYG{n}{xVals3}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{x0}
+\PYG{n}{uVals3}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{v0}
+
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{steps}\PYG{p}{:}
+    
+    \PYG{n}{xVals3}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{xVals3}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{omega}\PYG{o}{*}\PYG{n}{uVals3}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{*}\PYG{n}{deltaT}
+    \PYG{n}{uVals3}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{uVals3}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+} \PYG{n}{xVals3}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{*}\PYG{n}{deltaT}
+
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,} \PYG{n}{x}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{time}\PYG{p}{,} \PYG{n}{xVals3}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}\PYGZhy{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x1118bc610\PYGZgt{}]
+\end{sphinxVerbatim}
+
+\noindent\sphinxincludegraphics{{SHO-numerical_12_1}.png}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
 \end{sphinxuseclass}
-\sphinxAtStartPar
-And here is an error. You can mark notebook cells as “expected to error” by adding a
-\sphinxcode{\sphinxupquote{raises\sphinxhyphen{}exception}} tag to them.
-
-\begin{sphinxuseclass}{cell}
-\begin{sphinxuseclass}{tag_raises-exception}\begin{sphinxVerbatimInput}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
 
 \begin{sphinxuseclass}{cell_input}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{this\PYGZus{}will\PYGZus{}error}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{figure}\PYG{p}{(}\PYG{n}{figsize}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{,}\PYG{l+m+mi}{6}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,} \PYG{n}{x}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{time}\PYG{p}{,} \PYG{n}{xVals1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}\PYGZhy{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{time}\PYG{p}{,} \PYG{n}{xVals2}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}\PYGZhy{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{time}\PYG{p}{,} \PYG{n}{xVals3}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}\PYGZhy{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{legend}\PYG{p}{(}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{True}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Approach 1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Approach 2}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Approach 3}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{)}
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYGZlt{}matplotlib.legend.Legend at 0x111878340\PYGZgt{}
+\end{sphinxVerbatim}
+
+\noindent\sphinxincludegraphics{{SHO-numerical_13_1}.png}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
 \end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{xVals1}\PYG{o}{\PYGZhy{}}\PYG{n}{xVals2}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{xVals1}\PYG{o}{\PYGZhy{}}\PYG{n}{xVals3}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{xVals2}\PYG{o}{\PYGZhy{}}\PYG{n}{xVals3}\PYG{p}{)}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x11199d300\PYGZgt{}]
+\end{sphinxVerbatim}
+
+\noindent\sphinxincludegraphics{{SHO-numerical_14_1}.png}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
 \end{sphinxuseclass}
-
-\subsection{More features with Jupyter notebooks}
-\label{\detokenize{content/1_modeling/notebooks:more-features-with-jupyter-notebooks}}
-\sphinxAtStartPar
-There are many other features of Jupyter notebooks to take advantage of,
-such as automatically generating Binder links for notebooks or connecting your content with a kernel in the cloud.
-For more information browse the pages in this site, and \DUrole{xref,myst}{} in particular.
-
 \begin{sphinxthebibliography}{1}
 \bibitem[1]{content/1_modeling/SHO-intro:id2}
 \sphinxAtStartPar

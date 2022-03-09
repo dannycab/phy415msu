@@ -91,14 +91,14 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Welcome to Mathematical Modeling in Physics
+   Welcome to Mathematical Modeling in Physics - Under Construction
   </a>
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="syllabus.html">
-   Syllabus
+   Overview of PHY 415
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -108,7 +108,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="goals.html">
-     Course Goals
+     Course Objectives
     </a>
    </li>
    <li class="toctree-l2">
@@ -133,10 +133,27 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../1_modeling/what_is_modeling.html">
-   What is Modeling?
+   What is Mathematical Modeling?
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1_modeling/SHO-intro.html">
+     The Simple Harmonic Oscillator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1_modeling/SHO-numerical.html">
+     Numerically Integrating the SHO model
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -240,6 +257,24 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commitment-to-an-inclusive-classroom">
+   Commitment to an Inclusive Classroom
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comments-on-preparation">
+   Comments on preparation:
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -252,6 +287,24 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#commitment-to-an-inclusive-classroom">
+   Commitment to an Inclusive Classroom
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comments-on-preparation">
+   Comments on preparation:
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -260,6 +313,61 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="classroom-environment">
 <h1>Classroom Environment<a class="headerlink" href="#classroom-environment" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="commitment-to-an-inclusive-classroom">
+<h2>Commitment to an Inclusive Classroom<a class="headerlink" href="#commitment-to-an-inclusive-classroom" title="Permalink to this headline">¶</a></h2>
+<p>I am committed to creating an inclusive classroom - one where you and your classmates
+feel comfortable, intellectually challenged, and able to speak up about your ideas
+and experiences. This means that our classroom, our virtual environments, and our interactions
+need to be as inclusive as possible. Mutual respect, civility, and the ability to listen
+and observe others are central to creating a classroom that is inclusive. I will strive to
+do this and I ask that you do the same. If I can do anything to make the classroom a better
+learning environment for you, please let me know.</p>
+<p><strong>If you observe or experience behaviors that violate our commitment to inclusivity,
+please let me know as soon as possible.</strong></p>
+<p>If I violate this principle, please let me know
+or please tell the undergraduate department chair,
+Stuart Tessmer (<a class="reference external" href="mailto:tessmer&#37;&#52;&#48;pa&#46;msu&#46;edu">tessmer<span>&#64;</span>pa<span>&#46;</span>msu<span>&#46;</span>edu</a>), who I have informed to tell me about any such incidents
+without conveying student information to me.</p>
+</div>
+<div class="section" id="comments-on-preparation">
+<h2>Comments on preparation:<a class="headerlink" href="#comments-on-preparation" title="Permalink to this headline">¶</a></h2>
+<p>Physics 482 covers material you might have seen before (Many of the topics
+stem from PHY 184/294H material) but at a higher level of conceptual and
+mathematical sophistication.</p>
+<p>Therefore you should expect:</p>
+<ul class="simple">
+<li><p>a large amount of material covered quickly.</p></li>
+<li><p>no recitations, and few examples covered in lecture. Most homework
+problems are not similar to examples from class.</p></li>
+<li><p>long, hard homework problems that usually cannot be completed by one
+individual alone.</p></li>
+<li><p>challenging projects.</p></li>
+</ul>
+<p>Physics 482 is a challenging, upper‐division physics course. Unlike more
+introductory courses, you are fully responsible for your own learning.
+In particular, you control the pace of the course by asking questions in
+class. I tend to speak quickly, and questions are important to slow down
+the lecture. This means that if you don’t understand something, it is
+your responsibility to ask questions. Attending class and the homework
+help sessions gives you an opportunity to ask questions. I am here to
+help you as much as possible, but I need your questions to know what you
+don’t understand.</p>
+<p>Physics 482 covers some of the most important physics and mathematical
+methods in the field. Your reward for the hard work and effort will be
+learning important and elegant material that you will use over and over
+as a physics major. Here is what I have experienced, and heard from
+other faculty teaching upper division physics in the past:</p>
+<ul class="simple">
+<li><p>most students reported spending a minimum of 10 hours per week on the
+homework (!!)</p></li>
+<li><p>students who didn’t attend the homework help sessions
+often did poorly in the class.</p></li>
+<li><p>students reported learning a tremendous amount in this class.</p></li>
+</ul>
+<p><strong>The course topics that we will cover in Physics 482 are among the
+greatest intellectual achievements of humans. Don’t be surprised if you
+have to think hard and work hard to master the material.</strong></p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

@@ -51,7 +51,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Assessments" href="assessments.html" />
-    <link rel="prev" title="Course Goals" href="goals.html" />
+    <link rel="prev" title="Course Objectives" href="goals.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -91,14 +91,14 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Welcome to Mathematical Modeling in Physics
+   Welcome to Mathematical Modeling in Physics - Under Construction
   </a>
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="syllabus.html">
-   Syllabus
+   Overview of PHY 415
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -108,7 +108,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="goals.html">
-     Course Goals
+     Course Objectives
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -133,10 +133,27 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../1_modeling/what_is_modeling.html">
-   What is Modeling?
+   What is Mathematical Modeling?
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1_modeling/SHO-intro.html">
+     The Simple Harmonic Oscillator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1_modeling/SHO-numerical.html">
+     Numerically Integrating the SHO model
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -240,6 +257,55 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Course Design
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#required-purchases">
+     Required purchases:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-activities">
+   Course Activities
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#readings">
+     Readings
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#class-meetings">
+     Class Meetings
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#homework">
+     Homework
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#help-session">
+       Help Session
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -252,6 +318,55 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Course Design
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#required-purchases">
+     Required purchases:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-activities">
+   Course Activities
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#readings">
+     Readings
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#class-meetings">
+     Class Meetings
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#homework">
+     Homework
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#help-session">
+       Help Session
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -260,6 +375,93 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="course-design">
 <h1>Course Design<a class="headerlink" href="#course-design" title="Permalink to this headline">¶</a></h1>
+<p>For most of you, 482 is an elective course that you are taking to advance your knowledge of electromagnetism. As such, this course is designed under several different principles than a standard course. Below, I provide those principles and their rationale.</p>
+<ul class="simple">
+<li><p>482 should help you learn the central tenets of Electromagnetism</p>
+<ul>
+<li><p>This course provides the conclusion of the story started in 481. In 481, we were concerned with static charges and steady currents, but in 482, we broaden our scope to allow distributions and thus fields to change with time. This course should help you see how all the different aspects of Electromagnetism are connected together and how it is that Classical Electromagnetism is a coherent theory. Because Electromagnetism is such a broad topic, we will cover the basic in class and you will research advanced topics and share them with your class mates. At the end of the semester, we will bring it all together.</p></li>
+</ul>
+</li>
+<li><p>482 should be a celebration of your knowledge</p>
+<ul>
+<li><p>For most of you, this course concludes your study of physics at MSU. What you have achieved in the last four years should be celebrated and enjoyed. This course will provide ample opportunities for you to share what things you know and what things you are learning with me and with each other.</p></li>
+</ul>
+</li>
+<li><p>482 should give you opportunities to engage in professional practice</p>
+<ul>
+<li><p>As you start towards your professional career, it’s important to learn what professional scientists do. You have probably already begun this work in advanced lab and research projects that you have worked on. We will continue developing your professional skills in this course through the use of course projects in lieu of exams.</p></li>
+</ul>
+</li>
+<li><p>482 will illustrate that we can learn from each other</p>
+<ul>
+<li><p>Even though I’ve been learning physics for almost 20 years, I don’t know everything. I am excited to learn from you and I hope that you are excited to learn from me and each other.</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="required-purchases">
+<h2>Required purchases:<a class="headerlink" href="#required-purchases" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>J.D. Griffiths. <a class="reference external" href="http://goo.gl/iU6MdA"><em>Introduction to Electromagnetism</em>, 4th
+Edition</a> (Pearson; 2012). This book is
+pedagogically excellent and is my favorite undergrad textbook of
+them all! There are <a class="reference external" href="http://goo.gl/78y9jw">other editions that might be less
+expensive</a>, and they can be substituted. But
+reading assignments will come from the 4th edition, which may have
+some different content.</p></li>
+<li><p>An “iClicker”, available at the bookstore, will be used
+every lecture.</p></li>
+</ol>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="course-activities">
+<h1>Course Activities<a class="headerlink" href="#course-activities" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="readings">
+<h2>Readings<a class="headerlink" href="#readings" title="Permalink to this headline">¶</a></h2>
+<p>Reading is an essential part of 482! Reading the text before class is
+very important. Lecture is to clarify your understanding, to help you
+make sense of the material. I will assume you have done the required
+readings in advance! Griffiths is one of the best (and most readable)
+texts I know of - it will make a huge difference if you spend the time
+and effort to carefully read and follow the text. The
+<span class="xref myst">calendar</span> has the details on reading assignments.</p>
+</div>
+<div class="section" id="class-meetings">
+<h2>Class Meetings<a class="headerlink" href="#class-meetings" title="Permalink to this headline">¶</a></h2>
+<p><strong>Classroom Etiquette:</strong> Please silence your cell phones when entering the classroom.
+I don’t mind you using them, but they can very distracting to your neighbors, so
+use your judgement. I appreciate that you might have questions or comments about things in
+class. If you and your neighbors are confused, just raise your hand and ask. If you are confused, you are likely not the only one and it’s better to chat about it, then move on.
+Questions in lecture are always good, and are strongly encouraged!</p>
+<p><strong>Clickers:</strong> Occasionally, clicker questions will be used in class to gauge your understanding of a topic or concept. I do not penalize you for not knowing the correct answer. I prefer to know what you know in-the-monent. Thus, clickers will be ungraded.</p>
+<p><strong>In-Class Activities:</strong> We will also use a variety of in-class activities and worksheets that help you construct an understanding of a particular topic or concept. These will not be collected or graded, but we will discuss the solutions in class.</p>
+</div>
+<div class="section" id="homework">
+<h2>Homework<a class="headerlink" href="#homework" title="Permalink to this headline">¶</a></h2>
+<p>There will be a homework due every Friday by 5pm. Late homework can’t be accepted once solutions are posted - but, your lowest score will be dropped. Homework is exceedingly important for developing an understanding of the course material, not to mention building skills in complex physical and mathematical problem solving. They will require considerable time and personal effort this term! <em>Your lowest homework grade will be dropped.</em></p>
+<p>There are four kinds of homework problems in this class:</p>
+<p><strong>Standard Homework Problems</strong>: These are regular back-of-the-book type homework problems that involve derivations, calculations, figures, and graphs. If you took 481, there will be fewer of these in 482. Each question will be coarsely graded for “completion”:</p>
+<ul class="simple">
+<li><p>10 pts. complete</p></li>
+<li><p>8 pts. right idea, but incomplete</p></li>
+<li><p>4 pts. relatively incomplete</p></li>
+<li><p>0 pts. not turned in</p></li>
+</ul>
+<p><strong>Computational Homework Problems:</strong> There will be <em>some use of computation in this course</em> on homework problems. I will encourage and support the use of Python (through <a class="reference external" href="http://jupyter.org/">Jupyter notebooks</a>). You do not need any computational experience for this course as you will learn some fundamentals early on and keep using them throughout the course. You are welcome to use any environment of your choosing (e.g., Octave/MATLAB, Mathematica, C++), but I will only provide support for Python. Python is in use across the sciences, but it is becoming much used in physics, so learning it will serve you well in your future work. I suggest downloading the <a class="reference external" href="https://www.continuum.io/">Anaconda distribution of Python</a> as it comes with all the packages you will need to get up and running with Jupyter notebooks. These will be graded on the same 10-8-4-0 scale as standard homework problems. Here are <a class="reference external" href="http://jupyter.readthedocs.io/en/latest/install.html">instructions for installing Jupyter Notebooks</a>.</p>
+<p><strong>Project Homework Problems</strong>: These are homework problems to support your working towards completing your individual and paired projects (see below). <em>Projects are difficult to complete, so having some regular check-ins on how those projects are going, setting milestones to complete, and producing a semi-complete piece of a project are all important aspects of research!</em> These homework problems are meant to help you make that progress each week. They count twice as much as normal homework problems, but follow a similar grading scale:</p>
+<ul class="simple">
+<li><p>20 pts. complete</p></li>
+<li><p>16 pts. right idea, but incomplete</p></li>
+<li><p>8 pts. relatively incomplete</p></li>
+<li><p>0 pts. not turned in</p></li>
+</ul>
+<p>You will be given detailed feedback on these project homework problems as you are working on bigger projects throughout this class. You should read and be responsive to this feedback as it will help you develop a strong project.</p>
+<p><strong>Self-reflection Homework Problems</strong>: These are homework problems that ask you to evaluate your progress on your projects and how you and your partner are working together. <em>Evaluating how well you understand something and what you need to do to move forward is a hard thing to learn. So is working on a team (or with a partner).</em> These homework problems are meant to help you do both and get feedback from me on how things are going. These problems are graded out of 10 points like regular homework problems on the same 10-8-4-0 scale. You will also be given detailed feedback on these homework problems.</p>
+<p><em>I strongly encourage collaboration</em>, an essential skill in science and engineering (and highly valued by employers!) Social interactions are critical to scientists’ success – most good ideas grow out of discussions with colleagues, and essentially all physicists work as part of a group. Find partners and work on homework together. However, it is also important that you OWN the material. I strongly suggest you start homework by yourself (and that means really making an extended effort on every problem). Then work with a group, and finally, finish up on your own – write up your own work, in your own way. There will also be time for peer discussion during classes – as you work together, try to help your partners get over confusions, listen to them, ask each other questions, critique, teach each other. You will learn a lot this way! For all assignments, the work you turn in must in the end be your own: in your own words, reflecting your own understanding. (If, at any time, for any reason, you feel disadvantaged or isolated, contact me and I can discretely try to help arrange study groups.)</p>
+<div class="section" id="help-session">
+<h3>Help Session<a class="headerlink" href="#help-session" title="Permalink to this headline">¶</a></h3>
+<p>Help sessions/office hours are to facilitate your learning. We encourage attendance - plan on working in small groups, our role will be as learning coaches. The sessions are homework-centric, but we will not be explicitly telling anyone how to do the homework (how would that help you learn?) I strongly encourage you to start all problems on your own. If you come to help sessions “cold”, the value of homework to you will be greatly reduced.</p>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -291,7 +493,7 @@ const thebe_selector_output = ".output, .cell_output"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Course Goals</p>
+            <p class="prev-next-title">Course Objectives</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="assessments.html" title="next page">

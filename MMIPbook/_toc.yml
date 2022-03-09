@@ -14,4 +14,4 @@ chapters:
 - file: content/1_modeling/what_is_modeling
   sections:
     - file: content/1_modeling/SHO-intro
-    - file: content/1_modeling/notebooks
+    - file: content/1_modeling/SHO-numerical

@@ -43,8 +43,10 @@ def AnalyticalSolutionSHO(tf, deltat, amp, omega, t0 = 0, phase = 0):
 # In[4]:
 
 
-t,x = AnalyticalSolutionSHO(tf, 0.02, x0, omega)
+deltat = 0.001
+t,x = AnalyticalSolutionSHO(tf, deltat, x0, omega)
 plt.plot(t,x)
+plt.grid()
 
 
 # $$\ddot{x} = -\omega x$$
@@ -125,7 +127,7 @@ plt.plot(t,x)
 # In[5]:
 
 
-N = 100
+N = int(np.ceil(tf/deltat))
 steps = np.arange(0, N-1)
 deltaT = tf/N
 time = np.linspace(0,tf,N)
@@ -148,10 +150,13 @@ for i in steps:
 
 plt.plot(t, x)
 plt.plot(time, xVals1, '--')
+plt.grid()
 
 
 # In[7]:
 
+
+## Approach 2
 
 xVals2 = np.zeros(N)
 uVals2 = np.zeros(N)
@@ -166,10 +171,13 @@ for i in steps:
 
 plt.plot(t, x)
 plt.plot(time, xVals2, '--')
+plt.grid()
 
 
 # In[8]:
 
+
+## Approach 3
 
 xVals3 = np.zeros(N)
 uVals3 = np.zeros(N)
@@ -184,6 +192,7 @@ for i in steps:
 
 plt.plot(t, x)
 plt.plot(time, xVals3, '--')
+plt.grid()
 
 
 # In[9]:
@@ -195,14 +204,53 @@ plt.plot(time, xVals1, '--')
 plt.plot(time, xVals2, '--')
 plt.plot(time, xVals3, '--')
 plt.legend(['True', 'Approach 1', 'Approach 2', 'Approach 3'])
+plt.grid()
 
 
 # In[10]:
 
 
-plt.plot(np.abs(xVals1-xVals2))
-plt.plot(np.abs(xVals1-xVals3))
-plt.plot(np.abs(xVals2-xVals3))
+plt.plot(np.abs(x-xVals1))
+plt.plot(np.abs(x-xVals2))
+plt.plot(np.abs(x-xVals3))
+plt.grid()
+
+
+# In[11]:
+
+
+from scipy.integrate import odeint
+
+
+# In[12]:
+
+
+def NumericalSolutionSHO(y, t, omega):
+    
+    x, vx = y
+    dydt = [vx, -omega*x]
+    return dydt
+
+
+# In[13]:
+
+
+omega0 = omega
+y0 = [x0, v0]
+t = time
+sol = odeint(NumericalSolutionSHO, y0, t, args=(omega0,))
+
+
+# In[14]:
+
+
+plt.plot(t, x, label='True')
+plt.plot(t, sol[:,0], label='ODEInt')
+plt.legend(loc='best')
+
+plt.xlabel('t')
+
+plt.grid()
 
 
 # In[ ]:

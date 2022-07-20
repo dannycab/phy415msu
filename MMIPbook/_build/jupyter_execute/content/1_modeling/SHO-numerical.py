@@ -15,6 +15,13 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 # In[2]:
 
 
+a = 1 
+print(a)
+
+
+# In[3]:
+
+
 x0 = 1.0 ## Initial position
 v0 = 0.0 ## Initial velocity
 
@@ -23,7 +30,7 @@ omega = 2 ## Angular freq. of SHO
 tf = 5 ## Model time
 
 
-# In[3]:
+# In[4]:
 
 
 def AnalyticalSolutionSHO(tf, deltat, amp, omega, t0 = 0, phase = 0):
@@ -40,7 +47,7 @@ def AnalyticalSolutionSHO(tf, deltat, amp, omega, t0 = 0, phase = 0):
         raise ValueError('Final time is before start time.')
 
 
-# In[4]:
+# In[5]:
 
 
 deltat = 0.001
@@ -124,7 +131,7 @@ plt.grid()
 # 
 # It looks like we can try approach 1, 2, and 3 without much fuss. Let's write a few functions.
 
-# In[5]:
+# In[6]:
 
 
 N = int(np.ceil(tf/deltat))
@@ -133,7 +140,7 @@ deltaT = tf/N
 time = np.linspace(0,tf,N)
 
 
-# In[6]:
+# In[7]:
 
 
 ##Approach 1
@@ -153,7 +160,7 @@ plt.plot(time, xVals1, '--')
 plt.grid()
 
 
-# In[7]:
+# In[8]:
 
 
 ## Approach 2
@@ -174,7 +181,7 @@ plt.plot(time, xVals2, '--')
 plt.grid()
 
 
-# In[8]:
+# In[9]:
 
 
 ## Approach 3
@@ -195,7 +202,7 @@ plt.plot(time, xVals3, '--')
 plt.grid()
 
 
-# In[9]:
+# In[10]:
 
 
 plt.figure(figsize=(10,6))
@@ -207,7 +214,7 @@ plt.legend(['True', 'Approach 1', 'Approach 2', 'Approach 3'])
 plt.grid()
 
 
-# In[10]:
+# In[11]:
 
 
 plt.plot(np.abs(x-xVals1))
@@ -216,13 +223,13 @@ plt.plot(np.abs(x-xVals3))
 plt.grid()
 
 
-# In[11]:
+# In[12]:
 
 
 from scipy.integrate import odeint
 
 
-# In[12]:
+# In[13]:
 
 
 def NumericalSolutionSHO(y, t, omega):
@@ -232,7 +239,7 @@ def NumericalSolutionSHO(y, t, omega):
     return dydt
 
 
-# In[13]:
+# In[14]:
 
 
 omega0 = omega
@@ -241,7 +248,7 @@ t = time
 sol = odeint(NumericalSolutionSHO, y0, t, args=(omega0,))
 
 
-# In[14]:
+# In[15]:
 
 
 plt.plot(t, x, label='True')

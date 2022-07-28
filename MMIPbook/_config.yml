@@ -32,6 +32,15 @@ html:
   use_issues_button: true
   use_repository_button: true
 
+# Launch button settings
+launch_buttons:
+  jupyterhub_url            : "https://jupyterhub.egr.msu.edu/" 
+  colab_url                 : "https://colab.research.google.com"
+#  notebook_interface        : classic  # The interface interactive links will activate ["classic", "jupyterlab"]
+#  binderhub_url             : https://mybinder.org  # The URL of the BinderHub (e.g., https://mybinder.org)
+#  thebe                     : false  # Add a thebe button to pages (requires the repository to run on Binder)
+
+
 # for references
 sphinx:
   config:

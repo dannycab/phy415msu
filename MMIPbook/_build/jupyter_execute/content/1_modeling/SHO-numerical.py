@@ -222,3 +222,27 @@ plt.plot(np.abs(xVals2-xVals3))
 
 
 
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+

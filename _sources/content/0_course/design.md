@@ -15,51 +15,83 @@ kernelspec:
 
 # Course Design
 
-For most of you, 482 is an elective course that you are taking to advance your knowledge of electromagnetism. As such, this course is designed under several different principles than a standard course. Below, I provide those principles and their rationale.
+For most of you, 4415 is an elective course that you are taking to learn more about how we use mathematical techniques in physics. As such, this course is designed under several different principles than a standard course. Below, I provide those principles and their rationale.
 
-* 482 should help you learn the central tenets of Electromagnetism
-	* This course provides the conclusion of the story started in 481. In 481, we were concerned with static charges and steady currents, but in 482, we broaden our scope to allow distributions and thus fields to change with time. This course should help you see how all the different aspects of Electromagnetism are connected together and how it is that Classical Electromagnetism is a coherent theory. Because Electromagnetism is such a broad topic, we will cover the basic in class and you will research advanced topics and share them with your class mates. At the end of the semester, we will bring it all together.
-* 482 should be a celebration of your knowledge
-	* For most of you, this course concludes your study of physics at MSU. What you have achieved in the last four years should be celebrated and enjoyed. This course will provide ample opportunities for you to share what things you know and what things you are learning with me and with each other.
-* 482 should give you opportunities to engage in professional practice
-	* As you start towards your professional career, it's important to learn what professional scientists do. You have probably already begun this work in advanced lab and research projects that you have worked on. We will continue developing your professional skills in this course through the use of course projects in lieu of exams.
-* 482 will illustrate that we can learn from each other
+* 415 should help you learn the central tenets of modeling physical systems
+  * The sheer volume of mathematical and computational physics knowledge out there is immense and impossible for any one person to learn. However, the central elements of making models, how to learn about specific techniques, and how to debug your approaches are things we can learn and employ broadly as well as to specific problems.
+* 415 should be a celebration of your knowledge
+	* For most of you, this course is part of your senior level coursework. What you have achieved in the last three to four years should be celebrated and enjoyed. This course will provide ample opportunities for you to share what things you know and what things you are learning with me and with each other.
+* 415 should give you opportunities to engage in professional practice
+	* As you start towards your professional career, it's important to learn what professional scientists do. You have probably already begun this work in advanced lab and research projects that you have worked on. We will continue developing your professional skills in this course through the use of course projects.
+* 415 will illustrate that we can learn from each other
 	* Even though I've been learning physics for almost 20 years, I don't know everything. I am excited to learn from you and I hope that you are excited to learn from me and each other.
 
-## Required purchases:
+## Optional purchases:
 
-1.  J.D. Griffiths. [*Introduction to Electromagnetism*, 4th
-    Edition](http://goo.gl/iU6MdA) (Pearson; 2012). This book is
-    pedagogically excellent and is my favorite undergrad textbook of
-    them all! There are [other editions that might be less
-    expensive](http://goo.gl/78y9jw), and they can be substituted. But
-    reading assignments will come from the 4th edition, which may have
-    some different content.
-2.  An "iClicker", available at the bookstore, will be used
-    every lecture.
+The core readings and work for this course will be this jupyterbook. I will find resources online, make my own, and provide as much organized free material as possible. If you want to have a textbook that helps you organize your readings, please obtain copies of:
 
+1.  Mary Boas, [*Mathematical Methods in the Physical Sciences*](https://www.amazon.com/Mathematical-Methods-Physical-Sciences-Mary/dp/04711982) (Wiley; 2005). This book is the definitive text on mathematical approaches, written by Dr. Boas originally in 1966! Any 3rd edition will be useful and I will put the section numbers from Boas in the online readings.
+2. Mark Newman, [*Computational Physics*](https://www.amazon.com/Computational-Physics-Mark-Newman/dp/1480145513) (CreateSpace Independent Publishing Platform; 2012). This book is a great introduction to a variety of computational physics techniques, written by UMich professor Mark Newman for a computational physics course. I will put section numbers from Newman in the online readings.
+
+### Additional sources
+
+In addition, I will draw from the following books. I have copies of them if you want or need scans of sections. But they can found online in Google Books and other places as well. no need to purchase unless you want a copy for your personal library.
+
+#### Mechanics
+
+* Edwin Taylor, Mechanics
+* Jerry Marion and Stephen Thornton, Classical Dynamics of Particles and Systems
+* Charles Kittel, Walter D. Knight, Malvin A. Ruderman, A. Carl Helholtz, and Burton J. Moyer, Mechanics
+ 
+#### Electromagnetism
+
+* Edward Purcell, Electricity and Magnetism
+* David J. Grriffths, Introduction to Electromagnetism
+
+#### Quantum Mechanics
+
+* David McIntyre, Quantum Mechanics
+* David J. Griffiths, Introduction to Quantum Mechanics
+
+#### Waves and Thermal Physics
+
+* Frank S. Crawford, Waves
+* Charles Kittel, Thermal Physics
+* Ashley Carter, Classical and Statistical Thermodynamics
+* Daniel Schroeder, Thermal Physics
+
+#### Additional Physics Topics
+
+* Steven H. Strogatz, Nonlinear Dynamics and Chaos
+* B Lautrup, Physics of Continuous Matter
+* Frank L. Pedrotti and Leno S. Pedrotti, Introduction to Optics
+
+#### Mathematics
+
+* Susan M. Lea, Mathematics for Physicists
+* William E. Boyce and Richard C. DiPrima, Elementary Differential Equations
+* James Brown and Ruel Churchill, Complex Variables and Applications
+* Jerrold Marsden and Anthony Tromba, Vector Calculus
+* Sheldon Ross, A First Course in Probability
+
+#### Presenting (Visual) Information
+
+* Edward Tufte, The Visual Display of Quantitative information
+* Albert Cairo, The Truthful Art
+* Stephen E. Toulmin, The Uses of Argument
 
 # Course Activities
 
-## Readings
+## "Readings"
 
-Reading is an essential part of 482! Reading the text before class is
-very important. Lecture is to clarify your understanding, to help you
-make sense of the material. I will assume you have done the required
-readings in advance! Griffiths is one of the best (and most readable)
-texts I know of - it will make a huge difference if you spend the time
-and effort to carefully read and follow the text. The
-[calendar](./calendar.html) has the details on reading assignments.
+"Reading" is an essential part of 415! Reading the notes before class is very important. I use "reading" in quotes, because in our class this idea goes beyond just reading text and includes understanding figures and watching videos. These should help inform the basis of your understating that we will draw on in class to clarify your understanding and to help you make sense of the material. I will assume you have done the required readings in advance! It will make a huge difference if you spend the time and effort to carefully read and follow the resources posted. The
+[calendar](./calendar.html) has the details on readings that will be updated.
 
 ## Class Meetings
 
-**Classroom Etiquette:** Please silence your cell phones when entering the classroom.
-I don't mind you using them, but they can very distracting to your neighbors, so
-use your judgement. I appreciate that you might have questions or comments about things in
-class. If you and your neighbors are confused, just raise your hand and ask. If you are confused, you are likely not the only one and it's better to chat about it, then move on.
-Questions in lecture are always good, and are strongly encouraged!
+**Classroom Etiquette:** Please silence your electronic devices when entering the classroom. I don't mind you using them (in fact, see below, we will use them). But, sometimes, they can very distracting to your neighbors, so use your judgement. I appreciate that you might have questions or comments about things in class. If you and your neighbors are confused, just raise your hand and ask. If you are confused, you are likely not the only one and it's better to chat about it, then move on. Questions in lecture are always good, and are strongly encouraged!
 
-**Clickers:** Occasionally, clicker questions will be used in class to gauge your understanding of a topic or concept. I do not penalize you for not knowing the correct answer. I prefer to know what you know in-the-monent. Thus, clickers will be ungraded.
+**Computing Devices:** Please bring some sort of computing device to class everyday. You might be researching information online, reviewing work you have done, or actively building models of systems together. This device can be a computer, a tablet, or a phone. You can also partner up with folks because we will use them in groups.
 
 **In-Class Activities:** We will also use a variety of in-class activities and worksheets that help you construct an understanding of a particular topic or concept. These will not be collected or graded, but we will discuss the solutions in class.
 

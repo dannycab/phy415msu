@@ -15,13 +15,9 @@ kernelspec:
 
 # Overview of PHY 415
 
-Histroically, PHY 415 has focused on developing specialized analytical solutions to common physics problems and situations. However, the work of phyiscists involves a variety of tools the **model the behavior of physical systems**. Hence, this course will emphasize how we go about building mathematical models of physical phenomenon and how we can investigate them through a variety of lenses: analytical mathematics, graphics and visualization, as well as computational modeling using Python. By emphasizing the critical aspects of the modeling process, this course aims to develop your expertise in the process of doing physics rather than specific tools or techniques. That being said, you will also learn many differenty analytical and computaitonal tools to use for your own aims.
+In designing this course, I plan to emphasize more independent learning on your part and greater agency for you in determining what you learn and how you demonstrate you have learned. So you should expect:
 
-## What you should expect
-
-In redesigning this course, I plan to emphasize more independent learning on your part and greater agency for you in determining what you learn and how you demonstrate you have learned. So you should expect:
-
-  * to read a variety of courses to coordinate information
+  * to read a variety of pieces of information to coordinate information
   * to present your ideas publicly and to discuss them
   * to learn new approaches and novel techniques on your own
   * to become more expert than me in the areas of your interest
@@ -38,26 +34,27 @@ This is not to say that you are on your own. Here's what you can expect from me:
 
 -   Instructor: [Prof. Danny Caballero](http://dannycab.github.io) (he/him/his)
 -   Class Meetings: Tuesdays and Thursdays 10:20am-12:10pm (Location: TBD)
--   Email: [caball14@msu.edu](mailto:caball14@msu.edu), cell: (517) 420-5330, office:
-    1310-A BPS
--   Office hrs: Open door policy. I enjoy visiting and talking with you about physics.
+-   Email: [caball14@msu.edu](mailto:caball14@msu.edu), office: 1310-A BPS
+-   Office hrs: To be scheduled, but I also have an open door policy. I enjoy visiting and talking with you about physics.
 -   Web page:
     [dannycab.github.io/phy415msu/](http://dannycab.github.io/phy415msu/)
 
 ### Slack Team
 
-*This term we will be using Slack for class discussion.* The system is highly catered to getting you help fast and efficiently from classmates and myself. Rather than emailing questions, I encourage you to post your questions on there. MORE SOON.
+*This term we will be using Slack for class discussion.* The system is highly catered to getting you help fast and efficiently from classmates and myself. Rather than emailing questions, I encourage you to post your questions on there. You should be added to the Slack team by the first week of class. Email Danny if you are not part of the team. 
+
+**Link:** [https://phy415fall2022.slack.com/](https://phy415fall2022.slack.com/)
 
 
 
 ## Grading
-Details about [course activities are here](design.md) and [information regarding asessment is here](assessments.md). How your grade is calculated appears below.
+Details about [course activities are here](design.md) and [information regarding asessment is here](assessments.md). Your grade will be comprised of several projects that you will complete in the form of a Jupyter notebook (a "computational essay", which we will discuss later). Your grade on each project is split between completion (50%) and quality (50%). We will collectively define quality in class. Your final grade will be scaled based on your best performances; there will be slightly more projects than what comprises your grade. How your grade is calculated appears below. 
 
-**NOT READY YET**
+| Activity                                  | Percent of Grade |
+|-------------------------------------------|-----------------:|
+| Best Project Grade                        |        40%       |
+| 2nd Best Project Grade                    |        30%       |
+| 3rd Best Project Grade                    |        20%       |
+| 4th Best Project Grade                    |        10%       |
 
-| Activity                              |            Date           | Percent of Grade |
-|---------------------------------------|:-------------------------:|-----------------:|
-| Homework (14 total; 1 dropped)        | Due Fri at start of class |              40% |
-| In-Class Quizzes  (7 total; 1 dropped)| Every other Friday        |              20% |
-| Individual Project                    | Fri Feb 28                 |              20% |
-| Pair Project                          | Tues Apr 28                |              20% |
+**While attendance is not required, you are unlikely to succeed with your projects without regular attendance and engagement.**

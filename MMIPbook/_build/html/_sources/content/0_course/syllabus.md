@@ -15,11 +15,7 @@ kernelspec:
 
 # Overview of PHY 415
 
-Historically, PHY 415 has focused on developing specialized analytical solutions to common physics problems and situations. However, the work of physicists involves a variety of tools that we use to **model the behavior of physical systems**. Hence, this course will emphasize how we go about building mathematical models of physical phenomenon and how we can investigate them through a variety of lenses: analytical mathematics, graphics and visualization, as well as computational modeling using Python. By emphasizing the critical aspects of the modeling process, this course aims to develop your expertise in the process of doing theoretical physics rather than specific tools or techniques. That being said, you will also learn many differently analytical and computational tools to use for your own aims.
-
-## What you should expect
-
-In redesigning this course, I plan to emphasize more independent learning on your part and greater agency for you in determining what you learn and how you demonstrate you have learned. So you should expect:
+In designing this course, I plan to emphasize more independent learning on your part and greater agency for you in determining what you learn and how you demonstrate you have learned. So you should expect:
 
   * to read a variety of pieces of information to coordinate information
   * to present your ideas publicly and to discuss them
@@ -45,7 +41,9 @@ This is not to say that you are on your own. Here's what you can expect from me:
 
 ### Slack Team
 
-*This term we will be using Slack for class discussion.* The system is highly catered to getting you help fast and efficiently from classmates and myself. Rather than emailing questions, I encourage you to post your questions on there. MORE SOON.
+*This term we will be using Slack for class discussion.* The system is highly catered to getting you help fast and efficiently from classmates and myself. Rather than emailing questions, I encourage you to post your questions on there. You should be added to the Slack team by the first week of class. Email Danny if you are not part of the team. 
+
+**Link:** [https://phy415fall2022.slack.com/](https://phy415fall2022.slack.com/)
 
 
 

@@ -100,22 +100,53 @@
 \phantomsection\label{\detokenize{content/intro::doc}}
 
 
+\begin{DUlineblock}{0em}
+\item[] \sphinxstylestrong{\Large Under Construction}
+\end{DUlineblock}
 
 
 
+
+
+\begin{DUlineblock}{0em}
+\item[] \sphinxstylestrong{\Large Overview of PHY 415}
+\end{DUlineblock}
+
+\sphinxAtStartPar
+Historically, PHY 415 has focused on developing specialized analytical solutions to common physics problems and situations. However, the work of physicists involves a variety of tools that we use to \sphinxstylestrong{model the behavior of physical systems}. Hence, this course will emphasize how we go about building mathematical models of physical phenomenon and how we can investigate them through a variety of lenses: analytical mathematics, graphics and visualization, as well as computational modeling using Python. By emphasizing the critical aspects of the modeling process, this course aims to develop your expertise in the process of doing theoretical physics rather than specific tools or techniques. That being said, you will also learn many differently analytical and computational tools to use for your own aims.
+
+\begin{DUlineblock}{0em}
+\item[] \sphinxstylestrong{\large Learning Objectives}
+\end{DUlineblock}
 
 \sphinxAtStartPar
 In this course, you will learn to:
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-Develop models and stuff
+investigate physical systems using a variety of tools and approaches,
 
 \item {} 
 \sphinxAtStartPar
-Collaborate
+construct and document a reproducible process for those investigations,
+
+\item {} 
+\sphinxAtStartPar
+use analytical, computational, and graphical approaches to answer specific questions in those investigations,
+
+\item {} 
+\sphinxAtStartPar
+provide evidence of the quality of work using a variety of sources, and
+
+\item {} 
+\sphinxAtStartPar
+collaborate effectively and contribute to a inclusive learning environment
 
 \end{itemize}
+
+\begin{DUlineblock}{0em}
+\item[] \sphinxstylestrong{\large Table of Contents}
+\end{DUlineblock}
 
 \sphinxAtStartPar
 The rest of this JupyterBook is (currently) organized as follows:
@@ -136,17 +167,11 @@ The rest of this JupyterBook is (currently) organized as follows:
 \chapter{Overview of PHY 415}
 \label{\detokenize{content/0_course/syllabus:overview-of-phy-415}}\label{\detokenize{content/0_course/syllabus::doc}}
 \sphinxAtStartPar
-Histroically, PHY 415 has focused on developing specialized analytical solutions to common physics problems and situations. However, the work of phyiscists involves a variety of tools the \sphinxstylestrong{model the behavior of physical systems}. Hence, this course will emphasize how we go about building mathematical models of physical phenomenon and how we can investigate them through a variety of lenses: analytical mathematics, graphics and visualization, as well as computational modeling using Python. By emphasizing the critical aspects of the modeling process, this course aims to develop your expertise in the process of doing physics rather than specific tools or techniques. That being said, you will also learn many differenty analytical and computaitonal tools to use for your own aims.
-
-
-\section{What you should expect}
-\label{\detokenize{content/0_course/syllabus:what-you-should-expect}}
-\sphinxAtStartPar
-In redesigning this course, I plan to emphasize more independent learning on your part and greater agency for you in determining what you learn and how you demonstrate you have learned. So you should expect:
+In designing this course, I plan to emphasize more independent learning on your part and greater agency for you in determining what you learn and how you demonstrate you have learned. So you should expect:
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-to read a variety of courses to coordinate information
+to read a variety of pieces of information to coordinate information
 
 \item {} 
 \sphinxAtStartPar
@@ -200,12 +225,11 @@ Class Meetings: Tuesdays and Thursdays 10:20am\sphinxhyphen{}12:10pm (Location: 
 
 \item {} 
 \sphinxAtStartPar
-Email: \sphinxhref{mailto:caball14@msu.edu}{caball14@msu.edu}, cell: (517) 420\sphinxhyphen{}5330, office:
-1310\sphinxhyphen{}A BPS
+Email: \sphinxhref{mailto:caball14@msu.edu}{caball14@msu.edu}, office: 1310\sphinxhyphen{}A BPS
 
 \item {} 
 \sphinxAtStartPar
-Office hrs: Open door policy. I enjoy visiting and talking with you about physics.
+Office hrs: To be scheduled, but I also have an open door policy. I enjoy visiting and talking with you about physics.
 
 \item {} 
 \sphinxAtStartPar
@@ -218,76 +242,64 @@ Web page:
 \subsection{Slack Team}
 \label{\detokenize{content/0_course/syllabus:slack-team}}
 \sphinxAtStartPar
-\sphinxstyleemphasis{This term we will be using Slack for class discussion.} The system is highly catered to getting you help fast and efficiently from classmates and myself. Rather than emailing questions, I encourage you to post your questions on there. MORE SOON.
+\sphinxstyleemphasis{This term we will be using Slack for class discussion.} The system is highly catered to getting you help fast and efficiently from classmates and myself. Rather than emailing questions, I encourage you to post your questions on there. You should be added to the Slack team by the first week of class. Email Danny if you are not part of the team.
+
+\sphinxAtStartPar
+\sphinxstylestrong{Link:} \sphinxurl{https://phy415fall2022.slack.com/}
 
 
 \section{Grading}
 \label{\detokenize{content/0_course/syllabus:grading}}
 \sphinxAtStartPar
-Details about {\hyperref[\detokenize{content/0_course/design::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{course activities are here}}}} and {\hyperref[\detokenize{content/0_course/assessments::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{information regarding asessment is here}}}}. How your grade is calculated appears below.
-
-\sphinxAtStartPar
-\sphinxstylestrong{NOT READY YET}
+Details about {\hyperref[\detokenize{content/0_course/design::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{course activities are here}}}} and {\hyperref[\detokenize{content/0_course/assessments::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{information regarding asessment is here}}}}. Your grade will be comprised of several projects that you will complete in the form of a Jupyter notebook (a “computational essay”, which we will discuss later). Your grade on each project is split between completion (50\%) and quality (50\%). We will collectively define quality in class. Your final grade will be scaled based on your best performances; there will be slightly more projects than what comprises your grade. How your grade is calculated appears below.
 
 
 \begin{savenotes}\sphinxattablestart
 \centering
-\begin{tabulary}{\linewidth}[t]{|T|T|T|}
+\begin{tabulary}{\linewidth}[t]{|T|T|}
 \hline
 \sphinxstyletheadfamily 
 \sphinxAtStartPar
 Activity
 &\sphinxstyletheadfamily 
 \sphinxAtStartPar
-Date
-&\sphinxstyletheadfamily 
-\sphinxAtStartPar
 Percent of Grade
 \\
 \hline
 \sphinxAtStartPar
-Homework (14 total; 1 dropped)
-&
-\sphinxAtStartPar
-Due Fri at start of class
+Best Project Grade
 &
 \sphinxAtStartPar
 40\%
 \\
 \hline
 \sphinxAtStartPar
-In\sphinxhyphen{}Class Quizzes  (7 total; 1 dropped)
+2nd Best Project Grade
 &
 \sphinxAtStartPar
-Every other Friday
+30\%
+\\
+\hline
+\sphinxAtStartPar
+3rd Best Project Grade
 &
 \sphinxAtStartPar
 20\%
 \\
 \hline
 \sphinxAtStartPar
-Individual Project
+4th Best Project Grade
 &
 \sphinxAtStartPar
-Fri Feb 28
-&
-\sphinxAtStartPar
-20\%
-\\
-\hline
-\sphinxAtStartPar
-Pair Project
-&
-\sphinxAtStartPar
-Tues Apr 28
-&
-\sphinxAtStartPar
-20\%
+10\%
 \\
 \hline
 \end{tabulary}
 \par
 \sphinxattableend\end{savenotes}
+
+\sphinxAtStartPar
+\sphinxstylestrong{While attendance is not required, you are unlikely to succeed with your projects without regular attendance and engagement.}
 
 \sphinxstepscope
 
@@ -326,13 +338,15 @@ collaborate effectively and contribute to a inclusive learning environment
 \end{sphinxadmonition}
 
 \sphinxAtStartPar
-Each of these learning objectives contributes to your development as a physicist. I recognize that these are \sphinxstylestrong{big} ideas to think about. What I mean is that the objectives above are quite broad and you might be able to see a little about what or why they are included. But, below, I added more detail about each one along with a smaller scale list of objectives that you will engage with. Throughout our course, you will have opprtunties to demonstrate these objectives in your work. My aim is to make what you are assessed on in this course something you are interested in, so these objectives reflect that.
+Each of these learning objectives contributes to your development as a physicist. I recognize that these are \sphinxstylestrong{big} ideas to think about. What I mean is that the objectives above are quite broad and you might be able to see a little about what or why they are included. But, below, I added more detail about each one along with a smaller scale list of objectives that you will engage with. Throughout our course, you will have opportunities to demonstrate these objectives in your work. My aim is to make what you are assessed on in this course something you are interested in, so these objectives reflect that.
 
 
 \subsection{Investigate physical systems}
 \label{\detokenize{content/0_course/goals:investigate-physical-systems}}
 \sphinxAtStartPar
-Clearly, the principal goal we are concerned with in this course learning how to make models of physical systems. This means learning about and developing fluency with a wide variety of mathematical and computational tools. In this courses, we will make extensive use of \sphinxhref{http://anaconda.org}{Jupyter notebooks} for homework and projects. In fact, what you are reading is a set of Jupyter notebooks! Below, you will see the list of objectives for this principal objective.
+Clearly, one of our central goals is learning how to make models of physical systems. This means learning about and developing fluency with a wide variety of mathematical and computational tools. In this courses, we will make extensive use of \sphinxhref{http://anaconda.org}{Jupyter notebooks} for homework and projects. In fact, what you are reading is a set of Jupyter notebooks! Below, you will see the list of objectives for this principal objective.
+
+\begin{sphinxadmonition}{note}{Investigating Physical Systems Learning Objectives}
 
 \sphinxAtStartPar
 Students will demonstrate they can:
@@ -340,68 +354,167 @@ Students will demonstrate they can:
 \item {} 
 \sphinxAtStartPar
 use mathematical techniques to predict or explain some physical phenomenon
-\begin{itemize}
+
 \item {} 
 \sphinxAtStartPar
-solve ordinary differential equations
+employ computational models and algorithms to investigate physical systems
+
+\item {} 
+\sphinxAtStartPar
+compare analytical and computational approaches to these investigations
+
+\item {} 
+\sphinxAtStartPar
+provide coherent explanations for their investigations buttressed by physical, mathematical, and/or computational knowledge and principles
 
 \end{itemize}
-
-\end{itemize}
+\end{sphinxadmonition}
 
 
 \subsection{Construct and document a reproducible process}
 \label{\detokenize{content/0_course/goals:construct-and-document-a-reproducible-process}}
+\sphinxAtStartPar
+A critical element of physics work is making sure that with the same setup and approach, others can reproduce the work you have done. This provides validity to your work and evidences how we develop collective understanding of physics. Physics is a social enterprise and the ensuring the reproducibility of work supports that enterprise. Below are the learning objectives for this principal objective.
+
+\begin{sphinxadmonition}{note}{Reproducibility Learning Objectives}
+
+\sphinxAtStartPar
+Students will demonstrate they can:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+document their work and analysis such that others can reproduce their work
+
+\item {} 
+\sphinxAtStartPar
+consistently reproduce their work and results in a variety of contexts
+
+\item {} 
+\sphinxAtStartPar
+provide an explanation for why certain work or results are not (or should not be) reproducible
+
+\end{itemize}
+\end{sphinxadmonition}
+
 
 \subsection{Use analytical, computational, and graphical approaches}
 \label{\detokenize{content/0_course/goals:use-analytical-computational-and-graphical-approaches}}
+\sphinxAtStartPar
+The main approaches that we use to make models are mathematical, computational, and graphical. In this class, we will aim to leverage the benefits of each to learn more about the physical systems that we are investigating. Indeed, much of the “knowledge” that you are going to develop will be about specific analytical, computational, or graphical approaches to investigate physical systems. Below are the learning objectives for this principal objective.
+
+\begin{sphinxadmonition}{note}{Modeling Approaches Learning Objectives}
+
+\sphinxAtStartPar
+Students will demonstrate they can:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Use a wide variety of modeling techniques to investigate different physical systems
+
+\item {} 
+\sphinxAtStartPar
+Choose and employ appropriate approaches to modeling physical systems of their choosing
+
+\item {} 
+\sphinxAtStartPar
+Explain how those approaches lead to different results or conclusions
+
+\end{itemize}
+\end{sphinxadmonition}
+
 
 \subsection{Provide evidence of the quality of their work}
 \label{\detokenize{content/0_course/goals:provide-evidence-of-the-quality-of-their-work}}
+\sphinxAtStartPar
+The definition of the quality of a piece of science is a collective decision by the scientific community. In established communities, like physics, there are commonly\sphinxhyphen{}accepted ways of defining the quality of work (norms, customs, and rules all play a role). But that is not to mean those ways can’t change; papers describing quantum physics and relativity brushed up hard against this issue of quality and were both dismissed and celebrated. Newer disciplines are still establishing those norms and rules. And in some cases, disciplines are pushing back against Western norms of quality. In our class, we will collectively decide what we mean by ‘’high quality’’ work. Below are the learning objectives for this principal objective.
+
+\begin{sphinxadmonition}{note}{Quality Control Learning Objectives}
+
+\sphinxAtStartPar
+Students will demonstrate they can:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+describe what it means to have high quality work in our class
+
+\item {} 
+\sphinxAtStartPar
+look for and evaluate when work meets those standards
+
+\item {} 
+\sphinxAtStartPar
+provide suggestions (or act on suggestions) to improve the quality of their work
+
+\end{itemize}
+\end{sphinxadmonition}
+
 
 \subsection{Collaborate effectively}
 \label{\detokenize{content/0_course/goals:collaborate-effectively}}
+\sphinxAtStartPar
+Physics is a social enterprise that relies on effective and productive collaborations. Very little (if any) science is done alone; the scale of science is too grand for individuals to effectively work – everyone needs a team. In this spirit, in this classroom, we deeply encourage collaboration. We will try to develop effective collaboration through your work on projects and our in\sphinxhyphen{}class activities. Below are the learning objectives for this principal objective.
+
+\begin{sphinxadmonition}{note}{Collaboration Learning Objectives}
+
+\sphinxAtStartPar
+Students will demonstrate they can:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Collaborate on a variety of activities in and out of class
+
+\item {} 
+\sphinxAtStartPar
+Document the contributions in these collaborations and make changes if contributions are unbalanced
+
+\item {} 
+\sphinxAtStartPar
+Develop personally effective strategies for collaboration
+
+\end{itemize}
+\end{sphinxadmonition}
+
 \sphinxstepscope
 
 
 \section{Course Design}
 \label{\detokenize{content/0_course/design:course-design}}\label{\detokenize{content/0_course/design::doc}}
 \sphinxAtStartPar
-For most of you, 482 is an elective course that you are taking to advance your knowledge of electromagnetism. As such, this course is designed under several different principles than a standard course. Below, I provide those principles and their rationale.
+For most of you, 4415 is an elective course that you are taking to learn more about how we use mathematical techniques in physics. As such, this course is designed under several different principles than a standard course. Below, I provide those principles and their rationale.
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-482 should help you learn the central tenets of Electromagnetism
+415 should help you learn the central tenets of modeling physical systems
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-This course provides the conclusion of the story started in 481. In 481, we were concerned with static charges and steady currents, but in 482, we broaden our scope to allow distributions and thus fields to change with time. This course should help you see how all the different aspects of Electromagnetism are connected together and how it is that Classical Electromagnetism is a coherent theory. Because Electromagnetism is such a broad topic, we will cover the basic in class and you will research advanced topics and share them with your class mates. At the end of the semester, we will bring it all together.
+The sheer volume of mathematical and computational physics knowledge out there is immense and impossible for any one person to learn. However, the central elements of making models, how to learn about specific techniques, and how to debug your approaches are things we can learn and employ broadly as well as to specific problems.
 
 \end{itemize}
 
 \item {} 
 \sphinxAtStartPar
-482 should be a celebration of your knowledge
+415 should be a celebration of your knowledge
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-For most of you, this course concludes your study of physics at MSU. What you have achieved in the last four years should be celebrated and enjoyed. This course will provide ample opportunities for you to share what things you know and what things you are learning with me and with each other.
+For most of you, this course is part of your senior level coursework. What you have achieved in the last three to four years should be celebrated and enjoyed. This course will provide ample opportunities for you to share what things you know and what things you are learning with me and with each other.
 
 \end{itemize}
 
 \item {} 
 \sphinxAtStartPar
-482 should give you opportunities to engage in professional practice
+415 should give you opportunities to engage in professional practice
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-As you start towards your professional career, it’s important to learn what professional scientists do. You have probably already begun this work in advanced lab and research projects that you have worked on. We will continue developing your professional skills in this course through the use of course projects in lieu of exams.
+As you start towards your professional career, it’s important to learn what professional scientists do. You have probably already begun this work in advanced lab and research projects that you have worked on. We will continue developing your professional skills in this course through the use of course projects.
 
 \end{itemize}
 
 \item {} 
 \sphinxAtStartPar
-482 will illustrate that we can learn from each other
+415 will illustrate that we can learn from each other
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
@@ -412,53 +525,169 @@ Even though I’ve been learning physics for almost 20 years, I don’t know eve
 \end{itemize}
 
 
-\subsection{Required purchases:}
-\label{\detokenize{content/0_course/design:required-purchases}}\begin{enumerate}
+\subsection{Optional purchases:}
+\label{\detokenize{content/0_course/design:optional-purchases}}
+\sphinxAtStartPar
+The core readings and work for this course will be this jupyterbook. I will find resources online, make my own, and provide as much organized free material as possible. If you want to have a textbook that helps you organize your readings, please obtain copies of:
+\begin{enumerate}
 \sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 \sphinxAtStartPar
-J.D. Griffiths. \sphinxhref{http://goo.gl/iU6MdA}{\sphinxstyleemphasis{Introduction to Electromagnetism}, 4th
-Edition} (Pearson; 2012). This book is
-pedagogically excellent and is my favorite undergrad textbook of
-them all! There are \sphinxhref{http://goo.gl/78y9jw}{other editions that might be less
-expensive}, and they can be substituted. But
-reading assignments will come from the 4th edition, which may have
-some different content.
+Mary Boas, \sphinxhref{https://www.amazon.com/Mathematical-Methods-Physical-Sciences-Mary/dp/04711982}{\sphinxstyleemphasis{Mathematical Methods in the Physical Sciences}} (Wiley; 2005). This book is the definitive text on mathematical approaches, written by Dr. Boas originally in 1966! Any 3rd edition will be useful and I will put the section numbers from Boas in the online readings.
 
 \item {} 
 \sphinxAtStartPar
-An “iClicker”, available at the bookstore, will be used
-every lecture.
+Mark Newman, \sphinxhref{https://www.amazon.com/Computational-Physics-Mark-Newman/dp/1480145513}{\sphinxstyleemphasis{Computational Physics}} (CreateSpace Independent Publishing Platform; 2012). This book is a great introduction to a variety of computational physics techniques, written by UMich professor Mark Newman for a computational physics course. I will put section numbers from Newman in the online readings.
 
 \end{enumerate}
+
+
+\subsubsection{Additional sources}
+\label{\detokenize{content/0_course/design:additional-sources}}
+\sphinxAtStartPar
+In addition, I will draw from the following books. I have copies of them if you want or need scans of sections. But they can found online in Google Books and other places as well. no need to purchase unless you want a copy for your personal library.
+
+
+\paragraph{Mechanics}
+\label{\detokenize{content/0_course/design:mechanics}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Edwin Taylor, Mechanics
+
+\item {} 
+\sphinxAtStartPar
+Jerry Marion and Stephen Thornton, Classical Dynamics of Particles and Systems
+
+\item {} 
+\sphinxAtStartPar
+Charles Kittel, Walter D. Knight, Malvin A. Ruderman, A. Carl Helholtz, and Burton J. Moyer, Mechanics
+
+\end{itemize}
+
+
+\paragraph{Electromagnetism}
+\label{\detokenize{content/0_course/design:electromagnetism}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Edward Purcell, Electricity and Magnetism
+
+\item {} 
+\sphinxAtStartPar
+David J. Grriffths, Introduction to Electromagnetism
+
+\end{itemize}
+
+
+\paragraph{Quantum Mechanics}
+\label{\detokenize{content/0_course/design:quantum-mechanics}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+David McIntyre, Quantum Mechanics
+
+\item {} 
+\sphinxAtStartPar
+David J. Griffiths, Introduction to Quantum Mechanics
+
+\end{itemize}
+
+
+\paragraph{Waves and Thermal Physics}
+\label{\detokenize{content/0_course/design:waves-and-thermal-physics}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Frank S. Crawford, Waves
+
+\item {} 
+\sphinxAtStartPar
+Charles Kittel, Thermal Physics
+
+\item {} 
+\sphinxAtStartPar
+Ashley Carter, Classical and Statistical Thermodynamics
+
+\item {} 
+\sphinxAtStartPar
+Daniel Schroeder, Thermal Physics
+
+\end{itemize}
+
+
+\paragraph{Additional Physics Topics}
+\label{\detokenize{content/0_course/design:additional-physics-topics}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Steven H. Strogatz, Nonlinear Dynamics and Chaos
+
+\item {} 
+\sphinxAtStartPar
+B Lautrup, Physics of Continuous Matter
+
+\item {} 
+\sphinxAtStartPar
+Frank L. Pedrotti and Leno S. Pedrotti, Introduction to Optics
+
+\end{itemize}
+
+
+\paragraph{Mathematics}
+\label{\detokenize{content/0_course/design:mathematics}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Susan M. Lea, Mathematics for Physicists
+
+\item {} 
+\sphinxAtStartPar
+William E. Boyce and Richard C. DiPrima, Elementary Differential Equations
+
+\item {} 
+\sphinxAtStartPar
+James Brown and Ruel Churchill, Complex Variables and Applications
+
+\item {} 
+\sphinxAtStartPar
+Jerrold Marsden and Anthony Tromba, Vector Calculus
+
+\item {} 
+\sphinxAtStartPar
+Sheldon Ross, A First Course in Probability
+
+\end{itemize}
+
+
+\paragraph{Presenting (Visual) Information}
+\label{\detokenize{content/0_course/design:presenting-visual-information}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Edward Tufte, The Visual Display of Quantitative information
+
+\item {} 
+\sphinxAtStartPar
+Albert Cairo, The Truthful Art
+
+\item {} 
+\sphinxAtStartPar
+Stephen E. Toulmin, The Uses of Argument
+
+\end{itemize}
 
 
 \section{Course Activities}
 \label{\detokenize{content/0_course/design:course-activities}}
 
-\subsection{Readings}
+\subsection{“Readings”}
 \label{\detokenize{content/0_course/design:readings}}
 \sphinxAtStartPar
-Reading is an essential part of 482! Reading the text before class is
-very important. Lecture is to clarify your understanding, to help you
-make sense of the material. I will assume you have done the required
-readings in advance! Griffiths is one of the best (and most readable)
-texts I know of \sphinxhyphen{} it will make a huge difference if you spend the time
-and effort to carefully read and follow the text. The
-\DUrole{xref,myst}{calendar} has the details on reading assignments.
+“Reading” is an essential part of 415! Reading the notes before class is very important. I use “reading” in quotes, because in our class this idea goes beyond just reading text and includes understanding figures and watching videos. These should help inform the basis of your understating that we will draw on in class to clarify your understanding and to help you make sense of the material. I will assume you have done the required readings in advance! It will make a huge difference if you spend the time and effort to carefully read and follow the resources posted. The
+\DUrole{xref,myst}{calendar} has the details on readings that will be updated.
 
 
 \subsection{Class Meetings}
 \label{\detokenize{content/0_course/design:class-meetings}}
 \sphinxAtStartPar
-\sphinxstylestrong{Classroom Etiquette:} Please silence your cell phones when entering the classroom.
-I don’t mind you using them, but they can very distracting to your neighbors, so
-use your judgement. I appreciate that you might have questions or comments about things in
-class. If you and your neighbors are confused, just raise your hand and ask. If you are confused, you are likely not the only one and it’s better to chat about it, then move on.
-Questions in lecture are always good, and are strongly encouraged!
+\sphinxstylestrong{Classroom Etiquette:} Please silence your electronic devices when entering the classroom. I don’t mind you using them (in fact, see below, we will use them). But, sometimes, they can very distracting to your neighbors, so use your judgement. I appreciate that you might have questions or comments about things in class. If you and your neighbors are confused, just raise your hand and ask. If you are confused, you are likely not the only one and it’s better to chat about it, then move on. Questions in lecture are always good, and are strongly encouraged!
 
 \sphinxAtStartPar
-\sphinxstylestrong{Clickers:} Occasionally, clicker questions will be used in class to gauge your understanding of a topic or concept. I do not penalize you for not knowing the correct answer. I prefer to know what you know in\sphinxhyphen{}the\sphinxhyphen{}monent. Thus, clickers will be ungraded.
+\sphinxstylestrong{Computing Devices:} Please bring some sort of computing device to class everyday. You might be researching information online, reviewing work you have done, or actively building models of systems together. This device can be a computer, a tablet, or a phone. You can also partner up with folks because we will use them in groups.
 
 \sphinxAtStartPar
 \sphinxstylestrong{In\sphinxhyphen{}Class Activities:} We will also use a variety of in\sphinxhyphen{}class activities and worksheets that help you construct an understanding of a particular topic or concept. These will not be collected or graded, but we will discuss the solutions in class.

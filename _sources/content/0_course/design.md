@@ -111,3 +111,15 @@ These projects will take the form a [computational essay](https://uio-ccse.githu
 ### Help Session
 
 Help sessions/office hours are to facilitate your learning. We encourage attendance - plan on working in small groups, our role will be as learning coaches. The sessions are concept and project-centric, but we will not be explicitly telling anyone how to do your project (how would that help you learn?) I strongly encourage you to start all projects on your own. If you come to help sessions "cold", the value of the project to you will be greatly reduced.
+
+**Please report your preferred times for help session:** 
+
+**QR Code for form**
+
+![QRCodeHelpSession](../../assets/images/help_session_qr.png)
+
+**Link to form**
+
+[https://www.when2meet.com/?16627934-Bt7PQ](https://www.when2meet.com/?16627934-Bt7PQ)
+
+

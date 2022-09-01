@@ -84,7 +84,7 @@
         
 
 \title{Mathematical Modeling in Physics}
-\date{Aug 23, 2022}
+\date{Aug 31, 2022}
 \release{}
 \author{Danny Caballero}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -100,23 +100,14 @@
 \phantomsection\label{\detokenize{content/intro::doc}}
 
 
-\begin{DUlineblock}{0em}
-\item[] \sphinxstylestrong{\Large Under Construction}
-\end{DUlineblock}
-
-
-
-
-
-\begin{DUlineblock}{0em}
-\item[] \sphinxstylestrong{\Large Overview of PHY 415}
-\end{DUlineblock}
+\sphinxAtStartPar
+PHY 415, called, “Mathematical Methods for Physicists” is a course the brings together many of the mathematical approaches that we commonly use in physics and apply them to variety of problems. In this course, we will take a modeling\sphinxhyphen{}based approach where we focus on the mathematical descriptions of physical phenomenon and determine what mathematical and analytical approaches are useful in exploring those models.
 
 \sphinxAtStartPar
-Historically, PHY 415 has focused on developing specialized analytical solutions to common physics problems and situations. However, the work of physicists involves a variety of tools that we use to \sphinxstylestrong{model the behavior of physical systems}. Hence, this course will emphasize how we go about building mathematical models of physical phenomenon and how we can investigate them through a variety of lenses: analytical mathematics, graphics and visualization, as well as computational modeling using Python. By emphasizing the critical aspects of the modeling process, this course aims to develop your expertise in the process of doing theoretical physics rather than specific tools or techniques. That being said, you will also learn many differently analytical and computational tools to use for your own aims.
+To get a sense of the course, please read all the pages associated with our syllabus.
 
 \begin{DUlineblock}{0em}
-\item[] \sphinxstylestrong{\large Learning Objectives}
+\item[] \sphinxstylestrong{\Large Learning Objectives}
 \end{DUlineblock}
 
 \sphinxAtStartPar
@@ -157,7 +148,19 @@ The rest of this JupyterBook is (currently) organized as follows:
 
 \item {} 
 \sphinxAtStartPar
+{\hyperref[\detokenize{content/0_course/reading_questions::doc}]{\sphinxcrossref{Reading Questions Form}}}
+
+\item {} 
+\sphinxAtStartPar
 {\hyperref[\detokenize{content/1_modeling/what_is_modeling::doc}]{\sphinxcrossref{What is Mathematical Modeling?}}}
+
+\item {} 
+\sphinxAtStartPar
+{\hyperref[\detokenize{content/2_oscillations/readings-oscillators::doc}]{\sphinxcrossref{Oscillations}}}
+
+\item {} 
+\sphinxAtStartPar
+{\hyperref[\detokenize{content/X_additional_pages/references-page::doc}]{\sphinxcrossref{References}}}
 
 \end{itemize}
 
@@ -214,14 +217,17 @@ a commitment to an inclusive classroom
 
 
 \section{Contact Information}
-\label{\detokenize{content/0_course/syllabus:contact-information}}\begin{itemize}
+\label{\detokenize{content/0_course/syllabus:contact-information}}
+
+\subsection{Instructor}
+\label{\detokenize{content/0_course/syllabus:instructor}}\begin{itemize}
 \item {} 
 \sphinxAtStartPar
-Instructor: \sphinxhref{http://dannycab.github.io}{Prof. Danny Caballero} (he/him/his)
+\sphinxhref{http://dannycab.github.io}{Prof. Danny Caballero} (he/him/his)
 
 \item {} 
 \sphinxAtStartPar
-Class Meetings: Tuesdays and Thursdays 10:20am\sphinxhyphen{}12:10pm (Location: TBD)
+Class Meetings: Tuesdays and Thursdays 10:20am\sphinxhyphen{}12:10pm (Location: 1300 BPS)
 
 \item {} 
 \sphinxAtStartPar
@@ -239,6 +245,19 @@ Web page:
 \end{itemize}
 
 
+\subsection{Teaching Assistant}
+\label{\detokenize{content/0_course/syllabus:teaching-assistant}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Neshad Amarasinghe (he/him/his)
+
+\item {} 
+\sphinxAtStartPar
+Email: \sphinxhref{mailto:devanes1@msu.edu}{devanes1@msu.edu}
+
+\end{itemize}
+
+
 \subsection{Slack Team}
 \label{\detokenize{content/0_course/syllabus:slack-team}}
 \sphinxAtStartPar
@@ -251,7 +270,7 @@ Web page:
 \section{Grading}
 \label{\detokenize{content/0_course/syllabus:grading}}
 \sphinxAtStartPar
-Details about {\hyperref[\detokenize{content/0_course/design::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{course activities are here}}}} and {\hyperref[\detokenize{content/0_course/assessments::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{information regarding asessment is here}}}}. Your grade will be comprised of several projects that you will complete in the form of a Jupyter notebook (a “computational essay”, which we will discuss later). Your grade on each project is split between completion (50\%) and quality (50\%). We will collectively define quality in class. Your final grade will be scaled based on your best performances; there will be slightly more projects than what comprises your grade. How your grade is calculated appears below.
+Details about {\hyperref[\detokenize{content/0_course/design::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{course activities are here}}}} and {\hyperref[\detokenize{content/0_course/assessments::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{information regarding assessment is here}}}}. Your grade will be comprised of weekly discussion questions and several projects that you will complete in the form of a Jupyter notebook (a “computational essay”, which we will discuss later). Your grade on each project is split between completion (50\%) and quality (50\%). We will collectively define “quality” in class, but we have provided {\hyperref[\detokenize{content/0_course/rubric::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{a preliminary rubric}}}} for us to work from for the first project. Your final grade will be scaled based on your best performances; there will be slightly more projects than what comprises your grade.  \sphinxstyleemphasis{The intent here is to to allow you space to explore a model or project that you really enjoy, and to reward you for doing that.} How your grade is calculated appears below.
 
 
 \begin{savenotes}\sphinxattablestart
@@ -270,14 +289,14 @@ Percent of Grade
 Best Project Grade
 &
 \sphinxAtStartPar
-40\%
+30\%
 \\
 \hline
 \sphinxAtStartPar
 2nd Best Project Grade
 &
 \sphinxAtStartPar
-30\%
+25\%
 \\
 \hline
 \sphinxAtStartPar
@@ -292,6 +311,13 @@ Best Project Grade
 &
 \sphinxAtStartPar
 10\%
+\\
+\hline
+\sphinxAtStartPar
+Weekly Discussion Questions (completion)
+&
+\sphinxAtStartPar
+15\%
 \\
 \hline
 \end{tabulary}
@@ -338,7 +364,7 @@ collaborate effectively and contribute to a inclusive learning environment
 \end{sphinxadmonition}
 
 \sphinxAtStartPar
-Each of these learning objectives contributes to your development as a physicist. I recognize that these are \sphinxstylestrong{big} ideas to think about. What I mean is that the objectives above are quite broad and you might be able to see a little about what or why they are included. But, below, I added more detail about each one along with a smaller scale list of objectives that you will engage with. Throughout our course, you will have opportunities to demonstrate these objectives in your work. My aim is to make what you are assessed on in this course something you are interested in, so these objectives reflect that.
+Each of these learning objectives contributes to your development as a physicist. I recognize that these are \sphinxstylestrong{big} ideas to think about. What I mean is that the objectives above are quite broad and you might be able to see a little about what or why they are included. But, below, I added more detail about each one along with a smaller scale list of objectives that you will engage with. Throughout our course, you will have opportunities to demonstrate these objectives in your work. \sphinxstyleemphasis{My aim is to make what you are assessed on in this course something you are interested in, so these objectives reflect that.}
 
 
 \subsection{Investigate physical systems}
@@ -677,89 +703,46 @@ Stephen E. Toulmin, The Uses of Argument
 \subsection{“Readings”}
 \label{\detokenize{content/0_course/design:readings}}
 \sphinxAtStartPar
-“Reading” is an essential part of 415! Reading the notes before class is very important. I use “reading” in quotes, because in our class this idea goes beyond just reading text and includes understanding figures and watching videos. These should help inform the basis of your understating that we will draw on in class to clarify your understanding and to help you make sense of the material. I will assume you have done the required readings in advance! It will make a huge difference if you spend the time and effort to carefully read and follow the resources posted. The
-\DUrole{xref,myst}{calendar} has the details on readings that will be updated.
+\sphinxstylestrong{“Reading”} is an essential part of 415! Reading the notes before class is very important. I use “reading” in quotes, because in our class this idea goes beyond just reading text and includes understanding figures and watching videos. These should help inform the basis of your understating that we will draw on in class to clarify your understanding and to help you make sense of the material. I will assume you have done the required readings in advance! It will make a huge difference if you spend the time and effort to carefully read and follow the resources posted. The {\hyperref[\detokenize{content/0_course/calendar::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{calendar}}}} has the details on videos and readings that will be updated.
+
+\sphinxAtStartPar
+\sphinxstylestrong{Weekly Questions}: To encourage and reward you for keeping up with the “readings”, there will be weekly questions about the readings posted for you to respond to. These are not meant to test your knowledge, but rather to focus your “reading” towards what you understand, and what you don’t yet understand. I will ask you about those things weekly and use that information to tailor in\sphinxhyphen{}class activities based on what I am hearing is confusing, unclear, or challenging. These questions are only graded for completion, but I do want your honest attempt. You can {\hyperref[\detokenize{content/0_course/reading_questions::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{review the questions now}}}}.
 
 
 \subsection{Class Meetings}
 \label{\detokenize{content/0_course/design:class-meetings}}
 \sphinxAtStartPar
-\sphinxstylestrong{Classroom Etiquette:} Please silence your electronic devices when entering the classroom. I don’t mind you using them (in fact, see below, we will use them). But, sometimes, they can very distracting to your neighbors, so use your judgement. I appreciate that you might have questions or comments about things in class. If you and your neighbors are confused, just raise your hand and ask. If you are confused, you are likely not the only one and it’s better to chat about it, then move on. Questions in lecture are always good, and are strongly encouraged!
+\sphinxstylestrong{Classroom Etiquette:} Please silence your electronic devices when entering the classroom. I don’t mind you using them (in fact, see below, we will use them). But, sometimes, they can very distracting to your neighbors, so use your judgement. I appreciate that you might have questions or comments about things in class. We are going to be having short lectures combined with longer project work in class. So you will have plenty of time to catch up with social media and the news.
 
 \sphinxAtStartPar
-\sphinxstylestrong{Computing Devices:} Please bring some sort of computing device to class everyday. You might be researching information online, reviewing work you have done, or actively building models of systems together. This device can be a computer, a tablet, or a phone. You can also partner up with folks because we will use them in groups.
+If you and/or your group mates are confused, just raise your hand and ask questions. If you are confused, you are likely not the only one and it’s better to chat about it, then move on. Questions are always good, and are strongly encouraged! \sphinxstyleemphasis{The only way we learn is to question what we know and how we know it.}
 
 \sphinxAtStartPar
-\sphinxstylestrong{In\sphinxhyphen{}Class Activities:} We will also use a variety of in\sphinxhyphen{}class activities and worksheets that help you construct an understanding of a particular topic or concept. These will not be collected or graded, but we will discuss the solutions in class.
-
-
-\subsection{Homework}
-\label{\detokenize{content/0_course/design:homework}}
-\sphinxAtStartPar
-There will be a homework due every Friday by 5pm. Late homework can’t be accepted once solutions are posted \sphinxhyphen{} but, your lowest score will be dropped. Homework is exceedingly important for developing an understanding of the course material, not to mention building skills in complex physical and mathematical problem solving. They will require considerable time and personal effort this term! \sphinxstyleemphasis{Your lowest homework grade will be dropped.}
+\sphinxstylestrong{Computing Devices:} Please bring some sort of computing device to class everyday. You might be researching information online, reviewing work you have done, or actively building models of systems together. This device can be a computer, a tablet, or a phone. You can also partner up with folks because we will use them in groups. \sphinxstyleemphasis{If you need a computing device brought to class for you or your group mates to use, let me know. I will organize for some small collection of laptops if we need it.}
 
 \sphinxAtStartPar
-There are four kinds of homework problems in this class:
+\sphinxstylestrong{In\sphinxhyphen{}Class:} We will have some short lectures about topics or concepts; some of those will be in\sphinxhyphen{}the\sphinxhyphen{}moment as needed. The idea is that you are developing a basic understanding through readings and videos, practicing using those new ideas with me and with your classmates in class, and then applying what you are learning to new ideas. So, we will also use a variety of in\sphinxhyphen{}class activities that help you construct an understanding of a particular topic or concept. These will not be collected or graded, but we will discuss the solutions in class. \sphinxstyleemphasis{I will not post solutions for these activties as we have no exams or quizzes.}
+
+
+\subsection{Projects}
+\label{\detokenize{content/0_course/design:projects}}
+\sphinxAtStartPar
+\sphinxstylestrong{In\sphinxhyphen{}class Projects:} The class is designed to support your independent research into ideas that you are excited about. So in\sphinxhyphen{}class projects are meant to equip you with the knowledge and practice to learn new things for your projects. These in\sphinxhyphen{}class projects will be short demonstrations of models that you complete in groups. We will circulate around the room and check on you and your group’s progress and understanding. At the end of the class period, we will share the results of the in\sphinxhyphen{}class project and discuss any sticking points. These in\sphinxhyphen{}class activites will not be graded, but they will be essential for your out\sphinxhyphen{}of\sphinxhyphen{}class projects.
 
 \sphinxAtStartPar
-\sphinxstylestrong{Standard Homework Problems}: These are regular back\sphinxhyphen{}of\sphinxhyphen{}the\sphinxhyphen{}book type homework problems that involve derivations, calculations, figures, and graphs. If you took 481, there will be fewer of these in 482. Each question will be coarsely graded for “completion”:
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-10 pts. complete
-
-\item {} 
-\sphinxAtStartPar
-8 pts. right idea, but incomplete
-
-\item {} 
-\sphinxAtStartPar
-4 pts. relatively incomplete
-
-\item {} 
-\sphinxAtStartPar
-0 pts. not turned in
-
-\end{itemize}
+\sphinxstylestrong{Out\sphinxhyphen{}of\sphinxhyphen{}class Projects:} For this class, we anticipate 6 projects to be turned in roughly every 2\sphinxhyphen{}3 weeks, with a weeklong turn\sphinxhyphen{}in window (see {\hyperref[\detokenize{content/0_course/calendar::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{calendar}}}}). Except for the first project, up to 3 of these projects can be completed as partner projects. Partner projects are subject to a different grading rubric that evaluates collaborative efforts and increases the expectation for other areas compared to an individual project. A preliminary rubric appears {\hyperref[\detokenize{content/0_course/rubric::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{here}}}}, but we will define these collectively after the first project.
 
 \sphinxAtStartPar
-\sphinxstylestrong{Computational Homework Problems:} There will be \sphinxstyleemphasis{some use of computation in this course} on homework problems. I will encourage and support the use of Python (through \sphinxhref{http://jupyter.org/}{Jupyter notebooks}). You do not need any computational experience for this course as you will learn some fundamentals early on and keep using them throughout the course. You are welcome to use any environment of your choosing (e.g., Octave/MATLAB, Mathematica, C++), but I will only provide support for Python. Python is in use across the sciences, but it is becoming much used in physics, so learning it will serve you well in your future work. I suggest downloading the \sphinxhref{https://www.continuum.io/}{Anaconda distribution of Python} as it comes with all the packages you will need to get up and running with Jupyter notebooks. These will be graded on the same 10\sphinxhyphen{}8\sphinxhyphen{}4\sphinxhyphen{}0 scale as standard homework problems. Here are \sphinxhref{http://jupyter.readthedocs.io/en/latest/install.html}{instructions for installing Jupyter Notebooks}.
+These projects will take the form a \sphinxhref{https://uio-ccse.github.io/computational-essay-showroom/}{computational essay}, which provides documentation and rationale for the exploration that you are completing. We will model a computational essay project in our first project and we will reflect on the {\hyperref[\detokenize{content/0_course/rubric::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{rubric}}}} after it, and make changes collectively as a class to it.
 
 \sphinxAtStartPar
-\sphinxstylestrong{Project Homework Problems}: These are homework problems to support your working towards completing your individual and paired projects (see below). \sphinxstyleemphasis{Projects are difficult to complete, so having some regular check\sphinxhyphen{}ins on how those projects are going, setting milestones to complete, and producing a semi\sphinxhyphen{}complete piece of a project are all important aspects of research!} These homework problems are meant to help you make that progress each week. They count twice as much as normal homework problems, but follow a similar grading scale:
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-20 pts. complete
-
-\item {} 
-\sphinxAtStartPar
-16 pts. right idea, but incomplete
-
-\item {} 
-\sphinxAtStartPar
-8 pts. relatively incomplete
-
-\item {} 
-\sphinxAtStartPar
-0 pts. not turned in
-
-\end{itemize}
-
-\sphinxAtStartPar
-You will be given detailed feedback on these project homework problems as you are working on bigger projects throughout this class. You should read and be responsive to this feedback as it will help you develop a strong project.
-
-\sphinxAtStartPar
-\sphinxstylestrong{Self\sphinxhyphen{}reflection Homework Problems}: These are homework problems that ask you to evaluate your progress on your projects and how you and your partner are working together. \sphinxstyleemphasis{Evaluating how well you understand something and what you need to do to move forward is a hard thing to learn. So is working on a team (or with a partner).} These homework problems are meant to help you do both and get feedback from me on how things are going. These problems are graded out of 10 points like regular homework problems on the same 10\sphinxhyphen{}8\sphinxhyphen{}4\sphinxhyphen{}0 scale. You will also be given detailed feedback on these homework problems.
-
-\sphinxAtStartPar
-\sphinxstyleemphasis{I strongly encourage collaboration}, an essential skill in science and engineering (and highly valued by employers!) Social interactions are critical to scientists’ success – most good ideas grow out of discussions with colleagues, and essentially all physicists work as part of a group. Find partners and work on homework together. However, it is also important that you OWN the material. I strongly suggest you start homework by yourself (and that means really making an extended effort on every problem). Then work with a group, and finally, finish up on your own – write up your own work, in your own way. There will also be time for peer discussion during classes – as you work together, try to help your partners get over confusions, listen to them, ask each other questions, critique, teach each other. You will learn a lot this way! For all assignments, the work you turn in must in the end be your own: in your own words, reflecting your own understanding. (If, at any time, for any reason, you feel disadvantaged or isolated, contact me and I can discretely try to help arrange study groups.)
+\sphinxstyleemphasis{I strongly encourage collaboration}, an essential skill in science and engineering (and highly valued by employers!) Social interactions are critical to scientists’ success – most good ideas grow out of discussions with colleagues, and essentially all physicists work as part of a group. Find partners and work together. However, it is also important that you OWN the material. I strongly suggest you start working by yourself (and that means really making an extended effort on every activity). Then work with a group, and finally, finish up on your own – write up your own work, in your own way. There will also be time for peer discussion during classes – as you work together, try to help your partners get over confusions, listen to them, ask each other questions, critique, teach each other. You will learn a lot this way! For all assignments, the work you turn in must in the end be your own: in your own words, reflecting your own understanding. (If, at any time, for any reason, you feel disadvantaged or isolated, contact me and I can discretely try to help arrange study groups.)
 
 
 \subsubsection{Help Session}
 \label{\detokenize{content/0_course/design:help-session}}
 \sphinxAtStartPar
-Help sessions/office hours are to facilitate your learning. We encourage attendance \sphinxhyphen{} plan on working in small groups, our role will be as learning coaches. The sessions are homework\sphinxhyphen{}centric, but we will not be explicitly telling anyone how to do the homework (how would that help you learn?) I strongly encourage you to start all problems on your own. If you come to help sessions “cold”, the value of homework to you will be greatly reduced.
+Help sessions/office hours are to facilitate your learning. We encourage attendance \sphinxhyphen{} plan on working in small groups, our role will be as learning coaches. The sessions are concept and project\sphinxhyphen{}centric, but we will not be explicitly telling anyone how to do your project (how would that help you learn?) I strongly encourage you to start all projects on your own. If you come to help sessions “cold”, the value of the project to you will be greatly reduced.
 
 \sphinxstepscope
 
@@ -767,168 +750,119 @@ Help sessions/office hours are to facilitate your learning. We encourage attenda
 \section{Assessments}
 \label{\detokenize{content/0_course/assessments:assessments}}\label{\detokenize{content/0_course/assessments::doc}}
 
-\subsection{In\sphinxhyphen{}Class Quizzes}
-\label{\detokenize{content/0_course/assessments:in-class-quizzes}}
+\subsection{Formative Assessment}
+\label{\detokenize{content/0_course/assessments:formative-assessment}}
 \sphinxAtStartPar
-Every other Friday, we will have a short, in\sphinxhyphen{}class quiz that covers the material discussed in the previous two weeks. The quiz will take the form of a typical exam\sphinxhyphen{}style question – more straight\sphinxhyphen{}forward than your homework questions with not much substantive calculations. I will inform you of the type and topic of the in\sphinxhyphen{}class quiz on the Friday prior to the quiz, so you will have a week to prepare should you want. There will seven of these quizzes. \sphinxstyleemphasis{Your lowest quiz grade will be dropped.}
+Formative assessment is often ungraded and reflective assessment. It is meant to help you make changes to your thinking, approaches, or practice. It is not evaluative, it’s corrective; to help you make changes. We will make heavy use of ungraded formative feedback throughout the course.
 
 
-\subsection{Projects}
-\label{\detokenize{content/0_course/assessments:projects}}
+\subsection{Summative Assessment}
+\label{\detokenize{content/0_course/assessments:summative-assessment}}
 \sphinxAtStartPar
-In lieu of examinations, which are not at all representative of professional physics practice, you will produce two projects.
+Summative assessment is typically evaluative and will take the form of course projects completed out of class. These projects will take the form of a computational essay in which you write mathematics and code to investigate and explain a given phenomenon of interest. We will explore those essays in class and talk about what makes a useful one as we define a rubric for evaluation.
 
 
-\subsubsection{Individual Project}
-\label{\detokenize{content/0_course/assessments:individual-project}}
+\subsubsection{Preliminary Rubric}
+\label{\detokenize{content/0_course/assessments:preliminary-rubric}}
 \sphinxAtStartPar
-The first project is an individual research project and is meant to mimic the kind of literature review that is needed to understand a topic that is new to you. In a nutshell, you will select a topic of active research in electromagnetism, read several journal articles pertaining to the topic, and write a 4\sphinxhyphen{}5 page summary with references about the topic. You will be working to answer the following questions in your paper:
+{\hyperref[\detokenize{content/0_course/rubric::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{A preliminary rubric}}}} has been posted. We will use this rubric for the first out\sphinxhyphen{}of\sphinxhyphen{}class project evaluation. We will then reflect on it and make changes to collectively as a class.
+
+
+\subsubsection{Resources for Computational Essays}
+\label{\detokenize{content/0_course/assessments:resources-for-computational-essays}}
+\sphinxAtStartPar
+If you want to read more about computational essays, here’s a few links in the order utility/readability:
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-What is the phenomenon and why is it interesting?
+Steven Wolfram \sphinxhyphen{} \sphinxhref{https://writings.stephenwolfram.com/2017/11/what-is-a-computational-essay/}{What is a Computational Essay?}
 
 \item {} 
 \sphinxAtStartPar
-What the relevant electrodynamic models that are used to make sense of this phenomenon?
+University of Oslo Physics \sphinxhyphen{} \sphinxhref{https://uio-ccse.github.io/computational-essay-showroom/}{Examples of Computational Essays}
 
 \item {} 
 \sphinxAtStartPar
-What are the assumptions that go into these models?
+Odden and Burk, The Physics Teacher \sphinxhyphen{} \sphinxhref{https://aapt.scitation.org/doi/abs/10.1119/1.5145471}{Computational Essays in the Physics Classroom}
 
 \item {} 
 \sphinxAtStartPar
-What mathematical models and mathematical tools are used to make predictions?
-
-\item {} 
-\sphinxAtStartPar
-What are some of the major predictions?
-
-\item {} 
-\sphinxAtStartPar
-What experimental work has gone into validating these predictions?
-
-\item {} 
-\sphinxAtStartPar
-What the challenges in connecting the experimental and theoretical predictions?
+Odden, Lockwood, and Caballero, Physical Review PER \sphinxhyphen{} \sphinxhref{https://journals.aps.org/prper/abstract/10.1103/PhysRevPhysEducRes.15.020152}{Physics computational literacy: An exploratory case study using computational essays}
 
 \end{itemize}
 
+\sphinxstepscope
+
+
+\section{Project Rubrics}
+\label{\detokenize{content/0_course/rubric:project-rubrics}}\label{\detokenize{content/0_course/rubric::doc}}
+
+\subsection{Preliminary (For first out of class project)}
+\label{\detokenize{content/0_course/rubric:preliminary-for-first-out-of-class-project}}
 \sphinxAtStartPar
-There will be seven homework questions that help you develop your individual project. \sphinxstyleemphasis{Having deadlines and milestones for such a project is important, so that you don’t get behind.} Here’s a \sphinxstyleemphasis{preliminary} listing of the homework questions that will appear (note these are subject to change!):
-\begin{itemize}
-\item {} 
+Our rubric will initially focus on the {\hyperref[\detokenize{content/0_course/goals::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{core learning goals}}}}. As we develop expertise in these areas, we might decide to change emphases or focus.
+
+
+\begin{savenotes}\sphinxattablestart
+\centering
+\begin{tabulary}{\linewidth}[t]{|T|T|}
+\hline
+\sphinxstyletheadfamily 
 \sphinxAtStartPar
-\sphinxstylestrong{Homework 1} (What is interesting?) \sphinxhyphen{} Define your phenomenon; what is it? Why is it interesting to you? What are a few papers that you can use to start your background research (give actual references). 2\sphinxhyphen{}3 paragraphs along with a listing of at least 4 relevant journal articles.
-
-\item {} 
+Goal
+&\sphinxstyletheadfamily 
 \sphinxAtStartPar
-\sphinxstylestrong{Homework 2} (Towards an annotated bibliography I) \sphinxhyphen{} Summarize 2 of the 4 relevant journal articles. What do they say about your phenomenon? How are the theoretical models constructed? What are the predictions and implications? 2\sphinxhyphen{}3 paragraphs per article.
-
-\item {} 
+Fractional Importance
+\\
+\hline
 \sphinxAtStartPar
-\sphinxstylestrong{Homework 3} (Towards an annotated bibliography II)\sphinxhyphen{} Summarize 2 more relevant journal articles (can be the remaining 2 or 2 new ones if the direction of your research has changed). What do they say about your phenomenon? How are the theoretical models constructed? What are the predictions and implications? 2\sphinxhyphen{}3 paragraphs per article.
-
-\item {} 
+Investigate physical systems
+&
 \sphinxAtStartPar
-\sphinxstylestrong{Homework 4} (Building your paper I) \sphinxhyphen{} Summarize your background research so far (3\sphinxhyphen{}4 paragraphs on what you have learned so far) with references. What are people saying about this phenomenon? What are the relevant models? How are the models described?
-
-\item {} 
+0.30
+\\
+\hline
 \sphinxAtStartPar
-\sphinxstylestrong{Homework 5} (Building your paper II) \sphinxhyphen{} Summarize the models used to describe your phenomenon (3\sphinxhyphen{}4 more paragraphs on what you have learned so far) with references. What are the predictions of these models? What mathematical tools are used to make these predictions?
-
-\item {} 
+Construct and document a reproducible process
+&
 \sphinxAtStartPar
-\sphinxstylestrong{Homework 6} (Building your paper III) \sphinxhyphen{} Summarize the experimental work that validates the theoretical predictions (3\sphinxhyphen{}4 more paragraphs on what you have learned so far). What are the difficulties or successes connecting theory and experiment?
-
-\item {} 
+0.10
+\\
+\hline
 \sphinxAtStartPar
-\sphinxstylestrong{Homework 7} (Constructing an abstract) \sphinxhyphen{} Summarize your entire paper in a single paragraph \sphinxhyphen{} You are writing an abstract. It should be self\sphinxhyphen{}contained and describe the entire paper in just a few sentences.
-
-\end{itemize}
-
+Use analytical, computational, and graphical approaches
+&
 \sphinxAtStartPar
-After Homework 7 (Fri. Feb. 28), your paper is due. It should be 4\sphinxhyphen{}5 pages long not counting figures, equations, and references! It should fully describe all the aspects of the phenomenon that are being modeled including how the phenomenon is modeled, what predictions/implications they are, how it is connected to experiments, and what limitations there are in the modeling of it. There should be about 6\sphinxhyphen{}10 references to articles appearing in your paper. You have been continually reading about the topic, right?
-
-
-\subsubsection{Grading the individual project}
-\label{\detokenize{content/0_course/assessments:grading-the-individual-project}}
+0.30
+\\
+\hline
 \sphinxAtStartPar
-A rubric for the individual project \DUrole{xref,myst}{appears here}. Notice that the rubric emphasizes several aspects of the paper with different weights. Each category will be scored on the following scale (4.0, 3.5, 3.0, 2.0, 0.0) and then averaged together using the weights for each category. Your final grade will be this averaged score converted to a 100 point scale.
-
-
-\subsubsection{Pair Project}
-\label{\detokenize{content/0_course/assessments:pair-project}}
+Provide evidence of the quality of their work
+&
 \sphinxAtStartPar
-The second project can (but doesn’t have to) build on this first project. It is a team project that you will complete with a partner. It is meant to mimic the common practice of poster preparation and presentation. In a nutshell, you will conduct an original modeling project where you analytically and computationally model some E\&M phenomenon of your choosing, prepare a poster of the project, and present it to your classmates and me. In working on this project, you will be trying to answer the following questions:
-\begin{itemize}
-\item {} 
+0.10
+\\
+\hline
 \sphinxAtStartPar
-What is the area of E\&M that you are doing research on?
-
-\item {} 
+Collaborate effectively
+&
 \sphinxAtStartPar
-What are the questions that you are trying to answer about this area?
-
-\item {} 
-\sphinxAtStartPar
-What theoretical models can be used to answer those questions?
-
-\item {} 
-\sphinxAtStartPar
-What analytical and computational work did you do to answer those questions?
-
-\item {} 
-\sphinxAtStartPar
-What were the resulting predictions that your work produced?
-
-\item {} 
-\sphinxAtStartPar
-What are the limitations of what you have done? What are some remaining open questions?
-
-\item {} 
-\sphinxAtStartPar
-What did each member of your pair contribute?
-
-\end{itemize}
+0.20
+\\
+\hline
+\end{tabulary}
+\par
+\sphinxattableend\end{savenotes}
 
 \sphinxAtStartPar
-There will be six homework questions (10 if you count the 4 self\sphinxhyphen{}reflection homework questions) to help your team develop your poster project, Here is a \sphinxstyleemphasis{preliminary} listing of the homework questions that will appear (note that these are subject to change!):
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-\sphinxstylestrong{Homework 8} \sphinxhyphen{} What are you and your partner proposing to do? What area of E\&M will you be conducting original calculations for? What source material are you drawing from? What has been done so far and what are you going to do? It’s ok if it’s a solved problem, but you will need to reproduce what has been done and extend it beyond what your reference material offers.
+I will develop specific rubric elements based on your engagement with the in\sphinxhyphen{}class materials on the first couple of class periods. I need to observe where we need the most support initially and that will change the rubric expectations.
 
-\item {} 
-\sphinxAtStartPar
-\sphinxstylestrong{Homework 9} \sphinxhyphen{} What is the plan for the next 5 weeks? How do you intend to structure the work? Explain the details of what will be done and who will be doing what. I expect 2\sphinxhyphen{}3 paragraphs describing the work and a detailed timeline.
-
-\item {} 
-\sphinxAtStartPar
-\sphinxstylestrong{Homework 10} \sphinxhyphen{} Provide a detailed explanation of the models and theoretical calculations needed to set up your work. This should be presented as a “graphic” that would appear in a poster under “background or model.” There will also be a self\sphinxhyphen{}reflection homework problem \sphinxhyphen{} Who did what? What questions do you need to answer to continue to move forward? What help do you need from me or others?
-
-\item {} 
-\sphinxAtStartPar
-\sphinxstylestrong{Homework 11} \sphinxhyphen{} There should be some sample calculations and figures produced by your code. This can be a notebook (Mathematica; Jupyter; etc.), but the work needs to be explained inline (i.e., what are you doing and why?). This is the work that is the meat of your original contribution. It need not be complete yet. There will also be a self\sphinxhyphen{}reflection homework problem \sphinxhyphen{} Who did what? What questions were you able to answer last week? What questions do you need to answer to continue to move forward? What help do you need from me or others?
-
-\item {} 
-\sphinxAtStartPar
-\sphinxstylestrong{Homework 12} \sphinxhyphen{} At this point, you should produce draft figures for poster with captions. You should have pressed onward with your calculations and produced appropriate figures for your poster with captions. The “graphic” and caption should be turned in. These need not be complete in the sense that you should continue working on your calculations and models until the poster is turned in. There will also be a self\sphinxhyphen{}reflection homework problem \sphinxhyphen{} Who did what? What questions were you able to answer last week? What questions do you need to answer to continue to move forward? What help do you need from me or others?
-
-\item {} 
-\sphinxAtStartPar
-\sphinxstylestrong{Homework 13} \sphinxhyphen{} Finally, you should produce an abstract for your poster. You should have a self\sphinxhyphen{}contained paragraph on what you will present in your poster. There will also be a self\sphinxhyphen{}reflection homework problem \sphinxhyphen{} Who did what? What questions were you able to answer last week? What questions do you need to answer to continue to move forward? What help do you need from me or others?
-
-\end{itemize}
-
-\sphinxAtStartPar
-After Homework 13 (Tues. Apr 28 \sphinxhyphen{} during our final exam period), your poster is due. You and your teammate will present your poster to your classmates and myself. Your poster and presentation will be graded by me. But, you will also be given evaluation sheets for your classmates’ posters, which I’ll ask that you share with them (anonymously if you like). Your participation in the evaluation of your classmates’ posters counts towards your grade on your poster. There will also be a self\sphinxhyphen{}reflection/evaluation component to this assignment that asks you: Who did what? What did you learn? What did you want to learn more about? What was straight\sphinxhyphen{}forward? What was more difficult? Completion of this self\sphinxhyphen{}reflection/evaluation will also count towards the overall grade on your poster.
+\sphinxstepscope
 
 
-\subsubsection{Grading the pair project}
-\label{\detokenize{content/0_course/assessments:grading-the-pair-project}}
-\sphinxAtStartPar
-A rubric for the individual project \DUrole{xref,myst}{appears here}. Notice that the rubric emphasizes several aspects of the poster with different weights. Each category will be scored on the following scale (4.0, 3.5, 3.0, 2.0, 0.0) and then averaged together using the weights for each category. Your final grade will be this averaged score converted to a 100 point scale.
+\section{Calendar}
+\label{\detokenize{content/0_course/calendar:calendar}}\label{\detokenize{content/0_course/calendar::doc}}
+
 
 \sphinxstepscope
 
@@ -939,7 +873,7 @@ A rubric for the individual project \DUrole{xref,myst}{appears here}. Notice tha
 \subsection{Commitment to an Inclusive Classroom}
 \label{\detokenize{content/0_course/environment:commitment-to-an-inclusive-classroom}}
 \sphinxAtStartPar
-I am committed to creating an inclusive classroom \sphinxhyphen{} one where you and your classmates
+I am deeply committed to creating an inclusive classroom \sphinxhyphen{} one where you and your classmates
 feel comfortable, intellectually challenged, and able to speak up about your ideas
 and experiences. This means that our classroom, our virtual environments, and our interactions
 need to be as inclusive as possible. Mutual respect, civility, and the ability to listen
@@ -952,58 +886,45 @@ learning environment for you, please let me know.
 please let me know as soon as possible.}
 
 \sphinxAtStartPar
-If I violate this principle, please let me know
-or please tell the undergraduate department chair,
-Stuart Tessmer (\sphinxhref{mailto:tessmer@pa.msu.edu}{tessmer@pa.msu.edu}), who I have informed to tell me about any such incidents
-without conveying student information to me.
+If I violate this principle, please let me know or please tell the undergraduate department chair, Stuart Tessmer (\sphinxhref{mailto:tessmer@pa.msu.edu}{tessmer@pa.msu.edu}), who I have informed to tell me about any such incidents without conveying student information to me.
 
 
 \subsection{Comments on preparation:}
 \label{\detokenize{content/0_course/environment:comments-on-preparation}}
 \sphinxAtStartPar
-Physics 482 covers material you might have seen before (Many of the topics
-stem from PHY 184/294H material) but at a higher level of conceptual and
-mathematical sophistication.
+Physics 415 covers material you might have seen before. Many of the topics
+stem from a wide variety of physics courses you might have already taken. But, we might be applying them at a higher level of conceptual and mathematical sophistication.
 
 \sphinxAtStartPar
 Therefore you should expect:
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-a large amount of material covered quickly.
+a large amount of material to review and digest.
 
 \item {} 
 \sphinxAtStartPar
-no recitations, and few examples covered in lecture. Most homework
-problems are not similar to examples from class.
+no recitations, and few examples covered in lecture. Most of the learning will be done through projects and questions you and your group mates raise.
 
 \item {} 
 \sphinxAtStartPar
-long, hard homework problems that usually cannot be completed by one
-individual alone.
+long, hard problems that usually cannot be completed by one individual alone.
 
 \item {} 
 \sphinxAtStartPar
 challenging projects.
 
+\item {} 
+\sphinxAtStartPar
+to learn more about being a physicist that you have in another class (I hope!).
+
 \end{itemize}
 
 \sphinxAtStartPar
-Physics 482 is a challenging, upper‐division physics course. Unlike more
-introductory courses, you are fully responsible for your own learning.
-In particular, you control the pace of the course by asking questions in
-class. I tend to speak quickly, and questions are important to slow down
-the lecture. This means that if you don’t understand something, it is
-your responsibility to ask questions. Attending class and the homework
-help sessions gives you an opportunity to ask questions. I am here to
-help you as much as possible, but I need your questions to know what you
-don’t understand.
+Physics 415 is a challenging, upper‐division physics course. Unlike more introductory courses, you are fully responsible for your own learning. In particular, you control the pace of the course by asking questions in class. I tend to speak quickly, and questions are important to slow down. This means that if you don’t understand something, it is your responsibility to ask questions. Attending class and the help sessions gives you an opportunity to ask questions. I am here to help you as much as possible, but I need your questions to know what you don’t understand.
 
 \sphinxAtStartPar
-Physics 482 covers some of the most important physics and mathematical
-methods in the field. Your reward for the hard work and effort will be
-learning important and elegant material that you will use over and over
-as a physics major. Here is what I have experienced, and heard from
+Physics 415 covers some of the most important physics and mathematical methods in the field. Your reward for the hard work and effort will be learning important and elegant material that you will use over and over as a physics major. Here is what I have experienced, and heard from
 other faculty teaching upper division physics in the past:
 \begin{itemize}
 \item {} 
@@ -1013,7 +934,7 @@ homework (!!)
 
 \item {} 
 \sphinxAtStartPar
-students who didn’t attend the homework help sessions
+students who didn’t attend the help sessions
 often did poorly in the class.
 
 \item {} 
@@ -1023,7 +944,7 @@ students reported learning a tremendous amount in this class.
 \end{itemize}
 
 \sphinxAtStartPar
-\sphinxstylestrong{The course topics that we will cover in Physics 482 are among the
+\sphinxstylestrong{The course topics that we will cover in Physics 415 are among the
 greatest intellectual achievements of humans. Don’t be surprised if you
 have to think hard and work hard to master the material.}
 
@@ -1063,6 +984,13 @@ As a Spartan, I will strive to uphold values of the highest ethical standard. I 
 \sphinxstepscope
 
 
+\chapter{Reading Questions Form}
+\label{\detokenize{content/0_course/reading_questions:reading-questions-form}}\label{\detokenize{content/0_course/reading_questions::doc}}
+
+
+\sphinxstepscope
+
+
 \chapter{What is Mathematical Modeling?}
 \label{\detokenize{content/1_modeling/what_is_modeling:what-is-mathematical-modeling}}\label{\detokenize{content/1_modeling/what_is_modeling::doc}}
 \sphinxAtStartPar
@@ -1074,11 +1002,179 @@ In physics, our goals are typically to explain and predict observations of physi
 \sphinxstepscope
 
 
+\section{In\sphinxhyphen{}Class Activity: What is a Model?}
+\label{\detokenize{content/1_modeling/activity-what_is_a_model:in-class-activity-what-is-a-model}}\label{\detokenize{content/1_modeling/activity-what_is_a_model::doc}}
+
+\subsection{Notes}
+\label{\detokenize{content/1_modeling/activity-what_is_a_model:notes}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxstyleemphasis{Class Meeting:} 01 Sept 22
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstyleemphasis{Prior Reading:} None necessary
+
+\end{itemize}
+
+
+\subsection{Models and modeling}
+\label{\detokenize{content/1_modeling/activity-what_is_a_model:models-and-modeling}}
+\sphinxAtStartPar
+This course focuses on common physical models and how we use mathematics and computing tools to investigate these models. But, we need to agree on an mutual understanding of a model. In this activity, you will be working in a group to define aspects of a good model for the physical sciences.
+
+\sphinxAtStartPar
+There are plenty of ideas on the internet, I can even \sphinxhref{https://bfy.tw/TUdA}{provide you a link} with plenty of information. But, the point of this activity is for us to define a good model now (given all your prior experiences with models and modeling), and to reflect on that definition as you develop expertise with models and modeling (through your learning in this class).
+
+
+\subsection{What is a model?}
+\label{\detokenize{content/1_modeling/activity-what_is_a_model:what-is-a-model}}
+\sphinxAtStartPar
+We are going to start with this short video made by Geoscientist John Aiken when he was a graduate student at Georgia Tech.
+
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{IPython}\PYG{n+nn}{.}\PYG{n+nn}{display} \PYG{k+kn}{import} \PYG{n}{YouTubeVideo}
+\PYG{n}{YouTubeVideo}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{dkTncoPqo5Y}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{width} \PYG{o}{=} \PYG{l+m+mi}{800}\PYG{p}{,} \PYG{n}{height} \PYG{o}{=} \PYG{l+m+mi}{600}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\noindent\sphinxincludegraphics{{activity-what_is_a_model_2_0}.jpg}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+
+\subsubsection{History and Philosophy of Science}
+\label{\detokenize{content/1_modeling/activity-what_is_a_model:history-and-philosophy-of-science}}
+\sphinxAtStartPar
+If you would like to dive deeper into models and modeling, there’s excellent work in history and philosophy of science. The field studies how science develops knowledge, practice, culture, and so on. It studies important events and provides critical information on important and, often, overlooked folks who do science. For example, historian and gender studies professor \sphinxhref{https://en.wikipedia.org/wiki/Sharon\_Traweek}{Sharon Traweek} studies the high energy physics field. Her book, \sphinxhref{https://en.wikipedia.org/wiki/Beamtimes\_and\_Lifetimes}{Beamtimes and Lifetimes: The World of High Energy Physicists} {[}\hyperlink{cite.content/X_additional_pages/references-page:id4}{Traweek, 2009}{]} is excellent.
+
+\begin{sphinxadmonition}{note}{Dame Nancy Cartwright (philosopher of science)}
+
+\sphinxAtStartPar
+One of the more interesting scholars in \sphinxhref{https://en.wikipedia.org/wiki/Nancy\_Cartwright\_(philosopher)}{Dame Nancy Cartwright} who wrote a lot about the ‘practice of science.’ Her philosophical work informed many of the innovations in physics and broader science education – including many science courses at MSU.
+
+\sphinxAtStartPar
+Her writing is very interesting, but the style of writing can be a challenge to read. This is the nature of academic writing in different disciplines. Her book called “How The Laws of Physics Lie” {[}\hyperlink{cite.content/X_additional_pages/references-page:id5}{Cartwright, 1983}{]} is worth a read. Here’s a link to the \sphinxhref{http://www.generativescience.org/papers/nature/Cartwright-\_1983.pdf}{first chapter}.
+\end{sphinxadmonition}
+
+
+\subsection{What has been your experience with models?}
+\label{\detokenize{content/1_modeling/activity-what_is_a_model:what-has-been-your-experience-with-models}}
+\sphinxAtStartPar
+Take 2\sphinxhyphen{}3 minutes to think about your prior physics class.
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+What models have you used? What makes that a model?
+
+\item {} 
+\sphinxAtStartPar
+What modeling have you done? What makes that modeling?
+
+\end{itemize}
+
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} Take notes for yourself here}
+
+\PYG{c+c1}{\PYGZsh{} Idea 1}
+\PYG{c+c1}{\PYGZsh{} Idea 2}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\sphinxAtStartPar
+After we have discussed the above questions and generated a long list of experiences, you can move onto the next set of questions below.
+
+\begin{sphinxuseclass}{toggle}
+\sphinxAtStartPar
+Take 2\sphinxhyphen{}3 minutes to think about your prior work with models and modeling?
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+What made a model good or not so good?
+
+\item {} 
+\sphinxAtStartPar
+What kinds of things could you do to make a better model?
+
+\end{itemize}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} Take notes for yourself here}
+
+\PYG{c+c1}{\PYGZsh{} Idea 1}
+\PYG{c+c1}{\PYGZsh{} Idea 2}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\sphinxAtStartPar
+After we have discussed the above questions and generated a consensus list of good model features, you can move onto the next set of questions below.
+
+\begin{sphinxuseclass}{toggle}
+\sphinxAtStartPar
+Take 2\sphinxhyphen{}3 minutes and write down all the mathematical and/or computing models you have experienced, heard about, seen, or are otherwise familiar.
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} Take notes for yourself here (use comments)}
+
+\PYG{c+c1}{\PYGZsh{} Model 1}
+\PYG{c+c1}{\PYGZsh{} Model 2}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\sphinxstepscope
+
+
+\chapter{Oscillations}
+\label{\detokenize{content/2_oscillations/readings-oscillators:oscillations}}\label{\detokenize{content/2_oscillations/readings-oscillators::doc}}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{IPython}\PYG{n+nn}{.}\PYG{n+nn}{display} \PYG{k+kn}{import} \PYG{n}{YouTubeVideo}
+\PYG{n}{YouTubeVideo}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{7fgKBJDMO54}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mi}{800}\PYG{p}{,} \PYG{l+m+mi}{600}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\noindent\sphinxincludegraphics{{readings-oscillators_1_0}.jpg}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+\sphinxstepscope
+
+
 \section{The Simple Harmonic Oscillator}
-\label{\detokenize{content/1_modeling/SHO-intro:the-simple-harmonic-oscillator}}\label{\detokenize{content/1_modeling/SHO-intro::doc}}
+\label{\detokenize{content/2_oscillations/readings-SHO-intro:the-simple-harmonic-oscillator}}\label{\detokenize{content/2_oscillations/readings-SHO-intro::doc}}
 
 \subsection{The SHO model}
-\label{\detokenize{content/1_modeling/SHO-intro:the-sho-model}}
+\label{\detokenize{content/2_oscillations/readings-SHO-intro:the-sho-model}}
 \sphinxAtStartPar
 From these observations we find that a reasonable force model for a 1D spring system is given by:
 \begin{equation*}
@@ -1101,7 +1197,7 @@ Without much loss, we can recast the problem in terms of the distance from equil
 
 
 \subsubsection{Finding the general solution}
-\label{\detokenize{content/1_modeling/SHO-intro:finding-the-general-solution}}
+\label{\detokenize{content/2_oscillations/readings-SHO-intro:finding-the-general-solution}}
 \sphinxAtStartPar
 We can solve this using our typical approach to 2D linear ODEs; guess the form of the solution and check it.
 \begin{equation*}
@@ -1123,7 +1219,7 @@ This solution is consistent with the model (i.e., solves the differential equati
 \begin{split}\omega^2 = \frac{k}{m} > 0\end{split}
 \end{equation*}
 \sphinxAtStartPar
-Thus, \(s(t) = A\exp(i\sqrt{\frac{k}{m}} t)\) is \sphinxstylestrong{a solution} to this problem. Notice we have to set \(A\) using initial conditions for the problem. This is called a \sphinxstylestrong{initial value problem} in mathematics. You likely have heard about the Euler formulation; it is one of the most important relationships in mathematics {[}\hyperlink{cite.content/1_modeling/SHO-intro:id2}{Nahin, 2011}, \hyperlink{cite.content/1_modeling/SHO-intro:id3}{Stipp, 2017}{]}. We will get into it more later. It appears below:
+Thus, \(s(t) = A\exp(i\sqrt{\frac{k}{m}} t)\) is \sphinxstylestrong{a solution} to this problem. Notice we have to set \(A\) using initial conditions for the problem. This is called a \sphinxstylestrong{initial value problem} in mathematics. You likely have heard about the Euler formulation; it is one of the most important relationships in mathematics {[}\hyperlink{cite.content/X_additional_pages/references-page:id2}{Nahin, 2011}, \hyperlink{cite.content/X_additional_pages/references-page:id3}{Stipp, 2017}{]}. We will get into it more later. It appears below:
 
 \begin{sphinxadmonition}{note}{Leonhard Euler’s famous formula}
 \begin{equation*}
@@ -1140,7 +1236,7 @@ This probably doesn’t look quite right…there’s an \(i\) in the solution fo
 
 
 \subsubsection{The order of your differential equation matters}
-\label{\detokenize{content/1_modeling/SHO-intro:the-order-of-your-differential-equation-matters}}
+\label{\detokenize{content/2_oscillations/readings-SHO-intro:the-order-of-your-differential-equation-matters}}
 \sphinxAtStartPar
 You probably already know that our general solution for the SHO is:
 \begin{equation*}
@@ -1167,7 +1263,7 @@ Second order? Two conditions needed. Two free parameters to determine. Fourth or
 
 
 \section{Numerically Integrating the SHO model}
-\label{\detokenize{content/1_modeling/SHO-numerical:numerically-integrating-the-sho-model}}\label{\detokenize{content/1_modeling/SHO-numerical::doc}}
+\label{\detokenize{content/2_oscillations/activity-SHO-numerical:numerically-integrating-the-sho-model}}\label{\detokenize{content/2_oscillations/activity-SHO-numerical::doc}}
 \begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
 
 \begin{sphinxuseclass}{cell_input}
@@ -1230,10 +1326,10 @@ Second order? Two conditions needed. Two free parameters to determine. Fourth or
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-[\PYGZlt{}matplotlib.lines.Line2D at 0x1132ebaf0\PYGZgt{}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x117a3bc10\PYGZgt{}]
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{SHO-numerical_4_1}.png}
+\noindent\sphinxincludegraphics{{activity-SHO-numerical_4_1}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
@@ -1265,7 +1361,7 @@ Similarly,
 
 
 \subsection{Developing a Numerical Routine}
-\label{\detokenize{content/1_modeling/SHO-numerical:developing-a-numerical-routine}}
+\label{\detokenize{content/2_oscillations/activity-SHO-numerical:developing-a-numerical-routine}}
 \sphinxAtStartPar
 Notice we have two equations that describe how to obtain new values of location (\(x\)) and velocity (\(u\)) at a time \(t+\Delta t\) given information about the system at some earlier time, \(t\), (or at the least, considering the location and velocity at time \(t\)), which we take as a pair of \sphinxstylestrong{update equations} where the equality holds:
 \begin{equation*}
@@ -1285,7 +1381,7 @@ The quantities with the underbrace are ambiguous. Do we use the values of \(x\) 
 
 
 \subsubsection{The choice matters}
-\label{\detokenize{content/1_modeling/SHO-numerical:the-choice-matters}}
+\label{\detokenize{content/2_oscillations/activity-SHO-numerical:the-choice-matters}}
 \sphinxAtStartPar
 Let’s illustrate this with making different choices using the following routine:
 
@@ -1440,10 +1536,10 @@ It looks like we can try approach 1, 2, and 3 without much fuss. Let’s write a
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-[\PYGZlt{}matplotlib.lines.Line2D at 0x1134a2500\PYGZgt{}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x117c32440\PYGZgt{}]
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{SHO-numerical_10_1}.png}
+\noindent\sphinxincludegraphics{{activity-SHO-numerical_10_1}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
@@ -1472,10 +1568,10 @@ It looks like we can try approach 1, 2, and 3 without much fuss. Let’s write a
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-[\PYGZlt{}matplotlib.lines.Line2D at 0x1135253c0\PYGZgt{}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x117cad5d0\PYGZgt{}]
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{SHO-numerical_11_1}.png}
+\noindent\sphinxincludegraphics{{activity-SHO-numerical_11_1}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
@@ -1504,10 +1600,10 @@ It looks like we can try approach 1, 2, and 3 without much fuss. Let’s write a
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-[\PYGZlt{}matplotlib.lines.Line2D at 0x113591630\PYGZgt{}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x117d194b0\PYGZgt{}]
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{SHO-numerical_12_1}.png}
+\noindent\sphinxincludegraphics{{activity-SHO-numerical_12_1}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
@@ -1529,10 +1625,10 @@ It looks like we can try approach 1, 2, and 3 without much fuss. Let’s write a
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYGZlt{}matplotlib.legend.Legend at 0x1135bb2e0\PYGZgt{}
+\PYGZlt{}matplotlib.legend.Legend at 0x117d40c70\PYGZgt{}
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{SHO-numerical_13_1}.png}
+\noindent\sphinxincludegraphics{{activity-SHO-numerical_13_1}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
@@ -1551,19 +1647,30 @@ It looks like we can try approach 1, 2, and 3 without much fuss. Let’s write a
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-[\PYGZlt{}matplotlib.lines.Line2D at 0x1136724d0\PYGZgt{}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x117dfa650\PYGZgt{}]
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{SHO-numerical_14_1}.png}
+\noindent\sphinxincludegraphics{{activity-SHO-numerical_14_1}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
 \end{sphinxuseclass}
+\sphinxstepscope
+
+
+\chapter{References}
+\label{\detokenize{content/X_additional_pages/references-page:references}}\label{\detokenize{content/X_additional_pages/references-page::doc}}
 \begin{sphinxthebibliography}{1}
-\bibitem[1]{content/1_modeling/SHO-intro:id2}
+\bibitem[1]{content/X_additional_pages/references-page:id4}
 \sphinxAtStartPar
-Paul J Nahin. \sphinxstyleemphasis{Dr. Euler's fabulous formula}. Princeton University Press, 2011.
-\bibitem[2]{content/1_modeling/SHO-intro:id3}
+Sharon Traweek. \sphinxstyleemphasis{Beamtimes and Lifetimes}. Harvard University Press, 2009.
+\bibitem[2]{content/X_additional_pages/references-page:id5}
+\sphinxAtStartPar
+Nancy Cartwright. \sphinxstyleemphasis{How the Laws of Physics Lie}. OUP Oxford, 1983.
+\bibitem[3]{content/X_additional_pages/references-page:id2}
+\sphinxAtStartPar
+Paul J Nahin. \sphinxstyleemphasis{Dr. Euler's Fabulous Formula}. Princeton University Press, 2011.
+\bibitem[4]{content/X_additional_pages/references-page:id3}
 \sphinxAtStartPar
 David Stipp. \sphinxstyleemphasis{A most elegant equation: Euler's formula and the beauty of mathematics}. Hachette UK, 2017.
 \end{sphinxthebibliography}

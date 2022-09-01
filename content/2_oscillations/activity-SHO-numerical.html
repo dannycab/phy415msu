@@ -54,7 +54,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="The Simple Harmonic Oscillator" href="SHO-intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -114,7 +113,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../0_course/syllabus.html">
    Overview of PHY 415
@@ -167,27 +166,27 @@ const thebe_selector_output = ".output, .cell_output"
    Reading Questions Form
   </a>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="what_is_modeling.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../1_modeling/what_is_modeling.html">
    What is Mathematical Modeling?
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="SHO-intro.html">
-     The Simple Harmonic Oscillator
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Numerically Integrating the SHO model
+    <a class="reference internal" href="../1_modeling/activity-what_is_a_model.html">
+     In-Class Activity: What is a Model?
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../X_additional_pages/references-page.html">
+   References
+  </a>
  </li>
 </ul>
 
@@ -248,7 +247,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/dannycab/phy415msu/main?urlpath=tree/MMIPbook/content/1_modeling/SHO-numerical.ipynb"
+        <a href="https://mybinder.org/v2/gh/dannycab/phy415msu/main?urlpath=tree/MMIPbook/content/2_oscillations/activity-SHO-numerical.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -266,7 +265,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415msu/&urlpath=tree/phy415msu/MMIPbook/content/1_modeling/SHO-numerical.ipynb&branch=main"
+        <a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415msu/&urlpath=tree/phy415msu/MMIPbook/content/2_oscillations/activity-SHO-numerical.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -284,7 +283,7 @@ title="Launch on JupyterHub"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/dannycab/phy415msu/blob/main/MMIPbook/content/1_modeling/SHO-numerical.ipynb"
+        <a href="https://colab.research.google.com/github/dannycab/phy415msu/blob/main/MMIPbook/content/2_oscillations/activity-SHO-numerical.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -344,7 +343,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/dannycab/phy415msu//issues/new?title=Issue%20on%20page%20%2Fcontent/1_modeling/SHO-numerical.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/dannycab/phy415msu//issues/new?title=Issue%20on%20page%20%2Fcontent/2_oscillations/activity-SHO-numerical.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -372,7 +371,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/content/1_modeling/SHO-numerical.ipynb"
+        <a href="../../_sources/content/2_oscillations/activity-SHO-numerical.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -534,10 +533,10 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x111bc7ac0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1151dfc70&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/SHO-numerical_4_1.png" src="../../_images/SHO-numerical_4_1.png" />
+<img alt="../../_images/activity-SHO-numerical_4_1.png" src="../../_images/activity-SHO-numerical_4_1.png" />
 </div>
 </div>
 <div class="math notranslate nohighlight">
@@ -666,10 +665,10 @@ $<span class="math notranslate nohighlight">\(u(t+\Delta t) \approx -\omega x \D
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x111d6e380&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11539e2f0&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/SHO-numerical_10_1.png" src="../../_images/SHO-numerical_10_1.png" />
+<img alt="../../_images/activity-SHO-numerical_10_1.png" src="../../_images/activity-SHO-numerical_10_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -691,10 +690,10 @@ $<span class="math notranslate nohighlight">\(u(t+\Delta t) \approx -\omega x \D
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x111df1420&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11541d3f0&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/SHO-numerical_11_1.png" src="../../_images/SHO-numerical_11_1.png" />
+<img alt="../../_images/activity-SHO-numerical_11_1.png" src="../../_images/activity-SHO-numerical_11_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -716,10 +715,10 @@ $<span class="math notranslate nohighlight">\(u(t+\Delta t) \approx -\omega x \D
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x111e5d3c0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x115489780&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/SHO-numerical_12_1.png" src="../../_images/SHO-numerical_12_1.png" />
+<img alt="../../_images/activity-SHO-numerical_12_1.png" src="../../_images/activity-SHO-numerical_12_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -734,10 +733,10 @@ $<span class="math notranslate nohighlight">\(u(t+\Delta t) \approx -\omega x \D
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x111e872e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1154b0d00&gt;
 </pre></div>
 </div>
-<img alt="../../_images/SHO-numerical_13_1.png" src="../../_images/SHO-numerical_13_1.png" />
+<img alt="../../_images/activity-SHO-numerical_13_1.png" src="../../_images/activity-SHO-numerical_13_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -749,10 +748,10 @@ $<span class="math notranslate nohighlight">\(u(t+\Delta t) \approx -\omega x \D
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x111f3a2c0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x115566620&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/SHO-numerical_14_1.png" src="../../_images/SHO-numerical_14_1.png" />
+<img alt="../../_images/activity-SHO-numerical_14_1.png" src="../../_images/activity-SHO-numerical_14_1.png" />
 </div>
 </div>
 </section>
@@ -772,7 +771,7 @@ $<span class="math notranslate nohighlight">\(u(t+\Delta t) \approx -\omega x \D
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./content/1_modeling"
+            path: "./content/2_oscillations"
         },
         predefinedOutput: true
     }
@@ -786,13 +785,6 @@ $<span class="math notranslate nohighlight">\(u(t+\Delta t) \approx -\omega x \D
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="SHO-intro.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">The Simple Harmonic Oscillator</p>
-        </div>
-    </a>
 </div>
             </footer>
         </div>

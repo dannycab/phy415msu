@@ -14,7 +14,11 @@ chapters:
     - file: content/0_course/environment
     - file: content/0_course/resources
 - file: content/0_course/reading_questions
-# - file: content/1_modeling/what_is_modeling
-#   # sections:
-#   #   - file: content/1_modeling/SHO-intro
-#   #   - file: content/1_modeling/SHO-numerical
+- file: content/1_modeling/what_is_modeling
+  sections: 
+    - file: content/1_modeling/activity-what_is_a_model
+- file: content/2_oscillations/readings-oscillators  
+  sections:
+    - file: content/2_oscillations/readings-SHO-intro
+    - file: content/2_oscillations/activity-SHO-numerical
+- file: content/X_additional_pages/references-page

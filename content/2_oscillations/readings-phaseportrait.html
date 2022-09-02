@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>In-Class Activity: 01 - What is a Model? &#8212; Mathematical Modeling in Physics</title>
+    <title>The Simple Harmonic Oscillator &#8212; Mathematical Modeling in Physics</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,10 +50,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Notes: 01 - What is a Model?" href="notes-what_is_a_model.html" />
-    <link rel="prev" title="1 - What is Mathematical Modeling?" href="what_is_modeling.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -113,7 +113,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../0_course/syllabus.html">
    0 - Overview of PHY 415
@@ -166,30 +166,30 @@ const thebe_selector_output = ".output, .cell_output"
    Reading Questions Form
   </a>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="what_is_modeling.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../1_modeling/what_is_modeling.html">
    1 - What is Mathematical Modeling?
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1_modeling/activity-what_is_a_model.html">
      In-Class Activity: 01 - What is a Model?
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="notes-what_is_a_model.html">
+    <a class="reference internal" href="../1_modeling/notes-what_is_a_model.html">
      Notes: 01 - What is a Model?
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../2_oscillations/readings-oscillators.html">
+  <a class="reference internal" href="readings-oscillators.html">
    2 - Oscillations
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -264,7 +264,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/dannycab/phy415msu/main?urlpath=tree/MMIPbook/content/1_modeling/activity-what_is_a_model.ipynb"
+        <a href="https://mybinder.org/v2/gh/dannycab/phy415msu/main?urlpath=tree/MMIPbook/content/2_oscillations/readings-phaseportrait.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -282,7 +282,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415msu/&urlpath=tree/phy415msu/MMIPbook/content/1_modeling/activity-what_is_a_model.ipynb&branch=main"
+        <a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415msu/&urlpath=tree/phy415msu/MMIPbook/content/2_oscillations/readings-phaseportrait.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -300,7 +300,7 @@ title="Launch on JupyterHub"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/dannycab/phy415msu/blob/main/MMIPbook/content/1_modeling/activity-what_is_a_model.ipynb"
+        <a href="https://colab.research.google.com/github/dannycab/phy415msu/blob/main/MMIPbook/content/2_oscillations/readings-phaseportrait.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -360,7 +360,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/dannycab/phy415msu//issues/new?title=Issue%20on%20page%20%2Fcontent/1_modeling/activity-what_is_a_model.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/dannycab/phy415msu//issues/new?title=Issue%20on%20page%20%2Fcontent/2_oscillations/readings-phaseportrait.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -388,7 +388,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/content/1_modeling/activity-what_is_a_model.ipynb"
+        <a href="../../_sources/content/2_oscillations/readings-phaseportrait.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -448,31 +448,21 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#notes">
-   Notes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#models-and-modeling">
-   Models and modeling
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-a-model">
-   What is a model?
+  <a class="reference internal nav-link" href="#the-sho-model">
+   The SHO model
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#history-and-philosophy-of-science">
-     History and Philosophy of Science
+    <a class="reference internal nav-link" href="#finding-the-general-solution">
+     Finding the general solution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-order-of-your-differential-equation-matters">
+     The order of your differential equation matters
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-has-been-your-experience-with-models">
-   What has been your experience with models?
-  </a>
  </li>
 </ul>
 
@@ -483,7 +473,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>In-Class Activity: 01 - What is a Model?</h1>
+                <h1>The Simple Harmonic Oscillator</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -494,31 +484,21 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#notes">
-   Notes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#models-and-modeling">
-   Models and modeling
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-a-model">
-   What is a model?
+  <a class="reference internal nav-link" href="#the-sho-model">
+   The SHO model
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#history-and-philosophy-of-science">
-     History and Philosophy of Science
+    <a class="reference internal nav-link" href="#finding-the-general-solution">
+     Finding the general solution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-order-of-your-differential-equation-matters">
+     The order of your differential equation matters
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-has-been-your-experience-with-models">
-   What has been your experience with models?
-  </a>
  </li>
 </ul>
 
@@ -530,101 +510,64 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="in-class-activity-01-what-is-a-model">
-<h1>In-Class Activity: 01 - What is a Model?<a class="headerlink" href="#in-class-activity-01-what-is-a-model" title="Permalink to this headline">#</a></h1>
-<section id="notes">
-<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p><em>Class Meeting:</em> 01 Sept 22</p></li>
-<li><p><em>Prior Reading:</em> None necessary</p></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-simple-harmonic-oscillator">
+<h1>The Simple Harmonic Oscillator<a class="headerlink" href="#the-simple-harmonic-oscillator" title="Permalink to this headline">#</a></h1>
+<section id="the-sho-model">
+<h2>The SHO model<a class="headerlink" href="#the-sho-model" title="Permalink to this headline">#</a></h2>
+<p>From these observations we find that a reasonable force model for a 1D spring system is given by:</p>
+<div class="math notranslate nohighlight">
+\[F_{spring} = -k |x-x_0|\]</div>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> is the spring constant for the spring and <span class="math notranslate nohighlight">\(x_0\)</span> is the equilibrium location. As we know from Newton’s second law, if we can argue that this force is the only force or the dominant behavior we are trying to model in a mechanical situation, we have the following ordinary differential equation:</p>
+<div class="math notranslate nohighlight">
+\[F_{net} = F_{spring}\]</div>
+<div class="math notranslate nohighlight">
+\[m\ddot{x} = -k|x-x_0|\]</div>
+<p>Without much loss, we can recast the problem in terms of the distance from equilbirium (<span class="math notranslate nohighlight">\(s=|x-x_0|\)</span>). <em>As you will learn this is not a problem from vertically hanging springs near the surface of the Earth because the graviational force is constant and depends on the mass of the hanging weight.</em></p>
+<div class="admonition-the-sho-mathematical-model admonition">
+<p class="admonition-title">The SHO mathematical model</p>
+<div class="math notranslate nohighlight">
+\[m\ddot{s} = -ks\]</div>
+</div>
+<section id="finding-the-general-solution">
+<h3>Finding the general solution<a class="headerlink" href="#finding-the-general-solution" title="Permalink to this headline">#</a></h3>
+<p>We can solve this using our typical approach to 2D linear ODEs; guess the form of the solution and check it.</p>
+<div class="math notranslate nohighlight">
+\[\ddot{s} = -\frac{k}{m}s\]</div>
+<p>Assume: <span class="math notranslate nohighlight">\(s(t) = A\exp(i\omega t)\)</span> As we will learn this form is a good guess for linear ODEs. This gives:</p>
+<div class="math notranslate nohighlight">
+\[\ddot{s} = -\omega^2\;A\exp(i\omega t)\]</div>
+<p>So that,</p>
+<div class="math notranslate nohighlight">
+\[-\omega^2\;A\exp(i\omega t) = -\frac{k}{m}A\exp(i\omega t)\]</div>
+<p>This solution is consistent with the model (i.e., solves the differential equation) if we set <span class="math notranslate nohighlight">\(\omega\)</span> and notice it is exclusively positive:</p>
+<div class="math notranslate nohighlight">
+\[\omega^2 = \frac{k}{m} &gt; 0\]</div>
+<p>Thus, <span class="math notranslate nohighlight">\(s(t) = A\exp(i\sqrt{\frac{k}{m}} t)\)</span> is <strong>a solution</strong> to this problem. Notice we have to set <span class="math notranslate nohighlight">\(A\)</span> using initial conditions for the problem. This is called a <strong>initial value problem</strong> in mathematics. You likely have heard about the Euler formulation; it is one of the most important relationships in mathematics <span id="id1">[<a class="reference internal" href="../X_additional_pages/references-page.html#id2" title="Paul J Nahin. Dr. Euler's Fabulous Formula. Princeton University Press, 2011.">Nahin, 2011</a>, <a class="reference internal" href="../X_additional_pages/references-page.html#id3" title="David Stipp. A most elegant equation: Euler's formula and the beauty of mathematics. Hachette UK, 2017.">Stipp, 2017</a>]</span>. We will get into it more later. It appears below:</p>
+<div class="admonition-leonhard-euler-s-famous-formula admonition">
+<p class="admonition-title">Leonhard Euler’s famous formula</p>
+<div class="math notranslate nohighlight">
+\[\exp{i\theta} = \cos{\theta} + i \sin{\theta}\]</div>
+</div>
+<p>Thus, we know that our solution gives rise to real sinusoidal solutions of the form:</p>
+<div class="math notranslate nohighlight">
+\[s(t) = A\left(cos{\sqrt{\frac{k}{m}} t} + i\sin{\sqrt{\frac{k}{m}} t}\right)\]</div>
+<p>This probably doesn’t look quite right…there’s an <span class="math notranslate nohighlight">\(i\)</span> in the solution for real physical motion! We will get to that, but we need the initial conditions to do so. More importantly, there’s only one free parameter in our current solution, <span class="math notranslate nohighlight">\(A\)</span>. Given that this equation is <strong>a solution, is it the only solution?</strong></p>
 </section>
-<section id="models-and-modeling">
-<h2>Models and modeling<a class="headerlink" href="#models-and-modeling" title="Permalink to this headline">#</a></h2>
-<p>This course focuses on common physical models and how we use mathematics and computing tools to investigate these models. But, we need to agree on an mutual understanding of a model. In this activity, you will be working in a group to define aspects of a good model for the physical sciences.</p>
-<p>There are plenty of ideas on the internet, I can even <a class="reference external" href="https://bfy.tw/TUdA">provide you a link</a> with plenty of information. But, the point of this activity is for us to define a good model now (given all your prior experiences with models and modeling), and to reflect on that definition as you develop expertise with models and modeling (through your learning in this class).</p>
-</section>
-<section id="what-is-a-model">
-<h2>What is a model?<a class="headerlink" href="#what-is-a-model" title="Permalink to this headline">#</a></h2>
-<p>We are going to start with this short video made by Geoscientist John Aiken when he was a graduate student at Georgia Tech.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
-<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;dkTncoPqo5Y&quot;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">800</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">600</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="800"
-    height="600"
-    src="https://www.youtube.com/embed/dkTncoPqo5Y"
-    frameborder="0"
-    allowfullscreen
-
-></iframe>
-</div></div>
-</div>
-<section id="history-and-philosophy-of-science">
-<h3>History and Philosophy of Science<a class="headerlink" href="#history-and-philosophy-of-science" title="Permalink to this headline">#</a></h3>
-<p>If you would like to dive deeper into models and modeling, there’s excellent work in history and philosophy of science. The field studies how science develops knowledge, practice, culture, and so on. It studies important events and provides critical information on important and, often, overlooked folks who do science. For example, historian and gender studies professor <a class="reference external" href="https://en.wikipedia.org/wiki/Sharon_Traweek">Sharon Traweek</a> studies the high energy physics field. Her book, <a class="reference external" href="https://en.wikipedia.org/wiki/Beamtimes_and_Lifetimes">Beamtimes and Lifetimes: The World of High Energy Physicists</a> <span id="id1">[<a class="reference internal" href="../X_additional_pages/references-page.html#id4" title="Sharon Traweek. Beamtimes and Lifetimes. Harvard University Press, 2009.">Traweek, 2009</a>]</span> is excellent.</p>
-<div class="admonition-dame-nancy-cartwright-philosopher-of-science admonition">
-<p class="admonition-title">Dame Nancy Cartwright (philosopher of science)</p>
-<p>One of the more interesting scholars in <a class="reference external" href="https://en.wikipedia.org/wiki/Nancy_Cartwright_(philosopher)">Dame Nancy Cartwright</a> who wrote a lot about the ‘practice of science.’ Her philosophical work informed many of the innovations in physics and broader science education – including many science courses at MSU.</p>
-<p>Her writing is very interesting, but the style of writing can be a challenge to read. This is the nature of academic writing in different disciplines. Her book called “How The Laws of Physics Lie” <span id="id2">[<a class="reference internal" href="../X_additional_pages/references-page.html#id5" title="Nancy Cartwright. How the Laws of Physics Lie. OUP Oxford, 1983.">Cartwright, 1983</a>]</span> is worth a read. Here’s a link to the <a class="reference external" href="http://www.generativescience.org/papers/nature/Cartwright-_1983.pdf">first chapter</a>.</p>
+<section id="the-order-of-your-differential-equation-matters">
+<h3>The order of your differential equation matters<a class="headerlink" href="#the-order-of-your-differential-equation-matters" title="Permalink to this headline">#</a></h3>
+<p>You probably already know that our general solution for the SHO is:</p>
+<div class="math notranslate nohighlight">
+\[s(t) = A\exp(i\sqrt{\frac{k}{m}} t) + B\exp(-i\sqrt{\frac{k}{m}} t)\]</div>
+<p>Or written in a way that is more often presented:</p>
+<div class="math notranslate nohighlight">
+\[s(t) = A'\cos(\sqrt{\frac{k}{m}} t) + B'\sin(\sqrt{\frac{k}{m}} t)\]</div>
+<p>where we have made clear that the free parameters <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are not equal to <span class="math notranslate nohighlight">\(A'\)</span> and <span class="math notranslate nohighlight">\(B'\)</span>, respectively. Regardless, notice there’s two free parameters in these formula. That is because we are solving a <strong>two dimensional</strong> linear ODE. Because there’s two derivatives on <span class="math notranslate nohighlight">\(s\)</span> (i.e., <span class="math notranslate nohighlight">\(\ddot{s}\)</span>), we expect to have two free parameters that are set by the intial conditions. This is characteristic of an <strong>initial value problem</strong>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Important Tip</p>
+<p>The number of free parameters that are set by problem conditions in an initial value problem is determined by the order of the differential equation.</p>
+<p>Second order? Two conditions needed. Two free parameters to determine. Fourth order? Four conditions needed. Four free parameters to determine.</p>
 </div>
 </section>
-</section>
-<section id="what-has-been-your-experience-with-models">
-<h2>What has been your experience with models?<a class="headerlink" href="#what-has-been-your-experience-with-models" title="Permalink to this headline">#</a></h2>
-<p>Take 2-3 minutes to think about your prior physics class.</p>
-<ul class="simple">
-<li><p>What models have you used? What makes that a model?</p></li>
-<li><p>What modeling have you done? What makes that modeling?</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Take notes for yourself here</span>
-
-<span class="c1"># Idea 1</span>
-<span class="c1"># Idea 2</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>After we have discussed the above questions and generated a long list of experiences, you can move onto the next set of questions below.</p>
-<div class="toggle docutils container">
-<p>Take 2-3 minutes to think about your prior work with models and modeling?</p>
-<ul class="simple">
-<li><p>What made a model good or not so good?</p></li>
-<li><p>What kinds of things could you do to make a better model?</p></li>
-</ul>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Take notes for yourself here</span>
-
-<span class="c1"># Idea 1</span>
-<span class="c1"># Idea 2</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>After we have discussed the above questions and generated a consensus list of good model features, you can move onto the next set of questions below.</p>
-<div class="toggle docutils container">
-<p>Take 2-3 minutes and write down all the mathematical and/or computing models you have experienced, heard about, seen, or are otherwise familiar.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Take notes for yourself here (use comments)</span>
-
-<span class="c1"># Model 1</span>
-<span class="c1"># Model 2</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 </section>
 
@@ -641,7 +584,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./content/1_modeling"
+            path: "./content/2_oscillations"
         },
         predefinedOutput: true
     }
@@ -655,20 +598,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="what_is_modeling.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">1 - What is Mathematical Modeling?</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="notes-what_is_a_model.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Notes: 01 - What is a Model?</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>

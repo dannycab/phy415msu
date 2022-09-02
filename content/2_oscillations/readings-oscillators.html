@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Works Cited" href="../X_additional_pages/references-page.html" />
@@ -188,10 +190,17 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active">
+ <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
    2 - Oscillations
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../X_additional_pages/references-page.html">
@@ -418,12 +427,75 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#neutrino-oscillations">
+   Neutrino Oscillations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-simple-harmonic-oscillator">
+   The Simple Harmonic Oscillator
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-are-we-sure-we-can-model-each-local-minimum-as-an-sho">
+     How are we sure we can model each local minimum as an SHO?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-sho-mathematical-model">
+     The SHO mathematical model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finding-the-general-solution">
+     Finding the general solution
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-about-that-pesky-imaginary-part">
+       What about that pesky imaginary part?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-order-of-your-differential-equation-matters">
+     The order of your differential equation matters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-resources">
+     More Resources
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -435,6 +507,58 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#neutrino-oscillations">
+   Neutrino Oscillations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-simple-harmonic-oscillator">
+   The Simple Harmonic Oscillator
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-are-we-sure-we-can-model-each-local-minimum-as-an-sho">
+     How are we sure we can model each local minimum as an SHO?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-sho-mathematical-model">
+     The SHO mathematical model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finding-the-general-solution">
+     Finding the general solution
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-about-that-pesky-imaginary-part">
+       What about that pesky imaginary part?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-order-of-your-differential-equation-matters">
+     The order of your differential equation matters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-resources">
+     More Resources
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -444,7 +568,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="oscillations">
 <h1>2 - Oscillations<a class="headerlink" href="#oscillations" title="Permalink to this headline">#</a></h1>
-<p><strong>To be posted by Friday Sept 2nd</strong></p>
+<p>Oscillations are ubiquitous in nature. We see it in the motion of springs and pendulums, clearly. But orbital motion of the planets and stellar objects are large scale (both time and space) oscillations. While not obvious, weather patterns, the stock market, and other nonlinear and complex systems exhibit oscillations. Particle oscillations in quantum mechanics are some of the most interesting new physics we have discovered. Check out this short video on the oscillation of neutrinos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
@@ -463,6 +587,155 @@ title="Print to PDF"
 
 ></iframe>
 </div></div>
+</div>
+<section id="neutrino-oscillations">
+<h2>Neutrino Oscillations<a class="headerlink" href="#neutrino-oscillations" title="Permalink to this headline">#</a></h2>
+<p>These <a class="reference external" href="https://en.wikipedia.org/wiki/Neutrino_oscillation">neutrino oscillations</a> are incredibly important to the future of high energy and particle physics. Because of their observed oscillation, it is clear the neutrino is not a massless particle, but how much mass is an open question. The work that lead to this discovery was lead by Takaaki Kajita and Arthur McDonald who jointly were awarded the <a class="reference external" href="https://www.nobelprize.org/prizes/physics/2015/press-release/">2015 Nobel Prize in physics</a>.</p>
+<div class="admonition-current-research-at-michigan-state admonition">
+<p class="admonition-title">Current Research at Michigan State</p>
+<p>The Physics and Astronomy Department at MSU has a research effort devoted to neutrinos and neutrino oscillations. Some of this work is lead by <a class="reference external" href="https://www.dunescience.org/facesofdune/kendall-mahn/">Prof. Kendall Mahn</a> who works on the <a class="reference external" href="https://www.dunescience.org/">Deep Underground Neutrino Experiment (DUNE)</a>. The work of her and her team have the potential to <a class="reference external" href="https://www.scientificamerican.com/article/is-the-standard-model-of-physics-now-broken/">break standard model physics</a> and move us into the realm of new particle physics.</p>
+</div>
+</section>
+<section id="the-simple-harmonic-oscillator">
+<h2>The Simple Harmonic Oscillator<a class="headerlink" href="#the-simple-harmonic-oscillator" title="Permalink to this headline">#</a></h2>
+<p>One of the central models of physics is the simple harmonic oscillator; both beloved and ridiculed, it’s hard to deny how often it gets used. At issue is that nature tends towards some equilibrium. Most systems left alone will relax to some equilibrium. Typically, the process minimizes some quantity (e.g., energy) and thus we seek energy wells. These wells may have a complex form, but only depend on position. In 1d, the potential energy (also called the “configuration energy”) is:</p>
+<div class="math notranslate nohighlight">
+\[U = U(x)\]</div>
+<p>A potential energy extrema will have a vanishing first derivative (<span class="math notranslate nohighlight">\(dU/dx=0\)</span>). An energy minimum will have a positive concavity (<span class="math notranslate nohighlight">\(d^2U/dx^2&gt;0\)</span>).</p>
+<p>Consider a strange potential energy function:</p>
+<div class="math notranslate nohighlight">
+\[U(x)= \left[5\sin(3x)+(x+0.5)^2\right]\;e^{(-\dfrac{x}{10})}\]</div>
+<p>It is plotted below. Notice the many local potential energy minima. Motion around each of those points can be modeled as a harmonic oscillator.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">U</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">10</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">U</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x116fd04c0&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/readings-oscillators_4_1.png" src="../../_images/readings-oscillators_4_1.png" />
+</div>
+</div>
+<section id="how-are-we-sure-we-can-model-each-local-minimum-as-an-sho">
+<h3>How are we sure we can model each local minimum as an SHO?<a class="headerlink" href="#how-are-we-sure-we-can-model-each-local-minimum-as-an-sho" title="Permalink to this headline">#</a></h3>
+<p>Remember that we are modeling energy minima, so that <span class="math notranslate nohighlight">\(dU/dx=0\)</span> at the point we care about (the local energy minimum). So if we expand the potential in a Taylor series around any minimum energy point (<span class="math notranslate nohighlight">\(x_{localMinEnergy}\)</span>), we find the first non-constant contribution is quadratic,</p>
+<div class="math notranslate nohighlight">
+\[U(x) \approx U(x)|_{x_{localMinEnergy}} + \dfrac{dU}{dx}|_{x_{localMinEnergy}}(x-x_{localMinEnergy}) +\]</div>
+<div class="math notranslate nohighlight">
+\[\dfrac{1}{2}\dfrac{d^2U}{dx^2}|_{x_{localMinEnergy}}(x-x_{localMinEnergy})^2 + O((x-x_{localMinEnergy})^3)\]</div>
+<p>But, by definition, at a potential energy minimum</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{dU}{dx}|_{x_{localMinEnergy}}=0\]</div>
+<p>We neglect higher order terms, which arguably limits the extent we can predict. That is the space around the potential energy minimum that we can predict with good accuracy depends very much on how much the energy changes near the minimum and how well it can be approximated by a parabola. But, we are left with:</p>
+<div class="math notranslate nohighlight">
+\[U(x) \approx U(x)|_{x_{localMinEnergy}} + \dfrac{1}{2}\dfrac{d^2U}{dx^2}|_{x_{localMinEnergy}}(x-x_{localMinEnergy})^2\]</div>
+<p>which is an SHO potential energy function.</p>
+</section>
+<section id="the-sho-mathematical-model">
+<h3>The SHO mathematical model<a class="headerlink" href="#the-sho-mathematical-model" title="Permalink to this headline">#</a></h3>
+<p>From this potential energy, we find that a reasonable force model (<span class="math notranslate nohighlight">\(F = -dU/dx\)</span>) for a 1D spring system is given by:</p>
+<div class="math notranslate nohighlight">
+\[F_{spring} = -k |x-x_0|\]</div>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> is the spring constant for the spring and <span class="math notranslate nohighlight">\(x_0\)</span> is the equilibrium location. As we know from Newton’s second law, if we can argue that this force is the only force or the dominant behavior we are trying to model in a mechanical situation, we have the following ordinary differential equation:</p>
+<div class="math notranslate nohighlight">
+\[F_{net} = F_{spring}\]</div>
+<div class="math notranslate nohighlight">
+\[m\ddot{x} = -k|x-x_0|\]</div>
+<p>Without much loss, we can recast the problem in terms of the distance from equilibrium</p>
+<div class="math notranslate nohighlight">
+\[s=|x-x_0|\]</div>
+<p><em>As you will learn this is not a problem for vertically hanging springs near the surface of the Earth because the gravitational force is constant and depends on the mass of the hanging weight.</em></p>
+<div class="admonition-the-sho-mathematical-model admonition">
+<p class="admonition-title">The SHO mathematical model</p>
+<div class="math notranslate nohighlight">
+\[m\ddot{s} = -ks\]</div>
+</div>
+</section>
+<section id="finding-the-general-solution">
+<h3>Finding the general solution<a class="headerlink" href="#finding-the-general-solution" title="Permalink to this headline">#</a></h3>
+<p>We can solve this using our typical approach to 2nd order linear ODEs; guess the form of the solution and check it. <em>You might have done this in the past with functions of <span class="math notranslate nohighlight">\(\sin\)</span> and <span class="math notranslate nohighlight">\(\cos\)</span>. Here, we will introduce the complex form of the solution as a compliment.</em></p>
+<div class="math notranslate nohighlight">
+\[\ddot{s} = -\frac{k}{m}s\]</div>
+<p>Assume: <span class="math notranslate nohighlight">\(s(t) = A\exp(i\omega t)\)</span> As we will learn this form is a good guess for linear ODEs. You might be worried about the <span class="math notranslate nohighlight">\(i\)</span>, which is a complex number <span class="math notranslate nohighlight">\(i = \sqrt{-1}\)</span>. That’s ok, for now, let’s use it. Then we will see how it connects.</p>
+<p>Putting in the guessed solution (“the ansatz”) gives:</p>
+<div class="math notranslate nohighlight">
+\[\ddot{s} = -\omega^2\;A\exp(i\omega t)\]</div>
+<p>So that,</p>
+<div class="math notranslate nohighlight">
+\[-\omega^2\;A\exp(i\omega t) = -\frac{k}{m}A\exp(i\omega t)\]</div>
+<p>This solution is consistent with the model (i.e., solves the differential equation) if we set <span class="math notranslate nohighlight">\(\omega\)</span> and notice it is exclusively positive:</p>
+<div class="math notranslate nohighlight">
+\[\omega^2 = \frac{k}{m} &gt; 0\]</div>
+<p>Thus, <span class="math notranslate nohighlight">\(s(t) = A\exp(i\sqrt{\frac{k}{m}} t)\)</span> is <strong>a solution</strong> to this problem. Notice we have to set <span class="math notranslate nohighlight">\(A\)</span> using initial conditions for the problem. This is called a <strong>initial value problem</strong> in mathematics.</p>
+<section id="what-about-that-pesky-imaginary-part">
+<h4>What about that pesky imaginary part?<a class="headerlink" href="#what-about-that-pesky-imaginary-part" title="Permalink to this headline">#</a></h4>
+<p>Our complex formulation is consistent with the <span class="math notranslate nohighlight">\(\sin\)</span> and <span class="math notranslate nohighlight">\(\cos\)</span> approach you have used in the past. You might have heard about the Euler formulation; it is one of the most important relationships in mathematics <span id="id1">[<a class="reference internal" href="../X_additional_pages/references-page.html#id2" title="Paul J Nahin. Dr. Euler's Fabulous Formula. Princeton University Press, 2011.">Nahin, 2011</a>, <a class="reference internal" href="../X_additional_pages/references-page.html#id3" title="David Stipp. A most elegant equation: Euler's formula and the beauty of mathematics. Hachette UK, 2017.">Stipp, 2017</a>]</span>. We will get into it more later. It appears below:</p>
+<div class="admonition-leonhard-euler-s-famous-formula admonition">
+<p class="admonition-title">Leonhard Euler’s famous formula</p>
+<div class="math notranslate nohighlight">
+\[\exp{i\theta} = \cos{\theta} + i \sin{\theta}\]</div>
+</div>
+<p>Thus, we know that our solution gives rise to real sinusoidal solutions of the form:</p>
+<div class="math notranslate nohighlight">
+\[s(t) = A\left(cos{\sqrt{\frac{k}{m}} t} + i\sin{\sqrt{\frac{k}{m}} t}\right)\]</div>
+<p>This probably doesn’t look quite right…there’s an <span class="math notranslate nohighlight">\(i\)</span> in the solution for real physical motion! We will get to that, but we need the initial conditions to do so. More importantly, there’s only one free parameter in our current solution, <span class="math notranslate nohighlight">\(A\)</span>. Given that this equation is <strong>a solution, is it the only solution?</strong></p>
+</section>
+</section>
+<section id="the-order-of-your-differential-equation-matters">
+<h3>The order of your differential equation matters<a class="headerlink" href="#the-order-of-your-differential-equation-matters" title="Permalink to this headline">#</a></h3>
+<p>You probably already know that our general solution for the SHO is:</p>
+<div class="math notranslate nohighlight">
+\[s(t) = A\exp(i\sqrt{\frac{k}{m}} t) + B\exp(-i\sqrt{\frac{k}{m}} t)\]</div>
+<p>Or written in a way that is more often presented:</p>
+<div class="math notranslate nohighlight">
+\[s(t) = A'\cos(\sqrt{\frac{k}{m}} t) + B'\sin(\sqrt{\frac{k}{m}} t)\]</div>
+<p>where we have made clear that the free parameters <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are not equal to <span class="math notranslate nohighlight">\(A'\)</span> and <span class="math notranslate nohighlight">\(B'\)</span>, respectively. Regardless, notice there’s two free parameters in these formula. That is because we are solving a <strong>two dimensional</strong> linear ODE. Because there’s two derivatives on <span class="math notranslate nohighlight">\(s\)</span> (i.e., <span class="math notranslate nohighlight">\(\ddot{s}\)</span>), we expect to have two free parameters that are set by the intial conditions. This is characteristic of an <strong>initial value problem</strong>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Important Tip</p>
+<p>The number of free parameters that are set by problem conditions in an initial value problem is determined by the order of the differential equation.</p>
+<p>Second order? Two conditions needed. Two free parameters to determine. Fourth order? Four conditions needed. Four free parameters to determine.</p>
+</div>
+</section>
+<section id="more-resources">
+<h3>More Resources<a class="headerlink" href="#more-resources" title="Permalink to this headline">#</a></h3>
+<p>If you are feeling less comfortable with the harmonic oscillator or it’s been some time, I think Prof. Ten-Jie Lee’s lecture is very good. It’s long (a full 50 minutes), but here’s some key points:</p>
+<ul class="simple">
+<li><p>About 10 minutes in, he derives the full solution (we will not do this)</p></li>
+<li><p>About 17 minutes in, he shows how to get particular solutions with initial conditions (we will do this)</p></li>
+<li><p>About 26 minutes in, he completes an example where he shows how to Taylor approximate a potential to use the SHO model (we will do something like this)</p></li>
+<li><p>About 40 minutes in, he discusses the different forms of the solutions (we will do this)</p></li>
+<li><p>About 43 minutes in, he brings in complex analysis (we will do this)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;4ysFC9vd3GE&quot;</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="800"
+    height="600"
+    src="https://www.youtube.com/embed/4ysFC9vd3GE"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+</section>
+</section>
+<div class="toctree-wrapper compound">
 </div>
 </section>
 

@@ -1,0 +1,626 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>The Simple Harmonic Oscillator &#8212; Mathematical Modeling in Physics</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Mathematical Modeling in Physics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Mathematical Modeling in Physics
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../0_course/syllabus.html">
+   0 - Overview of PHY 415
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/goals.html">
+     Course Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/design.html">
+     Course Design
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/assessments.html">
+     Assessments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/rubric.html">
+     Project Rubrics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/calendar.html">
+     Calendar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/environment.html">
+     Classroom Environment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/resources.html">
+     Resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../0_course/reading_questions.html">
+   Reading Questions Form
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../1_modeling/what_is_modeling.html">
+   1 - What is Mathematical Modeling?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1_modeling/activity-what_is_a_model.html">
+     In-Class Activity: 01 - What is a Model?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1_modeling/notes-what_is_a_model.html">
+     Notes: 01 - What is a Model?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="readings-oscillators.html">
+   2 - Oscillations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../X_additional_pages/references-page.html">
+   Works Cited
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/dannycab/phy415msu/main?urlpath=tree/MMIPbook/content/2_oscillations/readings-phaseportrait.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415msu/&urlpath=tree/phy415msu/MMIPbook/content/2_oscillations/readings-phaseportrait.ipynb&branch=main"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on JupyterHub"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="headerbtn__text-container">JupyterHub</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/dannycab/phy415msu/blob/main/MMIPbook/content/2_oscillations/readings-phaseportrait.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/dannycab/phy415msu/"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/dannycab/phy415msu//issues/new?title=Issue%20on%20page%20%2Fcontent/2_oscillations/readings-phaseportrait.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/content/2_oscillations/readings-phaseportrait.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-sho-model">
+   The SHO model
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finding-the-general-solution">
+     Finding the general solution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-order-of-your-differential-equation-matters">
+     The order of your differential equation matters
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>The Simple Harmonic Oscillator</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-sho-model">
+   The SHO model
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finding-the-general-solution">
+     Finding the general solution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-order-of-your-differential-equation-matters">
+     The order of your differential equation matters
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="the-simple-harmonic-oscillator">
+<h1>The Simple Harmonic Oscillator<a class="headerlink" href="#the-simple-harmonic-oscillator" title="Permalink to this headline">#</a></h1>
+<section id="the-sho-model">
+<h2>The SHO model<a class="headerlink" href="#the-sho-model" title="Permalink to this headline">#</a></h2>
+<p>From these observations we find that a reasonable force model for a 1D spring system is given by:</p>
+<div class="math notranslate nohighlight">
+\[F_{spring} = -k |x-x_0|\]</div>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> is the spring constant for the spring and <span class="math notranslate nohighlight">\(x_0\)</span> is the equilibrium location. As we know from Newton’s second law, if we can argue that this force is the only force or the dominant behavior we are trying to model in a mechanical situation, we have the following ordinary differential equation:</p>
+<div class="math notranslate nohighlight">
+\[F_{net} = F_{spring}\]</div>
+<div class="math notranslate nohighlight">
+\[m\ddot{x} = -k|x-x_0|\]</div>
+<p>Without much loss, we can recast the problem in terms of the distance from equilbirium (<span class="math notranslate nohighlight">\(s=|x-x_0|\)</span>). <em>As you will learn this is not a problem from vertically hanging springs near the surface of the Earth because the graviational force is constant and depends on the mass of the hanging weight.</em></p>
+<div class="admonition-the-sho-mathematical-model admonition">
+<p class="admonition-title">The SHO mathematical model</p>
+<div class="math notranslate nohighlight">
+\[m\ddot{s} = -ks\]</div>
+</div>
+<section id="finding-the-general-solution">
+<h3>Finding the general solution<a class="headerlink" href="#finding-the-general-solution" title="Permalink to this headline">#</a></h3>
+<p>We can solve this using our typical approach to 2D linear ODEs; guess the form of the solution and check it.</p>
+<div class="math notranslate nohighlight">
+\[\ddot{s} = -\frac{k}{m}s\]</div>
+<p>Assume: <span class="math notranslate nohighlight">\(s(t) = A\exp(i\omega t)\)</span> As we will learn this form is a good guess for linear ODEs. This gives:</p>
+<div class="math notranslate nohighlight">
+\[\ddot{s} = -\omega^2\;A\exp(i\omega t)\]</div>
+<p>So that,</p>
+<div class="math notranslate nohighlight">
+\[-\omega^2\;A\exp(i\omega t) = -\frac{k}{m}A\exp(i\omega t)\]</div>
+<p>This solution is consistent with the model (i.e., solves the differential equation) if we set <span class="math notranslate nohighlight">\(\omega\)</span> and notice it is exclusively positive:</p>
+<div class="math notranslate nohighlight">
+\[\omega^2 = \frac{k}{m} &gt; 0\]</div>
+<p>Thus, <span class="math notranslate nohighlight">\(s(t) = A\exp(i\sqrt{\frac{k}{m}} t)\)</span> is <strong>a solution</strong> to this problem. Notice we have to set <span class="math notranslate nohighlight">\(A\)</span> using initial conditions for the problem. This is called a <strong>initial value problem</strong> in mathematics. You likely have heard about the Euler formulation; it is one of the most important relationships in mathematics <span id="id1">[<a class="reference internal" href="../X_additional_pages/references-page.html#id2" title="Paul J Nahin. Dr. Euler's Fabulous Formula. Princeton University Press, 2011.">Nahin, 2011</a>, <a class="reference internal" href="../X_additional_pages/references-page.html#id3" title="David Stipp. A most elegant equation: Euler's formula and the beauty of mathematics. Hachette UK, 2017.">Stipp, 2017</a>]</span>. We will get into it more later. It appears below:</p>
+<div class="admonition-leonhard-euler-s-famous-formula admonition">
+<p class="admonition-title">Leonhard Euler’s famous formula</p>
+<div class="math notranslate nohighlight">
+\[\exp{i\theta} = \cos{\theta} + i \sin{\theta}\]</div>
+</div>
+<p>Thus, we know that our solution gives rise to real sinusoidal solutions of the form:</p>
+<div class="math notranslate nohighlight">
+\[s(t) = A\left(cos{\sqrt{\frac{k}{m}} t} + i\sin{\sqrt{\frac{k}{m}} t}\right)\]</div>
+<p>This probably doesn’t look quite right…there’s an <span class="math notranslate nohighlight">\(i\)</span> in the solution for real physical motion! We will get to that, but we need the initial conditions to do so. More importantly, there’s only one free parameter in our current solution, <span class="math notranslate nohighlight">\(A\)</span>. Given that this equation is <strong>a solution, is it the only solution?</strong></p>
+</section>
+<section id="the-order-of-your-differential-equation-matters">
+<h3>The order of your differential equation matters<a class="headerlink" href="#the-order-of-your-differential-equation-matters" title="Permalink to this headline">#</a></h3>
+<p>You probably already know that our general solution for the SHO is:</p>
+<div class="math notranslate nohighlight">
+\[s(t) = A\exp(i\sqrt{\frac{k}{m}} t) + B\exp(-i\sqrt{\frac{k}{m}} t)\]</div>
+<p>Or written in a way that is more often presented:</p>
+<div class="math notranslate nohighlight">
+\[s(t) = A'\cos(\sqrt{\frac{k}{m}} t) + B'\sin(\sqrt{\frac{k}{m}} t)\]</div>
+<p>where we have made clear that the free parameters <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are not equal to <span class="math notranslate nohighlight">\(A'\)</span> and <span class="math notranslate nohighlight">\(B'\)</span>, respectively. Regardless, notice there’s two free parameters in these formula. That is because we are solving a <strong>two dimensional</strong> linear ODE. Because there’s two derivatives on <span class="math notranslate nohighlight">\(s\)</span> (i.e., <span class="math notranslate nohighlight">\(\ddot{s}\)</span>), we expect to have two free parameters that are set by the intial conditions. This is characteristic of an <strong>initial value problem</strong>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Important Tip</p>
+<p>The number of free parameters that are set by problem conditions in an initial value problem is determined by the order of the differential equation.</p>
+<p>Second order? Two conditions needed. Two free parameters to determine. Fourth order? Four conditions needed. Four free parameters to determine.</p>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/2_oscillations"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Danny Caballero<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

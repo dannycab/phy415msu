@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # References
+# # Works Cited
 # 
 # ```{bibliography}
-# :style: unsrt
+# :style: unsrtalpha
 # ```
+
+# 

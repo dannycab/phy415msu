@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Oscillations
+# # 2 - Oscillations
+# 
+# **To be posted by Friday Sept 2nd**
 
 # In[1]:
 

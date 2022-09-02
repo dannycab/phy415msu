@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: content/intro.md
+root: content/intro
 chapters:
 - file: content/0_course/syllabus
   sections:

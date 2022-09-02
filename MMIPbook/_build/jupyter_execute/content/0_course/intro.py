@@ -7,24 +7,10 @@
 # 
 # 
 
-# `````{admonition} Updates
+# `````{admonition} This admonition was styled...
 # :class: tip
-# 
-# **02 Sept 22**
-# 
-# - [Complete the survey](https://www.when2meet.com/?16627934-Bt7PQ) by Tuesday morning to help us schedule the Project Help Sessions
-# - Synthesized notes from 01 Sept 22 class are [posted](./1_modeling/notes-what_is_a_model.md)
-# - Readings have been updated for next week: [Read Oscillations](./2_oscillations/readings-oscillators.ipynb)
-# - Make sure to complete the [Reading Questions Form](./0_course/reading_questions.md) before class Tuesday morning
-# - More project details are coming, a draft project rubric is forthcoming, and activities for class this coming week will be posted by Monday
-# 
+# With a tip class!
 # `````
-
-# In[ ]:
-
-
-
-
 
 # To get a sense of the course, please read all the pages associated with our syllabus.
 # 

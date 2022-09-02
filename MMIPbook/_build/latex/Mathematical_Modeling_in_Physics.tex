@@ -144,7 +144,7 @@ The rest of this JupyterBook is (currently) organized as follows:
 \begin{itemize}
 \item {} 
 \sphinxAtStartPar
-{\hyperref[\detokenize{content/0_course/syllabus::doc}]{\sphinxcrossref{Overview of PHY 415}}}
+{\hyperref[\detokenize{content/0_course/syllabus::doc}]{\sphinxcrossref{0 \sphinxhyphen{} Overview of PHY 415}}}
 
 \item {} 
 \sphinxAtStartPar
@@ -152,11 +152,11 @@ The rest of this JupyterBook is (currently) organized as follows:
 
 \item {} 
 \sphinxAtStartPar
-{\hyperref[\detokenize{content/1_modeling/what_is_modeling::doc}]{\sphinxcrossref{What is Mathematical Modeling?}}}
+{\hyperref[\detokenize{content/1_modeling/what_is_modeling::doc}]{\sphinxcrossref{1 \sphinxhyphen{} What is Mathematical Modeling?}}}
 
 \item {} 
 \sphinxAtStartPar
-{\hyperref[\detokenize{content/2_oscillations/readings-oscillators::doc}]{\sphinxcrossref{Oscillations}}}
+{\hyperref[\detokenize{content/2_oscillations/readings-oscillators::doc}]{\sphinxcrossref{2 \sphinxhyphen{} Oscillations}}}
 
 \item {} 
 \sphinxAtStartPar
@@ -167,7 +167,7 @@ The rest of this JupyterBook is (currently) organized as follows:
 \sphinxstepscope
 
 
-\chapter{Overview of PHY 415}
+\chapter{0 \sphinxhyphen{} Overview of PHY 415}
 \label{\detokenize{content/0_course/syllabus:overview-of-phy-415}}\label{\detokenize{content/0_course/syllabus::doc}}
 \sphinxAtStartPar
 In designing this course, I plan to emphasize more independent learning on your part and greater agency for you in determining what you learn and how you demonstrate you have learned. So you should expect:
@@ -1029,7 +1029,7 @@ As a Spartan, I will strive to uphold values of the highest ethical standard. I 
 \sphinxstepscope
 
 
-\chapter{What is Mathematical Modeling?}
+\chapter{1 \sphinxhyphen{} What is Mathematical Modeling?}
 \label{\detokenize{content/1_modeling/what_is_modeling:what-is-mathematical-modeling}}\label{\detokenize{content/1_modeling/what_is_modeling::doc}}
 \sphinxAtStartPar
 Nature reveals itself to us through interactions. We can tell from observations that it is nature’s interactions that lead to its evolution. How nature is changing and predicting how it will change in the future is the work of science. In this work, we observe nature and its interactions to make models of those observations. We aim to predict and explain our observations of nature through this building of models.
@@ -1040,7 +1040,321 @@ In physics, our goals are typically to explain and predict observations of physi
 \sphinxstepscope
 
 
-\chapter{Oscillations}
+\section{In\sphinxhyphen{}Class Activity: 01 \sphinxhyphen{} What is a Model?}
+\label{\detokenize{content/1_modeling/activity-what_is_a_model:in-class-activity-01-what-is-a-model}}\label{\detokenize{content/1_modeling/activity-what_is_a_model::doc}}
+
+\subsection{Notes}
+\label{\detokenize{content/1_modeling/activity-what_is_a_model:notes}}\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxstyleemphasis{Class Meeting:} 01 Sept 22
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstyleemphasis{Prior Reading:} None necessary
+
+\end{itemize}
+
+
+\subsection{Models and modeling}
+\label{\detokenize{content/1_modeling/activity-what_is_a_model:models-and-modeling}}
+\sphinxAtStartPar
+This course focuses on common physical models and how we use mathematics and computing tools to investigate these models. But, we need to agree on an mutual understanding of a model. In this activity, you will be working in a group to define aspects of a good model for the physical sciences.
+
+\sphinxAtStartPar
+There are plenty of ideas on the internet, I can even \sphinxhref{https://bfy.tw/TUdA}{provide you a link} with plenty of information. But, the point of this activity is for us to define a good model now (given all your prior experiences with models and modeling), and to reflect on that definition as you develop expertise with models and modeling (through your learning in this class).
+
+
+\subsection{What is a model?}
+\label{\detokenize{content/1_modeling/activity-what_is_a_model:what-is-a-model}}
+\sphinxAtStartPar
+We are going to start with this short video made by Geoscientist John Aiken when he was a graduate student at Georgia Tech.
+
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{IPython}\PYG{n+nn}{.}\PYG{n+nn}{display} \PYG{k+kn}{import} \PYG{n}{YouTubeVideo}
+\PYG{n}{YouTubeVideo}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{dkTncoPqo5Y}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{width} \PYG{o}{=} \PYG{l+m+mi}{800}\PYG{p}{,} \PYG{n}{height} \PYG{o}{=} \PYG{l+m+mi}{600}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\noindent\sphinxincludegraphics{{activity-what_is_a_model_2_0}.jpg}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+
+\subsubsection{History and Philosophy of Science}
+\label{\detokenize{content/1_modeling/activity-what_is_a_model:history-and-philosophy-of-science}}
+\sphinxAtStartPar
+If you would like to dive deeper into models and modeling, there’s excellent work in history and philosophy of science. The field studies how science develops knowledge, practice, culture, and so on. It studies important events and provides critical information on important and, often, overlooked folks who do science. For example, historian and gender studies professor \sphinxhref{https://en.wikipedia.org/wiki/Sharon\_Traweek}{Sharon Traweek} studies the high energy physics field. Her book, \sphinxhref{https://en.wikipedia.org/wiki/Beamtimes\_and\_Lifetimes}{Beamtimes and Lifetimes: The World of High Energy Physicists} {[}\hyperlink{cite.content/X_additional_pages/references-page:id4}{Traweek, 2009}{]} is excellent.
+
+\begin{sphinxadmonition}{note}{Dame Nancy Cartwright (philosopher of science)}
+
+\sphinxAtStartPar
+One of the more interesting scholars in \sphinxhref{https://en.wikipedia.org/wiki/Nancy\_Cartwright\_(philosopher)}{Dame Nancy Cartwright} who wrote a lot about the ‘practice of science.’ Her philosophical work informed many of the innovations in physics and broader science education – including many science courses at MSU.
+
+\sphinxAtStartPar
+Her writing is very interesting, but the style of writing can be a challenge to read. This is the nature of academic writing in different disciplines. Her book called “How The Laws of Physics Lie” {[}\hyperlink{cite.content/X_additional_pages/references-page:id5}{Cartwright, 1983}{]} is worth a read. Here’s a link to the \sphinxhref{http://www.generativescience.org/papers/nature/Cartwright-\_1983.pdf}{first chapter}.
+\end{sphinxadmonition}
+
+
+\subsection{What has been your experience with models?}
+\label{\detokenize{content/1_modeling/activity-what_is_a_model:what-has-been-your-experience-with-models}}
+\sphinxAtStartPar
+Take 2\sphinxhyphen{}3 minutes to think about your prior physics class.
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+What models have you used? What makes that a model?
+
+\item {} 
+\sphinxAtStartPar
+What modeling have you done? What makes that modeling?
+
+\end{itemize}
+
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} Take notes for yourself here}
+
+\PYG{c+c1}{\PYGZsh{} Idea 1}
+\PYG{c+c1}{\PYGZsh{} Idea 2}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\sphinxAtStartPar
+After we have discussed the above questions and generated a long list of experiences, you can move onto the next set of questions below.
+
+\begin{sphinxuseclass}{toggle}
+\sphinxAtStartPar
+Take 2\sphinxhyphen{}3 minutes to think about your prior work with models and modeling?
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+What made a model good or not so good?
+
+\item {} 
+\sphinxAtStartPar
+What kinds of things could you do to make a better model?
+
+\end{itemize}
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} Take notes for yourself here}
+
+\PYG{c+c1}{\PYGZsh{} Idea 1}
+\PYG{c+c1}{\PYGZsh{} Idea 2}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\sphinxAtStartPar
+After we have discussed the above questions and generated a consensus list of good model features, you can move onto the next set of questions below.
+
+\begin{sphinxuseclass}{toggle}
+\sphinxAtStartPar
+Take 2\sphinxhyphen{}3 minutes and write down all the mathematical and/or computing models you have experienced, heard about, seen, or are otherwise familiar.
+
+\end{sphinxuseclass}
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} Take notes for yourself here (use comments)}
+
+\PYG{c+c1}{\PYGZsh{} Model 1}
+\PYG{c+c1}{\PYGZsh{} Model 2}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+
+\end{sphinxuseclass}
+\sphinxstepscope
+
+
+\section{Notes: 01 \sphinxhyphen{} What is a Model?}
+\label{\detokenize{content/1_modeling/notes-what_is_a_model:notes-01-what-is-a-model}}\label{\detokenize{content/1_modeling/notes-what_is_a_model::doc}}
+\sphinxAtStartPar
+These is the summary of the PHY 415 class period on 01 Sept 22. If I missed anything, \sphinxhref{https://phy415fall2022.slack.com/}{send me an message} on Slack and I will add it here. \sphinxhyphen{}DC
+
+
+\subsection{Modeling Discussion}
+\label{\detokenize{content/1_modeling/notes-what_is_a_model:modeling-discussion}}
+\sphinxAtStartPar
+We discussed models and modeling extensively today to start to form a functional definition of both. We talked about what the general idea of models and modeling can encompass. Some of the classes major ideas were:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+A model takes \sphinxstylestrong{BIG} things and makes them \sphinxstyleemphasis{smaller} things (approximations and assumptions)
+
+\item {} 
+\sphinxAtStartPar
+A model is only as good as it fits nature/reality/experiment
+
+\item {} 
+\sphinxAtStartPar
+A model is not useful unless it does something we intended it
+
+\item {} 
+\sphinxAtStartPar
+The best models destroy themselves (i.e., are pushed to their limits and need to be replaced/redeveloped)
+
+\end{itemize}
+
+
+\subsubsection{Mathematical Models in Physics}
+\label{\detokenize{content/1_modeling/notes-what_is_a_model:mathematical-models-in-physics}}
+\sphinxAtStartPar
+We narrows our discussion to mathematical models, the focus of this class, and talked about the variety of models the class has used. We had a couple general ideas. A \sphinxstylestrong{mathematical model} (in physics) is:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+an equation that has a physics idea behind it
+
+\item {} 
+\sphinxAtStartPar
+the order that you use different mathematical methods to investigate a physics problem
+
+\end{itemize}
+
+\sphinxAtStartPar
+In this discussion, the class brought up several models they had experienced in the past; many of them were from mechanics contexts. And a couple were outside of physics models.
+
+\sphinxAtStartPar
+\sphinxstylestrong{Physics}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Hooke’s Law
+
+\item {} 
+\sphinxAtStartPar
+Differential equations that describe physical systems
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+example: the Schrodinger equation
+
+\end{itemize}
+
+\item {} 
+\sphinxAtStartPar
+Taylor expansions
+
+\item {} 
+\sphinxAtStartPar
+Newton’s Laws
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Kepler’s Laws
+
+\item {} 
+\sphinxAtStartPar
+Newton’s Law of Gravitation
+
+\end{itemize}
+
+\end{itemize}
+
+\sphinxAtStartPar
+\sphinxstylestrong{Outside of Physics}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxhref{https://en.wikipedia.org/wiki/Zipf\%27s\_law}{Zipf’s Law} (linguistics)
+
+\item {} 
+\sphinxAtStartPar
+\sphinxhref{https://en.wikipedia.org/wiki/Benford\%27s\_law}{Benford’s Law} (random numbers)
+
+\end{itemize}
+
+
+\subsubsection{Features of a good mathematical model}
+\label{\detokenize{content/1_modeling/notes-what_is_a_model:features-of-a-good-mathematical-model}}
+\sphinxAtStartPar
+We then discussed the features that make up a good model in physics. Ideas included aspects of the model and the modeling process as well as social aspects of engaging in science. The list below is from the class’s discussion, where the highlighted words are starting to form the details of our class’s project rubric.
+
+\sphinxAtStartPar
+\sphinxstylestrong{A good model:}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+depends on its intent and how well it does what it we intend it to do
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+e.g., a model of a galaxy is not useful for modeling the solar system
+
+\end{itemize}
+
+\item {} 
+\sphinxAtStartPar
+predicts or explains something about a physical system \sphinxhyphen{} \sphinxstylestrong{predictability}
+
+\item {} 
+\sphinxAtStartPar
+gives everyone the same results with the same input \sphinxhyphen{} \sphinxstylestrong{reproducibility}
+
+\item {} 
+\sphinxAtStartPar
+balances simplicity and applicability \sphinxhyphen{} \sphinxstylestrong{parsimonius}
+
+\item {} 
+\sphinxAtStartPar
+cannot be biased towards the data (experiment, etc.)
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+avoid manipulation of the model to fit data
+
+\item {} 
+\sphinxAtStartPar
+overfitting data
+
+\end{itemize}
+
+\item {} 
+\sphinxAtStartPar
+recognizes \sphinxstylestrong{limitations} and presents its \sphinxstylestrong{assumptions}
+
+\item {} 
+\sphinxAtStartPar
+uses input from outside sources (other theories, data, experiments, etc) to confirm/evaluate \sphinxhyphen{} \sphinxstylestrong{validation}
+
+\item {} 
+\sphinxAtStartPar
+can be adjusted for different conditions \sphinxhyphen{} \sphinxstylestrong{investigatory}
+
+\item {} 
+\sphinxAtStartPar
+is \sphinxstylestrong{testable} in some way
+
+\item {} 
+\sphinxAtStartPar
+needs to have its results and processes \sphinxstylestrong{communicated clearly}
+
+\end{itemize}
+
+\sphinxstepscope
+
+
+\chapter{2 \sphinxhyphen{} Oscillations}
 \label{\detokenize{content/2_oscillations/readings-oscillators:oscillations}}\label{\detokenize{content/2_oscillations/readings-oscillators::doc}}
 \sphinxAtStartPar
 \sphinxstylestrong{To be posted by Friday Sept 2nd}
@@ -1221,7 +1535,7 @@ Second order? Two conditions needed. Two free parameters to determine. Fourth or
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-[\PYGZlt{}matplotlib.lines.Line2D at 0x11775bc70\PYGZgt{}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x115767c10\PYGZgt{}]
 \end{sphinxVerbatim}
 
 \noindent\sphinxincludegraphics{{activity-SHO-numerical_4_1}.png}
@@ -1431,7 +1745,7 @@ It looks like we can try approach 1, 2, and 3 without much fuss. Let’s write a
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-[\PYGZlt{}matplotlib.lines.Line2D at 0x1179525f0\PYGZgt{}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x115922410\PYGZgt{}]
 \end{sphinxVerbatim}
 
 \noindent\sphinxincludegraphics{{activity-SHO-numerical_10_1}.png}
@@ -1463,7 +1777,7 @@ It looks like we can try approach 1, 2, and 3 without much fuss. Let’s write a
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-[\PYGZlt{}matplotlib.lines.Line2D at 0x1179d1240\PYGZgt{}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x1159a15a0\PYGZgt{}]
 \end{sphinxVerbatim}
 
 \noindent\sphinxincludegraphics{{activity-SHO-numerical_11_1}.png}
@@ -1495,7 +1809,7 @@ It looks like we can try approach 1, 2, and 3 without much fuss. Let’s write a
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-[\PYGZlt{}matplotlib.lines.Line2D at 0x117a3d4e0\PYGZgt{}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x115a0d7e0\PYGZgt{}]
 \end{sphinxVerbatim}
 
 \noindent\sphinxincludegraphics{{activity-SHO-numerical_12_1}.png}
@@ -1520,7 +1834,7 @@ It looks like we can try approach 1, 2, and 3 without much fuss. Let’s write a
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYGZlt{}matplotlib.legend.Legend at 0x117a66020\PYGZgt{}
+\PYGZlt{}matplotlib.legend.Legend at 0x115a34d00\PYGZgt{}
 \end{sphinxVerbatim}
 
 \noindent\sphinxincludegraphics{{activity-SHO-numerical_13_1}.png}
@@ -1542,7 +1856,7 @@ It looks like we can try approach 1, 2, and 3 without much fuss. Let’s write a
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-[\PYGZlt{}matplotlib.lines.Line2D at 0x117b1a650\PYGZgt{}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x115aee6b0\PYGZgt{}]
 \end{sphinxVerbatim}
 
 \noindent\sphinxincludegraphics{{activity-SHO-numerical_14_1}.png}
@@ -1555,19 +1869,19 @@ It looks like we can try approach 1, 2, and 3 without much fuss. Let’s write a
 
 \chapter{Works Cited}
 \label{\detokenize{content/X_additional_pages/references-page:works-cited}}\label{\detokenize{content/X_additional_pages/references-page::doc}}
-\begin{sphinxthebibliography}{Nah11}
-\bibitem[Nah11]{content/X_additional_pages/references-page:id2}
-\sphinxAtStartPar
-Paul J Nahin. \sphinxstyleemphasis{Dr. Euler's Fabulous Formula}. Princeton University Press, 2011.
-\bibitem[Sti17]{content/X_additional_pages/references-page:id3}
-\sphinxAtStartPar
-David Stipp. \sphinxstyleemphasis{A most elegant equation: Euler's formula and the beauty of mathematics}. Hachette UK, 2017.
+\begin{sphinxthebibliography}{Tra09}
 \bibitem[Tra09]{content/X_additional_pages/references-page:id4}
 \sphinxAtStartPar
 Sharon Traweek. \sphinxstyleemphasis{Beamtimes and Lifetimes}. Harvard University Press, 2009.
 \bibitem[Car83]{content/X_additional_pages/references-page:id5}
 \sphinxAtStartPar
 Nancy Cartwright. \sphinxstyleemphasis{How the Laws of Physics Lie}. OUP Oxford, 1983.
+\bibitem[Nah11]{content/X_additional_pages/references-page:id2}
+\sphinxAtStartPar
+Paul J Nahin. \sphinxstyleemphasis{Dr. Euler's Fabulous Formula}. Princeton University Press, 2011.
+\bibitem[Sti17]{content/X_additional_pages/references-page:id3}
+\sphinxAtStartPar
+David Stipp. \sphinxstyleemphasis{A most elegant equation: Euler's formula and the beauty of mathematics}. Hachette UK, 2017.
 \end{sphinxthebibliography}
 
 

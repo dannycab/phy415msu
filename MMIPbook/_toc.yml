@@ -19,7 +19,7 @@ chapters:
     - file: content/1_modeling/activity-what_is_a_model
     - file: content/1_modeling/notes-what_is_a_model
 - file: content/2_oscillations/readings-oscillators  
-  # sections:
-  #   - file: content/2_oscillations/readings-SHO-intro
-  #   - file: content/2_oscillations/activity-SHO-numerical
+  sections:
+    - file: content/2_oscillations/readings-SHO-intro
+    - file: content/2_oscillations/activity-SHO-numerical
 - file: content/X_additional_pages/references-page

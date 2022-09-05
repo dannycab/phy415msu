@@ -10,6 +10,10 @@
 # `````{admonition} Updates
 # :class: tip
 # 
+# **05 Sept 22**
+# - Tuesday's [in-class activity](https://dannycaballero.info/phy415msu/content/2_oscillations/activity-SHO_and_dynamical_systems.html) has been posted.
+#     - Review as you see fit; we will go over the whole thing together
+# 
 # **02 Sept 22**
 # 
 # - [Complete the survey](https://www.when2meet.com/?16627934-Bt7PQ) by Tuesday morning to help us schedule the Project Help Sessions

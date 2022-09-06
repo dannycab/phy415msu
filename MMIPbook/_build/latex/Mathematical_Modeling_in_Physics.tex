@@ -84,7 +84,7 @@
         
 
 \title{Mathematical Modeling in Physics}
-\date{Sep 01, 2022}
+\date{Sep 06, 2022}
 \release{}
 \author{Danny Caballero}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -102,6 +102,49 @@
 
 \sphinxAtStartPar
 PHY 415, called, “Mathematical Methods for Physicists” is a course the brings together many of the mathematical approaches that we commonly use in physics and apply them to variety of problems. In this course, we will take a modeling\sphinxhyphen{}based approach where we focus on the mathematical descriptions of physical phenomenon and determine what mathematical and analytical approaches are useful in exploring those models.
+
+\begin{sphinxadmonition}{note}{Updates}
+
+\sphinxAtStartPar
+\sphinxstylestrong{05 Sept 22}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Tuesday’s \sphinxhref{https://dannycaballero.info/phy415msu/content/2\_oscillations/activity-SHO\_and\_dynamical\_systems.html}{in\sphinxhyphen{}class activity} has been posted.
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+Review as you see fit; we will go over the whole thing together
+
+\end{itemize}
+
+\end{itemize}
+
+\sphinxAtStartPar
+\sphinxstylestrong{02 Sept 22}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxhref{https://www.when2meet.com/?16627934-Bt7PQ}{Complete the survey} by Tuesday morning to help us schedule the Project Help Sessions
+
+\item {} 
+\sphinxAtStartPar
+Synthesized notes from 01 Sept 22 class are {\hyperref[\detokenize{content/1_modeling/notes-what_is_a_model::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{posted}}}}
+
+\item {} 
+\sphinxAtStartPar
+Readings have been updated for next week: {\hyperref[\detokenize{content/2_oscillations/readings-oscillators::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{Read Oscillations}}}}
+
+\item {} 
+\sphinxAtStartPar
+Make sure to complete the {\hyperref[\detokenize{content/0_course/reading_questions::doc}]{\sphinxcrossref{\DUrole{doc,std,std-doc}{Reading Questions Form}}}} before class Tuesday morning
+
+\item {} 
+\sphinxAtStartPar
+More project details are coming, a draft project rubric is forthcoming, and activities for class this coming week will be posted by Monday
+
+\end{itemize}
+\end{sphinxadmonition}
 
 \sphinxAtStartPar
 To get a sense of the course, please read all the pages associated with our syllabus.
@@ -132,35 +175,6 @@ provide evidence of the quality of work using a variety of sources, and
 \item {} 
 \sphinxAtStartPar
 collaborate effectively and contribute to a inclusive learning environment
-
-\end{itemize}
-
-\begin{DUlineblock}{0em}
-\item[] \sphinxstylestrong{\large Table of Contents}
-\end{DUlineblock}
-
-\sphinxAtStartPar
-The rest of this JupyterBook is (currently) organized as follows:
-\begin{itemize}
-\item {} 
-\sphinxAtStartPar
-{\hyperref[\detokenize{content/0_course/syllabus::doc}]{\sphinxcrossref{0 \sphinxhyphen{} Overview of PHY 415}}}
-
-\item {} 
-\sphinxAtStartPar
-{\hyperref[\detokenize{content/0_course/reading_questions::doc}]{\sphinxcrossref{Reading Questions Form}}}
-
-\item {} 
-\sphinxAtStartPar
-{\hyperref[\detokenize{content/1_modeling/what_is_modeling::doc}]{\sphinxcrossref{1 \sphinxhyphen{} What is Mathematical Modeling?}}}
-
-\item {} 
-\sphinxAtStartPar
-{\hyperref[\detokenize{content/2_oscillations/readings-oscillators::doc}]{\sphinxcrossref{2 \sphinxhyphen{} Oscillations}}}
-
-\item {} 
-\sphinxAtStartPar
-{\hyperref[\detokenize{content/X_additional_pages/references-page::doc}]{\sphinxcrossref{Works Cited}}}
 
 \end{itemize}
 
@@ -1357,7 +1371,7 @@ needs to have its results and processes \sphinxstylestrong{communicated clearly}
 \chapter{2 \sphinxhyphen{} Oscillations}
 \label{\detokenize{content/2_oscillations/readings-oscillators:oscillations}}\label{\detokenize{content/2_oscillations/readings-oscillators::doc}}
 \sphinxAtStartPar
-\sphinxstylestrong{To be posted by Friday Sept 2nd}
+Oscillations are ubiquitous in nature. We see it in the motion of springs and pendulums, clearly. But orbital motion of the planets and stellar objects are large scale (both time and space) oscillations. While not obvious, weather patterns, the stock market, and other nonlinear and complex systems exhibit oscillations. Particle oscillations in quantum mechanics are some of the most interesting new physics we have discovered. Check out this short video on the oscillation of neutrinos.
 
 \begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
 
@@ -1376,16 +1390,91 @@ needs to have its results and processes \sphinxstylestrong{communicated clearly}
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
 \end{sphinxuseclass}
-\sphinxstepscope
+
+\section{Neutrino Oscillations}
+\label{\detokenize{content/2_oscillations/readings-oscillators:neutrino-oscillations}}
+\sphinxAtStartPar
+These \sphinxhref{https://en.wikipedia.org/wiki/Neutrino\_oscillation}{neutrino oscillations} are incredibly important to the future of high energy and particle physics. Because of their observed oscillation, it is clear the neutrino is not a massless particle, but how much mass is an open question. The work that lead to this discovery was lead by Takaaki Kajita and Arthur McDonald who jointly were awarded the \sphinxhref{https://www.nobelprize.org/prizes/physics/2015/press-release/}{2015 Nobel Prize in physics}.
+
+\begin{sphinxadmonition}{note}{Current Research at Michigan State}
+
+\sphinxAtStartPar
+The Physics and Astronomy Department at MSU has a research effort devoted to neutrinos and neutrino oscillations. Some of this work is lead by \sphinxhref{https://www.dunescience.org/facesofdune/kendall-mahn/}{Prof. Kendall Mahn} who works on the \sphinxhref{https://www.dunescience.org/}{Deep Underground Neutrino Experiment (DUNE)}. The work of her and her team have the potential to \sphinxhref{https://www.scientificamerican.com/article/is-the-standard-model-of-physics-now-broken/}{break standard model physics} and move us into the realm of new particle physics.
+\end{sphinxadmonition}
 
 
 \section{The Simple Harmonic Oscillator}
-\label{\detokenize{content/2_oscillations/readings-SHO-intro:the-simple-harmonic-oscillator}}\label{\detokenize{content/2_oscillations/readings-SHO-intro::doc}}
-
-\subsection{The SHO model}
-\label{\detokenize{content/2_oscillations/readings-SHO-intro:the-sho-model}}
+\label{\detokenize{content/2_oscillations/readings-oscillators:the-simple-harmonic-oscillator}}
 \sphinxAtStartPar
-From these observations we find that a reasonable force model for a 1D spring system is given by:
+One of the central models of physics is the simple harmonic oscillator; both beloved and ridiculed, it’s hard to deny how often it gets used. At issue is that nature tends towards some equilibrium. Most systems left alone will relax to some equilibrium. Typically, the process minimizes some quantity (e.g., energy) and thus we seek energy wells. These wells may have a complex form, but only depend on position. In 1d, the potential energy (also called the “configuration energy”) is:
+\begin{equation*}
+\begin{split}U = U(x)\end{split}
+\end{equation*}
+\sphinxAtStartPar
+A potential energy extrema will have a vanishing first derivative (\(dU/dx=0\)). An energy minimum will have a positive concavity (\(d^2U/dx^2>0\)).
+
+\sphinxAtStartPar
+Consider a strange potential energy function:
+\begin{equation*}
+\begin{split}U(x)= \left[5\sin(3x)+(x+0.5)^2\right]\;e^{(-\dfrac{x}{10})}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+It is plotted below. Notice the many local potential energy minima. Motion around each of those points can be modeled as a harmonic oscillator.
+
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib}\PYG{n+nn}{.}\PYG{n+nn}{pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+
+\PYG{n}{x} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{10}\PYG{p}{,}\PYG{l+m+mi}{10}\PYG{p}{,}\PYG{l+m+mf}{0.01}\PYG{p}{)}
+\PYG{n}{U} \PYG{o}{=} \PYG{p}{(}\PYG{l+m+mi}{5}\PYG{o}{*}\PYG{n}{np}\PYG{o}{.}\PYG{n}{sin}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{o}{*}\PYG{n}{x}\PYG{p}{)}\PYG{o}{+}\PYG{p}{(}\PYG{n}{x}\PYG{o}{+}\PYG{l+m+mf}{0.5}\PYG{p}{)}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{*}\PYG{n}{np}\PYG{o}{.}\PYG{n}{exp}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{10}\PYG{o}{*}\PYG{n}{x}\PYG{p}{)}
+
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{U}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x1170c9ed0\PYGZgt{}]
+\end{sphinxVerbatim}
+
+\noindent\sphinxincludegraphics{{readings-oscillators_4_1}.png}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+
+\subsection{How are we sure we can model each local minimum as an SHO?}
+\label{\detokenize{content/2_oscillations/readings-oscillators:how-are-we-sure-we-can-model-each-local-minimum-as-an-sho}}
+\sphinxAtStartPar
+Remember that we are modeling energy minima, so that \(dU/dx=0\) at the point we care about (the local energy minimum). So if we expand the potential in a Taylor series around any minimum energy point (\(x_{localMinEnergy}\)), we find the first non\sphinxhyphen{}constant contribution is quadratic,
+\begin{equation*}
+\begin{split}U(x) \approx U(x)|_{x_{localMinEnergy}} + \dfrac{dU}{dx}|_{x_{localMinEnergy}}(x-x_{localMinEnergy}) +\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}\dfrac{1}{2}\dfrac{d^2U}{dx^2}|_{x_{localMinEnergy}}(x-x_{localMinEnergy})^2 + O((x-x_{localMinEnergy})^3)\end{split}
+\end{equation*}
+\sphinxAtStartPar
+But, by definition, at a potential energy minimum
+\begin{equation*}
+\begin{split}\dfrac{dU}{dx}|_{x_{localMinEnergy}}=0\end{split}
+\end{equation*}
+\sphinxAtStartPar
+We neglect higher order terms, which arguably limits the extent we can predict. That is the space around the potential energy minimum that we can predict with good accuracy depends very much on how much the energy changes near the minimum and how well it can be approximated by a parabola. But, we are left with:
+\begin{equation*}
+\begin{split}U(x) \approx U(x)|_{x_{localMinEnergy}} + \dfrac{1}{2}\dfrac{d^2U}{dx^2}|_{x_{localMinEnergy}}(x-x_{localMinEnergy})^2\end{split}
+\end{equation*}
+\sphinxAtStartPar
+which is an SHO potential energy function.
+
+
+\subsection{The SHO mathematical model}
+\label{\detokenize{content/2_oscillations/readings-oscillators:the-sho-mathematical-model}}
+\sphinxAtStartPar
+From this potential energy, we find that a reasonable force model (\(F = -dU/dx\)) for a 1D spring system is given by:
 \begin{equation*}
 \begin{split}F_{spring} = -k |x-x_0|\end{split}
 \end{equation*}
@@ -1397,7 +1486,12 @@ where \(k\) is the spring constant for the spring and \(x_0\) is the equilibrium
 \begin{split}m\ddot{x} = -k|x-x_0|\end{split}
 \end{equation*}
 \sphinxAtStartPar
-Without much loss, we can recast the problem in terms of the distance from equilbirium (\(s=|x-x_0|\)). \sphinxstyleemphasis{As you will learn this is not a problem from vertically hanging springs near the surface of the Earth because the graviational force is constant and depends on the mass of the hanging weight.}
+Without much loss, we can recast the problem in terms of the distance from equilibrium
+\begin{equation*}
+\begin{split}s=|x-x_0|\end{split}
+\end{equation*}
+\sphinxAtStartPar
+\sphinxstyleemphasis{As you will learn this is not a problem for vertically hanging springs near the surface of the Earth because the gravitational force is constant and depends on the mass of the hanging weight.}
 
 \begin{sphinxadmonition}{note}{The SHO mathematical model}
 \begin{equation*}
@@ -1405,15 +1499,18 @@ Without much loss, we can recast the problem in terms of the distance from equil
 \end{equation*}\end{sphinxadmonition}
 
 
-\subsubsection{Finding the general solution}
-\label{\detokenize{content/2_oscillations/readings-SHO-intro:finding-the-general-solution}}
+\subsection{Finding the general solution}
+\label{\detokenize{content/2_oscillations/readings-oscillators:finding-the-general-solution}}
 \sphinxAtStartPar
-We can solve this using our typical approach to 2D linear ODEs; guess the form of the solution and check it.
+We can solve this using our typical approach to 2nd order linear ODEs; guess the form of the solution and check it. \sphinxstyleemphasis{You might have done this in the past with functions of \(\sin\) and \(\cos\). Here, we will introduce the complex form of the solution as a compliment.}
 \begin{equation*}
 \begin{split}\ddot{s} = -\frac{k}{m}s\end{split}
 \end{equation*}
 \sphinxAtStartPar
-Assume: \(s(t) = A\exp(i\omega t)\) As we will learn this form is a good guess for linear ODEs. This gives:
+Assume: \(s(t) = A\exp(i\omega t)\) As we will learn this form is a good guess for linear ODEs. You might be worried about the \(i\), which is a complex number \(i = \sqrt{-1}\). That’s ok, for now, let’s use it. Then we will see how it connects.
+
+\sphinxAtStartPar
+Putting in the guessed solution (“the ansatz”) gives:
 \begin{equation*}
 \begin{split}\ddot{s} = -\omega^2\;A\exp(i\omega t)\end{split}
 \end{equation*}
@@ -1428,7 +1525,13 @@ This solution is consistent with the model (i.e., solves the differential equati
 \begin{split}\omega^2 = \frac{k}{m} > 0\end{split}
 \end{equation*}
 \sphinxAtStartPar
-Thus, \(s(t) = A\exp(i\sqrt{\frac{k}{m}} t)\) is \sphinxstylestrong{a solution} to this problem. Notice we have to set \(A\) using initial conditions for the problem. This is called a \sphinxstylestrong{initial value problem} in mathematics. You likely have heard about the Euler formulation; it is one of the most important relationships in mathematics {[}\hyperlink{cite.content/X_additional_pages/references-page:id2}{Nahin, 2011}, \hyperlink{cite.content/X_additional_pages/references-page:id3}{Stipp, 2017}{]}. We will get into it more later. It appears below:
+Thus, \(s(t) = A\exp(i\sqrt{\frac{k}{m}} t)\) is \sphinxstylestrong{a solution} to this problem. Notice we have to set \(A\) using initial conditions for the problem. This is called a \sphinxstylestrong{initial value problem} in mathematics.
+
+
+\subsubsection{What about that pesky imaginary part?}
+\label{\detokenize{content/2_oscillations/readings-oscillators:what-about-that-pesky-imaginary-part}}
+\sphinxAtStartPar
+Our complex formulation is consistent with the \(\sin\) and \(\cos\) approach you have used in the past. You might have heard about the Euler formulation; it is one of the most important relationships in mathematics {[}\hyperlink{cite.content/X_additional_pages/references-page:id2}{Nahin, 2011}, \hyperlink{cite.content/X_additional_pages/references-page:id3}{Stipp, 2017}{]}. We will get into it more later. It appears below:
 
 \begin{sphinxadmonition}{note}{Leonhard Euler’s famous formula}
 \begin{equation*}
@@ -1444,8 +1547,8 @@ Thus, we know that our solution gives rise to real sinusoidal solutions of the f
 This probably doesn’t look quite right…there’s an \(i\) in the solution for real physical motion! We will get to that, but we need the initial conditions to do so. More importantly, there’s only one free parameter in our current solution, \(A\). Given that this equation is \sphinxstylestrong{a solution, is it the only solution?}
 
 
-\subsubsection{The order of your differential equation matters}
-\label{\detokenize{content/2_oscillations/readings-SHO-intro:the-order-of-your-differential-equation-matters}}
+\subsection{The order of your differential equation matters}
+\label{\detokenize{content/2_oscillations/readings-oscillators:the-order-of-your-differential-equation-matters}}
 \sphinxAtStartPar
 You probably already know that our general solution for the SHO is:
 \begin{equation*}
@@ -1468,11 +1571,202 @@ The number of free parameters that are set by problem conditions in an initial v
 Second order? Two conditions needed. Two free parameters to determine. Fourth order? Four conditions needed. Four free parameters to determine.
 \end{sphinxadmonition}
 
+
+\subsection{More Resources}
+\label{\detokenize{content/2_oscillations/readings-oscillators:more-resources}}
+\sphinxAtStartPar
+If you are feeling less comfortable with the harmonic oscillator or it’s been some time, I think Prof. Ten\sphinxhyphen{}Jie Lee’s lecture is very good. It’s long (a full 50 minutes), but here’s some key points:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+About 10 minutes in, he derives the full solution (we will not do this)
+
+\item {} 
+\sphinxAtStartPar
+About 17 minutes in, he shows how to get particular solutions with initial conditions (we will do this)
+
+\item {} 
+\sphinxAtStartPar
+About 26 minutes in, he completes an example where he shows how to Taylor approximate a potential to use the SHO model (we will do something like this)
+
+\item {} 
+\sphinxAtStartPar
+About 40 minutes in, he discusses the different forms of the solutions (we will do this)
+
+\item {} 
+\sphinxAtStartPar
+About 43 minutes in, he brings in complex analysis (we will do this)
+
+\end{itemize}
+
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{YouTubeVideo}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{4ysFC9vd3GE}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+m+mi}{800}\PYG{p}{,} \PYG{l+m+mi}{600}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\noindent\sphinxincludegraphics{{readings-oscillators_9_0}.jpg}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
 \sphinxstepscope
 
 
-\section{Numerically Integrating the SHO model}
-\label{\detokenize{content/2_oscillations/activity-SHO-numerical:numerically-integrating-the-sho-model}}\label{\detokenize{content/2_oscillations/activity-SHO-numerical::doc}}
+\section{Activity: Investigating the Simple Harmonic Oscillator}
+\label{\detokenize{content/2_oscillations/activity-SHO_and_dynamical_systems:activity-investigating-the-simple-harmonic-oscillator}}\label{\detokenize{content/2_oscillations/activity-SHO_and_dynamical_systems::doc}}
+
+\subsection{Reminders of the SHO and Introduction to Dynamical Systems}
+\label{\detokenize{content/2_oscillations/activity-SHO_and_dynamical_systems:reminders-of-the-sho-and-introduction-to-dynamical-systems}}
+\sphinxAtStartPar
+Look for \sphinxstylestrong{✅ Do this}
+
+
+\subsubsection{The SHO mathematical model}
+\label{\detokenize{content/2_oscillations/activity-SHO_and_dynamical_systems:the-sho-mathematical-model}}
+\sphinxAtStartPar
+We have seen for the canonical one\sphinxhyphen{}dimensional harmonic oscillator is described by the following \sphinxstylestrong{2nd order linear} differential equation:
+\begin{equation*}
+\begin{split}m\ddot{s} = -k{s}\end{split}
+\end{equation*}
+\sphinxAtStartPar
+where \(s\) represents the distance from the oscillators equilibrium position. It’s important to note that this model for a linear restoring force gives rise to at \sphinxstylestrong{econd order} differential equation. As you will see, there would be no ability for cycles or recurrent behavior without two dimensions (the two dimensions here are the position, \(s\), and velocity of the oscillator, \(\dot{s}\)). It is also important that the differential equation is \sphinxstylestrong{linear}.
+
+
+\subsubsection{Linearity of differential equations}
+\label{\detokenize{content/2_oscillations/activity-SHO_and_dynamical_systems:linearity-of-differential-equations}}
+\sphinxAtStartPar
+This is something that is easy to confuse because we use the term \sphinxstylestrong{linear} in different ways at different times. In many cases this prompts us to think of a line, so that we might think the only linear differential equations are ones where the variable of interest (in this case the position of the oscillator) appears only \sphinxstyleemphasis{linearly} in the equation.
+
+\begin{sphinxadmonition}{warning}{Warning:}
+\sphinxAtStartPar
+So you might think that Nth order differential equations of the form:
+\begin{equation*}
+\begin{split}\dfrac{d^n x}{dt^n} = c\;x\end{split}
+\end{equation*}
+\sphinxAtStartPar
+are the only ones that are linear. \sphinxstyleemphasis{Note for the harmonic oscillator \(n=2\).}
+\end{sphinxadmonition}
+
+\sphinxAtStartPar
+\sphinxstylestrong{That is not the case and this is key.}
+
+\sphinxAtStartPar
+The linearity refers to the fact that we can write the differential equation as a \sphinxstylestrong{linear combination of the derivatives}.
+
+\begin{sphinxadmonition}{tip}{Tip:}
+\sphinxAtStartPar
+So an \(N\)th linear differential equation (e.g., for position and time) can have the general form:
+\begin{equation*}
+\begin{split}\sum_{i=0}^N a_i(t)\dfrac{d^ix}{dt} = f(t)\end{split}
+\end{equation*}
+\sphinxAtStartPar
+where \(\dfrac{d^ix}{dt}\) is the \(i\)th derivative of \(x\) (e.g., \(i=0\), \(\dfrac{d^0x}{dt}=x\); \(i=1\), \(\dfrac{d^0x}{dt}=\dfrac{dx}{dt}\)) The coefficients are allowed to depend explicitly on time (i.e., \(a_i(t)\); you have probably seen \sphinxstyleemphasis{constant coefficients} in the past (where \(\dfrac{da_i(t)}{dt}=0\), i.e., \(a_i(t) =\) constant). In addition, as you can explore later, the system can be driven by a function that depends only on time (e.g., some forcing function, \(f(t)\)).
+\end{sphinxadmonition}
+
+
+\subsubsection{Why does linearity matter?}
+\label{\detokenize{content/2_oscillations/activity-SHO_and_dynamical_systems:why-does-linearity-matter}}
+\sphinxAtStartPar
+Because much of nature can be modeled with linear differential equations (or approximately so) and linear differential equations have really nice solution properties. *The solutions to linear differential equations are \sphinxstylestrong{holonomic functions}. This is just a fancy word for functions you know like polynomials, sine, cosine, exponentiale, and some special functions (e.g., Airy, Bessel, hypergeometric). But these solutions are really important because they are smooth as are their derivatives, so they have really nice properties.
+
+\sphinxAtStartPar
+In many cases, we can lean on strong properties dervied from linearity:
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+\sphinxhref{https://en.wikipedia.org/wiki/Cauchy\%E2\%80\%93Kowalevski\_theorem}{Uniqueness}: If we find a solution to the differential equation and it satisfies the boundary/initial conditions, we are guaranteed that this is the only solution.
+
+\item {} 
+\sphinxAtStartPar
+Linear combinations: The linear nature of the differential equation means linear combinations of general solutions are unchanged. We can build solutions from known general solutions.
+
+\end{itemize}
+
+\begin{sphinxadmonition}{note}{The Cauchy\sphinxhyphen{}Kowaleski theorem }
+
+\sphinxAtStartPar
+This theorem is typically called the Cauchy theorem (or the uniqueness theorem) for \sphinxhref{https://en.wikipedia.org/wiki/Augustin-Louis\_Cauchy}{Augustin Louis\sphinxhyphen{}Cachy}, a French mathematician who contributed much to the field of complex analysis. However, Cauchy only proved this theorem in a special case.  A Russian Mathematician, \sphinxhref{https://en.wikipedia.org/wiki/Sofya\_Kovalevskaya}{Sofya Kovalevskaya}, who was the first woman to earn a PhD in Mathematics (earned 1874, University of Göttingen), proved the theorem, in general, in her dissertation.
+
+\sphinxAtStartPar
+\sphinxstylestrong{So, it is really the “Kovalevskaya\sphinxhyphen{}Cauchy” theorem.}
+\end{sphinxadmonition}
+
+
+\subsubsection{General Solution to the SHO}
+\label{\detokenize{content/2_oscillations/activity-SHO_and_dynamical_systems:general-solution-to-the-sho}}
+\sphinxAtStartPar
+We can start with the differential equation:
+\begin{equation*}
+\begin{split}\ddot{x} = -\omega\end{split}
+\end{equation*}
+\sphinxAtStartPar
+where \(x\) is the position relative to equilibrium and \(\omega^2 = k/m\). We know this is a linear, second\sphinxhyphen{}order ODE, so we expect the solutions to be \sphinxhref{https://en.wikipedia.org/wiki/Holonomic\_function}{holonomic functions} \sphinxhyphen{} that is, many of the functions we have seen before. Moreover, we need something that when we take two derivatives, we get the same functions back.
+
+\sphinxAtStartPar
+\sphinxstyleemphasis{This is a key to suggest \(\sin\) and \(\cos\) as our proposed linear combination.}
+
+\sphinxAtStartPar
+Now, we have to decide how to do that. Because \sphinxstylestrong{ANY} linear combination is a good starting guess, but not all of them a reasonable guesses. How do we decide?
+
+
+\paragraph{Discussion Question}
+\label{\detokenize{content/2_oscillations/activity-SHO_and_dynamical_systems:discussion-question}}
+\sphinxAtStartPar
+\sphinxstylestrong{✅ Do this}
+
+\sphinxAtStartPar
+Below are several choices of potential general solution guesses, called “ansatz” in many books and classes. Which of them will work for us? How do you know? \sphinxstyleemphasis{Discuss with your neighbors} Demonstrate that one solution you chose works.
+\begin{equation*}
+\begin{split}x(t) = A\cos(\omega t)\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}x(t) = B\sin(\omega t)\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}x(t) = A\cos(\omega t)+B\sin(\omega t)\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}x(t) = B\sin(\omega t+ \phi_B)\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}x(t) = \sum_i^N A_i\cos(\omega_i t) + B_i\sin(\omega_i t)\end{split}
+\end{equation*}
+\sphinxAtStartPar
+\sphinxstylestrong{What other general solution forms will work?}
+
+
+\subsubsection{Particular Solutions}
+\label{\detokenize{content/2_oscillations/activity-SHO_and_dynamical_systems:particular-solutions}}
+\sphinxAtStartPar
+Let’s pick two general solutions:
+\begin{equation*}
+\begin{split}x(t) = A\cos(\omega t) + B\sin(\omega t)\end{split}
+\end{equation*}\begin{equation*}
+\begin{split}x(t) = C\sin(\omega_t + \phi_C)\end{split}
+\end{equation*}
+\sphinxAtStartPar
+\sphinxstylestrong{✅ Do this}
+\begin{itemize}
+\item {} 
+\sphinxAtStartPar
+For an SHO that is pulled to a point \(x_0\) and let go at \(t=0\), find the particular solutions using both general forms. \sphinxstylestrong{Compare and contrast these solutions with your neighbor.} What do you notice about them? How can they be made compatible with each other?
+
+\item {} 
+\sphinxAtStartPar
+Make a plot (in this notebook) of both solutions for an SHO with frequency of 100Hz that starts at \(x_0 =\) 0.1m
+
+\item {} 
+\sphinxAtStartPar
+Adjust the starting location and frequency, what do you notice?
+
+\item {} 
+\sphinxAtStartPar
+\sphinxstylestrong{If you have time}, create another solution for an SHO that is put into motion with a velocity of +0.1m/s at \(x_0=0\) at \(t=0\).
+
+\end{itemize}
+
 \begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
 
 \begin{sphinxuseclass}{cell_input}
@@ -1480,53 +1774,13 @@ Second order? Two conditions needed. Two free parameters to determine. Fourth or
 \PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
 \PYG{k+kn}{import} \PYG{n+nn}{matplotlib}\PYG{n+nn}{.}\PYG{n+nn}{pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
 
-\PYG{o}{\PYGZpc{}}\PYG{k}{matplotlib} inline
-\end{sphinxVerbatim}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{} Adjust code to fit your needs \PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
 
-\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\PYG{n}{t} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{10}\PYG{p}{,}\PYG{l+m+mf}{0.1}\PYG{p}{)}
+\PYG{n}{x} \PYG{o}{=} \PYG{n}{t}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2}
 
-\end{sphinxuseclass}
-\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
-
-\begin{sphinxuseclass}{cell_input}
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{x0} \PYG{o}{=} \PYG{l+m+mf}{1.0} \PYG{c+c1}{\PYGZsh{}\PYGZsh{} Initial position}
-\PYG{n}{v0} \PYG{o}{=} \PYG{l+m+mf}{0.0} \PYG{c+c1}{\PYGZsh{}\PYGZsh{} Initial velocity}
-
-\PYG{n}{omega} \PYG{o}{=} \PYG{l+m+mi}{2} \PYG{c+c1}{\PYGZsh{}\PYGZsh{} Angular freq. of SHO}
-
-\PYG{n}{tf} \PYG{o}{=} \PYG{l+m+mi}{5} \PYG{c+c1}{\PYGZsh{}\PYGZsh{} Model time}
-\end{sphinxVerbatim}
-
-\end{sphinxuseclass}\end{sphinxVerbatimInput}
-
-\end{sphinxuseclass}
-\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
-
-\begin{sphinxuseclass}{cell_input}
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{k}{def} \PYG{n+nf}{AnalyticalSolutionSHO}\PYG{p}{(}\PYG{n}{tf}\PYG{p}{,} \PYG{n}{deltat}\PYG{p}{,} \PYG{n}{amp}\PYG{p}{,} \PYG{n}{omega}\PYG{p}{,} \PYG{n}{t0} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{phase} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{:}
-    
-    \PYG{k}{if} \PYG{n}{t0} \PYG{o}{\PYGZlt{}} \PYG{n}{tf}\PYG{p}{:}
-        
-        \PYG{n}{t} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{n}{t0}\PYG{p}{,}\PYG{n}{tf}\PYG{p}{,}\PYG{n}{deltat}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{}\PYGZsh{} equal steps}
-        \PYG{n}{x} \PYG{o}{=} \PYG{n}{amp}\PYG{o}{*}\PYG{n}{np}\PYG{o}{.}\PYG{n}{cos}\PYG{p}{(}\PYG{n}{omega}\PYG{o}{*}\PYG{n}{t}\PYG{o}{+}\PYG{n}{phase}\PYG{p}{)}
-        
-        \PYG{k}{return} \PYG{n}{t}\PYG{p}{,}\PYG{n}{x}
-    
-    \PYG{k}{else}\PYG{p}{:}
-        
-        \PYG{k}{raise} \PYG{n+ne}{ValueError}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Final time is before start time.}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-\end{sphinxVerbatim}
-
-\end{sphinxuseclass}\end{sphinxVerbatimInput}
-
-\end{sphinxuseclass}
-\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
-
-\begin{sphinxuseclass}{cell_input}
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{t}\PYG{p}{,}\PYG{n}{x} \PYG{o}{=} \PYG{n}{AnalyticalSolutionSHO}\PYG{p}{(}\PYG{n}{tf}\PYG{p}{,} \PYG{l+m+mf}{0.02}\PYG{p}{,} \PYG{n}{x0}\PYG{p}{,} \PYG{n}{omega}\PYG{p}{)}
 \PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{n}{x}\PYG{p}{)}
 \end{sphinxVerbatim}
 
@@ -1535,209 +1789,292 @@ Second order? Two conditions needed. Two free parameters to determine. Fourth or
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-[\PYGZlt{}matplotlib.lines.Line2D at 0x115767c10\PYGZgt{}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x10eb99540\PYGZgt{}]
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{activity-SHO-numerical_4_1}.png}
+\noindent\sphinxincludegraphics{{activity-SHO_and_dynamical_systems_7_1}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
-\end{sphinxuseclass}\begin{equation*}
-\begin{split}\ddot{x} = -\omega x\end{split}
+\end{sphinxuseclass}
+
+\subsubsection{SHO properties}
+\label{\detokenize{content/2_oscillations/activity-SHO_and_dynamical_systems:sho-properties}}
+\sphinxAtStartPar
+You have likely work with the SHO in other contexts. You have learned about a variety of aspects of the SHO. Talk with your neighbor about different things you all know about the properties of the SHO (it’s motion, it’s energy, etc.).
+
+\sphinxAtStartPar
+\sphinxstylestrong{✅ Do this}
+
+\sphinxAtStartPar
+Decide on one or two things to investigate and plot with respect to the SHO. \sphinxstylestrong{Be ready to explain your figure, to discuss how to improve it, and what we can claim from it.}
+
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib}\PYG{n+nn}{.}\PYG{n+nn}{pyplot} \PYG{k}{as} \PYG{n+nn}{plt}
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{} Adjust code to fit your needs \PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+
+\PYG{n}{t} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{10}\PYG{p}{,}\PYG{l+m+mf}{0.1}\PYG{p}{)}
+\PYG{n}{x} \PYG{o}{=} \PYG{n}{t}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2}
+
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{n}{x}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x10ec95ae0\PYGZgt{}]
+\end{sphinxVerbatim}
+
+\noindent\sphinxincludegraphics{{activity-SHO_and_dynamical_systems_9_1}.png}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+
+\subsubsection{Shifting gears}
+\label{\detokenize{content/2_oscillations/activity-SHO_and_dynamical_systems:shifting-gears}}
+\sphinxAtStartPar
+We will come back to the SHO and how we complicate it soon, but we are going to use our knowledge of the SHO to bring in a new analytical tool: \sphinxhref{https://en.wikipedia.org/wiki/Dynamical\_system}{Dynamical Systems}.
+
+
+\subsection{Introduction to Dynamical Systems}
+\label{\detokenize{content/2_oscillations/activity-SHO_and_dynamical_systems:introduction-to-dynamical-systems}}
+\sphinxAtStartPar
+Dynamical systems is a branch of mathematics that seeks to investigate the time dependence of a system and characterize the families of trajectories the system can have. We don’t often solve the system for a given set of conditions in dynamical systems work. Instead, we want to \sphinxstylestrong{uncover the families of possible solutions} for a system to see what kinds of things it \sphinxstyleemphasis{can} do. An excellent book on this subject that we will draw from is Strogatz’s book on Nonlinear Dynamics {[}\hyperlink{cite.content/X_additional_pages/references-page:id6}{Strogatz, 2018}{]}; i highly recommend you find a copy for yourself.
+
+
+\subsubsection{Geometric Thinking and Phase Portraits}
+\label{\detokenize{content/2_oscillations/activity-SHO_and_dynamical_systems:geometric-thinking-and-phase-portraits}}
+\sphinxAtStartPar
+One of the first things we will use to investigate the SHO from a dynamical systems perspective is the \sphinxhref{https://en.wikipedia.org/wiki/Phase\_portrait}{phase portrait}, where we will plot the velocity against the position. We can use the phase portrait to tell us what families of solutions we might expect to see.
+
+\sphinxAtStartPar
+\sphinxstyleemphasis{Phase portraits are quite useful for second order differential equations (or any two\sphinxhyphen{}dimensional system) because we frequenty use and interpret 2D graphs.} Notice that we focused on “2nd order differential equations” not “linear 2nd order.” That is because, as we will see, \sphinxstylestrong{phase portraits are particularly useful for nonlinear 2nd order differential equations.}
+
+
+\subsubsection{Example}
+\label{\detokenize{content/2_oscillations/activity-SHO_and_dynamical_systems:example}}
+\sphinxAtStartPar
+Consider a falling object in one\sphinxhyphen{}dimension. A model for free fall where we define \(+y\) in the upward direction (away from the ground) and we neglect influences beyond the gravitational interaction leads us to:
+\begin{equation*}
+\begin{split}\ddot{y} = -g\end{split}
+\end{equation*}
+\sphinxAtStartPar
+where \(g \equiv +9.8\) m/s (that is, \(g>0\) with these definitions).
+
+\sphinxAtStartPar
+We can make a phase portrait by considering how the position, \(y\), and velocity, \(v_y\), change. We represent those changes with arrows in the same space. To do this we must separate our 2nd order ODE into two 1st order ODEs (one for \(y\) and one for \(v_y\)). That is relatively straightforward for this case:
+\begin{equation*}
+\begin{split}\dot{y} = v_y\end{split}
 \end{equation*}\begin{equation*}
-\begin{split}\dfrac{d^2x}{dt^2} = -\omega x\end{split}
+\begin{split}\dot{v_y} = -g\end{split}
+\end{equation*}
+
+\paragraph{Plot the vector field}
+\label{\detokenize{content/2_oscillations/activity-SHO_and_dynamical_systems:plot-the-vector-field}}
+\sphinxAtStartPar
+The phase portrait can be represented by arrows that indicate how the system moves through phase space. Below we have written the code to make the phase portrait for this system.
+
+\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
+
+\begin{sphinxuseclass}{cell_input}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{GravPhasePortrait}\PYG{p}{(}\PYG{n}{Y}\PYG{p}{,}\PYG{n}{t}\PYG{p}{)}\PYG{p}{:}
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} GravPhase Portrait takes the position variable y1 and velocity variable y2 }
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} and returns the vectors that describe how each change in the phase space}
+    
+    \PYG{n}{y1}\PYG{p}{,} \PYG{n}{y2} \PYG{o}{=} \PYG{n}{Y}
+    \PYG{n}{vectors} \PYG{o}{=} \PYG{p}{[}\PYG{n}{y2}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{9.8}\PYG{p}{]} \PYG{c+c1}{\PYGZsh{}\PYGZsh{} Specific to the problem}
+    \PYG{k}{return} \PYG{n}{vectors}
+
+\PYG{n}{y1} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{l+m+mf}{0.0}\PYG{p}{,} \PYG{l+m+mf}{10.0}\PYG{p}{,} \PYG{l+m+mi}{20}\PYG{p}{)}
+\PYG{n}{y2} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{20.0}\PYG{p}{,} \PYG{l+m+mf}{2.0}\PYG{p}{,} \PYG{l+m+mi}{20}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} A meshgrid makes pairs of points in a 2D space that }
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} we can use to compute the value of a vector at a }
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} location in 2D space}
+
+\PYG{n}{Y1}\PYG{p}{,} \PYG{n}{Y2} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{meshgrid}\PYG{p}{(}\PYG{n}{y1}\PYG{p}{,} \PYG{n}{y2}\PYG{p}{)}
+
+\PYG{n}{t} \PYG{o}{=} \PYG{l+m+mi}{0}
+
+\PYG{n}{u}\PYG{p}{,} \PYG{n}{v} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{Y1}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{)}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{Y2}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{)}
+
+\PYG{n}{X}\PYG{p}{,} \PYG{n}{Y} \PYG{o}{=} \PYG{n}{Y1}\PYG{o}{.}\PYG{n}{shape}
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} We need to compute the vectors in the space}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} This loop steps through each grid point (not two loops)}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} to do this calculation}
+
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{X}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{Y}\PYG{p}{)}\PYG{p}{:}
+        \PYG{n}{x} \PYG{o}{=} \PYG{n}{Y1}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,} \PYG{n}{j}\PYG{p}{]}
+        \PYG{n}{y} \PYG{o}{=} \PYG{n}{Y2}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,} \PYG{n}{j}\PYG{p}{]}
+        \PYG{n}{vectors} \PYG{o}{=} \PYG{n}{GravPhasePortrait}\PYG{p}{(}\PYG{p}{[}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{]}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}
+        \PYG{n}{u}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{n}{vectors}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+        \PYG{n}{v}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{n}{vectors}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} A quiver plot is a common way to present a vector field}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} THe arrows indicate the direction of the \PYGZdq{}flow\PYGZdq{} of the dynamical system  }
+\PYG{n}{ax} \PYG{o}{=} \PYG{n}{plt}\PYG{o}{.}\PYG{n}{figure}\PYG{p}{(}\PYG{n}{figsize}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{,}\PYG{l+m+mi}{6}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{Q} \PYG{o}{=} \PYG{n}{plt}\PYG{o}{.}\PYG{n}{quiver}\PYG{p}{(}\PYG{n}{Y1}\PYG{p}{,} \PYG{n}{Y2}\PYG{p}{,} \PYG{n}{u}\PYG{p}{,} \PYG{n}{v}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{.1}\PYG{p}{,}\PYG{l+m+mi}{11}\PYG{p}{]}\PYG{p}{,}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}k}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{21}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}k}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{xlabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}y\PYGZdl{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{ylabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}v\PYGZus{}y\PYGZdl{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} Plotting a trajectory}
+\PYG{n}{y0}\PYG{p}{,} \PYG{n}{v0}\PYG{p}{,} \PYG{n}{g} \PYG{o}{=} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mf}{9.8}
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} To do this we solved the kinematic equations for}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} the velocity in terms of the position}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} In some cases, we can do this, in others,}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} we will have generate data based on time }
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} and plot things together (see below), but a more}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} useful tool is to numerically solve the problem}
+
+\PYG{n}{y\PYGZus{}traj} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{l+m+mf}{0.1}\PYG{p}{,}\PYG{l+m+mi}{10}\PYG{p}{,}\PYG{l+m+mi}{100}\PYG{p}{)}
+\PYG{n}{v\PYGZus{}traj} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{o}{*}\PYG{n}{np}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{v0}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{g}\PYG{o}{*}\PYG{p}{(}\PYG{n}{y\PYGZus{}traj}\PYG{o}{\PYGZhy{}}\PYG{n}{y0}\PYG{p}{)}\PYG{p}{)} 
+\PYG{c+c1}{\PYGZsh{}print(2*g*(y\PYGZus{}traj\PYGZhy{}y0)**2)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{y\PYGZus{}traj}\PYG{p}{,}\PYG{n}{v\PYGZus{}traj}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}b}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+\end{sphinxuseclass}\end{sphinxVerbatimInput}
+\begin{sphinxVerbatimOutput}
+
+\begin{sphinxuseclass}{cell_output}
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+[\PYGZlt{}matplotlib.lines.Line2D at 0x10ed40340\PYGZgt{}]
+\end{sphinxVerbatim}
+
+\noindent\sphinxincludegraphics{{activity-SHO_and_dynamical_systems_12_1}.png}
+
+\end{sphinxuseclass}\end{sphinxVerbatimOutput}
+
+\end{sphinxuseclass}
+
+\subsubsection{Discussion Question}
+\label{\detokenize{content/2_oscillations/activity-SHO_and_dynamical_systems:id2}}
+\sphinxAtStartPar
+\sphinxstylestrong{✅ Do this}
+
+\sphinxAtStartPar
+Work with your neighbors to make sense of this code and the resulting plot. Try to write down what each line is doing and explain it to each other. Then, try to interpret the plot. Adjust the parameters and see what happens? What can you learn about a falling object from this?
+
+
+\subsection{Adding Drag}
+\label{\detokenize{content/2_oscillations/activity-SHO_and_dynamical_systems:adding-drag}}
+\sphinxAtStartPar
+We are going to explore ODEs that have multiple terms next week. But ti get started consider a 1 dimensional fall object that experiences linear drag. The mathematical model we use for this is given by the following linear 2nd order differential equation.
+\begin{equation*}
+\begin{split}m\ddot{x} = -m*g + \beta*\dot{x}\end{split}
 \end{equation*}
 \sphinxAtStartPar
-Introduce \(u=\dot{x}\), so that \(\dot{u}=\ddot{x}\). We can produce two coupled, linear, first order, ODEs:
+Linear drag is the simplest model of drag. It is useful in only a few cases (small and slow moving objects). The \sphinxhref{https://en.wikipedia.org/wiki/Reynolds\_number\#:~:text=The\%20Reynolds\%20number\%20is\%20the,the\%20interior\%20of\%20a\%20pipe.}{REynolds number} characterizes the relationship between inertial (weight) and viscous (drag) forces. Low Reynolds? Laminar flow! High Reynolds? Turbulence! One of the most interesting papers about this is called \sphinxhref{http://www.damtp.cam.ac.uk/user/gold/pdfs/purcell.pdf}{“Life at Low Reynolds Number”} by E.M. Purcell. It’s a great, short read.
+
+\sphinxAtStartPar
+We will show (not today) that we can derive trajectories for this solution of the form:
 \begin{equation*}
-\begin{split}\dot{u} = -\omega x\end{split}
+\begin{split}v(t) = -\dfrac{g}{\beta}+\dfrac{g}{\beta} e^{-\beta t}\end{split}
 \end{equation*}\begin{equation*}
-\begin{split}\dot{x} = u\end{split}
+\begin{split}y(t) = \int v(t) dt = y_0 - \dfrac{g}{\beta}t + \dfrac{g}{\beta^2}\left(1-e^{-\beta t}\right)\end{split}
 \end{equation*}
 \sphinxAtStartPar
-Imagine we allow ourselves to take a small step in time \(\Delta t\), how would \(u\) and \(x\) change in that time?
-\begin{equation*}
-\begin{split}\dot{x} = \dfrac{dx}{dt} = \lim_{\Delta t \rightarrow 0} \dfrac{x(t+\Delta t) - x(t)}{\Delta t} = u\end{split}
-\end{equation*}
-\sphinxAtStartPar
-So that,
-\begin{equation*}
-\begin{split}x(t+\Delta t) \approx u\Delta t + x(t)\end{split}
-\end{equation*}
-\sphinxAtStartPar
-Similarly,
-\$\(u(t+\Delta t) \approx -\omega x \Delta t + u(t)\)\$
+Below we have constructed a code that explores the phase portrait of a falling object with drag
 
 
-\subsection{Developing a Numerical Routine}
-\label{\detokenize{content/2_oscillations/activity-SHO-numerical:developing-a-numerical-routine}}
+\subsubsection{Discussion Question}
+\label{\detokenize{content/2_oscillations/activity-SHO_and_dynamical_systems:id3}}
 \sphinxAtStartPar
-Notice we have two equations that describe how to obtain new values of location (\(x\)) and velocity (\(u\)) at a time \(t+\Delta t\) given information about the system at some earlier time, \(t\), (or at the least, considering the location and velocity at time \(t\)), which we take as a pair of \sphinxstylestrong{update equations} where the equality holds:
-\begin{equation*}
-\begin{split}x(t+\Delta t) = u\Delta t + x(t)\end{split}
-\end{equation*}\begin{equation*}
-\begin{split}u(t+\Delta t) = -\omega x \Delta t + u(t)\end{split}
-\end{equation*}
-\sphinxAtStartPar
-That is, they can potentially tell us at least in a short time \(\Delta t\) that we can estimate the velocity (\(u\)) and location (\(x\)) of the oscillator. \sphinxstyleemphasis{We have not shown these can be used repeatedly to produce an estimated trajectory yet.} As you might expect, these are better update equations when \(\Delta t\) is small. But there’s another ambiguity:
-\begin{equation*}
-\begin{split}x(t+\Delta t) = \underbrace{u}_{\mathtt{?}}\Delta t + x(t)\end{split}
-\end{equation*}\begin{equation*}
-\begin{split}u(t+\Delta t) = -\omega \underbrace{x}_{\mathtt{?}} \Delta t + u(t)\end{split}
-\end{equation*}
-\sphinxAtStartPar
-The quantities with the underbrace are ambiguous. Do we use the values of \(x\) and \(u\) at a time \(t\), \(t+\Delta t\), or something else?!
-
-
-\subsubsection{The choice matters}
-\label{\detokenize{content/2_oscillations/activity-SHO-numerical:the-choice-matters}}
-\sphinxAtStartPar
-Let’s illustrate this with making different choices using the following routine:
-
-\begin{sphinxadmonition}{note}{Basic ODE Integration Routine}
-
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{initialCond0} \PYG{o}{=} \PYG{n}{VAL0}
-\PYG{n}{initialCond1} \PYG{o}{=} \PYG{n}{VAL1}
-\PYG{o}{.}\PYG{o}{.}\PYG{o}{.}
-\PYG{n}{initialCondN} \PYG{o}{=} \PYG{n}{VALN}
-
-\PYG{n}{startTime} \PYG{o}{=} \PYG{n}{START}
-\PYG{n}{stopTime} \PYG{o}{=} \PYG{n}{STOP}
-\PYG{n}{steps} \PYG{o}{=}  \PYG{n}{STEPS}
-\PYG{n}{deltaT} \PYG{o}{=} \PYG{p}{(}\PYG{n}{stopTime}\PYG{o}{\PYGZhy{}}\PYG{n}{startTime}\PYG{p}{)}\PYG{o}{/}\PYG{n}{steps}
-
-\PYG{n}{t} \PYG{o}{=} \PYG{n}{startTime}
-
-\PYG{k}{while} \PYG{n}{t} \PYG{o}{\PYGZlt{}} \PYG{n}{stopTime}\PYG{p}{:}
-
-    \PYG{n}{updatedVal0} \PYG{o}{=} \PYG{n}{updateEqn0}\PYG{p}{(}\PYG{p}{)}
-    \PYG{n}{updatedVal1} \PYG{o}{=} \PYG{n}{updateEqn1}\PYG{p}{(}\PYG{p}{)}
-    \PYG{o}{.}\PYG{o}{.}\PYG{o}{.}
-    \PYG{n}{updatedValN} \PYG{o}{=} \PYG{n}{updateEqnN}\PYG{p}{(}\PYG{p}{)}
-    
-    \PYG{n}{store}\PYG{p}{(}\PYG{n}{updatedVals}\PYG{p}{)}
-    
-    \PYG{n}{t} \PYG{o}{+}\PYG{o}{=} \PYG{n}{deltaT}
-\end{sphinxVerbatim}
-\end{sphinxadmonition}
-
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-
-\end{sphinxVerbatim}
+\sphinxstylestrong{✅ Do this}
 
 \sphinxAtStartPar
-This might seem quite abstract, so let’s make a table of choices for our integration routines:
-
-
-\begin{savenotes}\sphinxattablestart
-\centering
-\begin{tabulary}{\linewidth}[t]{|T|T|T|T|}
-\hline
-\sphinxstyletheadfamily 
-\sphinxAtStartPar
-Approach
-&\sphinxstyletheadfamily 
-\sphinxAtStartPar
-Value of x
-&\sphinxstyletheadfamily 
-\sphinxAtStartPar
-Value of u
-&\sphinxstyletheadfamily 
-\sphinxAtStartPar
-Considerations
-\\
-\hline
-\sphinxAtStartPar
-1
-&
-\sphinxAtStartPar
-\(x(t)\)
-&
-\sphinxAtStartPar
-\(u(t)\)
-&
-\sphinxAtStartPar
-We have both of these values to start
-\\
-\hline
-\sphinxAtStartPar
-2
-&
-\sphinxAtStartPar
-\(x(t)\)
-&
-\sphinxAtStartPar
-\(u(t+\Delta t)\)
-&
-\sphinxAtStartPar
-For this, we will need a \(u(t+\Delta t)\) estimate first
-\\
-\hline
-\sphinxAtStartPar
-3
-&
-\sphinxAtStartPar
-\(x(t+\Delta t)\)
-&
-\sphinxAtStartPar
-\(u(t)\)
-&
-\sphinxAtStartPar
-Hmm…we will need a \(x(t+\Delta t)\) estimate first
-\\
-\hline
-\sphinxAtStartPar
-4
-&
-\sphinxAtStartPar
-\(x(t+\Delta t)\)
-&
-\sphinxAtStartPar
-\(u(t+\Delta t)\)
-&
-\sphinxAtStartPar
-Well this doesn’t seem possible to get both estimates at the same time!
-\\
-\hline
-\end{tabulary}
-\par
-\sphinxattableend\end{savenotes}
-
-\sphinxAtStartPar
-It looks like we can try approach 1, 2, and 3 without much fuss. Let’s write a few functions.
+Work with your neighbors to make sense of this code and the resulting plots. Try to write down what each line is doing (you’ve done this already) and explain it to each other. Then, try to interpret the plots. Adjust the parameters and see what happens? What can you learn about a falling object with drag from this?
 
 \begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
 
 \begin{sphinxuseclass}{cell_input}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{N} \PYG{o}{=} \PYG{l+m+mi}{100}
-\PYG{n}{steps} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{arange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{N}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}
-\PYG{n}{deltaT} \PYG{o}{=} \PYG{n}{tf}\PYG{o}{/}\PYG{n}{N}
-\PYG{n}{time} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{tf}\PYG{p}{,}\PYG{n}{N}\PYG{p}{)}
-\end{sphinxVerbatim}
+\PYG{k}{def} \PYG{n+nf}{GravWithLinearDragPhasePortrait}\PYG{p}{(}\PYG{n}{Y}\PYG{p}{,}\PYG{n}{t}\PYG{p}{,}\PYG{n}{beta} \PYG{o}{=} \PYG{l+m+mf}{0.1}\PYG{p}{)}\PYG{p}{:}
 
-\end{sphinxuseclass}\end{sphinxVerbatimInput}
-
-\end{sphinxuseclass}
-\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
-
-\begin{sphinxuseclass}{cell_input}
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{c+c1}{\PYGZsh{}\PYGZsh{}Approach 1}
-\PYG{n}{xVals1} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}
-\PYG{n}{uVals1} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}
-
-\PYG{n}{xVals1}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{x0}
-\PYG{n}{uVals1}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{v0}
-
-\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{steps}\PYG{p}{:}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} GravWithLinearDragPhasePortrait takes the position variable y1 and velocity variable y2 }
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} and returns the vectors that describe how each change in the phase space}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} the parameter beta lets you adjust the strength of the linear drag}
     
-    \PYG{n}{uVals1}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{uVals1}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+} \PYG{n}{xVals1}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{*}\PYG{n}{deltaT}
-    \PYG{n}{xVals1}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{xVals1}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{omega}\PYG{o}{*}\PYG{n}{uVals1}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{*}\PYG{n}{deltaT}
+    \PYG{n}{y1}\PYG{p}{,} \PYG{n}{y2} \PYG{o}{=} \PYG{n}{Y}
+    \PYG{n}{vectors} \PYG{o}{=} \PYG{p}{[}\PYG{n}{y2}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{9.8}\PYG{o}{\PYGZhy{}}\PYG{n}{beta}\PYG{o}{*}\PYG{n}{y2}\PYG{p}{]} \PYG{c+c1}{\PYGZsh{}\PYGZsh{} Specific to the problem}
+    \PYG{k}{return} \PYG{n}{vectors}
 
-\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,} \PYG{n}{x}\PYG{p}{)}
-\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{time}\PYG{p}{,} \PYG{n}{xVals1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}\PYGZhy{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{beta} \PYG{o}{=} \PYG{l+m+mf}{0.3} \PYG{c+c1}{\PYGZsh{}\PYGZsh{} DRAG COEFF}
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{} All the same code below \PYGZsh{}}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+
+\PYG{n}{y1} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{l+m+mf}{0.0}\PYG{p}{,} \PYG{l+m+mf}{10.0}\PYG{p}{,} \PYG{l+m+mi}{20}\PYG{p}{)}
+\PYG{n}{y2} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{20.0}\PYG{p}{,} \PYG{l+m+mf}{2.0}\PYG{p}{,} \PYG{l+m+mi}{20}\PYG{p}{)}
+
+\PYG{n}{Y1}\PYG{p}{,} \PYG{n}{Y2} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{meshgrid}\PYG{p}{(}\PYG{n}{y1}\PYG{p}{,} \PYG{n}{y2}\PYG{p}{)}
+
+\PYG{n}{t} \PYG{o}{=} \PYG{l+m+mi}{0}
+
+\PYG{n}{u}\PYG{p}{,} \PYG{n}{v} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{Y1}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{)}\PYG{p}{,} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{Y2}\PYG{o}{.}\PYG{n}{shape}\PYG{p}{)}
+
+\PYG{n}{X}\PYG{p}{,} \PYG{n}{Y} \PYG{o}{=} \PYG{n}{Y1}\PYG{o}{.}\PYG{n}{shape}
+
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{X}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{Y}\PYG{p}{)}\PYG{p}{:}
+        \PYG{n}{x} \PYG{o}{=} \PYG{n}{Y1}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,} \PYG{n}{j}\PYG{p}{]}
+        \PYG{n}{y} \PYG{o}{=} \PYG{n}{Y2}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,} \PYG{n}{j}\PYG{p}{]}
+        \PYG{n}{vectors} \PYG{o}{=} \PYG{n}{GravWithLinearDragPhasePortrait}\PYG{p}{(}\PYG{p}{[}\PYG{n}{x}\PYG{p}{,} \PYG{n}{y}\PYG{p}{]}\PYG{p}{,} \PYG{n}{t}\PYG{p}{,} \PYG{n}{beta}\PYG{p}{)}
+        \PYG{n}{u}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{n}{vectors}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+        \PYG{n}{v}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{n}{vectors}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}
+
+\PYG{n}{ax} \PYG{o}{=} \PYG{n}{plt}\PYG{o}{.}\PYG{n}{figure}\PYG{p}{(}\PYG{n}{figsize}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{,}\PYG{l+m+mi}{6}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{Q} \PYG{o}{=} \PYG{n}{plt}\PYG{o}{.}\PYG{n}{quiver}\PYG{p}{(}\PYG{n}{Y1}\PYG{p}{,} \PYG{n}{Y2}\PYG{p}{,} \PYG{n}{u}\PYG{p}{,} \PYG{n}{v}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{k}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{.1}\PYG{p}{,}\PYG{l+m+mi}{11}\PYG{p}{]}\PYG{p}{,}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}k}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{21}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}k}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{xlabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}y\PYGZdl{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{ylabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}v\PYGZus{}y\PYGZdl{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{} Trajectory}
+\PYG{n}{t} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{l+m+mf}{0.1}\PYG{p}{,}\PYG{l+m+mi}{10}\PYG{p}{,}\PYG{l+m+mi}{1000}\PYG{p}{)}
+
+\PYG{n}{y0}\PYG{p}{,} \PYG{n}{v0}\PYG{p}{,} \PYG{n}{g} \PYG{o}{=} \PYG{l+m+mf}{10.0}\PYG{p}{,} \PYG{l+m+mf}{0.0}\PYG{p}{,} \PYG{l+m+mf}{9.8}
+\PYG{n}{v\PYGZus{}traj} \PYG{o}{=} \PYG{n}{v0}\PYG{o}{\PYGZhy{}}\PYG{n}{g}\PYG{o}{/}\PYG{n}{beta}\PYG{o}{+}\PYG{p}{(}\PYG{n}{g}\PYG{o}{/}\PYG{n}{beta}\PYG{p}{)}\PYG{o}{*}\PYG{n}{np}\PYG{o}{.}\PYG{n}{exp}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{beta}\PYG{o}{*}\PYG{n}{t}\PYG{p}{)}
+\PYG{n}{y\PYGZus{}traj} \PYG{o}{=} \PYG{n}{y0} \PYG{o}{\PYGZhy{}} \PYG{p}{(}\PYG{n}{g}\PYG{o}{/}\PYG{n}{beta}\PYG{p}{)}\PYG{o}{*}\PYG{n}{t} \PYG{o}{+} \PYG{p}{(}\PYG{n}{g}\PYG{o}{/}\PYG{n}{beta}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{*}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{n}{np}\PYG{o}{.}\PYG{n}{exp}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{beta}\PYG{o}{*}\PYG{n}{t}\PYG{p}{)}\PYG{p}{)}
+
+\PYG{n}{y0}\PYG{p}{,} \PYG{n}{v0}\PYG{p}{,} \PYG{n}{g} \PYG{o}{=} \PYG{l+m+mf}{10.0}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{2.0}\PYG{p}{,} \PYG{l+m+mf}{9.8}
+\PYG{n}{v\PYGZus{}traj2} \PYG{o}{=} \PYG{n}{v0}\PYG{o}{\PYGZhy{}}\PYG{n}{g}\PYG{o}{/}\PYG{n}{beta}\PYG{o}{+}\PYG{p}{(}\PYG{n}{g}\PYG{o}{/}\PYG{n}{beta}\PYG{p}{)}\PYG{o}{*}\PYG{n}{np}\PYG{o}{.}\PYG{n}{exp}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{beta}\PYG{o}{*}\PYG{n}{t}\PYG{p}{)}
+\PYG{n}{y\PYGZus{}traj2} \PYG{o}{=} \PYG{n}{y0} \PYG{o}{\PYGZhy{}} \PYG{p}{(}\PYG{n}{g}\PYG{o}{/}\PYG{n}{beta}\PYG{p}{)}\PYG{o}{*}\PYG{n}{t} \PYG{o}{+} \PYG{p}{(}\PYG{n}{g}\PYG{o}{/}\PYG{n}{beta}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{*}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{n}{np}\PYG{o}{.}\PYG{n}{exp}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{beta}\PYG{o}{*}\PYG{n}{t}\PYG{p}{)}\PYG{p}{)}
+
+\PYG{n}{y0}\PYG{p}{,} \PYG{n}{v0}\PYG{p}{,} \PYG{n}{g} \PYG{o}{=} \PYG{l+m+mf}{9.0}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{2.0}\PYG{p}{,} \PYG{l+m+mf}{9.8}
+\PYG{n}{v\PYGZus{}traj3} \PYG{o}{=} \PYG{n}{v0}\PYG{o}{\PYGZhy{}}\PYG{n}{g}\PYG{o}{/}\PYG{n}{beta}\PYG{o}{+}\PYG{p}{(}\PYG{n}{g}\PYG{o}{/}\PYG{n}{beta}\PYG{p}{)}\PYG{o}{*}\PYG{n}{np}\PYG{o}{.}\PYG{n}{exp}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{beta}\PYG{o}{*}\PYG{n}{t}\PYG{p}{)}
+\PYG{n}{y\PYGZus{}traj3} \PYG{o}{=} \PYG{n}{y0} \PYG{o}{\PYGZhy{}} \PYG{p}{(}\PYG{n}{g}\PYG{o}{/}\PYG{n}{beta}\PYG{p}{)}\PYG{o}{*}\PYG{n}{t} \PYG{o}{+} \PYG{p}{(}\PYG{n}{g}\PYG{o}{/}\PYG{n}{beta}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{o}{*}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{n}{np}\PYG{o}{.}\PYG{n}{exp}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{beta}\PYG{o}{*}\PYG{n}{t}\PYG{p}{)}\PYG{p}{)}
+
+
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{y\PYGZus{}traj}\PYG{p}{,} \PYG{n}{v\PYGZus{}traj}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}b}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{y\PYGZus{}traj2}\PYG{p}{,} \PYG{n}{v\PYGZus{}traj2}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}g}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{y\PYGZus{}traj3}\PYG{p}{,} \PYG{n}{v\PYGZus{}traj3}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}r}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+
+
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{xlabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}y\PYGZdl{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{ylabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZdl{}v\PYGZus{}y\PYGZdl{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{xlim}\PYG{p}{(}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{11}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{ylim}\PYG{p}{(}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{20}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{]}\PYG{p}{)}
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimInput}
@@ -1745,125 +2082,54 @@ It looks like we can try approach 1, 2, and 3 without much fuss. Let’s write a
 
 \begin{sphinxuseclass}{cell_output}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-[\PYGZlt{}matplotlib.lines.Line2D at 0x115922410\PYGZgt{}]
+(\PYGZhy{}20.0, 5.0)
 \end{sphinxVerbatim}
 
-\noindent\sphinxincludegraphics{{activity-SHO-numerical_10_1}.png}
+\noindent\sphinxincludegraphics{{activity-SHO_and_dynamical_systems_15_1}.png}
 
 \end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
 \end{sphinxuseclass}
+
+\subsubsection{Discussion Question}
+\label{\detokenize{content/2_oscillations/activity-SHO_and_dynamical_systems:id4}}
+\sphinxAtStartPar
+\sphinxstylestrong{✅ Do this}
+
+\sphinxAtStartPar
+Compare the phase potraits of the no drag and drag case. What do they tell you about the families of solutions? Discuss with your neighbors.
+
+
+\subsection{Back to the SHO}
+\label{\detokenize{content/2_oscillations/activity-SHO_and_dynamical_systems:back-to-the-sho}}
+\sphinxAtStartPar
+\sphinxstylestrong{✅ Do this}
+
+\sphinxAtStartPar
+Use the above code to make a phase portrait of the SHO. Add trajectories to the portrait. What does this tell you about the SHO?
+
 \begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
 
 \begin{sphinxuseclass}{cell_input}
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{xVals2} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}
-\PYG{n}{uVals2} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}
-
-\PYG{n}{xVals2}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{x0}
-\PYG{n}{uVals2}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{v0}
-
-\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{steps}\PYG{p}{:}
-    
-    \PYG{n}{uVals2}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{uVals2}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+} \PYG{n}{xVals2}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{*}\PYG{n}{deltaT}
-    \PYG{n}{xVals2}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{xVals2}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{omega}\PYG{o}{*}\PYG{n}{uVals2}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{*}\PYG{n}{deltaT}
-
-\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,} \PYG{n}{x}\PYG{p}{)}
-\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{time}\PYG{p}{,} \PYG{n}{xVals2}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}\PYGZhy{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{} Your code here}
 \end{sphinxVerbatim}
 
 \end{sphinxuseclass}\end{sphinxVerbatimInput}
-\begin{sphinxVerbatimOutput}
-
-\begin{sphinxuseclass}{cell_output}
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-[\PYGZlt{}matplotlib.lines.Line2D at 0x1159a15a0\PYGZgt{}]
-\end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{activity-SHO-numerical_11_1}.png}
-
-\end{sphinxuseclass}\end{sphinxVerbatimOutput}
 
 \end{sphinxuseclass}
-\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
 
-\begin{sphinxuseclass}{cell_input}
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{xVals3} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}
-\PYG{n}{uVals3} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{zeros}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}
+\subsection{Lingering Questions}
+\label{\detokenize{content/2_oscillations/activity-SHO_and_dynamical_systems:lingering-questions}}
+\sphinxAtStartPar
+\sphinxstylestrong{✅ Do this}
 
-\PYG{n}{xVals3}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{x0}
-\PYG{n}{uVals3}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{=} \PYG{n}{v0}
+\sphinxAtStartPar
+What lingering questions do you have? What should we explore more?
 
-\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{steps}\PYG{p}{:}
-    
-    \PYG{n}{xVals3}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{xVals3}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{omega}\PYG{o}{*}\PYG{n}{uVals3}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{*}\PYG{n}{deltaT}
-    \PYG{n}{uVals3}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{uVals3}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+} \PYG{n}{xVals3}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{*}\PYG{n}{deltaT}
+\sphinxAtStartPar
+Notes here
 
-\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,} \PYG{n}{x}\PYG{p}{)}
-\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{time}\PYG{p}{,} \PYG{n}{xVals3}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}\PYGZhy{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-\end{sphinxVerbatim}
-
-\end{sphinxuseclass}\end{sphinxVerbatimInput}
-\begin{sphinxVerbatimOutput}
-
-\begin{sphinxuseclass}{cell_output}
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-[\PYGZlt{}matplotlib.lines.Line2D at 0x115a0d7e0\PYGZgt{}]
-\end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{activity-SHO-numerical_12_1}.png}
-
-\end{sphinxuseclass}\end{sphinxVerbatimOutput}
-
-\end{sphinxuseclass}
-\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
-
-\begin{sphinxuseclass}{cell_input}
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{plt}\PYG{o}{.}\PYG{n}{figure}\PYG{p}{(}\PYG{n}{figsize}\PYG{o}{=}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{,}\PYG{l+m+mi}{6}\PYG{p}{)}\PYG{p}{)}
-\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,} \PYG{n}{x}\PYG{p}{)}
-\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{time}\PYG{p}{,} \PYG{n}{xVals1}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}\PYGZhy{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{time}\PYG{p}{,} \PYG{n}{xVals2}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}\PYGZhy{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{time}\PYG{p}{,} \PYG{n}{xVals3}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{\PYGZhy{}\PYGZhy{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
-\PYG{n}{plt}\PYG{o}{.}\PYG{n}{legend}\PYG{p}{(}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{True}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Approach 1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Approach 2}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Approach 3}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{)}
-\end{sphinxVerbatim}
-
-\end{sphinxuseclass}\end{sphinxVerbatimInput}
-\begin{sphinxVerbatimOutput}
-
-\begin{sphinxuseclass}{cell_output}
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYGZlt{}matplotlib.legend.Legend at 0x115a34d00\PYGZgt{}
-\end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{activity-SHO-numerical_13_1}.png}
-
-\end{sphinxuseclass}\end{sphinxVerbatimOutput}
-
-\end{sphinxuseclass}
-\begin{sphinxuseclass}{cell}\begin{sphinxVerbatimInput}
-
-\begin{sphinxuseclass}{cell_input}
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{xVals1}\PYG{o}{\PYGZhy{}}\PYG{n}{xVals2}\PYG{p}{)}\PYG{p}{)}
-\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{xVals1}\PYG{o}{\PYGZhy{}}\PYG{n}{xVals3}\PYG{p}{)}\PYG{p}{)}
-\PYG{n}{plt}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{xVals2}\PYG{o}{\PYGZhy{}}\PYG{n}{xVals3}\PYG{p}{)}\PYG{p}{)}
-\end{sphinxVerbatim}
-
-\end{sphinxuseclass}\end{sphinxVerbatimInput}
-\begin{sphinxVerbatimOutput}
-
-\begin{sphinxuseclass}{cell_output}
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-[\PYGZlt{}matplotlib.lines.Line2D at 0x115aee6b0\PYGZgt{}]
-\end{sphinxVerbatim}
-
-\noindent\sphinxincludegraphics{{activity-SHO-numerical_14_1}.png}
-
-\end{sphinxuseclass}\end{sphinxVerbatimOutput}
-
-\end{sphinxuseclass}
 \sphinxstepscope
 
 
@@ -1882,6 +2148,9 @@ Paul J Nahin. \sphinxstyleemphasis{Dr. Euler's Fabulous Formula}. Princeton Uni
 \bibitem[Sti17]{content/X_additional_pages/references-page:id3}
 \sphinxAtStartPar
 David Stipp. \sphinxstyleemphasis{A most elegant equation: Euler's formula and the beauty of mathematics}. Hachette UK, 2017.
+\bibitem[Str18]{content/X_additional_pages/references-page:id6}
+\sphinxAtStartPar
+Steven H Strogatz. \sphinxstyleemphasis{Nonlinear dynamics and chaos: with applications to physics, biology, chemistry, and engineering}. CRC press, 2018.
 \end{sphinxthebibliography}
 
 

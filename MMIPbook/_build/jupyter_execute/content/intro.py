@@ -16,11 +16,14 @@
 # `````{admonition} Updates
 # :class: tip
 # 
+# 
 # **06 Sept 22**
+# - [Class notes](./2_oscillations/notes-SHO_and_dynamical_systems.md) have been posted along with some scans of book sections
+#     - I will add the Phase Portrait notes tonight
 # - A [preliminary rubric](./0_course/rubric.md) for the first project is posted. A detailed breakdown is coming before next class.
 # 
 # **05 Sept 22**
-# - Tuesday's [in-class activity](https://dannycaballero.info/phy415msu/content/2_oscillations/activity-SHO_and_dynamical_systems.html) has been posted.
+# - Tuesday's [in-class activity](./2_oscillations/activity-SHO_and_dynamical_systems.ipynb) has been posted.
 #     - Review as you see fit; we will go over the whole thing together
 # 
 # **02 Sept 22**
@@ -30,6 +33,8 @@
 # - Readings have been updated for next week: [Read Oscillations](./2_oscillations/readings-oscillators.ipynb)
 # - Make sure to complete the [Reading Questions Form](./0_course/reading_questions.md) before class Tuesday morning
 # - More project details are coming, a draft project rubric is forthcoming, and activities for class this coming week will be posted by Monday
+# 
+# [News Archive](./0_course/news_archive.md)
 # 
 # `````
 

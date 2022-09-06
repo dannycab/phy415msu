@@ -743,7 +743,7 @@ title="Print to PDF"
 <h3>General Solution to the SHO<a class="headerlink" href="#general-solution-to-the-sho" title="Permalink to this headline">#</a></h3>
 <p>We can start with the differential equation:</p>
 <div class="math notranslate nohighlight">
-\[\ddot{x} = -\omega\]</div>
+\[\ddot{x} = -\omega^2 x\]</div>
 <p>where <span class="math notranslate nohighlight">\(x\)</span> is the position relative to equilibrium and <span class="math notranslate nohighlight">\(\omega^2 = k/m\)</span>. We know this is a linear, second-order ODE, so we expect the solutions to be <a class="reference external" href="https://en.wikipedia.org/wiki/Holonomic_function">holonomic functions</a> - that is, many of the functions we have seen before. Moreover, we need something that when we take two derivatives, we get the same functions back.</p>
 <p><em>This is a key to suggest <span class="math notranslate nohighlight">\(\sin\)</span> and <span class="math notranslate nohighlight">\(\cos\)</span> as our proposed linear combination.</em></p>
 <p>Now, we have to decide how to do that. Because <strong>ANY</strong> linear combination is a good starting guess, but not all of them a reasonable guesses. How do we decide?</p>
@@ -770,7 +770,7 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[x(t) = A\cos(\omega t) + B\sin(\omega t)\]</div>
 <div class="math notranslate nohighlight">
-\[x(t) = C\sin(\omega_t + \phi_C)\]</div>
+\[x(t) = C\sin(\omega t + \phi_C)\]</div>
 <p><strong>✅ Do this</strong></p>
 <ul class="simple">
 <li><p>For an SHO that is pulled to a point <span class="math notranslate nohighlight">\(x_0\)</span> and let go at <span class="math notranslate nohighlight">\(t=0\)</span>, find the particular solutions using both general forms. <strong>Compare and contrast these solutions with your neighbor.</strong> What do you notice about them? How can they be made compatible with each other?</p></li>
@@ -795,7 +795,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x115687d00&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x115583b50&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/activity-SHO_and_dynamical_systems_7_1.png" src="../../_images/activity-SHO_and_dynamical_systems_7_1.png" />
@@ -824,7 +824,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11588c190&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11571ffd0&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/activity-SHO_and_dynamical_systems_9_1.png" src="../../_images/activity-SHO_and_dynamical_systems_9_1.png" />
@@ -924,7 +924,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1158fa830&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1157c22f0&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/activity-SHO_and_dynamical_systems_12_1.png" src="../../_images/activity-SHO_and_dynamical_systems_12_1.png" />

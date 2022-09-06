@@ -21,5 +21,6 @@ chapters:
 - file: content/2_oscillations/readings-oscillators  
   sections:
     - file: content/2_oscillations/activity-SHO_and_dynamical_systems
+    - file: content/2_oscillations/notes-SHO_and_dynamical_systems
     # - file: content/2_oscillations/activity-SHO-numerical
 - file: content/X_additional_pages/references-page

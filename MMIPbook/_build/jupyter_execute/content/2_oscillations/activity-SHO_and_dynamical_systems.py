@@ -120,6 +120,8 @@ plt.plot(t,x)
 # 
 # Decide on one or two things to investigate and plot with respect to the SHO. **Be ready to explain your figure, to discuss how to improve it, and what we can claim from it.** 
 
+# 
+
 # In[2]:
 
 

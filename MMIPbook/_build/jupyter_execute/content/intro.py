@@ -7,8 +7,17 @@
 # 
 # 
 
+# In[ ]:
+
+
+
+
+
 # `````{admonition} Updates
 # :class: tip
+# 
+# **06 Sept 22**
+# - A [preliminary rubric](./0_course/rubric.md) for the first project is posted. A detailed breakdown is coming before next class.
 # 
 # **05 Sept 22**
 # - Tuesday's [in-class activity](https://dannycaballero.info/phy415msu/content/2_oscillations/activity-SHO_and_dynamical_systems.html) has been posted.

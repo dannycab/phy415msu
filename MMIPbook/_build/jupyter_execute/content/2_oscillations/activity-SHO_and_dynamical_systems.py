@@ -59,7 +59,7 @@
 # 
 # We can start with the differential equation:
 # 
-# $$\ddot{x} = -\omega$$
+# $$\ddot{x} = -\omega^2 x$$
 # 
 # where $x$ is the position relative to equilibrium and $\omega^2 = k/m$. We know this is a linear, second-order ODE, so we expect the solutions to be [holonomic functions](https://en.wikipedia.org/wiki/Holonomic_function) - that is, many of the functions we have seen before. Moreover, we need something that when we take two derivatives, we get the same functions back.
 # 
@@ -87,7 +87,7 @@
 # 
 # $$x(t) = A\cos(\omega t) + B\sin(\omega t)$$
 # 
-# $$x(t) = C\sin(\omega_t + \phi_C)$$
+# $$x(t) = C\sin(\omega t + \phi_C)$$
 # 
 # **&#9989; Do this** 
 # 

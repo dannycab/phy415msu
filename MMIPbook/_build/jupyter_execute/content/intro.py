@@ -19,7 +19,6 @@
 # 
 # **06 Sept 22**
 # - [Class notes](./2_oscillations/notes-SHO_and_dynamical_systems.md) have been posted along with some scans of book sections
-#     - I will add the Phase Portrait notes tonight
 # - A [preliminary rubric](./0_course/rubric.md) for the first project is posted. A detailed breakdown is coming before next class.
 # 
 # **05 Sept 22**

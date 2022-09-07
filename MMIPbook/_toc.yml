@@ -22,6 +22,7 @@ chapters:
   sections:
     - file: content/2_oscillations/activity-SHO_and_dynamical_systems
     - file: content/2_oscillations/notes-SHO_and_dynamical_systems
+    - file: content/2_oscillations/activity-SHO_and_Large_Angles
     # - file: content/2_oscillations/activity-SHO-numerical
 - file: content/X_additional_pages/references-page
 - file: content/0_course/news_archive

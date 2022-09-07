@@ -2,11 +2,11 @@
 
 These is the summary of the PHY 415 class period on 01 Sept 22. If I missed anything, [send me an message](https://phy415fall2022.slack.com/) on Slack and I will add it here. -DC
 
-Today, we worked with the simple harmonic oscillator's general solution to find particular solutions and remind ourselves how that all works. We used that to talk about 2nd order systems a bit more generally, which is the focus of your first project (a 2nd order ODE of your choosing). We also discussed phjase portraits and what they buy us. We will investigate them further with more real systems like the pendulum that can go over the top and the damped oscillator.
+Today, we worked with the simple harmonic oscillator's general solution to find particular solutions and remind ourselves how that all works. We used that to talk about 2nd order systems a bit more generally, which is the focus of your first project (a 2nd order ODE of your choosing). We also discussed phase portraits and what they buy us. We will investigate them further with more real systems like the pendulum that can go over the top and the damped oscillator.
 
 ## Resources
 
-Here are scansof four sections of four books (that you can look over at my office, or find elsewhere) that are useful for our study of the SHO and will help you with your project ideas and plans.
+Here are scans of four sections of four books (that you can look over at my office, or find elsewhere) that are useful for our study of the SHO and will help you with your project ideas and plans.
 
 *Sorry for the potato quality, and apparently the orientations, which I corrected but github refuses to keep the same orientation.  I will do better next class and try to fix these later.*
 
@@ -25,4 +25,4 @@ Here are scansof four sections of four books (that you can look over at my offic
 Below, I have worked up some additional notes that describe the conceptual and procedural aspects of what we did today. Think: derivations and examples for learning from for your project. They are linked below:
 
 - [The SHO](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_2_SHO.pdf)
-- Phase Portraits (COMING TONIGHT)
+- [Phase Portraits](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_2_NLD_intro.pdf)

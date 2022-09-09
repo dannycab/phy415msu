@@ -480,8 +480,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nonlinear-dynamics-and-chaos">
-   Nonlinear Dynamics and Chaos
+  <a class="reference internal nav-link" href="#nonlinear-science">
+   Nonlinear Science
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -521,8 +521,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nonlinear-dynamics-and-chaos">
-   Nonlinear Dynamics and Chaos
+  <a class="reference internal nav-link" href="#nonlinear-science">
+   Nonlinear Science
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -554,13 +554,13 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="numerical-integration-in-1d">
 <h1>2 - Numerical Integration in 1D<a class="headerlink" href="#numerical-integration-in-1d" title="Permalink to this headline">#</a></h1>
-<p>Principal Ideas come from [Newman Chapter 8, Section 1]</p>
-<p>We have seen how we can quickly exhaust our analytical tools when we investigate systems with interesting and complex behavior. We can see much from the perspective of phase space in terms of the qualitatively different behaviors (e.g., oscillations vs rotations, both clockwise and counter-clockwise, in the large angle pendulum). But what if we can to find the trajectory of a given system.</p>
-<p>That is how can we take a general differential equation:</p>
+<p>Principal Ideas for this unit will come from <a class="reference external" href="https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/scans/Newman_Ch8_ODEs.pdf">Newman Chapter 8, Section 1</a>, which is the reading assigned below.</p>
+<p>We have seen how we can quickly exhaust our analytical tools when we investigate systems with interesting and complex behavior. We can see much from the perspective of phase space in terms of the qualitatively different behaviors (e.g., oscillations vs rotations, both clockwise and counter-clockwise, in the large angle pendulum). But what if we want to find the specific trajectory of a given set of initial conditions.</p>
+<p>That is we want to be able to take a more general differential equation:</p>
 <div class="math notranslate nohighlight">
 \[\ddot{x} = f(x,\dot{x},t)\]</div>
-<p>to <span class="math notranslate nohighlight">\(x(t)\)</span>? in (most) cases…because sometimes integrals don’t converge.</p>
-<p>We can use <strong>numerical integration</strong> to do so. Below is a video describing 3 coupled ODEs, the Lorenz equations, that are quite famous. You will be able to model systems like this, but for now think of it as motivation for why we want to learn numerical integration.</p>
+<p>to a solution for all (or some specified amount)of time, <span class="math notranslate nohighlight">\(x(t)\)</span>…in (most) cases…because sometimes integrals don’t converge.</p>
+<p>We can use <strong>numerical integration</strong> to find these trajectories. Below is a video describing 3 coupled ODEs, the <a class="reference external" href="https://en.wikipedia.org/wiki/Lorenz_system">Lorenz equations</a>, that are quite famous. You will be able to model systems like this, but for now think of it as motivation for why we want to learn numerical integration.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
@@ -580,9 +580,11 @@ title="Print to PDF"
 ></iframe>
 </div></div>
 </div>
-<section id="nonlinear-dynamics-and-chaos">
-<h2>Nonlinear Dynamics and Chaos<a class="headerlink" href="#nonlinear-dynamics-and-chaos" title="Permalink to this headline">#</a></h2>
-<p>Some of the most interesting problems to work on are</p>
+<section id="nonlinear-science">
+<h2>Nonlinear Science<a class="headerlink" href="#nonlinear-science" title="Permalink to this headline">#</a></h2>
+<p>Some of the most interesting ODEs to work with are those that lead to chaos, have interesting behaviors in different parts of phase space, are highly sensitive to initial conditions, or that have complex bound orbits (in real or phase space). This area of study in physics overlaps with a broad interdisciplinary field called <a class="reference external" href="https://en.wikipedia.org/wiki/Nonlinear_system">Nonlinear Science</a>, which studies all manner of systems where the results are not simply proportional to the input features. This work includes theory, applied science, and experimental work. As it is difficult to find truly linear systems in the real world, nonlinear science is quite interdisciplinary with physics research in the areas of <a class="reference external" href="https://complex.umd.edu/research/MHD_dynamos/MHD_dynamos.php">magnetohydrodynamics</a>, <span class="xref myst">fluid mechanics</span>, <a class="reference external" href="https://meche.mit.edu/people/faculty/PEKO&#64;MIT.EDU">bio-inspired design</a>, <a class="reference external" href="https://curtisresearch.gatech.edu/index.php">biophysics (cellular)</a>, <a class="reference external" href="https://crablab.gatech.edu/">biophysics (animal locomotion)</a>, <a class="reference external" href="https://jila.colorado.edu/lewandowski">atomic and molecular physics</a>, and many more fields.</p>
+<p>We will focus on integrating 1 dimensional ODEs (that is, ODEs of only one variable like the SHO). To that end the reding this week aims to inform you with the simplest of the integrators the <a class="reference external" href="https://en.wikipedia.org/wiki/Semi-implicit_Euler_method">Euler-Cromer integration</a> technique. This approach is intuitive, straight-forward, and forms the basis for better and far more accurate methods like <a class="reference external" href="https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods">Runge-Kutta</a>.</p>
+<p>Through this week’s activities, we will introduce several integration methods, but you will learn to use the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html?highlight=odeint">built-in integrator</a> (<code class="docutils literal notranslate"><span class="pre">odeint</span></code>) from scipy, which are more efficient than what we could write ourselves.</p>
 </section>
 <section id="book-readings">
 <h2>Book Readings<a class="headerlink" href="#book-readings" title="Permalink to this headline">#</a></h2>

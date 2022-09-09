@@ -371,7 +371,7 @@ omega0 = 2
 N = 20
 
 x = np.linspace(-6.0, 6.0, N)
-vx = np.linspace(-8.0, 8.0, N)
+vx = np.linspace(-8, 8.0, N)
 
 X, VX = np.meshgrid(x, vx)
 
@@ -418,14 +418,14 @@ def ComputeLAPDragPhase(X, VX, omega0, beta):
 
 
 omega0 = 2
-beta = 0.5
+beta = 1.0
 N = 16
 
 xlim=4.0
 ylim=5.0
 
-x = np.linspace(-xlim, xlim, N)
-vx = np.linspace(-ylim, ylim, N)
+x = np.linspace(-2*xlim, 2*xlim, N)
+vx = np.linspace(-2*ylim, 2*ylim, N)
 
 X, VX = np.meshgrid(x, vx)
 
@@ -436,6 +436,7 @@ Q = plt.streamplot(X, VX, xdot, vxdot, color='k')
 plt.grid()
 
 plt.xlabel('$x$')
+    
 plt.ylabel('$v_x$')
 
 

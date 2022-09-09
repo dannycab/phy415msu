@@ -27,3 +27,14 @@ But for this first project, I have a list of tasks that you have experienced in 
 * Document your work
     - We should be able to run your notebooks and get exactly what you want us to
     - Comment everything 
+
+## Candidate ODEs
+
+- Wikipedia's list of famous equations
+[https://en.wikipedia.org/wiki/List_of_nonlinear_ordinary_differential_equations](https://en.wikipedia.org/wiki/List_of_nonlinear_ordinary_differential_equations)
+    - Consider: the Chandrasekhar equation, the Duffing model, the Langmuir equation, the Rayliegh equation, the Van Der Pol oscillator
+- Strogatz's Nonlinear Dynamics and Chaos
+    - Check out Chapters 4-5 (SCAN COMING). There are many interesting examples and problem setups you could use.
+- Think about other systems that are described mathematically as an ODE
+    - Predator-prey models, Pursuit models, Fireflies, etc.
+

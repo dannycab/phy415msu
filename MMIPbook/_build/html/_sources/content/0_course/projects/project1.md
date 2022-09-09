@@ -38,4 +38,3 @@ But for this first project, I have a list of tasks that you have experienced in 
 - Think about other systems that are described mathematically as an ODE
     - Predator-prey models, Pursuit models, Fireflies, etc.
 
-

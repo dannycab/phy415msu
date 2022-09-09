@@ -188,7 +188,7 @@ PlotPhaseSpaceAxesSHO(x, vx, N)
 # In[7]:
 
 
-def SHOPhasePortrait(x, vx, omega = 10):
+def SHOPhasePortrait(x, vx, omega):
     '''SHOPhasePortrait returns the value of
     the change in the phase variables at a given location
     in phase space for the SHO model'''

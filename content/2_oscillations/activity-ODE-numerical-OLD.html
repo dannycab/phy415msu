@@ -1,0 +1,1458 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Activity: Integrating ODEs Numerically &#8212; Mathematical Modeling in Physics</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Mathematical Modeling in Physics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Mathematical Modeling in Physics
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../0_course/syllabus.html">
+   0 - Overview of PHY 415
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/goals.html">
+     Course Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/design.html">
+     Course Design
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/assessments.html">
+     Assessments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/rubric.html">
+     Project Rubrics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/calendar.html">
+     Calendar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/environment.html">
+     Classroom Environment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/resources.html">
+     Resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../0_course/reading_questions.html">
+   Reading Questions Form
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../1_modeling/what_is_modeling.html">
+   1 - What is Mathematical Modeling?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1_modeling/activity-what_is_a_model.html">
+     In-Class Activity: 01 - What is a Model?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1_modeling/notes-what_is_a_model.html">
+     Notes: 01 - What is a Model?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="readings-oscillators.html">
+   2 - Oscillations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="activity-SHO_and_dynamical_systems.html">
+     Activity: Investigating the Simple Harmonic Oscillator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notes-SHO_and_dynamical_systems.html">
+     Notes: 02 - The SHO and Phase Portraits
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="activity-SHO_and_Large_Angles.html">
+     Activity: Large Angle Pendulum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="readings-numerical_integration_1d.html">
+     2 - Numerical Integration in 1D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="activity-ODE-numerical.html">
+     Activity: Integrating ODEs Numerically
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../X_additional_pages/references-page.html">
+   Works Cited
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../0_course/news_archive.html">
+   News Archive
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../0_course/projects/project1.html">
+   Project 1
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/dannycab/phy415msu/main?urlpath=tree/MMIPbook/content/2_oscillations/activity-ODE-numerical-OLD.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415msu/&urlpath=tree/phy415msu/MMIPbook/content/2_oscillations/activity-ODE-numerical-OLD.ipynb&branch=main"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on JupyterHub"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="headerbtn__text-container">JupyterHub</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/dannycab/phy415msu/blob/main/MMIPbook/content/2_oscillations/activity-ODE-numerical-OLD.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/dannycab/phy415msu/"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/dannycab/phy415msu//issues/new?title=Issue%20on%20page%20%2Fcontent/2_oscillations/activity-ODE-numerical-OLD.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/content/2_oscillations/activity-ODE-numerical-OLD.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-goals">
+   Learning Goals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#falling-ball-with-drag">
+   Falling Ball with Drag
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discussion-question">
+     Discussion Question
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#making-an-eom-numerically-integrable">
+     Making an EOM numerically integrable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update-equations">
+     Update equations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Falling Ball with Drag
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#writing-the-equations-of-motion">
+     Writing the equations of motion
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#now-we-integrate">
+     Now we integrate
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#euler-cromer-integration">
+       Euler-Cromer Integration
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-results-and-interpret">
+     Plot results and interpret
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rk2-and-rk4">
+     RK2 and RK4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#let-s-use-them">
+     Let’s use them
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Activity: Integrating ODEs Numerically</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-goals">
+   Learning Goals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#falling-ball-with-drag">
+   Falling Ball with Drag
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discussion-question">
+     Discussion Question
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#making-an-eom-numerically-integrable">
+     Making an EOM numerically integrable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#update-equations">
+     Update equations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Falling Ball with Drag
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#writing-the-equations-of-motion">
+     Writing the equations of motion
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#now-we-integrate">
+     Now we integrate
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#euler-cromer-integration">
+       Euler-Cromer Integration
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-results-and-interpret">
+     Plot results and interpret
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rk2-and-rk4">
+     RK2 and RK4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#let-s-use-them">
+     Let’s use them
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="activity-integrating-odes-numerically">
+<h1>Activity: Integrating ODEs Numerically<a class="headerlink" href="#activity-integrating-odes-numerically" title="Permalink to this headline">#</a></h1>
+<p>One of the most important skills to learn in theoretical physics is to be able to solve non-analytical problems. At this point it is impossible to conduct modern physics work without the use of a computer. In this activity, we will begin to make use of the computer as a tool for doing science we can’t do without it.</p>
+<p><strong><a class="reference external" href="https://en.wikipedia.org/wiki/Numerical_integration">Numerical Integration</a></strong> is a vast and wide topic with lots of different approaches, important nuances, and difficult problems. Some of the most high profile numerical integration was done by NASA’s <a class="reference external" href="https://education.nationalgeographic.org/resource/women-nasa">human computers</a> – a now well-known story thanks to the film <a class="reference external" href="https://en.wikipedia.org/wiki/Hidden_Figures">Hidden Figures</a>. Black women formed a core group of these especially talented scientists (including <a class="reference external" href="https://en.wikipedia.org/wiki/Mary_Jackson_(engineer)">Mary Jackson</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Katherine_Johnson">Katherine Johnson</a>, and <a class="reference external" href="https://en.wikipedia.org/wiki/Dorothy_Vaughan">Dorothy Vaughn</a>), without whom, John Glenn would not have orbited the Earth in 1962. This is also a very interesting story about the importance of <a class="reference external" href="https://en.wikipedia.org/wiki/Historically_black_colleges_and_universities">Historically Black Colleges and Universities</a> to American science.</p>
+<p>In this activity, you will conduct a similar calculation as these scientists, but in 1 dimension. We will explore multidimensional systems later. We will model the motion of a falling ball with drag using several techniques:</p>
+<ul class="simple">
+<li><p>Euler-Cromer (simplest approach)</p></li>
+<li><p>Runge Kutta 2nd order (better slope approximation)</p></li>
+<li><p>Runge Kutta 4th order (the gold standard; good balance of accuracy and speed)</p></li>
+<li><p>Scipy’s built-in integrator, <code class="docutils literal notranslate"><span class="pre">odeint</span></code> (it can choose or you can tell it what to use)</p></li>
+</ul>
+<section id="learning-goals">
+<h2>Learning Goals<a class="headerlink" href="#learning-goals" title="Permalink to this headline">#</a></h2>
+<p>After completing this activity you should be able to:</p>
+<ul class="simple">
+<li><p>Explain the different kinds of integrators (that we have used) and why we might use different ones</p></li>
+<li><p>Model the motion of 1D nonlinear systems accurately</p></li>
+<li><p>Compare the accuracy of different integration approaches</p></li>
+<li><p>Make use of existing code to model systems</p></li>
+<li><p>Apply these codes to new systems of interest (we will do more of this Thursday)</p></li>
+</ul>
+</section>
+<section id="falling-ball-with-drag">
+<h2>Falling Ball with Drag<a class="headerlink" href="#falling-ball-with-drag" title="Permalink to this headline">#</a></h2>
+<p>Let’s start with a system that we have a lot of experience with, a falling ball. Let’s allow some drag, both linear (<span class="math notranslate nohighlight">\(\beta v_y\)</span>) and quadratic (<span class="math notranslate nohighlight">\(\alpha v_y^2\)</span>), as well. The equation of motion, EOM, (choosing <span class="math notranslate nohighlight">\(g, \beta, \alpha &gt;0\)</span>) choosing up to be positive <span class="math notranslate nohighlight">\(y\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[m\ddot{y} = -mg + \beta v_y + \alpha v_y^2\]</div>
+<section id="discussion-question">
+<h3>Discussion Question<a class="headerlink" href="#discussion-question" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Draw the FBD for this system and verify the equation of motion and it’s signs.</p></li>
+<li><p>What would happen to the equation of motion if <span class="math notranslate nohighlight">\(y\)</span> was chosen to be positive pointing down? What if <span class="math notranslate nohighlight">\(g&lt;0\)</span>?</p>
+<ul>
+<li><p>Write both of these forms</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="making-an-eom-numerically-integrable">
+<h3>Making an EOM numerically integrable<a class="headerlink" href="#making-an-eom-numerically-integrable" title="Permalink to this headline">#</a></h3>
+<p>A computer understands things like updating individual variables with a change. It turns out this process of updating things in steps is the basis for numerical integration. But we need to shift our description, currently 2nd order for one variable, to a set of 1st order differential equations for 2 variables. Then, we need a set of update equations. Making those update equations is effectively choosing our integrator.</p>
+<p>Starting with,</p>
+<div class="math notranslate nohighlight">
+\[\ddot{y} = -g + \dfrac{\beta}{m} v_y + \dfrac{\alpha}{m} v_y^2\]</div>
+<p>We can posit two variables (<span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(v_y\)</span>) that will make this 2nd order equation 2 first order ones:</p>
+<div class="math notranslate nohighlight">
+\[\dot{v}_y = -g + \dfrac{\beta}{m} v_y + \dfrac{\alpha}{m} v_y^2\]</div>
+<div class="math notranslate nohighlight">
+\[\dot{y} = v_y\]</div>
+<p>These are the basis for our update equations.</p>
+</section>
+<section id="update-equations">
+<h3>Update equations<a class="headerlink" href="#update-equations" title="Permalink to this headline">#</a></h3>
+<p>The critical part of numerical integration is approximating the change to variables you are investigating. Going back to our differential equations, we can rewrite them as approximate equation, which a computer understands because it involves discrete steps.</p>
+<div class="math notranslate nohighlight">
+\[\dot{v}_y \approx \dfrac{\Delta v_y}{\Delta t} = -g + \dfrac{\beta}{m} v_y + \dfrac{\alpha}{m} v_y^2\]</div>
+<div class="math notranslate nohighlight">
+\[\dot{y} \approx \dfrac{\Delta y}{\Delta t} = v_y\]</div>
+<p>We can rewrite these equations to illustrate how the variables will change,</p>
+<div class="math notranslate nohighlight">
+\[dv_y \approx {\Delta v_y} = \left(-g + \dfrac{\beta}{m} v_y + \dfrac{\alpha}{m} v_y^2\right){\Delta t}\]</div>
+<div class="math notranslate nohighlight">
+\[dy \approx {\Delta y} = \left(v_y\right){\Delta t}\]</div>
+<p>How we choose to approximate this update indicates which integration routine we’ve chosen and sets the irreducible error we are stuck with (i.e., <span class="math notranslate nohighlight">\(O((\Delta t)^2)\)</span>, <span class="math notranslate nohighlight">\(O((\Delta t)^3)\)</span>, etc.)</p>
+<p>We will illustrate three approximations to the slope of these functions:</p>
+<ul class="simple">
+<li><p><strong>Euler-Cromer (EC)</strong> - definitely the most intuitive of the approaches, where we approximate the slope with two points separated by <span class="math notranslate nohighlight">\(\Delta t\)</span> in time. It is just a quick rewrite of the above equations. It is quick to write, slow to solve, and requires small steps for accurate results. Even so, it fails to integrate periodic motion well because it doesn’t conserve energy in periodic motion. Turns out it’s the best tool to use when you have random noise added to the model though (e.g., <span class="math notranslate nohighlight">\(\eta_n(\sigma(t))\)</span>). For a first order eqn, <span class="math notranslate nohighlight">\(\dot{x}=f(x,t)\)</span>,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[x(t+\Delta t) = x(t) + \textrm{change} = x(t) + \Delta t \left(f(x(t+\dfrac{1}{2}\Delta t), t+\dfrac{1}{2}\Delta t\right)\]</div>
+<ul class="simple">
+<li><p><strong>Runge-Kutta 2nd order (RK2)</strong> - just a step above Euler-Cromer; it uses three points to approximate the slope giving two measures of the slope (hence, 2nd order). It’s not much more complex than Euler-Cromer, but gives an order of magnitude lower error. It’s a good starting point for simple systems. For a first order eqn, <span class="math notranslate nohighlight">\(\dot{x}=f(x,t)\)</span>,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[k_1 = \Delta t\left(f(x,t)\right),\]</div>
+<div class="math notranslate nohighlight">
+\[k_2 =  \Delta t\left(x+\dfrac{1}{2}k_1, t+\dfrac{1}{2}\Delta t\right),\]</div>
+<div class="math notranslate nohighlight">
+\[x(t+\Delta t) = x(t) + \textrm{change} = x(t) + k_2\]</div>
+<ul class="simple">
+<li><p><strong>Runge Kutta 4th order (RK4)</strong> - this is the gold standard. Most researchers start with RK4 on most problems. It uses 5 points to build 4 slope profiles and integrates the system in 4 steps. It is highly adaptable and supported – it can be modified to take smaller or longer steps depending on the specific nature of the problem at the time. I mean that it can change step size in the middle of its work; including within the step it is taking presently. For a first order eqn, <span class="math notranslate nohighlight">\(\dot{x}=f(x,t)\)</span>,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[k_1 = \Delta t\left(f(x,t)\right),\]</div>
+<div class="math notranslate nohighlight">
+\[k_2 =  \Delta t\left(x+\dfrac{1}{2}k_1, t+\dfrac{1}{2}\Delta t\right),\]</div>
+<div class="math notranslate nohighlight">
+\[k_3 =  \Delta t\left(x+\dfrac{1}{2}k_2, t+\dfrac{1}{2}\Delta t\right),\]</div>
+<div class="math notranslate nohighlight">
+\[k_4 =  \Delta t\left(x+k_3, t+\Delta t\right),\]</div>
+<div class="math notranslate nohighlight">
+\[x(t+\Delta t) = x(t) + \textrm{change} = x(t) + \dfrac{1}{6}\left(k_1 + 2k_2 +2k_3 +k_4\right)\]</div>
+<p>We don’t expect you memorize these approaches or to derive them, but to understand how they work and what their limitations are. Let’s use them on our 1d problem.</p>
+</section>
+</section>
+<section id="id1">
+<h2>Falling Ball with Drag<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>As a reminder, here’s our equations of motion:</p>
+<div class="math notranslate nohighlight">
+\[\dot{v}_y \approx \dfrac{\Delta v_y}{\Delta t} = -g + \dfrac{\beta}{m} v_y + \dfrac{\alpha}{m} v_y^2\]</div>
+<div class="math notranslate nohighlight">
+\[\dot{y} \approx \dfrac{\Delta y}{\Delta t} = v_y\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="writing-the-equations-of-motion">
+<h3>Writing the equations of motion<a class="headerlink" href="#writing-the-equations-of-motion" title="Permalink to this headline">#</a></h3>
+<p>We begin by writing an equation of motion as a function. This is useful because then the integrators we right can just use the function form of the EOMs. So we can swap out EOMs (as you will model the Large Angle Pendulum yourself).</p>
+<p>So let’s start by thinking about what our function should do:</p>
+<ol class="simple">
+<li><p>Take inputs from model (<span class="math notranslate nohighlight">\(g\)</span>, <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span>) and the current state (<span class="math notranslate nohighlight">\(y_i,v_{y,i}\)</span>)</p></li>
+<li><p>Return the value of the changes at the point</p></li>
+<li><p>Needs to work for at least 2 variables (<span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(v_y\)</span>)</p></li>
+</ol>
+<p>So we will write <code class="docutils literal notranslate"><span class="pre">DerivDragModel1D</span></code> with these conditions below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">DeriveDragModel1D</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">vy</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;DerviceDrageModel1D returns the value of the</span>
+<span class="sd">    position and velocity changes at a given point in </span>
+<span class="sd">    phase space for a 1D drag model.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns dy_dt and dvy_dt in that order&#39;&#39;&#39;</span>
+    
+    <span class="c1">## Compute the changes; the notation is derviative of thing</span>
+    <span class="c1">## underscore with respect to variable, so dvy_dt means</span>
+    <span class="c1">## derivative of vy with respect to t</span>
+    
+    <span class="n">dvy_dt</span> <span class="o">=</span> <span class="o">-</span><span class="n">g</span> <span class="o">+</span> <span class="n">beta</span><span class="o">/</span><span class="n">m</span><span class="o">*</span><span class="n">vy</span> <span class="o">+</span> <span class="n">alpha</span><span class="o">/</span><span class="n">m</span><span class="o">*</span><span class="n">vy</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">dy_dt</span> <span class="o">=</span> <span class="n">vy</span>
+    
+    <span class="c1">## Returns position change/dt then velocity change/dt</span>
+    <span class="k">return</span> <span class="n">dy_dt</span><span class="p">,</span> <span class="n">dvy_dt</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="now-we-integrate">
+<h3>Now we integrate<a class="headerlink" href="#now-we-integrate" title="Permalink to this headline">#</a></h3>
+<p>Let’s integragte these EOMs. The function below will call <code class="docutils literal notranslate"><span class="pre">DeriveDragModel1D</span></code> along each integration step. We start with Euler-Cromer to illustrate the approach.</p>
+<section id="euler-cromer-integration">
+<h4>Euler-Cromer Integration<a class="headerlink" href="#euler-cromer-integration" title="Permalink to this headline">#</a></h4>
+<p>Let’s write a function ‘’’EC’’’ that will integrate our EOMs with an Euler Cromer method. We should think about what this function should do:</p>
+<ol class="simple">
+<li><p>Take a clean array for position, velocity, and time as well as the associate parameters</p></li>
+<li><p>Update the values of position and velocity based on <code class="docutils literal notranslate"><span class="pre">DeriveDradModel1D</span></code></p></li>
+<li><p>Return the updated arrays for plotting</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">EC</span><span class="p">(</span><span class="n">y_arr</span><span class="p">,</span> <span class="n">vy_arr</span><span class="p">,</span> <span class="n">deltat</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;EC performs an Euler Cromer integration for the model</span>
+<span class="sd">    placed in the main loop. There are several checks in place</span>
+<span class="sd">    to make sure that EC has what it needs before running.</span>
+<span class="sd">    Think about these kinds fo checks when doing your work.&#39;&#39;&#39;</span>
+    
+    <span class="c1">## Make sure the arrays are clean and zeroed out to start </span>
+    <span class="c1">## but we preserve any initial conditions that were set</span>
+
+    <span class="n">y0</span> <span class="o">=</span> <span class="n">y_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">vy0</span> <span class="o">=</span> <span class="n">vy_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="n">y_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_arr</span><span class="p">))</span>
+    <span class="n">vy_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vy_arr</span><span class="p">))</span>
+    
+    <span class="n">y_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">y0</span>
+    <span class="n">vy_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">vy0</span>
+    
+    <span class="c1">## Another check: Make sure the arrays are the same size; else stop and raise error</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_arr</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">vy_arr</span><span class="p">):</span>
+        
+        <span class="c1">## Let&#39;s store the length of everything now that we know everything is the same length</span>
+        <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_arr</span><span class="p">)</span>
+        
+        <span class="c1">## We create the time array now and return it, there&#39;s no need to worry about that before now</span>
+        <span class="n">t_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="o">+</span><span class="n">tstart</span><span class="p">,</span> <span class="n">N</span><span class="o">*</span><span class="n">deltat</span><span class="o">+</span><span class="n">tstart</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+        
+        
+        <span class="c1">## The core of the EC algorithm</span>
+        <span class="c1">## For each point starting with the first and going to the last</span>
+        <span class="c1">## calculate the changes to the location and velocity </span>
+        <span class="c1">## Add those changes to the original value and</span>
+        <span class="c1">## store that in the very next position in the arrays</span>
+        <span class="c1">## REPEAT UNTIL DONE</span>
+        
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">y_arr</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            
+            <span class="n">dy_dt</span><span class="p">,</span> <span class="n">dvy_dt</span> <span class="o">=</span> <span class="n">DeriveDragModel1D</span><span class="p">(</span><span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
+            
+            <span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">dy_dt</span><span class="o">*</span><span class="n">deltat</span><span class="p">,</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">dvy_dt</span><span class="o">*</span><span class="n">deltat</span>
+         
+        <span class="c1">## Give us all that information we worked so hard for   </span>
+        <span class="k">return</span> <span class="n">t_arr</span><span class="p">,</span> <span class="n">y_arr</span><span class="p">,</span> <span class="n">vy_arr</span>
+        
+    <span class="k">else</span><span class="p">:</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error: arrays mismatch size&#39;</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">tf</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">deltat</span> <span class="o">=</span> <span class="p">(</span><span class="n">tf</span><span class="o">-</span><span class="n">t0</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+
+<span class="n">y_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">vy_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.8</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.03</span>
+
+<span class="n">t_arr</span><span class="p">,</span> <span class="n">y_arr</span><span class="p">,</span> <span class="n">vy_arr</span> <span class="o">=</span> <span class="n">EC</span><span class="p">(</span><span class="n">y_arr</span><span class="p">,</span> <span class="n">vy_arr</span><span class="p">,</span> <span class="n">deltat</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">t0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_arr</span><span class="p">,</span><span class="n">vy_arr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11026a020&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/activity-ODE-numerical-OLD_8_1.png" src="../../_images/activity-ODE-numerical-OLD_8_1.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="plot-results-and-interpret">
+<h3>Plot results and interpret<a class="headerlink" href="#plot-results-and-interpret" title="Permalink to this headline">#</a></h3>
+<p><strong>✅ Do this</strong></p>
+<ol class="simple">
+<li><p>Make a plot of position vs time, velocity vs time, and position vs velocity.</p></li>
+<li><p>Dicsuss the results with your neighbors</p></li>
+<li><p>Adjust the parameters, can you find sets of parameters that produce reasonable results? What about parameters that produce poor results?</p>
+<ul class="simple">
+<li><p>What choices do this correspond to in your modeling? What does the parameter regimes say about the system of a falling ball?</p></li>
+</ul>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## YOUR CODE HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="rk2-and-rk4">
+<h3>RK2 and RK4<a class="headerlink" href="#rk2-and-rk4" title="Permalink to this headline">#</a></h3>
+<p>For something like falling ball, Euler-Cromer is pretty good, but we will see that it fails for periodic motion. It doesn’t conserve energy over a periodic cycle. We won’t go into the details of the code for RK2 and RK4, but it is commented below. We have tried to write the code like Euler Cromer above so you can see the only part that changes in the loop.</p>
+<p><strong>✅ Do this</strong></p>
+<ol class="simple">
+<li><p>Review the RK2 and RK4 codes. Identify the similarities and differences to the EC code and be able to explain them.</p></li>
+<li><p>We will compile these qualifications later once we mess with different ODEs.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">RK2</span><span class="p">(</span><span class="n">y_arr</span><span class="p">,</span> <span class="n">vy_arr</span><span class="p">,</span> <span class="n">deltat</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;RK2 performs an 2nd order Runge Kutta integration for the model</span>
+<span class="sd">    placed in the main loop. There are several checks in place</span>
+<span class="sd">    to make sure that RK2 has what it needs before running.</span>
+<span class="sd">    Think about these kinds fo checks when doing your work.&#39;&#39;&#39;</span>
+    
+    <span class="c1">## Make sure the arrays are clean and zeroed out to start </span>
+    <span class="c1">## but we preserve any initial conditions that were set</span>
+
+    <span class="n">y0</span> <span class="o">=</span> <span class="n">y_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">vy0</span> <span class="o">=</span> <span class="n">vy_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="n">y_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_arr</span><span class="p">))</span>
+    <span class="n">vy_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vy_arr</span><span class="p">))</span>
+    
+    <span class="n">y_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">y0</span>
+    <span class="n">vy_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">vy0</span>
+    
+    <span class="c1">## Another check: Make sure the arrays are the same size; else stop and raise error</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_arr</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">vy_arr</span><span class="p">):</span>
+        
+        <span class="c1">## Let&#39;s store the length of everything now that we know everything is the same length</span>
+        <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_arr</span><span class="p">)</span>
+        
+        <span class="c1">## We create the time array now and return it, there&#39;s no need to worry about that before now</span>
+        <span class="n">t_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="o">+</span><span class="n">tstart</span><span class="p">,</span> <span class="n">N</span><span class="o">*</span><span class="n">deltat</span><span class="o">+</span><span class="n">tstart</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+        
+        
+        <span class="c1">## The core of the RK algorithm</span>
+        <span class="c1">## For each point starting with the first and going to the last</span>
+        <span class="c1">## calculate the changes to the location and velocity </span>
+        <span class="c1">## Add those changes to the original value and</span>
+        <span class="c1">## store that in the very next position in the arrays</span>
+        <span class="c1">## REPEAT UNTIL DONE</span>
+        
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">y_arr</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            
+            <span class="c1">## It&#39;s two steps now</span>
+            <span class="n">k1_y</span><span class="p">,</span> <span class="n">k1_vy</span> <span class="o">=</span> <span class="n">DeriveDragModel1D</span><span class="p">(</span><span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span><span class="o">*</span><span class="n">deltat</span>   <span class="c1">## DONT FORGET THE DELTAT FOR THESE LIKE I DID FOR AN HOUR!!!!</span>
+            <span class="n">k2_y</span><span class="p">,</span> <span class="n">k2_vy</span> <span class="o">=</span> <span class="n">DeriveDragModel1D</span><span class="p">(</span><span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">k1_y</span><span class="p">,</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">k1_vy</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span><span class="o">*</span><span class="n">deltat</span>
+            
+            <span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k2_</span><span class="p">,</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k2_vy</span>
+         
+        <span class="c1">## Give us all that information we worked so hard for   </span>
+        <span class="k">return</span> <span class="n">t_arr</span><span class="p">,</span> <span class="n">y_arr</span><span class="p">,</span> <span class="n">vy_arr</span>
+        
+    <span class="k">else</span><span class="p">:</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error: arrays mismatch size&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">RK4</span><span class="p">(</span><span class="n">y_arr</span><span class="p">,</span> <span class="n">vy_arr</span><span class="p">,</span> <span class="n">deltat</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">tstart</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;RK4 performs an 4th order Runge Kutta integration for the model</span>
+<span class="sd">    placed in the main loop. There are several checks in place</span>
+<span class="sd">    to make sure that RK4 has what it needs before running.</span>
+<span class="sd">    Think about these kinds fo checks when doing your work.&#39;&#39;&#39;</span>
+    
+    <span class="c1">## Make sure the arrays are clean and zeroed out to start </span>
+    <span class="c1">## but we preserve any initial conditions that were set</span>
+
+    <span class="n">y0</span> <span class="o">=</span> <span class="n">y_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">vy0</span> <span class="o">=</span> <span class="n">vy_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="n">y_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_arr</span><span class="p">))</span>
+    <span class="n">vy_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vy_arr</span><span class="p">))</span>
+    
+    <span class="n">y_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">y0</span>
+    <span class="n">vy_arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">vy0</span>
+    
+    <span class="c1">## Another check: Make sure the arrays are the same size; else stop and raise error</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_arr</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">vy_arr</span><span class="p">):</span>
+        
+        <span class="c1">## Let&#39;s store the length of everything now that we know everything is the same length</span>
+        <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_arr</span><span class="p">)</span>
+        
+        <span class="c1">## We create the time array now and return it, there&#39;s no need to worry about that before now</span>
+        <span class="n">t_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="o">+</span><span class="n">tstart</span><span class="p">,</span> <span class="n">N</span><span class="o">*</span><span class="n">deltat</span><span class="o">+</span><span class="n">tstart</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+        
+        
+        <span class="c1">## The core of the RK algorithm</span>
+        <span class="c1">## For each point starting with the first and going to the last</span>
+        <span class="c1">## calculate the changes to the location and velocity </span>
+        <span class="c1">## Add those changes to the original value and</span>
+        <span class="c1">## store that in the very next position in the arrays</span>
+        <span class="c1">## REPEAT UNTIL DONE</span>
+        
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">y_arr</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            
+            <span class="c1">## It&#39;s four steps now</span>
+            <span class="n">k1_y</span><span class="p">,</span> <span class="n">k1_vy</span> <span class="o">=</span> <span class="n">DeriveDragModel1D</span><span class="p">(</span><span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span><span class="o">*</span><span class="n">deltat</span> <span class="c1">## DONT FORGET THE DELTAT FOR THESE LIKE I DID FOR AN HOUR!!!!</span>
+            <span class="n">k2_y</span><span class="p">,</span> <span class="n">k2_vy</span> <span class="o">=</span> <span class="n">DeriveDragModel1D</span><span class="p">(</span><span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">k1_y</span><span class="p">,</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">k1_vy</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span><span class="o">*</span><span class="n">deltat</span>
+            <span class="n">k3_y</span><span class="p">,</span> <span class="n">k3_vy</span> <span class="o">=</span> <span class="n">DeriveDragModel1D</span><span class="p">(</span><span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">k2_y</span><span class="p">,</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">k2_vy</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span><span class="o">*</span><span class="n">deltat</span>
+            <span class="n">k4_y</span><span class="p">,</span> <span class="n">k4_vy</span> <span class="o">=</span> <span class="n">DeriveDragModel1D</span><span class="p">(</span><span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k3_y</span><span class="p">,</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k3_vy</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span><span class="o">*</span><span class="n">deltat</span>
+            
+            
+            <span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k4_y</span><span class="p">,</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k4_vy</span>
+         
+        <span class="c1">## Give us all that information we worked so hard for   </span>
+        <span class="k">return</span> <span class="n">t_arr</span><span class="p">,</span> <span class="n">y_arr</span><span class="p">,</span> <span class="n">vy_arr</span>
+        
+    <span class="k">else</span><span class="p">:</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error: arrays mismatch size&#39;</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="let-s-use-them">
+<h3>Let’s use them<a class="headerlink" href="#let-s-use-them" title="Permalink to this headline">#</a></h3>
+<p>Here’s a set up for a problem where we are going to use all three approaches and compare them. Below, we have modeled a s=five second fall with 10 points. Compare the results.</p>
+<p><strong>✅ Do this</strong></p>
+<ol class="simple">
+<li><p>Compare the solutions as the exist. Do they make sense? What value of terminal velocity should we get with this setup?</p>
+<ul class="simple">
+<li><p>Which approach is modeling this behavior best?</p></li>
+</ul>
+</li>
+<li><p>Can you make adjustments to get them all more inline with each other?</p></li>
+<li><p>What visualizations are useful in determining which of these approaches is working properly?</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">tf</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">deltat</span> <span class="o">=</span> <span class="p">(</span><span class="n">tf</span><span class="o">-</span><span class="n">t0</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+
+<span class="n">y_arr_EC</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">vy_arr_EC</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">y_arr_RK2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">vy_arr_RK2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">y_arr_RK4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">vy_arr_RK4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.8</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mi">0</span>
+
+
+<span class="c1">#print(m*g/beta)</span>
+
+<span class="n">t_arr_EC</span><span class="p">,</span> <span class="n">y_arr_EC</span><span class="p">,</span> <span class="n">vy_arr_EC</span> <span class="o">=</span> <span class="n">EC</span><span class="p">(</span><span class="n">y_arr_EC</span><span class="p">,</span> <span class="n">vy_arr_EC</span><span class="p">,</span> <span class="n">deltat</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">t0</span><span class="p">)</span>
+<span class="n">t_arr_RK2</span><span class="p">,</span> <span class="n">y_arr_RK2</span><span class="p">,</span> <span class="n">vy_arr_RK2</span> <span class="o">=</span> <span class="n">RK2</span><span class="p">(</span><span class="n">y_arr_RK2</span><span class="p">,</span> <span class="n">vy_arr_RK2</span><span class="p">,</span> <span class="n">deltat</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">t0</span><span class="p">)</span>
+<span class="n">t_arr_RK4</span><span class="p">,</span> <span class="n">y_arr_RK4</span><span class="p">,</span> <span class="n">vy_arr_RK4</span> <span class="o">=</span> <span class="n">RK4</span><span class="p">(</span><span class="n">y_arr_RK4</span><span class="p">,</span> <span class="n">vy_arr_RK4</span><span class="p">,</span> <span class="n">deltat</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">t0</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_arr_EC</span><span class="p">,</span><span class="n">y_arr_EC</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_arr_RK2</span><span class="p">,</span><span class="n">y_arr_RK2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_arr_RK4</span><span class="p">,</span><span class="n">y_arr_RK4</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="o">*</span><span class="n">g</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (t)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Speed (y)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;EC&#39;</span><span class="p">,</span><span class="s1">&#39;RK2&#39;</span><span class="p">,</span><span class="s1">&#39;RK4&#39;</span><span class="p">,</span> <span class="s1">&#39;No Drag&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [8],</span> in <span class="ni">&lt;cell line: 22&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="c1">#print(m*g/beta)</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="n">t_arr_EC</span><span class="p">,</span> <span class="n">y_arr_EC</span><span class="p">,</span> <span class="n">vy_arr_EC</span> <span class="o">=</span> <span class="n">EC</span><span class="p">(</span><span class="n">y_arr_EC</span><span class="p">,</span> <span class="n">vy_arr_EC</span><span class="p">,</span> <span class="n">deltat</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">t0</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">22</span> <span class="n">t_arr_RK2</span><span class="p">,</span> <span class="n">y_arr_RK2</span><span class="p">,</span> <span class="n">vy_arr_RK2</span> <span class="o">=</span> <span class="n">RK2</span><span class="p">(</span><span class="n">y_arr_RK2</span><span class="p">,</span> <span class="n">vy_arr_RK2</span><span class="p">,</span> <span class="n">deltat</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">t0</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="n">t_arr_RK4</span><span class="p">,</span> <span class="n">y_arr_RK4</span><span class="p">,</span> <span class="n">vy_arr_RK4</span> <span class="o">=</span> <span class="n">RK4</span><span class="p">(</span><span class="n">y_arr_RK4</span><span class="p">,</span> <span class="n">vy_arr_RK4</span><span class="p">,</span> <span class="n">deltat</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">t0</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="nn">Input In [6],</span> in <span class="ni">RK2</span><span class="nt">(y_arr, vy_arr, deltat, m, g, alpha, beta, tstart)</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="c1">## The core of the RK algorithm</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="c1">## For each point starting with the first and going to the last</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="c1">## calculate the changes to the location and velocity </span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span> <span class="c1">## Add those changes to the original value and</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="c1">## store that in the very next position in the arrays</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="c1">## REPEAT UNTIL DONE</span>
+<span class="g g-Whitespace">     </span><span class="mi">37</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">y_arr</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span>     
+<span class="g g-Whitespace">     </span><span class="mi">39</span>     <span class="c1">## It&#39;s two steps now</span>
+<span class="ne">---&gt; </span><span class="mi">40</span>     <span class="n">k1_y</span><span class="p">,</span> <span class="n">k1_vy</span> <span class="o">=</span> <span class="n">DeriveDragModel1D</span><span class="p">(</span><span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span><span class="o">*</span><span class="n">deltat</span>   <span class="c1">## DONT FORGET THE DELTAT FOR THESE LIKE I DID FOR AN HOUR!!!!</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span>     <span class="n">k2_y</span><span class="p">,</span> <span class="n">k2_vy</span> <span class="o">=</span> <span class="n">DeriveDragModel1D</span><span class="p">(</span><span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">k1_y</span><span class="p">,</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">k1_vy</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span><span class="o">*</span><span class="n">deltat</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span>     <span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k2_</span><span class="p">,</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k2_vy</span>
+
+<span class="ne">TypeError</span>: can&#39;t multiply sequence by non-int of type &#39;float&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">IntegrateEuler</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">):</span>
+    
+    <span class="n">h</span><span class="o">=</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+    
+    <span class="n">tpoints</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">h</span><span class="p">)</span>
+    <span class="n">xpoints</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tpoints</span><span class="p">:</span>
+        
+        <span class="n">xpoints</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">+=</span><span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">tpoints</span><span class="p">,</span> <span class="n">xpoints</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tpoints</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">xpoints</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">tpoints</span><span class="p">,</span> <span class="n">xpoints</span> <span class="o">=</span> <span class="n">IntegrateEuler</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">N</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tpoints</span><span class="p">,</span><span class="n">xpoints</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;x(t)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;x(t)&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/activity-ODE-numerical-OLD_17_1.png" src="../../_images/activity-ODE-numerical-OLD_17_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">IntegrateRungeKutta2</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">):</span>
+    
+    <span class="n">h</span><span class="o">=</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+    
+    <span class="n">tpoints</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">h</span><span class="p">)</span>
+    <span class="n">xpoints</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tpoints</span><span class="p">:</span>
+        
+        <span class="n">xpoints</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">k1</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+        <span class="n">k2</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">k1</span><span class="p">,</span> <span class="n">t</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">+=</span> <span class="n">k2</span>
+    
+    <span class="k">return</span> <span class="n">tpoints</span><span class="p">,</span> <span class="n">xpoints</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="n">tpoint</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">xpoint</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">tpoint</span><span class="p">,</span> <span class="n">xpoint</span> <span class="o">=</span> <span class="n">IntegrateEuler</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="n">tpoint2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">xpoint2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">tpoints2</span><span class="p">,</span> <span class="n">xpoints2</span> <span class="o">=</span> <span class="n">IntegrateRungeKutta2</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tpoints</span><span class="p">,</span><span class="n">xpoints</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tpoints2</span><span class="p">,</span> <span class="n">xpoints2</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;x(t)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Euler&#39;</span><span class="p">,</span><span class="s1">&#39;Runge-Kutta 2&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x117ee3d60&gt;
+</pre></div>
+</div>
+<img alt="../../_images/activity-ODE-numerical-OLD_19_1.png" src="../../_images/activity-ODE-numerical-OLD_19_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">IntegrateRungeKutta4</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">):</span>
+    
+    <span class="n">h</span><span class="o">=</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+    
+    <span class="n">tpoints</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">h</span><span class="p">)</span>
+    <span class="n">xpoints</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tpoints</span><span class="p">:</span>
+        
+        <span class="n">xpoints</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">k1</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+        <span class="n">k2</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">k1</span><span class="p">,</span> <span class="n">t</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+        <span class="n">k3</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">k2</span><span class="p">,</span> <span class="n">t</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+        <span class="n">k4</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">k3</span><span class="p">,</span> <span class="n">t</span><span class="o">+</span><span class="n">h</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">+=</span> <span class="p">(</span><span class="n">k1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">k2</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">k3</span><span class="o">+</span><span class="n">k4</span><span class="p">)</span><span class="o">/</span><span class="mi">6</span>
+    
+    <span class="k">return</span> <span class="n">tpoints</span><span class="p">,</span> <span class="n">xpoints</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="n">tpoint</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">xpoint</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">tpoint</span><span class="p">,</span> <span class="n">xpoint</span> <span class="o">=</span> <span class="n">IntegrateEuler</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="n">tpoint2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">xpoint2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">tpoints2</span><span class="p">,</span> <span class="n">xpoints2</span> <span class="o">=</span> <span class="n">IntegrateRungeKutta2</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="n">tpoint3</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">xpoint3</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">tpoints3</span><span class="p">,</span> <span class="n">xpoints3</span> <span class="o">=</span> <span class="n">IntegrateRungeKutta4</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tpoints</span><span class="p">,</span><span class="n">xpoints</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tpoints2</span><span class="p">,</span> <span class="n">xpoints2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tpoints3</span><span class="p">,</span> <span class="n">xpoints3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;x(t)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Euler&#39;</span><span class="p">,</span><span class="s1">&#39;Runge-Kutta 2&#39;</span><span class="p">,</span><span class="s1">&#39;Runge-Kutta 4&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x117e1b850&gt;
+</pre></div>
+</div>
+<img alt="../../_images/activity-ODE-numerical-OLD_21_1.png" src="../../_images/activity-ODE-numerical-OLD_21_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="n">tpoints</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">xpoints</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">tpoints</span><span class="p">,</span> <span class="n">xpoints</span> <span class="o">=</span> <span class="n">IntegrateEuler</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="n">tpoint2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">xpoint2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">tpoints2</span><span class="p">,</span> <span class="n">xpoints2</span> <span class="o">=</span> <span class="n">IntegrateRungeKutta2</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="n">tpoint3</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">xpoint3</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">tpoints3</span><span class="p">,</span> <span class="n">xpoints3</span> <span class="o">=</span> <span class="n">IntegrateRungeKutta4</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tpoints</span><span class="p">,</span> <span class="n">xpoints</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tpoints2</span><span class="p">,</span> <span class="n">xpoints2</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tpoints3</span><span class="p">,</span> <span class="n">xpoints3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;x(t)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Euler&#39;</span><span class="p">,</span><span class="s1">&#39;Runge-Kutta 2&#39;</span><span class="p">,</span><span class="s1">&#39;Runge-Kutta 4&#39;</span><span class="p">])</span>
+
+<span class="c1"># These are in unitless percentages of the figure size. (0,0 is bottom left)</span>
+<span class="n">left</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.49</span><span class="p">,</span> <span class="mf">0.55</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">]</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="n">left</span><span class="p">,</span> <span class="n">bottom</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">])</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tpoints</span><span class="p">,</span><span class="n">xpoints</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tpoints2</span><span class="p">,</span> <span class="n">xpoints2</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tpoints3</span><span class="p">,</span> <span class="n">xpoints3</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">8.5</span><span class="p">,</span> <span class="mf">9.5</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">0.50</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.5, 1.0)
+</pre></div>
+</div>
+<img alt="../../_images/activity-ODE-numerical-OLD_22_1.png" src="../../_images/activity-ODE-numerical-OLD_22_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">NonlinearPendulum</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">t</span><span class="p">):</span>
+    
+    <span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="mf">0.1</span>
+
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">omega</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">ftheta</span> <span class="o">=</span> <span class="n">omega</span>
+    <span class="n">fomega</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">g</span><span class="o">/</span><span class="n">l</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ftheta</span><span class="p">,</span> <span class="n">fomega</span><span class="p">],</span> <span class="nb">float</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">IntegrateRungeKutta4Vectorized</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">xstart</span><span class="p">):</span>
+    
+    <span class="n">h</span><span class="o">=</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">xstart</span>
+    
+    <span class="n">tpoints</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">h</span><span class="p">)</span>
+    <span class="n">xpoints</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">([</span><span class="n">N</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+    
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">:</span>
+        
+        <span class="n">xpoints</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
+
+        <span class="n">k1</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="n">NonlinearPendulum</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+        <span class="n">k2</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="n">NonlinearPendulum</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">k1</span><span class="p">,</span> <span class="n">t</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+        <span class="n">k3</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="n">NonlinearPendulum</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">k2</span><span class="p">,</span> <span class="n">t</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+        <span class="n">k4</span> <span class="o">=</span> <span class="n">h</span><span class="o">*</span><span class="n">NonlinearPendulum</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">k3</span><span class="p">,</span> <span class="n">t</span><span class="o">+</span><span class="n">h</span><span class="p">)</span>
+        
+        <span class="n">x</span> <span class="o">+=</span> <span class="p">(</span><span class="n">k1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">k2</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">k3</span><span class="o">+</span><span class="n">k4</span><span class="p">)</span><span class="o">/</span><span class="mi">6</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="k">return</span> <span class="n">tpoints</span><span class="p">,</span> <span class="n">xpoints</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="n">tpoints4</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">xpoints4</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">theta0</span> <span class="o">=</span> <span class="mf">179.0</span><span class="o">/</span><span class="mi">360</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="c1">## Degrees to radians</span>
+<span class="n">omega0</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+<span class="n">InitialConditions</span> <span class="o">=</span> <span class="p">[</span><span class="n">theta0</span><span class="p">,</span> <span class="n">omega0</span><span class="p">]</span>
+
+<span class="n">tpoints4</span><span class="p">,</span> <span class="n">xpoints4</span> <span class="o">=</span> <span class="n">IntegrateRungeKutta4Vectorized</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">InitialConditions</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tpoints4</span><span class="p">,</span> <span class="n">xpoints4</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;theta(t)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;theta(t)&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/activity-ODE-numerical-OLD_25_1.png" src="../../_images/activity-ODE-numerical-OLD_25_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># from scipy.integrate import odeint</span>
+
+<span class="c1"># y0 = [179/360*2*np.pi,0]</span>
+<span class="c1"># t = np.linspace(0,10,N)</span>
+
+<span class="c1"># def PhysicalPendulum(y,t,g,l):</span>
+    
+<span class="c1">#     theta = y[0]</span>
+<span class="c1">#     omega = y[1]</span>
+<span class="c1">#     dtheta_dt = omega</span>
+<span class="c1">#     domega_dt = -(g/l)*np.sin(theta) </span>
+    
+<span class="c1">#     return [dtheta_dt,domega_dt]</span>
+
+<span class="c1"># theta = odeint(PhysicalPendulum, y0, t, args = (g,l))</span>
+
+<span class="c1"># fig, ax1 = plt.subplots()</span>
+
+<span class="c1"># ax1.plot(t, theta[:,0])</span>
+<span class="c1"># ax1.plot(tpoints4, xpoints4[:,0])</span>
+
+<span class="c1"># plt.legend([&#39;SciPy&#39;, &#39;RK4&#39;], loc=1)</span>
+<span class="c1"># plt.xlabel(&#39;t&#39;)</span>
+<span class="c1"># plt.ylabel(&#39;theta(t)&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/2_oscillations"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Danny Caballero<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

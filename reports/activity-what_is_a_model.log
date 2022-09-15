@@ -17,30 +17,13 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-tpoints = []
-xpoints = []
-tpoints, xpoints = IntegrateEuler(0.0,10.0, N=10)
-
-plt.plot(tpoints,xpoints)
-plt.xlabel('t')
-plt.ylabel('x(t)')
+If you would like to dive deeper:
 ------------------
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-Input [0;32mIn [10][0m, in [0;36m<cell line: 3>[0;34m()[0m
-[1;32m      1[0m tpoints [38;5;241m=[39m []
-[1;32m      2[0m xpoints [38;5;241m=[39m []
-[0;32m----> 3[0m tpoints, xpoints [38;5;241m=[39m [43mIntegrateEuler[49m[43m([49m[38;5;241;43m0.0[39;49m[43m,[49m[38;5;241;43m10.0[39;49m[43m,[49m[43m [49m[43mN[49m[38;5;241;43m=[39;49m[38;5;241;43m10[39;49m[43m)[49m
-[1;32m      5[0m plt[38;5;241m.[39mplot(tpoints,xpoints)
-[1;32m      6[0m plt[38;5;241m.[39mxlabel([38;5;124m'[39m[38;5;124mt[39m[38;5;124m'[39m)
+[0;36m  Input [0;32mIn [2][0;36m[0m
+[0;31m    If you would like to dive deeper:[0m
+[0m       ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
 
-Input [0;32mIn [9][0m, in [0;36mIntegrateEuler[0;34m(a, b, N, x)[0m
-[1;32m      8[0m [38;5;28;01mfor[39;00m t [38;5;129;01min[39;00m tpoints:
-[1;32m     10[0m     xpoints[38;5;241m.[39mappend(x)
-[0;32m---> 11[0m     x [38;5;241m+[39m[38;5;241m=[39mh[38;5;241m*[39m[43mf[49m(x,t)
-[1;32m     13[0m [38;5;28;01mreturn[39;00m tpoints, xpoints
-
-[0;31mNameError[0m: name 'f' is not defined
-NameError: name 'f' is not defined
+SyntaxError: invalid syntax (3700249650.py, line 1)
 

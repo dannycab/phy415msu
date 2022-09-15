@@ -48,21 +48,6 @@ import matplotlib.pyplot as plt
 # 4. There's a few of these models with parameters, you can choose those, but maybe look into reasonable values. These models are likely the most challenging in this assignment because you have to keep track of and pass parameters.
 # 5. Finally, some of these models have a time depdendent component, i.e., some $F(t)$. We are neglecting that for now and will come back to it in ODE Palooza 2 - Electric Boogaloo. 
 
-# A few 2nd order models:
-# 
-# 1. [The Damped Pendulum](https://en.wikipedia.org/wiki/Harmonic_oscillator#Damped_harmonic_oscillator): 
-# $$m\ddot{x} + b\dot{x} + kx = 0$$ 
-# 2. [Anharmonic Oscillator (Symmetric)](https://en.wikipedia.org/wiki/Anharmonicity) 
-# $$m\ddot{x} + b\dot{x} + k_1 x + k_2 x^3 = 0$$
-# 3. [Double Well Potential:](https://en.wikipedia.org/wiki/Double-well_potential) 
-# $$\ddot{x} = x-x^3$$
-# 4. [Van Der Pol Oscillator:](https://en.wikipedia.org/wiki/Van_der_Pol_oscillator) 
-# $$\dot{x}=y; \dot{y} = -x+y(1-x^2)$$
-# 5. [Dipole Fixed Points:](https://en.wikipedia.org/wiki/Stability_theory) 
-# $$\dot{x} = 2xy; \dot{y} = y^2 - x^2$$
-# 6. [Duffing Oscillator:](https://en.wikipedia.org/wiki/Duffing_equation) 
-# $$\ddot{x} + x + \epsilon x^3=0$$
-
 # ## Integrators
 # 
 # We worked with Euler-Cromer, RK2, and RK4. Below is that same code (corrected) and generalized that you are free to use and modify in your explorations. It is called just like before.
@@ -400,8 +385,35 @@ plt.xlabel('vx')
 ax.legend(loc = 1);
 
 
-# In[ ]:
+# ## Activity
+# 
+# Pick an ODE as a group and explore it as we have done in class. The critical element here is not only working on making the models but finding where the key components of our model evaluation framework appear in your work. It is ok if it doesn't all show up for you. We will dsicuss as a class how we might see these components in our modeling work. As a reminder, here's the framework:
+# 
+# ### Goal: Investigate physical systems (0.30)
+#  
+#  - How well does your computational essay <mark>predict</mark> or <mark>explain</mark> the system of interest?
+#  - How well does your computational essay allow the user to <mark>explore</mark> and <mark>investigate</mark> the system?
+# 
+# ### Goal: Construct and document a reproducible process (0.10)
+# 
+# - How well does your computational essay <mark>reproduce</mark> your results and claims?
+# - How  <mark>well documented</mark> is your computational essay?
+# 
+# ### Goal: Use analytical, computational, and graphical approaches (0.30)
+# 
+# - How well does your computational essay document your <mark>assumptions</mark>?
+# - How well does your computational essay produce an <mark>understandable</mark> and <mark>parsimonious</mark> model?
+# - How well does your computational essay explain the <mark>limitations</mark> of your analysis?
+# 
+# ### Goal: Provide evidence of the quality of their work
+# 
+# - How well does your computational essay <mark>present</mark>  the case for its claims?
+# - How well <mark>validated</mark>  is your model?
+# 
+# ### Goal: Collaborate effectively
+# 
+# - How well did you <mark>share</mark>  in the class's knowledge?
+#   - How well is that documented in your computational essay?
+# - How well did you <mark>work with your partner</mark> ? *For those choosing to do so*
 
-
-
-
+# 

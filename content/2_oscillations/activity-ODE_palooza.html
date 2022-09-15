@@ -509,6 +509,38 @@ title="Print to PDF"
    Using ODEint
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#activity">
+   Activity
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#goal-investigate-physical-systems-0-30">
+     Goal: Investigate physical systems (0.30)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#goal-construct-and-document-a-reproducible-process-0-10">
+     Goal: Construct and document a reproducible process (0.10)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#goal-use-analytical-computational-and-graphical-approaches-0-30">
+     Goal: Use analytical, computational, and graphical approaches (0.30)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#goal-provide-evidence-of-the-quality-of-their-work">
+     Goal: Provide evidence of the quality of their work
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#goal-collaborate-effectively">
+     Goal: Collaborate effectively
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </nav>
@@ -547,6 +579,38 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#using-odeint">
    Using ODEint
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#activity">
+   Activity
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#goal-investigate-physical-systems-0-30">
+     Goal: Investigate physical systems (0.30)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#goal-construct-and-document-a-reproducible-process-0-10">
+     Goal: Construct and document a reproducible process (0.10)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#goal-use-analytical-computational-and-graphical-approaches-0-30">
+     Goal: Use analytical, computational, and graphical approaches (0.30)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#goal-provide-evidence-of-the-quality-of-their-work">
+     Goal: Provide evidence of the quality of their work
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#goal-collaborate-effectively">
+     Goal: Collaborate effectively
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -608,21 +672,6 @@ title="Print to PDF"
 <li><p>The models without parameter exploration are the Double Well, the Van Der Pol, and the Dipole fixed points. This might be the next easiest to work with because you don’t have to manipulate or pass parameters.</p></li>
 <li><p>There’s a few of these models with parameters, you can choose those, but maybe look into reasonable values. These models are likely the most challenging in this assignment because you have to keep track of and pass parameters.</p></li>
 <li><p>Finally, some of these models have a time depdendent component, i.e., some <span class="math notranslate nohighlight">\(F(t)\)</span>. We are neglecting that for now and will come back to it in ODE Palooza 2 - Electric Boogaloo.</p></li>
-</ol>
-<p>A few 2nd order models:</p>
-<ol class="simple">
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Harmonic_oscillator#Damped_harmonic_oscillator">The Damped Pendulum</a>:
-$<span class="math notranslate nohighlight">\(m\ddot{x} + b\dot{x} + kx = 0\)</span>$</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Anharmonicity">Anharmonic Oscillator (Symmetric)</a>
-$<span class="math notranslate nohighlight">\(m\ddot{x} + b\dot{x} + k_1 x + k_2 x^3 = 0\)</span>$</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Double-well_potential">Double Well Potential:</a>
-$<span class="math notranslate nohighlight">\(\ddot{x} = x-x^3\)</span>$</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Van_der_Pol_oscillator">Van Der Pol Oscillator:</a>
-$<span class="math notranslate nohighlight">\(\dot{x}=y; \dot{y} = -x+y(1-x^2)\)</span>$</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Stability_theory">Dipole Fixed Points:</a>
-$<span class="math notranslate nohighlight">\(\dot{x} = 2xy; \dot{y} = y^2 - x^2\)</span>$</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Duffing_equation">Duffing Oscillator:</a>
-$<span class="math notranslate nohighlight">\(\ddot{x} + x + \epsilon x^3=0\)</span>$</p></li>
 </ol>
 <section id="integrators">
 <h2>Integrators<a class="headerlink" href="#integrators" title="Permalink to this headline">#</a></h2>
@@ -890,10 +939,10 @@ $<span class="math notranslate nohighlight">\(\ddot{x} + x + \epsilon x^3=0\)</s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x119a16380&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x114fd8880&gt;
 </pre></div>
 </div>
-<img alt="../../_images/activity-ODE_palooza_8_1.png" src="../../_images/activity-ODE_palooza_8_1.png" />
+<img alt="../../_images/activity-ODE_palooza_7_1.png" src="../../_images/activity-ODE_palooza_7_1.png" />
 </div>
 </div>
 </section>
@@ -956,7 +1005,7 @@ $<span class="math notranslate nohighlight">\(\ddot{x} + x + \epsilon x^3=0\)</s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/activity-ODE_palooza_15_0.png" src="../../_images/activity-ODE_palooza_15_0.png" />
+<img alt="../../_images/activity-ODE_palooza_14_0.png" src="../../_images/activity-ODE_palooza_14_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -973,9 +1022,53 @@ $<span class="math notranslate nohighlight">\(\ddot{x} + x + \epsilon x^3=0\)</s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/activity-ODE_palooza_16_0.png" src="../../_images/activity-ODE_palooza_16_0.png" />
+<img alt="../../_images/activity-ODE_palooza_15_0.png" src="../../_images/activity-ODE_palooza_15_0.png" />
 </div>
 </div>
+</section>
+<section id="activity">
+<h2>Activity<a class="headerlink" href="#activity" title="Permalink to this headline">#</a></h2>
+<p>Pick an ODE as a group and explore it as we have done in class. The critical element here is not only working on making the models but finding where the key components of our model evaluation framework appear in your work. It is ok if it doesn’t all show up for you. We will dsicuss as a class how we might see these components in our modeling work. As a reminder, here’s the framework:</p>
+<section id="goal-investigate-physical-systems-0-30">
+<h3>Goal: Investigate physical systems (0.30)<a class="headerlink" href="#goal-investigate-physical-systems-0-30" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>How well does your computational essay <mark>predict</mark> or <mark>explain</mark> the system of interest?</p></li>
+<li><p>How well does your computational essay allow the user to <mark>explore</mark> and <mark>investigate</mark> the system?</p></li>
+</ul>
+</section>
+<section id="goal-construct-and-document-a-reproducible-process-0-10">
+<h3>Goal: Construct and document a reproducible process (0.10)<a class="headerlink" href="#goal-construct-and-document-a-reproducible-process-0-10" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>How well does your computational essay <mark>reproduce</mark> your results and claims?</p></li>
+<li><p>How  <mark>well documented</mark> is your computational essay?</p></li>
+</ul>
+</section>
+<section id="goal-use-analytical-computational-and-graphical-approaches-0-30">
+<h3>Goal: Use analytical, computational, and graphical approaches (0.30)<a class="headerlink" href="#goal-use-analytical-computational-and-graphical-approaches-0-30" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>How well does your computational essay document your <mark>assumptions</mark>?</p></li>
+<li><p>How well does your computational essay produce an <mark>understandable</mark> and <mark>parsimonious</mark> model?</p></li>
+<li><p>How well does your computational essay explain the <mark>limitations</mark> of your analysis?</p></li>
+</ul>
+</section>
+<section id="goal-provide-evidence-of-the-quality-of-their-work">
+<h3>Goal: Provide evidence of the quality of their work<a class="headerlink" href="#goal-provide-evidence-of-the-quality-of-their-work" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>How well does your computational essay <mark>present</mark>  the case for its claims?</p></li>
+<li><p>How well <mark>validated</mark>  is your model?</p></li>
+</ul>
+</section>
+<section id="goal-collaborate-effectively">
+<h3>Goal: Collaborate effectively<a class="headerlink" href="#goal-collaborate-effectively" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>How well did you <mark>share</mark>  in the class’s knowledge?</p>
+<ul>
+<li><p>How well is that documented in your computational essay?</p></li>
+</ul>
+</li>
+<li><p>How well did you <mark>work with your partner</mark> ? <em>For those choosing to do so</em></p></li>
+</ul>
+</section>
 </section>
 </section>
 

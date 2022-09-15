@@ -286,10 +286,12 @@ def RK2(y_arr, vy_arr, deltat, m, g, alpha, beta, tstart=0):
         for i in np.arange(0,len(y_arr)-1):
             
             ## It's two steps now
-            k1_y, k1_vy = DeriveDragModel1D(y_arr[i], vy_arr[i], m, g, alpha, beta)*deltat   ## DONT FORGET THE DELTAT FOR THESE LIKE I DID FOR AN HOUR!!!!
-            k2_y, k2_vy = DeriveDragModel1D(y_arr[i]+0.5*k1_y, vy_arr[i]+0.5*k1_vy, m, g, alpha, beta)*deltat
+            k1_y, k1_vy = DeriveDragModel1D(y_arr[i], vy_arr[i], m, g, alpha, beta)
+            k1_y, k1_vy = k1_y*deltat, k1_vy*deltat   ## DONT FORGET THE DELTAT FOR THESE LIKE I DID FOR AN HOUR!!!!
             
-            y_arr[i+1], vy_arr[i+1] = y_arr[i]+k2_, vy_arr[i]+k2_vy
+            k2_y, k2_vy = DeriveDragModel1D(y_arr[i]+0.5*k1_y, vy_arr[i]+0.5*k1_vy, m, g, alpha, beta)
+            
+            y_arr[i+1], vy_arr[i+1] = y_arr[i]+k2_y*deltat, vy_arr[i]+k2_vy*deltat
          
         ## Give us all that information we worked so hard for   
         return t_arr, y_arr, vy_arr
@@ -341,13 +343,18 @@ def RK4(y_arr, vy_arr, deltat, m, g, alpha, beta, tstart=0):
         for i in np.arange(0,len(y_arr)-1):
             
             ## It's four steps now
-            k1_y, k1_vy = DeriveDragModel1D(y_arr[i], vy_arr[i], m, g, alpha, beta)*deltat ## DONT FORGET THE DELTAT FOR THESE LIKE I DID FOR AN HOUR!!!!
-            k2_y, k2_vy = DeriveDragModel1D(y_arr[i]+0.5*k1_y, vy_arr[i]+0.5*k1_vy, m, g, alpha, beta)*deltat
-            k3_y, k3_vy = DeriveDragModel1D(y_arr[i]+0.5*k2_y, vy_arr[i]+0.5*k2_vy, m, g, alpha, beta)*deltat
-            k4_y, k4_vy = DeriveDragModel1D(y_arr[i]+k3_y, vy_arr[i]+k3_vy, m, g, alpha, beta)*deltat
+            k1_y, k1_vy = DeriveDragModel1D(y_arr[i], vy_arr[i], m, g, alpha, beta)
+            k1_y, k1_vy = k1_y*deltat, k1_vy*deltat   ## DONT FORGET THE DELTAT FOR THESE LIKE I DID FOR AN HOUR!!!!
             
+            k2_y, k2_vy = DeriveDragModel1D(y_arr[i]+0.5*k1_y, vy_arr[i]+0.5*k1_vy, m, g, alpha, beta)
+            k2_y, k2_vy = k2_y*deltat, k2_vy*deltat   ## DONT FORGET THE DELTAT FOR THESE LIKE I DID FOR AN HOUR!!!!
             
-            y_arr[i+1], vy_arr[i+1] = y_arr[i]+k4_y, vy_arr[i]+k4_vy
+            k3_y, k3_vy = DeriveDragModel1D(y_arr[i]+0.5*k2_y, vy_arr[i]+0.5*k2_vy, m, g, alpha, beta)
+            k3_y, k3_vy = k3_y*deltat, k3_vy*deltat   ## DONT FORGET THE DELTAT FOR THESE LIKE I DID FOR AN HOUR!!!!
+            
+            k4_y, k4_vy = DeriveDragModel1D(y_arr[i]+k3_y, vy_arr[i]+k3_vy, m, g, alpha, beta)
+            
+            y_arr[i+1], vy_arr[i+1] = y_arr[i]+k4_y*deltat, vy_arr[i]+k4_vy*deltat
          
         ## Give us all that information we worked so hard for   
         return t_arr, y_arr, vy_arr
@@ -374,7 +381,7 @@ def RK4(y_arr, vy_arr, deltat, m, g, alpha, beta, tstart=0):
 
 t0 = 0
 tf = 5
-N = 10000
+N = 10
 deltat = (tf-t0)/N
 
 y_arr_EC = np.zeros(N)
@@ -386,8 +393,8 @@ vy_arr_RK4 = np.zeros(N)
 
 m = 1
 g = 9.8
-beta = 0
-alpha = 0
+beta = 0.01
+alpha = 0.02
 
 
 #print(m*g/beta)
@@ -407,7 +414,7 @@ plt.ylabel('Speed (y)')
 plt.legend(['EC','RK2','RK4', 'No Drag'])
 
 
-# In[6]:
+# In[9]:
 
 
 def IntegrateEuler(a, b, N, x = 0.0):
@@ -425,7 +432,7 @@ def IntegrateEuler(a, b, N, x = 0.0):
     return tpoints, xpoints
 
 
-# In[7]:
+# In[10]:
 
 
 tpoints = []

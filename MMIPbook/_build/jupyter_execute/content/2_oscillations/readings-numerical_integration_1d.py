@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 2 - Numerical Integration in 1D
+# # Notes: Numerical Integration in 1D
 # 
 # Principal Ideas for this unit will come from [Newman Chapter 8, Section 1](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/scans/Newman_Ch8_ODEs.pdf), which is the reading assigned below.
 # 

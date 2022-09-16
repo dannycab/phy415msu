@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2 - Numerical Integration in 1D &#8212; Mathematical Modeling in Physics</title>
+    <title>Notes: Numerical Integration in 1D &#8212; Mathematical Modeling in Physics</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -180,12 +180,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../1_modeling/activity-what_is_a_model.html">
-     In-Class Activity: 01 - What is a Model?
+     Activity: What is a Model?
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../1_modeling/notes-what_is_a_model.html">
-     Notes: 01 - What is a Model?
+     Notes: What is a Model?
     </a>
    </li>
   </ul>
@@ -207,7 +207,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="notes-SHO_and_dynamical_systems.html">
-     Notes: 02 - The SHO and Phase Portraits
+     Notes: The SHO and Phase Portraits
     </a>
    </li>
    <li class="toctree-l2">
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2 - Numerical Integration in 1D
+     Notes: Numerical Integration in 1D
     </a>
    </li>
    <li class="toctree-l2">
@@ -227,7 +227,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="activity-ODE_palooza.html">
-     ODE Palooza
+     Activity: ODE Palooza
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="readings-coupled-oscillators.html">
+     Coupled Oscillators
     </a>
    </li>
   </ul>
@@ -520,7 +525,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>2 - Numerical Integration in 1D</h1>
+                <h1>Notes: Numerical Integration in 1D</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -562,8 +567,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="numerical-integration-in-1d">
-<h1>2 - Numerical Integration in 1D<a class="headerlink" href="#numerical-integration-in-1d" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="notes-numerical-integration-in-1d">
+<h1>Notes: Numerical Integration in 1D<a class="headerlink" href="#notes-numerical-integration-in-1d" title="Permalink to this headline">#</a></h1>
 <p>Principal Ideas for this unit will come from <a class="reference external" href="https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/scans/Newman_Ch8_ODEs.pdf">Newman Chapter 8, Section 1</a>, which is the reading assigned below.</p>
 <p>We have seen how we can quickly exhaust our analytical tools when we investigate systems with interesting and complex behavior. We can see much from the perspective of phase space in terms of the qualitatively different behaviors (e.g., oscillations vs rotations, both clockwise and counter-clockwise, in the large angle pendulum). But what if we want to find the specific trajectory of a given set of initial conditions.</p>
 <p>That is we want to be able to take a more general differential equation:</p>

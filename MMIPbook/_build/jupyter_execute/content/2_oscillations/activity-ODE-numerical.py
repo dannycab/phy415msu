@@ -356,9 +356,10 @@ def RK4(y_arr, vy_arr, deltat, m, g, alpha, beta, tstart=0):
             k3_y, k3_vy = k3_y*deltat, k3_vy*deltat   ## DONT FORGET THE DELTAT FOR THESE LIKE I DID FOR AN HOUR!!!!
             
             k4_y, k4_vy = DeriveDragModel1D(y_arr[i]+k3_y, vy_arr[i]+k3_vy, m, g, alpha, beta)
+            k4_y, k4_vy = k4_y*deltat, k4_vy*deltat   ## DONT FORGET THE DELTAT FOR THESE LIKE I DID FOR AN HOUR!!!!
             
-            y_arr[i+1], vy_arr[i+1] = y_arr[i]+k4_y*deltat, vy_arr[i]+k4_vy*deltat
-         
+            y_arr[i+1], vy_arr[i+1] = y_arr[i]+(1.0/6)*(k1_y+2*k2_y+2*k3_y+k4_y), vy_arr[i]+(1.0/6)*(k1_vy+2*k2_vy+2*k3_vy+k4_vy)
+                 
         ## Give us all that information we worked so hard for   
         return t_arr, y_arr, vy_arr
         
@@ -609,8 +610,9 @@ def RK4_SHO(y_arr, vy_arr, deltat, g, l, tstart=0):
             k3_y, k3_vy = k3_y*deltat, k3_vy*deltat   ## DONT FORGET THE DELTAT FOR THESE LIKE I DID FOR AN HOUR!!!!
             
             k4_y, k4_vy = DeriveSHOModel1D(y_arr[i]+k3_y, vy_arr[i]+k3_vy, g, l)
+            k4_y, k4_vy = k4_y*deltat, k4_vy*deltat   ## DONT FORGET THE DELTAT FOR THESE LIKE I DID FOR AN HOUR!!!!
             
-            y_arr[i+1], vy_arr[i+1] = y_arr[i]+k4_y*deltat, vy_arr[i]+k4_vy*deltat
+            y_arr[i+1], vy_arr[i+1] = y_arr[i]+(1.0/6)*(k1_y+2*k2_y+2*k3_y+k4_y), vy_arr[i]+(1.0/6)*(k1_vy+2*k2_vy+2*k3_vy+k4_vy)
          
         ## Give us all that information we worked so hard for   
         return t_arr, y_arr, vy_arr
@@ -633,8 +635,8 @@ def RK4_SHO(y_arr, vy_arr, deltat, g, l, tstart=0):
 ## Setup time
 
 t0 = 0
-tf = 4
-N = 60
+tf = 20
+N = 300
 deltat = (tf-t0)/N
 
 ## Setup parameters (feel free to adjust)
@@ -666,16 +668,16 @@ t_arr_RK4, x_arr_RK4, vx_arr_RK4 = RK4_SHO(x_arr_RK4, vx_arr_RK4, deltat,  g, l,
 ## Plot figures
 fig = plt.figure(figsize=(12,6))
 
-plt.plot(t_arr_EC,x_arr_EC)
-plt.plot(t_arr_RK2,x_arr_RK2)
-plt.plot(t_arr_RK4,x_arr_RK4)
+#plt.plot(t_arr_EC,x_arr_EC, label='EC')
+plt.plot(t_arr_RK2,x_arr_RK2, label='RK2')
+plt.plot(t_arr_RK4,x_arr_RK4, label='RK4')
 
 t = np.arange(0,5,0.1)
-plt.plot(t, x0*np.cos(np.sqrt(g/l)*t))
+plt.plot(t, x0*np.cos(np.sqrt(g/l)*t), label='SHO Analytical')
 
 plt.xlabel('Time (t)')
 plt.ylabel('Position (x)')
-plt.legend(['EC','RK2','RK4', 'SHO Analytical'])
+plt.legend(loc=1)
 
 
 # ### Let's investigate
@@ -694,5 +696,7 @@ plt.legend(['EC','RK2','RK4', 'SHO Analytical'])
 # 
 # 1. Modify the code to model the LAP and repeat the same investigations noticing what you find.
 # 2. Make a plot of phase space (use old code) and plot your numerically determined trajectories in the space.
+
+# 
 
 # 

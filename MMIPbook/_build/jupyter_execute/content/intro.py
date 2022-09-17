@@ -10,16 +10,12 @@
 # `````{admonition} Updates
 # :class: tip
 # 
-# **11 Sept 22**
-# - [Tuesday's Class Activity](https://dannycaballero.info/phy415msu/content/2_oscillations/activity-ODE-numerical.html) is posted.
-# - For Thursday, we will finish what ever we do not on Tuesday and then play a game: Diffy-Q-Palooza
+# **17 Sept 22**
+# - [Readings are posted](https://dannycaballero.info/phy415msu/content/2_oscillations/readings-coupled-oscillators.html)
+#     - Focus on Secs. 1.4-1.5 of Crawford; we will do this work together
+#     - This week will have some pencil and paper work before we start computing
 # 
-# **09 Sept 22**
-# - [Readings](https://dannycaballero.info/phy415msu/content/2_oscillations/readings-numerical_integration_1d.html) for next week are posted (this is week 2)
-# 
-# **06 Sept 22**
-# - [Class notes](./2_oscillations/notes-SHO_and_dynamical_systems.md) have been posted along with some scans of book sections
-# - A [preliminary rubric](./0_course/rubric.md) for the first project is posted. A detailed breakdown is coming before next class.
+# [ARCHIVE](./0_course/news_archive.md)
 # 
 # `````
 

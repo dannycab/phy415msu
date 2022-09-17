@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="ODE Palooza" href="activity-ODE_palooza.html" />
-    <link rel="prev" title="2 - Numerical Integration in 1D" href="readings-numerical_integration_1d.html" />
+    <link rel="next" title="Activity: ODE Palooza" href="activity-ODE_palooza.html" />
+    <link rel="prev" title="Notes: Numerical Integration in 1D" href="readings-numerical_integration_1d.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -180,12 +180,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../1_modeling/activity-what_is_a_model.html">
-     In-Class Activity: 01 - What is a Model?
+     Activity: What is a Model?
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../1_modeling/notes-what_is_a_model.html">
-     Notes: 01 - What is a Model?
+     Notes: What is a Model?
     </a>
    </li>
   </ul>
@@ -207,7 +207,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="notes-SHO_and_dynamical_systems.html">
-     Notes: 02 - The SHO and Phase Portraits
+     Notes: The SHO and Phase Portraits
     </a>
    </li>
    <li class="toctree-l2">
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="readings-numerical_integration_1d.html">
-     2 - Numerical Integration in 1D
+     Notes: Numerical Integration in 1D
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -227,7 +227,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="activity-ODE_palooza.html">
-     ODE Palooza
+     Activity: ODE Palooza
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="readings-coupled-oscillators.html">
+     Notes: Coupled Oscillators
     </a>
    </li>
   </ul>
@@ -1065,9 +1070,10 @@ title="Print to PDF"
             <span class="n">k3_y</span><span class="p">,</span> <span class="n">k3_vy</span> <span class="o">=</span> <span class="n">k3_y</span><span class="o">*</span><span class="n">deltat</span><span class="p">,</span> <span class="n">k3_vy</span><span class="o">*</span><span class="n">deltat</span>   <span class="c1">## DONT FORGET THE DELTAT FOR THESE LIKE I DID FOR AN HOUR!!!!</span>
             
             <span class="n">k4_y</span><span class="p">,</span> <span class="n">k4_vy</span> <span class="o">=</span> <span class="n">DeriveDragModel1D</span><span class="p">(</span><span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k3_y</span><span class="p">,</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k3_vy</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
+            <span class="n">k4_y</span><span class="p">,</span> <span class="n">k4_vy</span> <span class="o">=</span> <span class="n">k4_y</span><span class="o">*</span><span class="n">deltat</span><span class="p">,</span> <span class="n">k4_vy</span><span class="o">*</span><span class="n">deltat</span>   <span class="c1">## DONT FORGET THE DELTAT FOR THESE LIKE I DID FOR AN HOUR!!!!</span>
             
-            <span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k4_y</span><span class="o">*</span><span class="n">deltat</span><span class="p">,</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k4_vy</span><span class="o">*</span><span class="n">deltat</span>
-         
+            <span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="mf">1.0</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">k1_y</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">k2_y</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">k3_y</span><span class="o">+</span><span class="n">k4_y</span><span class="p">),</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="mf">1.0</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">k1_vy</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">k2_vy</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">k3_vy</span><span class="o">+</span><span class="n">k4_vy</span><span class="p">)</span>
+                 
         <span class="c1">## Give us all that information we worked so hard for   </span>
         <span class="k">return</span> <span class="n">t_arr</span><span class="p">,</span> <span class="n">y_arr</span><span class="p">,</span> <span class="n">vy_arr</span>
         
@@ -1140,7 +1146,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x119c66bc0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x11958c070&gt;
 </pre></div>
 </div>
 <img alt="../../_images/activity-ODE-numerical_15_1.png" src="../../_images/activity-ODE-numerical_15_1.png" />
@@ -1330,8 +1336,9 @@ title="Print to PDF"
             <span class="n">k3_y</span><span class="p">,</span> <span class="n">k3_vy</span> <span class="o">=</span> <span class="n">k3_y</span><span class="o">*</span><span class="n">deltat</span><span class="p">,</span> <span class="n">k3_vy</span><span class="o">*</span><span class="n">deltat</span>   <span class="c1">## DONT FORGET THE DELTAT FOR THESE LIKE I DID FOR AN HOUR!!!!</span>
             
             <span class="n">k4_y</span><span class="p">,</span> <span class="n">k4_vy</span> <span class="o">=</span> <span class="n">DeriveSHOModel1D</span><span class="p">(</span><span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k3_y</span><span class="p">,</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k3_vy</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
+            <span class="n">k4_y</span><span class="p">,</span> <span class="n">k4_vy</span> <span class="o">=</span> <span class="n">k4_y</span><span class="o">*</span><span class="n">deltat</span><span class="p">,</span> <span class="n">k4_vy</span><span class="o">*</span><span class="n">deltat</span>   <span class="c1">## DONT FORGET THE DELTAT FOR THESE LIKE I DID FOR AN HOUR!!!!</span>
             
-            <span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k4_y</span><span class="o">*</span><span class="n">deltat</span><span class="p">,</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">k4_vy</span><span class="o">*</span><span class="n">deltat</span>
+            <span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="mf">1.0</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">k1_y</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">k2_y</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">k3_y</span><span class="o">+</span><span class="n">k4_y</span><span class="p">),</span> <span class="n">vy_arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="mf">1.0</span><span class="o">/</span><span class="mi">6</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">k1_vy</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">k2_vy</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">k3_vy</span><span class="o">+</span><span class="n">k4_vy</span><span class="p">)</span>
          
         <span class="c1">## Give us all that information we worked so hard for   </span>
         <span class="k">return</span> <span class="n">t_arr</span><span class="p">,</span> <span class="n">y_arr</span><span class="p">,</span> <span class="n">vy_arr</span>
@@ -1349,8 +1356,8 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Setup time</span>
 
 <span class="n">t0</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">tf</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="n">tf</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">300</span>
 <span class="n">deltat</span> <span class="o">=</span> <span class="p">(</span><span class="n">tf</span><span class="o">-</span><span class="n">t0</span><span class="p">)</span><span class="o">/</span><span class="n">N</span>
 
 <span class="c1">## Setup parameters (feel free to adjust)</span>
@@ -1382,21 +1389,21 @@ title="Print to PDF"
 <span class="c1">## Plot figures</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_arr_EC</span><span class="p">,</span><span class="n">x_arr_EC</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_arr_RK2</span><span class="p">,</span><span class="n">x_arr_RK2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_arr_RK4</span><span class="p">,</span><span class="n">x_arr_RK4</span><span class="p">)</span>
+<span class="c1">#plt.plot(t_arr_EC,x_arr_EC, label=&#39;EC&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_arr_RK2</span><span class="p">,</span><span class="n">x_arr_RK2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;RK2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_arr_RK4</span><span class="p">,</span><span class="n">x_arr_RK4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;RK4&#39;</span><span class="p">)</span>
 
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">g</span><span class="o">/</span><span class="n">l</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">g</span><span class="o">/</span><span class="n">l</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;SHO Analytical&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (t)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Position (x)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;EC&#39;</span><span class="p">,</span><span class="s1">&#39;RK2&#39;</span><span class="p">,</span><span class="s1">&#39;RK4&#39;</span><span class="p">,</span> <span class="s1">&#39;SHO Analytical&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x119e5a530&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1196e77c0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/activity-ODE-numerical_21_1.png" src="../../_images/activity-ODE-numerical_21_1.png" />
@@ -1459,13 +1466,13 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">2 - Numerical Integration in 1D</p>
+            <p class="prev-next-title">Notes: Numerical Integration in 1D</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="activity-ODE_palooza.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">ODE Palooza</p>
+        <p class="prev-next-title">Activity: ODE Palooza</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

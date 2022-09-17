@@ -2,6 +2,14 @@
 
 *appears in reverse chronological order*
 
+**11 Sept 22**
+- [Tuesday's Class Activity](https://dannycaballero.info/phy415msu/content/2_oscillations/activity-ODE-numerical.html) is posted.
+- For Thursday, we will finish what ever we do not on Tuesday and then play a game: Diffy-Q-Palooza
+
+**09 Sept 22**
+- [Readings](https://dannycaballero.info/phy415msu/content/2_oscillations/readings-numerical_integration_1d.html) for next week are posted (this is week 2)
+
+
 **06 Sept 22**
 - A [preliminary rubric](./0_course/rubric.md) for the first project is posted. A detailed breakdown is coming before next class.
 

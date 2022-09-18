@@ -96,7 +96,7 @@ YouTubeVideo("yVkdfJ9PkRQ", 800, 600)
 # 
 # ### Crawford's Waves book - Secs. 1.1-1.5
 # 
-# This book is a great resource for learning about oscillations and waves. Unfortunately, it is out of print. The first section of this book was assigned on the first week ([Secs. 1.1-1.3](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/scans/Crawford-Waves-Secs_1.4-1.5.pdf); **Click Download**). If you want a reminder about oscillations from Crawford's perspective, please review that. But read [Sections 1.4-1.5](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/scans/Crawford-Waves-Secs_1.4-1.5.pdf); **Click Download**) for class. It will introduce the concept of normal modes, which we will discuss with a short lecture and example that you work on Tuesday. And it will show a phenomenon that we will explore Thursday: [Beats](https://en.wikipedia.org/wiki/Beat_(acoustics))
+# This book is a great resource for learning about oscillations and waves. Unfortunately, it is out of print. The first section of this book was assigned on the first week ([Secs. 1.1-1.3](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/scans/Crawford-Waves-Secs_1.1-1.3.pdf); **Click Download**). If you want a reminder about oscillations from Crawford's perspective, please review that. But read [Sections 1.4-1.5](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/scans/Crawford-Waves-Secs_1.4-1.5.pdf); **Click Download**) for class. It will introduce the concept of normal modes, which we will discuss with a short lecture and example that you work on Tuesday. And it will show a phenomenon that we will explore Thursday: [Beats](https://en.wikipedia.org/wiki/Beat_(acoustics))
 # 
 # ## Video Resources
 # 

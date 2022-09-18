@@ -1,6 +1,6 @@
 # Project 1
 
-Project 1 will focus on the the topic of ordinary differential equations in physics. Differential equations are often how we describe nature because nature often changes continously (quantum mehcanics not withstanding). We focused in class on the harmonix oscilaltor and it's variants. Your job is to develop a project that investigates some nonlinear differential equation of your choosing. My expectation is that this ODE is nonlinear, at least 2nd order or two coupled 1st order equations, and that is of interest to you personally or professionally. I will provide a list of potential candidates.
+Project 1 will focus on the the topic of ordinary differential equations in physics. Differential equations are often how we describe nature because nature often changes continuously (quantum mechanics notwithstanding). We focused in class on the harmonic oscillator and its variants. Your job is to develop a project that investigates some nonlinear differential equation of your choosing. My expectation is that this ODE is nonlinear, at least 2nd order or two coupled 1st order equations, and that is of interest to you personally or professionally. I will provide a list of potential candidates.
 
 ## What do you need to do?
 
@@ -32,9 +32,16 @@ But for this first project, I have a list of tasks that you have experienced in 
 
 - Wikipedia's list of famous equations
 [https://en.wikipedia.org/wiki/List_of_nonlinear_ordinary_differential_equations](https://en.wikipedia.org/wiki/List_of_nonlinear_ordinary_differential_equations)
-    - Consider: the Chandrasekhar equation, the Duffing model, the Langmuir equation, the Rayliegh equation, the Van Der Pol oscillator
+    - Consider: the Chandrasekhar equation, the Duffing model, the Langmuir equation, the Rayleigh equation, the Van Der Pol oscillator
 - Strogatz's Nonlinear Dynamics and Chaos
     - Check out Chapters 4-5 (SCAN COMING). There are many interesting examples and problem setups you could use.
 - Think about other systems that are described mathematically as an ODE
     - Predator-prey models, Pursuit models, Fireflies, etc.
 
+
+## Rubric
+
+Based on our discussion in class, we will emphasize **Prediction and Explanation**, **Reproducibility and Documentation**, and **Presentations and Validation** for this project. It appears we had lots of ideas for what good work in those areas might look like. This means we will have slightly more rigorous expectations on those pieces. Below is the rubric we will use. I have marked the elements that we will scrutinize more closely with italics.
+
+
+<img src="../../../assets/images/p1_rubric.png"/>

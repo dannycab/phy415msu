@@ -43,5 +43,6 @@ But for this first project, I have a list of tasks that you have experienced in 
 
 Based on our discussion in class, we will emphasize **Prediction and Explanation**, **Reproducibility and Documentation**, and **Presentations and Validation** for this project. It appears we had lots of ideas for what good work in those areas might look like. This means we will have slightly more rigorous expectations on those pieces. Below is the rubric we will use. I have marked the elements that we will scrutinize more closely with italics.
 
+**Right click and open in new tab for large version**
 
-<img src="../../../assets/images/p1_rubric.png"/>
+![Rubric](../../../assets/images/p1_rubric.png)

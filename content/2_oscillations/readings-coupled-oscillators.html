@@ -638,16 +638,22 @@ title="Print to PDF"
 <img src='https://www.entropy.energy/static/resources/coupled-oscillators/two-coupled-gliders-diagram.png' alt='Coupled Oscillator set up. Two oscillators connected by three springs in a horizontal line.' width=800px/>
 <p>Our analysis will proceed with an investigation of <a class="reference external" href="https://en.wikipedia.org/wiki/Normal_mode">normal modes</a>, which is a powerful tool that lets us not only analyze systems with many degrees of freedom; it can help us conceptually think about building up solutions for continuous systems that have infinite degrees of freedom (i.e., a rope or a water wave).</p>
 <p>We start by writing the differential equations that describe the motion of the system, noting that the length measures are critical for establishing the right differential equation:</p>
-<p>Left mass:
-$<span class="math notranslate nohighlight">\(m \ddot{x}_{1} = -k x_1 + k'(x_2-x_1)\)</span>$</p>
-<p>Right mass:
-$<span class="math notranslate nohighlight">\(m \ddot{x}_{2} = - k'(x_2-x_1)-kx_2\)</span>$</p>
-<p>We can write these in the following way:
-$<span class="math notranslate nohighlight">\(\ddot{x}_{1} = -\dfrac{k}{m} x_1 + \dfrac{k'}{m}(x_2-x_1)\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(\ddot{x}_{2} = - \dfrac{k'}{m}(x_2-x_1)-\dfrac{k}{m}x_2\)</span>$</p>
-<p>And then:
-$<span class="math notranslate nohighlight">\(\ddot{x}_{1} = -\left(\dfrac{k}{m}+\dfrac{k'}{m}\right) x_1 + \dfrac{k'}{m}x_2\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(\ddot{x}_{2} = \dfrac{k'}{m}x_1 - \left(\dfrac{k}{m}+\dfrac{k'}{m}\right)x_2\)</span>$</p>
+<p>Left mass:</p>
+<div class="math notranslate nohighlight">
+\[m \ddot{x}_{1} = -k x_1 + k'(x_2-x_1)\]</div>
+<p>Right mass:</p>
+<div class="math notranslate nohighlight">
+\[m \ddot{x}_{2} = - k'(x_2-x_1)-kx_2\]</div>
+<p>We can write these in the following way:</p>
+<div class="math notranslate nohighlight">
+\[\ddot{x}_{1} = -\dfrac{k}{m} x_1 + \dfrac{k'}{m}(x_2-x_1)\]</div>
+<div class="math notranslate nohighlight">
+\[\ddot{x}_{2} = - \dfrac{k'}{m}(x_2-x_1)-\dfrac{k}{m}x_2\]</div>
+<p>And then:</p>
+<div class="math notranslate nohighlight">
+\[\ddot{x}_{1} = -\left(\dfrac{k}{m}+\dfrac{k'}{m}\right) x_1 + \dfrac{k'}{m}x_2\]</div>
+<div class="math notranslate nohighlight">
+\[\ddot{x}_{2} = \dfrac{k'}{m}x_1 - \left(\dfrac{k}{m}+\dfrac{k'}{m}\right)x_2\]</div>
 <p>This is a linear differential equation. That means we can represent it as a vector equation:</p>
 <div class="math notranslate nohighlight">
 \[\ddot{\mathbf{x}} = \pmb{A} \mathbf{x}\]</div>

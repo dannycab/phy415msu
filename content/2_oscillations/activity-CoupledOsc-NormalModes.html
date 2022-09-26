@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Notes: Coupled Oscillators &#8212; Mathematical Modeling in Physics</title>
+    <title>Activity: Normal Modes &#8212; Mathematical Modeling in Physics</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Activity: Normal Modes" href="activity-CoupledOsc-NormalModes.html" />
-    <link rel="prev" title="Activity: ODE Palooza" href="activity-ODE_palooza.html" />
+    <link rel="next" title="Works Cited" href="../X_additional_pages/references-page.html" />
+    <link rel="prev" title="Notes: Coupled Oscillators" href="readings-coupled-oscillators.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -230,13 +230,13 @@ const thebe_selector_output = ".output, .cell_output"
      Activity: ODE Palooza
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="readings-coupled-oscillators.html">
      Notes: Coupled Oscillators
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="activity-CoupledOsc-NormalModes.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Activity: Normal Modes
     </a>
    </li>
@@ -316,7 +316,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/dannycab/phy415msu/main?urlpath=tree/MMIPbook/content/2_oscillations/readings-coupled-oscillators.ipynb"
+        <a href="https://mybinder.org/v2/gh/dannycab/phy415msu/main?urlpath=tree/MMIPbook/content/2_oscillations/activity-CoupledOsc-NormalModes.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -334,7 +334,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415msu/&urlpath=tree/phy415msu/MMIPbook/content/2_oscillations/readings-coupled-oscillators.ipynb&branch=main"
+        <a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415msu/&urlpath=tree/phy415msu/MMIPbook/content/2_oscillations/activity-CoupledOsc-NormalModes.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -352,7 +352,7 @@ title="Launch on JupyterHub"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/dannycab/phy415msu/blob/main/MMIPbook/content/2_oscillations/readings-coupled-oscillators.ipynb"
+        <a href="https://colab.research.google.com/github/dannycab/phy415msu/blob/main/MMIPbook/content/2_oscillations/activity-CoupledOsc-NormalModes.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -412,7 +412,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/dannycab/phy415msu//issues/new?title=Issue%20on%20page%20%2Fcontent/2_oscillations/readings-coupled-oscillators.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/dannycab/phy415msu//issues/new?title=Issue%20on%20page%20%2Fcontent/2_oscillations/activity-CoupledOsc-NormalModes.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -440,7 +440,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/content/2_oscillations/readings-coupled-oscillators.ipynb"
+        <a href="../../_sources/content/2_oscillations/activity-CoupledOsc-NormalModes.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -500,30 +500,25 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#synchronization">
-   Synchronization
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#coupled-oscillations">
-   Coupled Oscillations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#book-readings">
-   Book Readings
+  <a class="reference internal nav-link" href="#guided-lecture-canonical-coupled-oscillators">
+   Guided Lecture: Canonical Coupled Oscillators
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#crawford-s-waves-book-secs-1-1-1-5">
-     Crawford’s Waves book - Secs. 1.1-1.5
+    <a class="reference internal nav-link" href="#method-1-assume-the-solution">
+     Method 1: Assume the solution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#method-2-find-the-normal-modes">
+     Method 2: Find the normal modes
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-resources">
-   Video Resources
+  <a class="reference internal nav-link" href="#apply">
+   Apply:
   </a>
  </li>
 </ul>
@@ -535,7 +530,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Notes: Coupled Oscillators</h1>
+                <h1>Activity: Normal Modes</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -546,30 +541,25 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#synchronization">
-   Synchronization
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#coupled-oscillations">
-   Coupled Oscillations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#book-readings">
-   Book Readings
+  <a class="reference internal nav-link" href="#guided-lecture-canonical-coupled-oscillators">
+   Guided Lecture: Canonical Coupled Oscillators
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#crawford-s-waves-book-secs-1-1-1-5">
-     Crawford’s Waves book - Secs. 1.1-1.5
+    <a class="reference internal nav-link" href="#method-1-assume-the-solution">
+     Method 1: Assume the solution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#method-2-find-the-normal-modes">
+     Method 2: Find the normal modes
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#video-resources">
-   Video Resources
+  <a class="reference internal nav-link" href="#apply">
+   Apply:
   </a>
  </li>
 </ul>
@@ -582,135 +572,66 @@ title="Print to PDF"
                 
               <div>
                 
-  <p>Book Reading: Crawford, Waves, Secs 1.4-1.5</p>
-<section class="tex2jax_ignore mathjax_ignore" id="notes-coupled-oscillators">
-<h1>Notes: Coupled Oscillators<a class="headerlink" href="#notes-coupled-oscillators" title="Permalink to this headline">#</a></h1>
-<p>Single particle dynamics like the SHO and other singular point particle motion (e.g., basic kinematics, charges in fields modeled without interactions) are helpful in building our intutiion of how physics <em>should</em> work. We can track the position, velocity, and other dynamical quantities for these singular particles. We can determine how the act on and interact with their surroundings. We can find points of stasis (stable and unstable points); we can find different families of solutions (orbits vs runaway behavior); we can predict the motion of those particles with numerical routines.</p>
-<p>But what happens when we introduce a second particle? And we let it interact with the first particle. We have substantially opened the degrees of freedom (a way to characterize the complexity of our system) that our system has. We will see how these systems become expanded and how their dynamics becomes richer and more interesting.</p>
-<p>The canonical complication is the coupled oscillators, which will form the basis of our initial study, much like the SHO formed our initial work for dynamical models using ODEs. The setup appears below:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="activity-normal-modes">
+<h1>Activity: Normal Modes<a class="headerlink" href="#activity-normal-modes" title="Permalink to this headline">#</a></h1>
+<p>As we begin to work with multi-particle systems, we begin to open the number of degrees of freedom of the system. We increase the complexity of it and the challenge of modeling it. We will increasingly need tools that help us take less tractable issues and make them palatable. One such tool that forms the basis of many others is <strong>Normal Modes</strong>.</p>
+<p>Normal modes are ways of breaking up our understanding of a system into discrete (potentially infinite and hopefully vanishingly small) pieces. This lets us get at the big picture of the system and characterize how much we are neglecting. The concept of normal modes underlies much of the analysis done in quantum mechanics, field theory, fluid mechanics, and signal processing. In fact, numerical routines often make use of forms of these modes to do economize calculations – <em>especially when we move beyond a few hundred bodies in the system</em>. This stuff is part and parcel of most research in physics. For example, how we understand the <a class="reference external" href="https://en.wikipedia.org/wiki/Cosmic_background_radiation">Cosmic Background Radiation</a> relies on a <a class="reference external" href="https://www.quantamagazine.org/how-ancient-light-reveals-the-universes-contents-20200128/">normal mode like analysis</a>.</p>
+<section id="guided-lecture-canonical-coupled-oscillators">
+<h2>Guided Lecture: Canonical Coupled Oscillators<a class="headerlink" href="#guided-lecture-canonical-coupled-oscillators" title="Permalink to this headline">#</a></h2>
+<p>There is still plenty of room for pencil and paper. We will explore this numerically later.</p>
+<p>We will start with a form of guided lecture and build the understanding of these methods together. Then you will apply what you learned to a new system.</p>
+<p>Let’s assume you have a chain of two mass connected by springs (all the same <span class="math notranslate nohighlight">\(k\)</span>) as below.</p>
 <img src='https://www.entropy.energy/static/resources/coupled-oscillators/two-coupled-gliders-diagram.png' alt='Coupled Oscillator set up. Two oscillators connected by three springs in a horizontal line.' width=800px/>
-<p>We will set up this problem below, but our analysis will proceed in class. To motivate our study of coupled oscillations, watch this excellent video (20 minutes) on the phenomenon on <a class="reference external" href="https://physicstoday.scitation.org/doi/10.1063/1.1554136">synchronization</a>.</p>
+<section id="method-1-assume-the-solution">
+<h3>Method 1: Assume the solution<a class="headerlink" href="#method-1-assume-the-solution" title="Permalink to this headline">#</a></h3>
+<p><strong>✅ Do this</strong></p>
+<ol class="simple">
+<li><p>Displace the left mass by <span class="math notranslate nohighlight">\(x_1\)</span> and the right mass by <span class="math notranslate nohighlight">\(x_2\)</span> at <span class="math notranslate nohighlight">\(t=0\)</span>. Write down the pair of second order linear differential equations that describes the motion of this system.</p></li>
+<li><p>Assume the solutions to both will be simply oscillatory (e.g., sinusoidal). Plug the general solutions into your differential equation and find the particular solutions. Can you determine the oscillatory behavior of each solution?</p></li>
+<li><p>Pick numbers for your unknowns (e.g., <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, <span class="math notranslate nohighlight">\(k\)</span>) and plot your position vs. time solutions. Does this picture help determine the motion? Is it purely sinusoidal?</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
-<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;t-_VPRCtiUg&quot;</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Your code here</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="800"
-    height="600"
-    src="https://www.youtube.com/embed/t-_VPRCtiUg"
-    frameborder="0"
-    allowfullscreen
-
-></iframe>
-</div></div>
 </div>
-<section id="synchronization">
-<h2>Synchronization<a class="headerlink" href="#synchronization" title="Permalink to this headline">#</a></h2>
-<p>Nature exhibits many different kinds of behaviors that we have organized into different concepts (i.e., random, chaotic, deterministic, synchronized). THese behaviors have interesting properties and allow us to bring different and new forms of mathematics and computing to the work; this includes new areas like machine-learning based physics models](). As we move from a single object models to multiple objects models, we begin to explore these different conceptual behaviors. <a class="reference external" href="https://www.quantamagazine.org/physicists-discover-exotic-patterns-of-synchronization-20190404/">Synchronization</a> is one that is common and natural to consider in the context of oscillations as you saw from the above video. <a class="reference external" href="https://www.youtube.com/watch?v=ZGvtnE1Wy6U">Fireflies</a>, <a class="reference external" href="https://www.youtube.com/watch?v=2LPboySOSvo">patterns in the operation of a heart</a>, and <a class="reference external" href="https://www.youtube.com/watch?v=5v5eBf2KwF8">coupled metronomes</a> all exhibit this synchronized behavior. But, how is that possible? What physics is going on here? And how can it lead in and out of synchronization like this pendulum setup below?</p>
+</section>
+<section id="method-2-find-the-normal-modes">
+<h3>Method 2: Find the normal modes<a class="headerlink" href="#method-2-find-the-normal-modes" title="Permalink to this headline">#</a></h3>
+<p><strong>✅ Do this</strong></p>
+<ol class="simple">
+<li><p>Displace the left mass by <span class="math notranslate nohighlight">\(x_1\)</span> and the right mass by <span class="math notranslate nohighlight">\(x_2\)</span> at <span class="math notranslate nohighlight">\(t=0\)</span>. Again, write down the pair of second order linear differential equations that describes the motion of this system.</p></li>
+<li><p>Rework the differential equation into a matrix description: <span class="math notranslate nohighlight">\(\ddot{\mathbf{x}} = \pmb{A} \mathbf{x}\)</span>. Why can you do this? When can you not do this? Or rather what about the differential equation lets us do this?</p></li>
+<li><p>Find the determinant of the coefficient matrix <span class="math notranslate nohighlight">\(\pmb{A}\)</span>, and use that to determine the oscillation frequencies.</p></li>
+<li><p>Plot the normal mode solutions (remember we assume sinusoidal normal modes); there should be two.</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
-<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;yVkdfJ9PkRQ&quot;</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code here</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="800"
-    height="600"
-    src="https://www.youtube.com/embed/yVkdfJ9PkRQ"
-    frameborder="0"
-    allowfullscreen
-
-></iframe>
-</div></div>
-</div>
-<div class="admonition-huygen-s-clocks admonition">
-<p class="admonition-title">Huygen’s Clocks</p>
-<p>Much of this early understanding of synchronization we owe to the Dutch mathematician, <a class="reference external" href="https://en.wikipedia.org/wiki/Christiaan_Huygens">Christiann Huygens</a>, who spent much of his work trying to understand periodic motion. In this work, he observed the oscillation of two pendulum clocks that would eventually oscillate in precisely opposite swings. A great writeup of this history and its implications is <a class="reference external" href="https://www.quantamagazine.org/physicists-discover-exotic-patterns-of-synchronization-20190404/">here</a>. This phenomenon was explored experimentally and theoretically by three physicists at Georgia Tech, Matt Bennet, Mike Schatz (my Phd Advisor!), and Kurt Wiesenfeld. Their paper was written in collaboration with, history and language professor emerita, Heidi Rockwood. It’s a <a class="reference external" href="http://engineering.nyu.edu/mechatronics/Control_Lab/bck/VKapila/Chaotic%20Ref/Hujgens.pdf">fun read</a>.</p>
-<p>We know use this phenomenon to <a class="reference external" href="https://en.wikipedia.org/wiki/Injection_locking#Entrainment">entrain oscillators</a>; this kind of mode locking is really important to science – especially ultra-fast science. Physicists like <a class="reference external" href="https://www.ogilviegroup.org/">Dr. Jennifer Ogilive at the University of Michigan</a> use this phenomenon to image biological materials that undergo very fast transitions.</p>
 </div>
 </section>
-<section id="coupled-oscillations">
-<h2>Coupled Oscillations<a class="headerlink" href="#coupled-oscillations" title="Permalink to this headline">#</a></h2>
-<p>The key to why these phenomena are possible is the increase in the number of <strong>Degrees of Freedom</strong>. You can think of this as the <a class="reference external" href="https://en.wikipedia.org/wiki/Degrees_of_freedom_(mechanics)">ways in which the system can move</a> – really we should try to think of it as the <a class="reference external" href="https://en.wikipedia.org/wiki/Degrees_of_freedom_(physics_and_chemistry)">additional variables in phase space</a> that become available by adding more particles and interactions. We will start with the canonical longitudinal oscillations of two coupled spring oscillators.</p>
-<img src='https://www.entropy.energy/static/resources/coupled-oscillators/two-coupled-gliders-diagram.png' alt='Coupled Oscillator set up. Two oscillators connected by three springs in a horizontal line.' width=800px/>
-<p>Our analysis will proceed with an investigation of <a class="reference external" href="https://en.wikipedia.org/wiki/Normal_mode">normal modes</a>, which is a powerful tool that lets us not only analyze systems with many degrees of freedom; it can help us conceptually think about building up solutions for continuous systems that have infinite degrees of freedom (i.e., a rope or a water wave).</p>
-<p>We start by writing the differential equations that describe the motion of the system, noting that the length measures are critical for establishing the right differential equation:</p>
-<p>Left mass:</p>
-<div class="math notranslate nohighlight">
-\[m \ddot{x}_{1} = -k x_1 + k'(x_2-x_1)\]</div>
-<p>Right mass:</p>
-<div class="math notranslate nohighlight">
-\[m \ddot{x}_{2} = - k'(x_2-x_1)-kx_2\]</div>
-<p>We can write these in the following way:</p>
-<div class="math notranslate nohighlight">
-\[\ddot{x}_{1} = -\dfrac{k}{m} x_1 + \dfrac{k'}{m}(x_2-x_1)\]</div>
-<div class="math notranslate nohighlight">
-\[\ddot{x}_{2} = - \dfrac{k'}{m}(x_2-x_1)-\dfrac{k}{m}x_2\]</div>
-<p>And then:</p>
-<div class="math notranslate nohighlight">
-\[\ddot{x}_{1} = -\left(\dfrac{k}{m}+\dfrac{k'}{m}\right) x_1 + \dfrac{k'}{m}x_2\]</div>
-<div class="math notranslate nohighlight">
-\[\ddot{x}_{2} = \dfrac{k'}{m}x_1 - \left(\dfrac{k}{m}+\dfrac{k'}{m}\right)x_2\]</div>
-<p>This is a linear differential equation. That means we can represent it as a vector equation:</p>
-<div class="math notranslate nohighlight">
-\[\ddot{\mathbf{x}} = \pmb{A} \mathbf{x}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\pmb{A}\)</span> will represent the different coefficients in our differential equation. Below we write the matrix representation of the same equation above:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{bmatrix}
-\ddot{x}_1\\
-\ddot{x}_2
-\end{bmatrix} = \begin{bmatrix}
--\left(\dfrac{k}{m}+\dfrac{k'}{m}\right) &amp; +\dfrac{k'}{m}\\
-+\dfrac{k'}{m} &amp; -\left(\dfrac{k}{m}+\dfrac{k'}{m}\right)
-\end{bmatrix}
-\begin{bmatrix}
-{x}_1\\
-{x}_2
-\end{bmatrix}
-\end{split}\]</div>
-<p>When all the springs are the same <span class="math notranslate nohighlight">\(k\)</span>, you will show in class this leads to two normal modes with frequencies:</p>
-<div class="math notranslate nohighlight">
-\[\omega_1^2 = \dfrac{k}{m}\]</div>
-<div class="math notranslate nohighlight">
-\[\omega_2^2 = \dfrac{3k}{m}\]</div>
 </section>
-<section id="book-readings">
-<h2>Book Readings<a class="headerlink" href="#book-readings" title="Permalink to this headline">#</a></h2>
-<p>This reading is useful preparation for our normal modes discussion.</p>
-<section id="crawford-s-waves-book-secs-1-1-1-5">
-<h3>Crawford’s Waves book - Secs. 1.1-1.5<a class="headerlink" href="#crawford-s-waves-book-secs-1-1-1-5" title="Permalink to this headline">#</a></h3>
-<p>This book is a great resource for learning about oscillations and waves. Unfortunately, it is out of print. The first section of this book was assigned on the first week (<a class="reference external" href="https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/scans/Crawford-Waves-Secs_1.1-1.3.pdf">Secs. 1.1-1.3</a>; <strong>Click Download</strong>). If you want a reminder about oscillations from Crawford’s perspective, please review that. But read <a class="reference external" href="https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/scans/Crawford-Waves-Secs_1.4-1.5.pdf">Sections 1.4-1.5</a>; <strong>Click Download</strong>) for class. It will introduce the concept of normal modes, which we will discuss with a short lecture and example that you work on Tuesday. And it will show a phenomenon that we will explore Thursday: <a class="reference external" href="https://en.wikipedia.org/wiki/Beat_(acoustics)">Beats</a></p>
-</section>
-</section>
-<section id="video-resources">
-<h2>Video Resources<a class="headerlink" href="#video-resources" title="Permalink to this headline">#</a></h2>
-<p>If you are a feeling that you would like a little more on oscillations, beats, and matrices before we have class. Check out this video.</p>
+<section id="apply">
+<h2>Apply:<a class="headerlink" href="#apply" title="Permalink to this headline">#</a></h2>
+<p>Consider two vertical pendulums of length <span class="math notranslate nohighlight">\(l\)</span> connected via their masses <span class="math notranslate nohighlight">\(M\)</span> by a weak spring <span class="math notranslate nohighlight">\(k\)</span>. By weak, we mean that the spring constant is small. See below for a canonical setup:</p>
+<img src="http://www.maths.surrey.ac.uk/explore/michaelspages/coupled/coupled_diag.jpg" />
+<p><strong>✅ Do this</strong></p>
+<ol class="simple">
+<li><p>In this limit, write down the pair of second order linear differential equations for the horizontal motion of each pendulum bob around its equilibrium.</p></li>
+<li><p>Find and describe the normal modes. Use plots of your choosing to explain what you found.</p></li>
+<li><p>Can you build up particular solutions from sums and differences of normal modes?</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
-<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;I0YACDaY-ww&quot;</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code here</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="800"
-    height="600"
-    src="https://www.youtube.com/embed/I0YACDaY-ww"
-    frameborder="0"
-    allowfullscreen
-
-></iframe>
-</div></div>
 </div>
 </section>
 </section>
@@ -742,17 +663,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="activity-ODE_palooza.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="readings-coupled-oscillators.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Activity: ODE Palooza</p>
+            <p class="prev-next-title">Notes: Coupled Oscillators</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="activity-CoupledOsc-NormalModes.html" title="next page">
+    <a class='right-next' id="next-link" href="../X_additional_pages/references-page.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Activity: Normal Modes</p>
+        <p class="prev-next-title">Works Cited</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

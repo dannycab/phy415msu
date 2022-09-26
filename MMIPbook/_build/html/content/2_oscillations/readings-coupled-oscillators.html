@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Works Cited" href="../X_additional_pages/references-page.html" />
+    <link rel="next" title="Activity: Normal Modes" href="activity-CoupledOsc-NormalModes.html" />
     <link rel="prev" title="Activity: ODE Palooza" href="activity-ODE_palooza.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -233,6 +233,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Notes: Coupled Oscillators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="activity-CoupledOsc-NormalModes.html">
+     Activity: Normal Modes
     </a>
    </li>
   </ul>
@@ -638,16 +643,22 @@ title="Print to PDF"
 <img src='https://www.entropy.energy/static/resources/coupled-oscillators/two-coupled-gliders-diagram.png' alt='Coupled Oscillator set up. Two oscillators connected by three springs in a horizontal line.' width=800px/>
 <p>Our analysis will proceed with an investigation of <a class="reference external" href="https://en.wikipedia.org/wiki/Normal_mode">normal modes</a>, which is a powerful tool that lets us not only analyze systems with many degrees of freedom; it can help us conceptually think about building up solutions for continuous systems that have infinite degrees of freedom (i.e., a rope or a water wave).</p>
 <p>We start by writing the differential equations that describe the motion of the system, noting that the length measures are critical for establishing the right differential equation:</p>
-<p>Left mass:
-$<span class="math notranslate nohighlight">\(m \ddot{x}_{1} = -k x_1 + k'(x_2-x_1)\)</span>$</p>
-<p>Right mass:
-$<span class="math notranslate nohighlight">\(m \ddot{x}_{2} = - k'(x_2-x_1)-kx_2\)</span>$</p>
-<p>We can write these in the following way:
-$<span class="math notranslate nohighlight">\(\ddot{x}_{1} = -\dfrac{k}{m} x_1 + \dfrac{k'}{m}(x_2-x_1)\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(\ddot{x}_{2} = - \dfrac{k'}{m}(x_2-x_1)-\dfrac{k}{m}x_2\)</span>$</p>
-<p>And then:
-$<span class="math notranslate nohighlight">\(\ddot{x}_{1} = -\left(\dfrac{k}{m}+\dfrac{k'}{m}\right) x_1 + \dfrac{k'}{m}x_2\)</span><span class="math notranslate nohighlight">\(
-\)</span><span class="math notranslate nohighlight">\(\ddot{x}_{2} = \dfrac{k'}{m}x_1 - \left(\dfrac{k}{m}+\dfrac{k'}{m}\right)x_2\)</span>$</p>
+<p>Left mass:</p>
+<div class="math notranslate nohighlight">
+\[m \ddot{x}_{1} = -k x_1 + k'(x_2-x_1)\]</div>
+<p>Right mass:</p>
+<div class="math notranslate nohighlight">
+\[m \ddot{x}_{2} = - k'(x_2-x_1)-kx_2\]</div>
+<p>We can write these in the following way:</p>
+<div class="math notranslate nohighlight">
+\[\ddot{x}_{1} = -\dfrac{k}{m} x_1 + \dfrac{k'}{m}(x_2-x_1)\]</div>
+<div class="math notranslate nohighlight">
+\[\ddot{x}_{2} = - \dfrac{k'}{m}(x_2-x_1)-\dfrac{k}{m}x_2\]</div>
+<p>And then:</p>
+<div class="math notranslate nohighlight">
+\[\ddot{x}_{1} = -\left(\dfrac{k}{m}+\dfrac{k'}{m}\right) x_1 + \dfrac{k'}{m}x_2\]</div>
+<div class="math notranslate nohighlight">
+\[\ddot{x}_{2} = \dfrac{k'}{m}x_1 - \left(\dfrac{k}{m}+\dfrac{k'}{m}\right)x_2\]</div>
 <p>This is a linear differential equation. That means we can represent it as a vector equation:</p>
 <div class="math notranslate nohighlight">
 \[\ddot{\mathbf{x}} = \pmb{A} \mathbf{x}\]</div>
@@ -738,10 +749,10 @@ $<span class="math notranslate nohighlight">\(\ddot{x}_{1} = -\left(\dfrac{k}{m}
             <p class="prev-next-title">Activity: ODE Palooza</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../X_additional_pages/references-page.html" title="next page">
+    <a class='right-next' id="next-link" href="activity-CoupledOsc-NormalModes.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Works Cited</p>
+        <p class="prev-next-title">Activity: Normal Modes</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

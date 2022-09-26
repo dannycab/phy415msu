@@ -51,17 +51,23 @@ YouTubeVideo("yVkdfJ9PkRQ", 800, 600)
 # We start by writing the differential equations that describe the motion of the system, noting that the length measures are critical for establishing the right differential equation:
 # 
 # Left mass:
+# 
 # $$m \ddot{x}_{1} = -k x_1 + k'(x_2-x_1)$$
 # 
 # Right mass:
+# 
 # $$m \ddot{x}_{2} = - k'(x_2-x_1)-kx_2$$
 # 
 # We can write these in the following way:
+# 
 # $$\ddot{x}_{1} = -\dfrac{k}{m} x_1 + \dfrac{k'}{m}(x_2-x_1)$$
+# 
 # $$\ddot{x}_{2} = - \dfrac{k'}{m}(x_2-x_1)-\dfrac{k}{m}x_2$$
 # 
 # And then:
+# 
 # $$\ddot{x}_{1} = -\left(\dfrac{k}{m}+\dfrac{k'}{m}\right) x_1 + \dfrac{k'}{m}x_2$$
+# 
 # $$\ddot{x}_{2} = \dfrac{k'}{m}x_1 - \left(\dfrac{k}{m}+\dfrac{k'}{m}\right)x_2$$
 # 
 # This is a linear differential equation. That means we can represent it as a vector equation:

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Notes: Numerical Integration in 1D &#8212; Mathematical Modeling in Physics</title>
+    <title>Activity: Lagrangian Dynamics &#8212; Mathematical Modeling in Physics</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Activity: Integrating ODEs Numerically" href="activity-ODE-numerical.html" />
-    <link rel="prev" title="Activity: Large Angle Pendulum" href="activity-SHO_and_Large_Angles.html" />
+    <link rel="next" title="Works Cited" href="../X_additional_pages/references-page.html" />
+    <link rel="prev" title="Activity: Normal Modes" href="activity-CoupledOsc-NormalModes.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -215,8 +215,8 @@ const thebe_selector_output = ".output, .cell_output"
      Activity: Large Angle Pendulum
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="readings-numerical_integration_1d.html">
      Notes: Numerical Integration in 1D
     </a>
    </li>
@@ -240,8 +240,8 @@ const thebe_selector_output = ".output, .cell_output"
      Activity: Normal Modes
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="activity-Lagrange-reminders.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Activity: Lagrangian Dynamics
     </a>
    </li>
@@ -321,7 +321,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/dannycab/phy415msu/main?urlpath=tree/MMIPbook/content/2_oscillations/readings-numerical_integration_1d.ipynb"
+        <a href="https://mybinder.org/v2/gh/dannycab/phy415msu/main?urlpath=tree/MMIPbook/content/2_oscillations/activity-Lagrange-reminders.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -339,7 +339,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415msu/&urlpath=tree/phy415msu/MMIPbook/content/2_oscillations/readings-numerical_integration_1d.ipynb&branch=main"
+        <a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415msu/&urlpath=tree/phy415msu/MMIPbook/content/2_oscillations/activity-Lagrange-reminders.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -357,7 +357,7 @@ title="Launch on JupyterHub"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/dannycab/phy415msu/blob/main/MMIPbook/content/2_oscillations/readings-numerical_integration_1d.ipynb"
+        <a href="https://colab.research.google.com/github/dannycab/phy415msu/blob/main/MMIPbook/content/2_oscillations/activity-Lagrange-reminders.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -417,7 +417,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/dannycab/phy415msu//issues/new?title=Issue%20on%20page%20%2Fcontent/2_oscillations/readings-numerical_integration_1d.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/dannycab/phy415msu//issues/new?title=Issue%20on%20page%20%2Fcontent/2_oscillations/activity-Lagrange-reminders.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -445,7 +445,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/content/2_oscillations/readings-numerical_integration_1d.ipynb"
+        <a href="../../_sources/content/2_oscillations/activity-Lagrange-reminders.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -505,26 +505,38 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nonlinear-science">
-   Nonlinear Science
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#book-readings">
-   Book Readings
+  <a class="reference internal nav-link" href="#getting-started">
+   Getting Started
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#newman-s-computational-physics-chapter-8">
-     Newman’s Computational Physics - Chapter 8
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#strogatz-s-nonlinear-dynamics-and-chaos-chapters-4-and-5">
-     Strogatz’s Nonlinear Dynamics and Chaos - Chapters 4 and 5
+    <a class="reference internal nav-link" href="#simple-harmonic-oscillator">
+     Simple Harmonic Oscillator
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#canonical-coupled-oscillators">
+   #Canonical Coupled Oscillators
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#choose-your-coordinates">
+   Choose your coordinates
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#coupled-pendulums">
+     Coupled Pendulums
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-constraint-forces">
+   Adding Constraint Forces
+  </a>
  </li>
 </ul>
 
@@ -535,7 +547,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Notes: Numerical Integration in 1D</h1>
+                <h1>Activity: Lagrangian Dynamics</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -546,26 +558,38 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nonlinear-science">
-   Nonlinear Science
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#book-readings">
-   Book Readings
+  <a class="reference internal nav-link" href="#getting-started">
+   Getting Started
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#newman-s-computational-physics-chapter-8">
-     Newman’s Computational Physics - Chapter 8
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#strogatz-s-nonlinear-dynamics-and-chaos-chapters-4-and-5">
-     Strogatz’s Nonlinear Dynamics and Chaos - Chapters 4 and 5
+    <a class="reference internal nav-link" href="#simple-harmonic-oscillator">
+     Simple Harmonic Oscillator
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#canonical-coupled-oscillators">
+   #Canonical Coupled Oscillators
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#choose-your-coordinates">
+   Choose your coordinates
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#coupled-pendulums">
+     Coupled Pendulums
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-constraint-forces">
+   Adding Constraint Forces
+  </a>
  </li>
 </ul>
 
@@ -577,53 +601,64 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="notes-numerical-integration-in-1d">
-<h1>Notes: Numerical Integration in 1D<a class="headerlink" href="#notes-numerical-integration-in-1d" title="Permalink to this headline">#</a></h1>
-<p>Principal Ideas for this unit will come from <a class="reference external" href="https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/scans/Newman_Ch8_ODEs.pdf">Newman Chapter 8, Section 1</a>, which is the reading assigned below.</p>
-<p>We have seen how we can quickly exhaust our analytical tools when we investigate systems with interesting and complex behavior. We can see much from the perspective of phase space in terms of the qualitatively different behaviors (e.g., oscillations vs rotations, both clockwise and counter-clockwise, in the large angle pendulum). But what if we want to find the specific trajectory of a given set of initial conditions.</p>
-<p>That is we want to be able to take a more general differential equation:</p>
-<div class="math notranslate nohighlight">
-\[\ddot{x} = f(x,\dot{x},t)\]</div>
-<p>to a solution for all (or some specified amount)of time, <span class="math notranslate nohighlight">\(x(t)\)</span>…in (most) cases…because sometimes integrals don’t converge.</p>
-<p>We can use <strong>numerical integration</strong> to find these trajectories. Below is a video describing 3 coupled ODEs, the <a class="reference external" href="https://en.wikipedia.org/wiki/Lorenz_system">Lorenz equations</a>, that are quite famous. You will be able to model systems like this, but for now think of it as motivation for why we want to learn numerical integration.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="activity-lagrangian-dynamics">
+<h1>Activity: Lagrangian Dynamics<a class="headerlink" href="#activity-lagrangian-dynamics" title="Permalink to this headline">#</a></h1>
+<p>Motivation to be completed later…</p>
+<p>Here you will practice using the Lagrangian for increasingly complex systems. We start with the SHO and move forward from there.</p>
+<p>Using Lagrangian dnymaics can feel like magic. In fact, this is video of me from 2002 when I learned to use this approach:</p>
+<img src="https://c.tenor.com/zcs5gYi4sSMAAAAC/mindblown-omg.gif" alt="mind blown cat gif" width=400px/>
+<p>But we will step through the levels of complexity with these examples to make sure we all understand how to make use of them.</p>
+<img src="https://i.imgflip.com/6v4j4k.jpg" alt="Lagrange meme" width=400px/><section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">#</a></h2>
+<section id="simple-harmonic-oscillator">
+<h3>Simple Harmonic Oscillator<a class="headerlink" href="#simple-harmonic-oscillator" title="Permalink to this headline">#</a></h3>
+<p><strong>✅ Do this</strong></p>
+<ol class="simple">
+<li><p>Starting with the 1d energy equations (for <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(\dot{x}\)</span>) for an SHO; derive the equations of motion. Did you get the sign right?</p></li>
+</ol>
+</section>
+</section>
+<section id="canonical-coupled-oscillators">
+<h2>#Canonical Coupled Oscillators<a class="headerlink" href="#canonical-coupled-oscillators" title="Permalink to this headline">#</a></h2>
+<p>Let’s assume you have a chain of two mass connected by springs (all the same <span class="math notranslate nohighlight">\(k\)</span>) as below.</p>
+<img src='https://www.entropy.energy/static/resources/coupled-oscillators/two-coupled-gliders-diagram.png' alt='Coupled Oscillator set up. Two oscillators connected by three springs in a horizontal line.' width=800px/>
+<p><strong>✅ Do this</strong></p>
+<ol class="simple">
+<li><p>Write down the energy equations for this system (using <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> for coordinates)</p></li>
+<li><p>Write the Lagrangian and derive the two equations of motion.</p></li>
+<li><p>Do all the signs makes sense to you?</p></li>
+</ol>
+</section>
+<section id="choose-your-coordinates">
+<h2>Choose your coordinates<a class="headerlink" href="#choose-your-coordinates" title="Permalink to this headline">#</a></h2>
+<section id="coupled-pendulums">
+<h3>Coupled Pendulums<a class="headerlink" href="#coupled-pendulums" title="Permalink to this headline">#</a></h3>
+<p>Consider two vertical pendulums of length <span class="math notranslate nohighlight">\(l\)</span> connected via their masses <span class="math notranslate nohighlight">\(M\)</span> by a weak spring <span class="math notranslate nohighlight">\(k\)</span>. By weak, we mean that the spring constant is small. See below for a canonical setup:</p>
+<img src="http://www.maths.surrey.ac.uk/explore/michaelspages/coupled/coupled_diag.jpg" />
+<p><strong>✅ Do this</strong></p>
+<ol class="simple">
+<li><p>Write down the energy equations for this system (think about your choices of coordinates)</p></li>
+<li><p>Write the Lagrangian and derive the two equations of motion (we want to know what is happening with both bobs)</p></li>
+<li><p>Compare your work to another group. Did they choose the same coordinates?</p></li>
+</ol>
+</section>
+</section>
+<section id="adding-constraint-forces">
+<h2>Adding Constraint Forces<a class="headerlink" href="#adding-constraint-forces" title="Permalink to this headline">#</a></h2>
+<p><img alt="Rubric" src="../../_images/cylindrical_cone_mass.jpg" /></p>
+<p>Consider a particle of mass <span class="math notranslate nohighlight">\(m\)</span> constrained to move on the interior surface of a upside down smooth ice cream cone (aligned with the vertical axis) with half-angle <span class="math notranslate nohighlight">\(\alpha\)</span> subject to a gravitational force downward, so that the cone axis and gravity are aligned.</p>
+<ol class="simple">
+<li><p>Using cylindrical coordinates (why?), write down the equation of constraint. Think about where the mass must be if it’s stuck on a cone.</p></li>
+<li><p>Write the energy contributions in cylindrical coordinates. (This is where you put in the constraint!)</p></li>
+<li><p>Form the Lagrangian and find the equations of motion (there are two!)</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
-<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;aAJkLh76QnM&quot;</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code here</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="800"
-    height="600"
-    src="https://www.youtube.com/embed/aAJkLh76QnM"
-    frameborder="0"
-    allowfullscreen
-
-></iframe>
-</div></div>
 </div>
-<section id="nonlinear-science">
-<h2>Nonlinear Science<a class="headerlink" href="#nonlinear-science" title="Permalink to this headline">#</a></h2>
-<p>Some of the most interesting ODEs to work with are those that lead to chaos, have interesting behaviors in different parts of phase space, are highly sensitive to initial conditions, or that have complex bound orbits (in real or phase space). This area of study in physics overlaps with a broad interdisciplinary field called <a class="reference external" href="https://en.wikipedia.org/wiki/Nonlinear_system">Nonlinear Science</a>, which studies all manner of systems where the results are not simply proportional to the input features. This work includes theory, applied science, and experimental work. As it is difficult to find truly linear systems in the real world, nonlinear science is quite interdisciplinary with physics research in the areas of <a class="reference external" href="https://complex.umd.edu/research/MHD_dynamos/MHD_dynamos.php">magnetohydrodynamics</a>, <span class="xref myst">fluid mechanics</span>, <a class="reference external" href="https://meche.mit.edu/people/faculty/PEKO&#64;MIT.EDU">bio-inspired design</a>, <a class="reference external" href="https://curtisresearch.gatech.edu/index.php">biophysics (cellular)</a>, <a class="reference external" href="https://crablab.gatech.edu/">biophysics (animal locomotion)</a>, <a class="reference external" href="https://jila.colorado.edu/lewandowski">atomic and molecular physics</a>, and many more fields.</p>
-<p>We will focus on integrating 1 dimensional ODEs (that is, ODEs of only one variable like the SHO). To that end the reding this week aims to inform you with the simplest of the integrators the <a class="reference external" href="https://en.wikipedia.org/wiki/Semi-implicit_Euler_method">Euler-Cromer integration</a> technique. This approach is intuitive, straight-forward, and forms the basis for better and far more accurate methods like <a class="reference external" href="https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods">Runge-Kutta</a>.</p>
-<p>Through this week’s activities, we will introduce several integration methods, but you will learn to use the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html?highlight=odeint">built-in integrator</a> (<code class="docutils literal notranslate"><span class="pre">odeint</span></code>) from scipy, which are more efficient than what we could write ourselves.</p>
-</section>
-<section id="book-readings">
-<h2>Book Readings<a class="headerlink" href="#book-readings" title="Permalink to this headline">#</a></h2>
-<p>These two readings are useful preparation for what we are going to do with numerical integration.</p>
-<section id="newman-s-computational-physics-chapter-8">
-<h3>Newman’s Computational Physics - Chapter 8<a class="headerlink" href="#newman-s-computational-physics-chapter-8" title="Permalink to this headline">#</a></h3>
-<p>The first one is from <a class="reference external" href="https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/scans/Newman_Ch8_ODEs.pdf">Chapter 8 of Mark Newman’s book, Computational Physics</a>, which is an excellent introduction to most of the computational physics approaches we use in physics. It uses Python and modern libraries, which is rare for a computational physics textbook for undergraduate students.</p>
-<p><strong>Read This</strong> Sections 8.1 and 8.1.1. We will discuss and work with ideas from 8.1.2 and 8.1.3, but I don’t expect you to read those in detail. We will discuss how these work and then make use of the <a class="reference external" href="https://docs.scipy.org/doc/scipy/tutorial/integrate.html">built-in integrators from scipy</a>. The core one will be <code class="docutils literal notranslate"><span class="pre">odeint</span></code> <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html?highlight=odeint">(Documentation)</a>.</p>
-</section>
-<section id="strogatz-s-nonlinear-dynamics-and-chaos-chapters-4-and-5">
-<h3>Strogatz’s Nonlinear Dynamics and Chaos - Chapters 4 and 5<a class="headerlink" href="#strogatz-s-nonlinear-dynamics-and-chaos-chapters-4-and-5" title="Permalink to this headline">#</a></h3>
-<p>The second one in from <a class="reference external" href="https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/scans/Strogatz_Integrating_Ch4-5.pdf">Chapters 4 and 5 of Steven Strogatz’s book, Nonlinear Dynamics and Chaos</a>, which is an excellent and broad book covering many science and engineering problems. It is a book that I think every student of physics should read at some point.</p>
-<p><strong>Read This</strong> Section 5.1. We have worked already with these ideas, but we will continue to do so. This is another way to look at what we’ve done, so it’s worth reading another perspective. We will continue to discuss and work with these ideas. You are free to read other parts of this book, but please read 5.1 for class.</p>
-</section>
 </section>
 </section>
 
@@ -654,17 +689,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="activity-SHO_and_Large_Angles.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="activity-CoupledOsc-NormalModes.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Activity: Large Angle Pendulum</p>
+            <p class="prev-next-title">Activity: Normal Modes</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="activity-ODE-numerical.html" title="next page">
+    <a class='right-next' id="next-link" href="../X_additional_pages/references-page.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Activity: Integrating ODEs Numerically</p>
+        <p class="prev-next-title">Works Cited</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

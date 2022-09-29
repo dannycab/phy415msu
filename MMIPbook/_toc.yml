@@ -28,6 +28,7 @@ chapters:
     - file: content/2_oscillations/activity-ODE_palooza
     - file: content/2_oscillations/readings-coupled-oscillators
     - file: content/2_oscillations/activity-CoupledOsc-NormalModes
+    - file: content/2_oscillations/activity-Lagrange-reminders
 - file: content/X_additional_pages/references-page
 - file: content/0_course/news_archive
 - file: content/0_course/projects/project1

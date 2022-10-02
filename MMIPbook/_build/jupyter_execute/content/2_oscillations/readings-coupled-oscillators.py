@@ -104,6 +104,12 @@ YouTubeVideo("yVkdfJ9PkRQ", 800, 600)
 # 
 # This book is a great resource for learning about oscillations and waves. Unfortunately, it is out of print. The first section of this book was assigned on the first week ([Secs. 1.1-1.3](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/scans/Crawford-Waves-Secs_1.1-1.3.pdf); **Click Download**). If you want a reminder about oscillations from Crawford's perspective, please review that. But read [Sections 1.4-1.5](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/scans/Crawford-Waves-Secs_1.4-1.5.pdf); **Click Download**) for class. It will introduce the concept of normal modes, which we will discuss with a short lecture and example that you work on Tuesday. And it will show a phenomenon that we will explore Thursday: [Beats](https://en.wikipedia.org/wiki/Beat_(acoustics))
 # 
+# ## Handwritten Notes
+# 
+# Here are my handwritten notes on coupled oscillations and normal modes.
+# 
+# * [Coupled Oscillations](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_2_Coupled_Oscillations.pdf)
+# 
 # ## Video Resources
 # 
 # If you are a feeling that you would like a little more on oscillations, beats, and matrices before we have class. Check out this video.
@@ -113,4 +119,10 @@ YouTubeVideo("yVkdfJ9PkRQ", 800, 600)
 
 from IPython.display import YouTubeVideo
 YouTubeVideo("I0YACDaY-ww", 800, 600)
+
+
+# In[ ]:
+
+
+
 

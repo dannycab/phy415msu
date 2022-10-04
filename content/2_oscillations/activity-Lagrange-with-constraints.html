@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Activity: Lagrangian Dynamics &#8212; Mathematical Modeling in Physics</title>
+    <title>Activity: Lagrangian Dynamics with Constraints &#8212; Mathematical Modeling in Physics</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Notes: Lagrangian Dynamics" href="readings-lagrangian-dynamics.html" />
-    <link rel="prev" title="Activity: Normal Modes" href="activity-CoupledOsc-NormalModes.html" />
+    <link rel="next" title="Works Cited" href="../X_additional_pages/references-page.html" />
+    <link rel="prev" title="Notes: Lagrangian Dynamics" href="readings-lagrangian-dynamics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -240,8 +240,8 @@ const thebe_selector_output = ".output, .cell_output"
      Activity: Normal Modes
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="activity-Lagrange-reminders.html">
      Activity: Lagrangian Dynamics
     </a>
    </li>
@@ -250,8 +250,8 @@ const thebe_selector_output = ".output, .cell_output"
      Notes: Lagrangian Dynamics
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="activity-Lagrange-with-constraints.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Activity: Lagrangian Dynamics with Constraints
     </a>
    </li>
@@ -348,7 +348,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/dannycab/phy415msu/main?urlpath=tree/MMIPbook/content/2_oscillations/activity-Lagrange-reminders.ipynb"
+        <a href="https://mybinder.org/v2/gh/dannycab/phy415msu/main?urlpath=tree/MMIPbook/content/2_oscillations/activity-Lagrange-with-constraints.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -366,7 +366,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415msu/&urlpath=tree/phy415msu/MMIPbook/content/2_oscillations/activity-Lagrange-reminders.ipynb&branch=main"
+        <a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415msu/&urlpath=tree/phy415msu/MMIPbook/content/2_oscillations/activity-Lagrange-with-constraints.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -384,7 +384,7 @@ title="Launch on JupyterHub"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/dannycab/phy415msu/blob/main/MMIPbook/content/2_oscillations/activity-Lagrange-reminders.ipynb"
+        <a href="https://colab.research.google.com/github/dannycab/phy415msu/blob/main/MMIPbook/content/2_oscillations/activity-Lagrange-with-constraints.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -444,7 +444,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/dannycab/phy415msu//issues/new?title=Issue%20on%20page%20%2Fcontent/2_oscillations/activity-Lagrange-reminders.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/dannycab/phy415msu//issues/new?title=Issue%20on%20page%20%2Fcontent/2_oscillations/activity-Lagrange-with-constraints.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -472,7 +472,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/content/2_oscillations/activity-Lagrange-reminders.ipynb"
+        <a href="../../_sources/content/2_oscillations/activity-Lagrange-with-constraints.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -532,37 +532,18 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#getting-started">
-   Getting Started
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#simple-harmonic-oscillator">
-     Simple Harmonic Oscillator
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#canonical-coupled-oscillators">
-   #Canonical Coupled Oscillators
+  <a class="reference internal nav-link" href="#starting-with-pencil-and-paper-analytics">
+   Starting with Pencil and Paper Analytics
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#choose-your-coordinates">
-   Choose your coordinates
+  <a class="reference internal nav-link" href="#numerically-analyze-this-system">
+   Numerically analyze this system
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#coupled-pendulums">
-     Coupled Pendulums
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-constraint-forces">
-   Adding Constraint Forces
+  <a class="reference internal nav-link" href="#extend-your-analysis">
+   Extend your analysis
   </a>
  </li>
 </ul>
@@ -574,7 +555,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Activity: Lagrangian Dynamics</h1>
+                <h1>Activity: Lagrangian Dynamics with Constraints</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -585,37 +566,18 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#getting-started">
-   Getting Started
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#simple-harmonic-oscillator">
-     Simple Harmonic Oscillator
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#canonical-coupled-oscillators">
-   #Canonical Coupled Oscillators
+  <a class="reference internal nav-link" href="#starting-with-pencil-and-paper-analytics">
+   Starting with Pencil and Paper Analytics
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#choose-your-coordinates">
-   Choose your coordinates
+  <a class="reference internal nav-link" href="#numerically-analyze-this-system">
+   Numerically analyze this system
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#coupled-pendulums">
-     Coupled Pendulums
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-constraint-forces">
-   Adding Constraint Forces
+  <a class="reference internal nav-link" href="#extend-your-analysis">
+   Extend your analysis
   </a>
  </li>
 </ul>
@@ -628,64 +590,47 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="activity-lagrangian-dynamics">
-<h1>Activity: Lagrangian Dynamics<a class="headerlink" href="#activity-lagrangian-dynamics" title="Permalink to this headline">#</a></h1>
-<p>Motivation to be completed later…</p>
-<p>Here you will practice using the Lagrangian for increasingly complex systems. We start with the SHO and move forward from there.</p>
-<p>Using Lagrangian dnymaics can feel like magic. In fact, this is video of me from 2002 when I learned to use this approach:</p>
-<img src="https://c.tenor.com/zcs5gYi4sSMAAAAC/mindblown-omg.gif" alt="mind blown cat gif" width=400px/>
-<p>But we will step through the levels of complexity with these examples to make sure we all understand how to make use of them.</p>
-<img src="https://i.imgflip.com/6v4j4k.jpg" alt="Lagrange meme" width=400px/><section id="getting-started">
-<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">#</a></h2>
-<section id="simple-harmonic-oscillator">
-<h3>Simple Harmonic Oscillator<a class="headerlink" href="#simple-harmonic-oscillator" title="Permalink to this headline">#</a></h3>
-<p><strong>✅ Do this</strong></p>
-<ol class="simple">
-<li><p>Starting with the 1d energy equations (for <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(\dot{x}\)</span>) for an SHO; derive the equations of motion. Did you get the sign right?</p></li>
-</ol>
-</section>
-</section>
-<section id="canonical-coupled-oscillators">
-<h2>#Canonical Coupled Oscillators<a class="headerlink" href="#canonical-coupled-oscillators" title="Permalink to this headline">#</a></h2>
-<p>Let’s assume you have a chain of two mass connected by springs (all the same <span class="math notranslate nohighlight">\(k\)</span>) as below.</p>
-<img src='https://www.entropy.energy/static/resources/coupled-oscillators/two-coupled-gliders-diagram.png' alt='Coupled Oscillator set up. Two oscillators connected by three springs in a horizontal line.' width=800px/>
-<p><strong>✅ Do this</strong></p>
-<ol class="simple">
-<li><p>Write down the energy equations for this system (using <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> for coordinates)</p></li>
-<li><p>Write the Lagrangian and derive the two equations of motion.</p></li>
-<li><p>Do all the signs makes sense to you?</p></li>
-</ol>
-</section>
-<section id="choose-your-coordinates">
-<h2>Choose your coordinates<a class="headerlink" href="#choose-your-coordinates" title="Permalink to this headline">#</a></h2>
-<section id="coupled-pendulums">
-<h3>Coupled Pendulums<a class="headerlink" href="#coupled-pendulums" title="Permalink to this headline">#</a></h3>
-<p>Consider two vertical pendulums of length <span class="math notranslate nohighlight">\(l\)</span> connected via their masses <span class="math notranslate nohighlight">\(M\)</span> by a weak spring <span class="math notranslate nohighlight">\(k\)</span>. By weak, we mean that the spring constant is small. See below for a canonical setup:</p>
-<img src="http://www.maths.surrey.ac.uk/explore/michaelspages/coupled/coupled_diag.jpg" />
-<p><strong>✅ Do this</strong></p>
-<ol class="simple">
-<li><p>Write down the energy equations for this system (think about your choices of coordinates)</p></li>
-<li><p>Write the Lagrangian and derive the two equations of motion (we want to know what is happening with both bobs)</p></li>
-<li><p>Compare your work to another group. Did they choose the same coordinates?</p></li>
-</ol>
-</section>
-</section>
-<section id="adding-constraint-forces">
-<h2>Adding Constraint Forces<a class="headerlink" href="#adding-constraint-forces" title="Permalink to this headline">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="activity-lagrangian-dynamics-with-constraints">
+<h1>Activity: Lagrangian Dynamics with Constraints<a class="headerlink" href="#activity-lagrangian-dynamics-with-constraints" title="Permalink to this headline">#</a></h1>
+<p>One of the strengths of Lagrangian dynamics is that you do not have to have a mathematical description of the forces for all space and time. We can see that in this upside-down ice cream cone problem. How would you write the force of the cone for all space and time?</p>
+<p><em>Answer:</em> :shrugs:</p>
 <p><img alt="Rubric" src="../../_images/cylindrical_cone_mass.jpg" /></p>
+<section id="starting-with-pencil-and-paper-analytics">
+<h2>Starting with Pencil and Paper Analytics<a class="headerlink" href="#starting-with-pencil-and-paper-analytics" title="Permalink to this headline">#</a></h2>
 <p>Consider a particle of mass <span class="math notranslate nohighlight">\(m\)</span> constrained to move on the interior surface of a upside down smooth ice cream cone (aligned with the vertical axis) with half-angle <span class="math notranslate nohighlight">\(\alpha\)</span> subject to a gravitational force downward, so that the cone axis and gravity are aligned.</p>
 <ol class="simple">
 <li><p>Using cylindrical coordinates (why?), write down the equation of constraint. Think about where the mass must be if it’s stuck on a cone.</p></li>
-<li><p>Write the energy contributions in cylindrical coordinates. (This is where you put in the constraint!)</p></li>
+<li><p>Write the energy contributions in cylindrical coordinates. Do this in general first (use Cartesian and convert or start with cylindrical)</p></li>
+<li><p>Pop in the constraint. This reduces degrees of freedom (how do you see this?)</p></li>
 <li><p>Form the Lagrangian and find the equations of motion (there are two!)</p></li>
 </ol>
+</section>
+<section id="numerically-analyze-this-system">
+<h2>Numerically analyze this system<a class="headerlink" href="#numerically-analyze-this-system" title="Permalink to this headline">#</a></h2>
+<p>As a group, perform an analysis of this system (along the lines of what we have done in project 1). It is ok to split up tasks, but share the code and results!</p>
+<p>Try to:</p>
+<ul class="simple">
+<li><p>Create a phase space diagram</p></li>
+<li><p>Characterize different motion</p></li>
+<li><p>Numerically integrate the system</p></li>
+<li><p><strong>New to you:</strong> Investigate the energy over time</p></li>
+<li><p><strong>Challenging:</strong> Investigate the z-component of the angular momentum over time</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Your code here</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="extend-your-analysis">
+<h2>Extend your analysis<a class="headerlink" href="#extend-your-analysis" title="Permalink to this headline">#</a></h2>
+<p>Now allow the bead to roll without slipping inside the cone. How does this change the energy? The equations of constraint?</p>
+<ol class="simple">
+<li><p>Write the energy equations for this new system.</p></li>
+<li><p>Write the equations of constraint for this system.</p></li>
+</ol>
 </section>
 </section>
 
@@ -716,17 +661,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="activity-CoupledOsc-NormalModes.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="readings-lagrangian-dynamics.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Activity: Normal Modes</p>
+            <p class="prev-next-title">Notes: Lagrangian Dynamics</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="readings-lagrangian-dynamics.html" title="next page">
+    <a class='right-next' id="next-link" href="../X_additional_pages/references-page.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Notes: Lagrangian Dynamics</p>
+        <p class="prev-next-title">Works Cited</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

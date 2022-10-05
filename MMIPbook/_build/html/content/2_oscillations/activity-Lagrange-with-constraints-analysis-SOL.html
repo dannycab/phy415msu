@@ -1,0 +1,789 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Activity: Analyzing Lagrangian Dynamics with Constraints (Solution) &#8212; Mathematical Modeling in Physics</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Mathematical Modeling in Physics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Mathematical Modeling in Physics
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../0_course/syllabus.html">
+   0 - Overview of PHY 415
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/goals.html">
+     Course Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/design.html">
+     Course Design
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/assessments.html">
+     Assessments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/rubric.html">
+     Project Rubrics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/calendar.html">
+     Calendar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/environment.html">
+     Classroom Environment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/resources.html">
+     Resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../0_course/reading_questions.html">
+   Reading Questions Form
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../1_modeling/what_is_modeling.html">
+   1 - What is Mathematical Modeling?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1_modeling/activity-what_is_a_model.html">
+     Activity: What is a Model?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1_modeling/notes-what_is_a_model.html">
+     Notes: What is a Model?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="readings-oscillators.html">
+   2 - Oscillations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="activity-SHO_and_dynamical_systems.html">
+     Activity: Investigating the Simple Harmonic Oscillator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notes-SHO_and_dynamical_systems.html">
+     Notes: The SHO and Phase Portraits
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="activity-SHO_and_Large_Angles.html">
+     Activity: Large Angle Pendulum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="readings-numerical_integration_1d.html">
+     Notes: Numerical Integration in 1D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="activity-ODE-numerical.html">
+     Activity: Integrating ODEs Numerically
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="activity-ODE_palooza.html">
+     Activity: ODE Palooza
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="readings-coupled-oscillators.html">
+     Notes: Coupled Oscillators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="activity-CoupledOsc-NormalModes.html">
+     Activity: Normal Modes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="activity-Lagrange-reminders.html">
+     Activity: Lagrangian Dynamics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="readings-lagrangian-dynamics.html">
+     Notes: Lagrangian Dynamics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="activity-Lagrange-with-constraints.html">
+     Activity: Lagrangian Dynamics with Constraints
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../X_additional_pages/references-page.html">
+   Works Cited
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../0_course/news_archive.html">
+   News Archive
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../0_course/projects/index.html">
+   Projects
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/projects/project1.html">
+     Project 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/projects/project2.html">
+     Project 2
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/dannycab/phy415msu/main?urlpath=tree/MMIPbook/content/2_oscillations/activity-Lagrange-with-constraints-analysis-SOL.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415msu/&urlpath=tree/phy415msu/MMIPbook/content/2_oscillations/activity-Lagrange-with-constraints-analysis-SOL.ipynb&branch=main"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on JupyterHub"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="headerbtn__text-container">JupyterHub</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/dannycab/phy415msu/blob/main/MMIPbook/content/2_oscillations/activity-Lagrange-with-constraints-analysis-SOL.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/dannycab/phy415msu/"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/dannycab/phy415msu//issues/new?title=Issue%20on%20page%20%2Fcontent/2_oscillations/activity-Lagrange-with-constraints-analysis-SOL.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/content/2_oscillations/activity-Lagrange-with-constraints-analysis-SOL.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#last-time">
+   Last time
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#start-your-analysis">
+   Start your analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numerically-integrate-our-eom">
+   Numerically Integrate our EOM
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Activity: Analyzing Lagrangian Dynamics with Constraints (Solution)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#last-time">
+   Last time
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#start-your-analysis">
+   Start your analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numerically-integrate-our-eom">
+   Numerically Integrate our EOM
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="activity-analyzing-lagrangian-dynamics-with-constraints-solution">
+<h1>Activity: Analyzing Lagrangian Dynamics with Constraints (Solution)<a class="headerlink" href="#activity-analyzing-lagrangian-dynamics-with-constraints-solution" title="Permalink to this headline">#</a></h1>
+<p>One of the strengths of Lagrangian dynamics is that you do not have to have a mathematical description of the forces for all space and time. We can see that in this upside-down ice cream cone problem. How would you write the force of the cone for all space and time?</p>
+<p><em>Answer:</em> :shrugs:</p>
+<p><img alt="Rubric" src="../../_images/cylindrical_cone_mass.jpg" /></p>
+<section id="last-time">
+<h2>Last time<a class="headerlink" href="#last-time" title="Permalink to this headline">#</a></h2>
+<p>We used Lagrangian Analysis to produce the following differential equations:</p>
+<div class="math notranslate nohighlight">
+\[m\ddot{r} = (mr^2\dot{\theta}-mg\cot\alpha)\cos^2\alpha\]</div>
+<div class="math notranslate nohighlight">
+\[\dfrac{d}{dt}\left(mr^2\dot{\theta}\right) = 0\]</div>
+<p>We made a note that the second one tells about conservation of angular momentum in the <span class="math notranslate nohighlight">\(z\)</span>-direction.</p>
+<p>Let’s write this a bit different, so we can integrate the situation:</p>
+<div class="math notranslate nohighlight">
+\[m\ddot{r} = (mr^2\dot{\theta}-mg\cot\alpha)\cos^2\alpha\]</div>
+<div class="math notranslate nohighlight">
+\[2mr\dot{r}\dot{\theta}+mr^2\ddot{\theta} = 0\]</div>
+<p>Now we need to write this as a set of first order differential equations. Let <span class="math notranslate nohighlight">\(v=\dot{r}\)</span> and <span class="math notranslate nohighlight">\(\omega=\dot{\theta}\)</span>. Then we get the following four equations</p>
+<div class="math notranslate nohighlight">
+\[\dot{v} = \left(r^2\omega-g\cot\alpha\right)\cos^2\alpha\]</div>
+<div class="math notranslate nohighlight">
+\[\dot{r} = v\]</div>
+<div class="math notranslate nohighlight">
+\[\dot{\omega} = -2\dfrac{v\omega}{r}\]</div>
+<div class="math notranslate nohighlight">
+\[\dot{\theta} = \omega\]</div>
+</section>
+<section id="start-your-analysis">
+<h2>Start your analysis<a class="headerlink" href="#start-your-analysis" title="Permalink to this headline">#</a></h2>
+<p>Now we have four 1st order, coupled, nonlinear differential equations that describe the motion of this bead. We are going to solve for <span class="math notranslate nohighlight">\(r(t)\)</span> and <span class="math notranslate nohighlight">\(\theta(t)\)</span> for a given choice of <span class="math notranslate nohighlight">\(\alpha\)</span>. This will produce a solution for <span class="math notranslate nohighlight">\(z(t) = \dfrac{r(t)}{\tan\alpha}\)</span>. We can investigate phase space, but you will have to look at slices of it and try to make sense of different projections. Let’s start with the doing the following three tasks:</p>
+<p>We will construct phase space diagrams for <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<ol class="simple">
+<li><p>You will have to use numpy.meshgrid for four variables. If you put in four variables, then you will get out ordered groups of the four variables.</p></li>
+<li><p>You need to define a function that returns the four changes of the four variables (remember we had to take the ordered pairs and then compute the arrows)</p></li>
+<li><p>Plot a 2d slice (e.g., <span class="math notranslate nohighlight">\(r\)</span> vs <span class="math notranslate nohighlight">\(v\)</span>)</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Your code here</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span><span class="p">,</span> <span class="n">THETA</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">OMEGA</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">omega</span><span class="p">)</span> 
+
+<span class="k">def</span> <span class="nf">Deriv</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">THETA</span><span class="p">,</span> <span class="n">OMEGA</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">):</span>
+    
+    <span class="n">g</span><span class="o">=</span><span class="mf">9.8</span>
+
+    <span class="n">RDOT</span><span class="p">,</span> <span class="n">VDOT</span><span class="p">,</span> <span class="n">THETADOT</span><span class="p">,</span> <span class="n">OMEGADOT</span> <span class="o">=</span> <span class="p">[</span><span class="n">V</span><span class="p">,</span> <span class="p">(</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">OMEGA</span><span class="o">-</span><span class="n">g</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">alpha</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">OMEGA</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">V</span><span class="o">*</span><span class="n">OMEGA</span><span class="o">/</span><span class="n">R</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">VDOT</span><span class="p">,</span> <span class="n">RDOT</span><span class="p">,</span> <span class="n">THETADOT</span><span class="p">,</span> <span class="n">OMEGADOT</span>
+
+
+<span class="k">def</span> <span class="nf">ComputeBeadPhase</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">THETA</span><span class="p">,</span> <span class="n">OMEGA</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">):</span>
+
+    
+    <span class="c1">## Prep the arrays with zeros at the right size</span>
+    <span class="n">rdot</span><span class="p">,</span> <span class="n">vdot</span><span class="p">,</span> <span class="n">thetadot</span><span class="p">,</span> <span class="n">omegadot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">R</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">V</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">THETA</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">OMEGA</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+    <span class="c1">## Set the limits of the loop based on how </span>
+    <span class="c1">## many points in the arrays we have</span>
+    <span class="n">rlim</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">vlim</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">thetalim</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">omegalim</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    
+    <span class="c1">## Calculate the changes at each location and add them to the arrays</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rlim</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">vlim</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">thetalim</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">omegalim</span><span class="p">):</span>
+                    <span class="n">rloc</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">]</span>
+                    <span class="n">vloc</span> <span class="o">=</span> <span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">]</span>
+                    <span class="n">thetaloc</span> <span class="o">=</span> <span class="n">THETA</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">]</span>
+                    <span class="n">omegaloc</span> <span class="o">=</span> <span class="n">OMEGA</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">]</span>
+                    <span class="n">rdot</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">],</span> <span class="n">vdot</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">],</span> <span class="n">thetadot</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">],</span> <span class="n">omegadot</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">]</span> <span class="o">=</span> <span class="n">Deriv</span><span class="p">(</span><span class="n">rloc</span><span class="p">,</span> <span class="n">vloc</span><span class="p">,</span> <span class="n">thetaloc</span><span class="p">,</span> <span class="n">omegaloc</span><span class="p">)</span>
+            
+    <span class="k">return</span> <span class="n">rdot</span><span class="p">,</span> <span class="n">vdot</span><span class="p">,</span> <span class="n">thetadot</span><span class="p">,</span> <span class="n">omegadot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rdot</span><span class="p">,</span> <span class="n">vdot</span><span class="p">,</span> <span class="n">thetadot</span><span class="p">,</span> <span class="n">omegadot</span> <span class="o">=</span> <span class="n">ComputeBeadPhase</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">omega</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">Input In [3],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">rdot</span><span class="p">,</span> <span class="n">vdot</span><span class="p">,</span> <span class="n">thetadot</span><span class="p">,</span> <span class="n">omegadot</span> <span class="o">=</span> <span class="n">ComputeBeadPhase</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">omega</span><span class="p">)</span>
+
+<span class="nn">Input In [2],</span> in <span class="ni">ComputeBeadPhase</span><span class="nt">(R, V, THETA, OMEGA, alpha)</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="c1">## Set the limits of the loop based on how </span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="c1">## many points in the arrays we have</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="n">rlim</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="ne">---&gt; </span><span class="mi">21</span> <span class="n">vlim</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="n">thetalim</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="n">omegalim</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="ne">IndexError</span>: tuple index out of range
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="numerically-integrate-our-eom">
+<h2>Numerically Integrate our EOM<a class="headerlink" href="#numerically-integrate-our-eom" title="Permalink to this headline">#</a></h2>
+<p>Ok, now that you have looked at the phase space as discuss possible motion that could occur. Let’s pick some initial conditions and build a numerical model.</p>
+<p>Using the integrator of your choice, numerically integrate and plot (in 3d) the motion of the bead for the following conditions:</p>
+<ol class="simple">
+<li><p>Bead starts from rest and is let go</p></li>
+<li><p>Bead starts at a given height and is given a low speed (less than needed to orbit)</p></li>
+<li><p>Bead starts at a given height and is given a low speed (more than needed to orbit)</p></li>
+<li><p>Can you find a flat horizontal orbit?</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/2_oscillations"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Danny Caballero<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

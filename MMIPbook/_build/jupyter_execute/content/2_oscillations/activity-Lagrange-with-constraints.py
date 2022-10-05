@@ -15,7 +15,7 @@
 # 
 # 1. Using cylindrical coordinates (why?), write down the equation of constraint. Think about where the mass must be if it's stuck on a cone.
 # 2. Write the energy contributions in cylindrical coordinates. Do this in general first (use Cartesian and convert or start with cylindrical)
-# 3. Pop in the constraint. This reduces degrees of freedom (how do you see this?)
+# 3. Pop in the constraint equation. This reduces degrees of freedom (how do you see this?)
 # 3. Form the Lagrangian and find the equations of motion (there are two!)
 
 # ## Numerically analyze this system

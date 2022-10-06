@@ -47,7 +47,7 @@ YouTubeVideo("KpLno70oYHE", 800, 600)
 # 
 # This reading is useful preparation for reminding yourself of Lagrangian Dynamics.
 # 
-# * Any classical mechanics book you like!
+# * Any classical mechanics book you like! Taylor is a good one.
 # * [A Google Book you can review](https://www.google.com/books/edition/A_Student_s_Guide_to_Lagrangians_and_Ham/ebTCAQAAQBAJ?hl=en&gbpv=1&dq=lagrangian+dynamics+book&printsec=frontcover)
 # 
 # ## Handwritten Notes
@@ -55,6 +55,8 @@ YouTubeVideo("KpLno70oYHE", 800, 600)
 # Here are my handwritten notes on coupled oscillations and normal modes.
 # 
 # * [Lagrangian Dynamics](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_2_Lagrangian_Dynamics.pdf)
+# * [Lagrangian Example](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_2_Lagrangian_Example.pdf)
+# * [Lagrangian Example with Generalized Forces](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_2_Lagrangian_Example_Gen_Force.pdf)
 # 
 # ## Video Resources
 # 
@@ -65,10 +67,4 @@ YouTubeVideo("KpLno70oYHE", 800, 600)
 
 from IPython.display import YouTubeVideo
 YouTubeVideo("zhk9xLjrmi4", 800, 600)
-
-
-# In[ ]:
-
-
-
 

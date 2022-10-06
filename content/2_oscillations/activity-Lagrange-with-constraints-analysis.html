@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Activity: Normal Modes &#8212; Mathematical Modeling in Physics</title>
+    <title>Activity: Analyzing Lagrangian Dynamics with Constraints &#8212; Mathematical Modeling in Physics</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Activity: Lagrangian Dynamics" href="activity-Lagrange-reminders.html" />
-    <link rel="prev" title="Notes: Coupled Oscillators" href="readings-coupled-oscillators.html" />
+    <link rel="next" title="Works Cited" href="../X_additional_pages/references-page.html" />
+    <link rel="prev" title="Activity: Lagrangian Dynamics with Constraints" href="activity-Lagrange-with-constraints.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -235,8 +235,8 @@ const thebe_selector_output = ".output, .cell_output"
      Notes: Coupled Oscillators
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="activity-CoupledOsc-NormalModes.html">
      Activity: Normal Modes
     </a>
    </li>
@@ -255,8 +255,8 @@ const thebe_selector_output = ".output, .cell_output"
      Activity: Lagrangian Dynamics with Constraints
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="activity-Lagrange-with-constraints-analysis.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Activity: Analyzing Lagrangian Dynamics with Constraints
     </a>
    </li>
@@ -353,7 +353,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/dannycab/phy415msu/main?urlpath=tree/MMIPbook/content/2_oscillations/activity-CoupledOsc-NormalModes.ipynb"
+        <a href="https://mybinder.org/v2/gh/dannycab/phy415msu/main?urlpath=tree/MMIPbook/content/2_oscillations/activity-Lagrange-with-constraints-analysis.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -371,7 +371,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415msu/&urlpath=tree/phy415msu/MMIPbook/content/2_oscillations/activity-CoupledOsc-NormalModes.ipynb&branch=main"
+        <a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415msu/&urlpath=tree/phy415msu/MMIPbook/content/2_oscillations/activity-Lagrange-with-constraints-analysis.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -389,7 +389,7 @@ title="Launch on JupyterHub"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/dannycab/phy415msu/blob/main/MMIPbook/content/2_oscillations/activity-CoupledOsc-NormalModes.ipynb"
+        <a href="https://colab.research.google.com/github/dannycab/phy415msu/blob/main/MMIPbook/content/2_oscillations/activity-Lagrange-with-constraints-analysis.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -449,7 +449,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/dannycab/phy415msu//issues/new?title=Issue%20on%20page%20%2Fcontent/2_oscillations/activity-CoupledOsc-NormalModes.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/dannycab/phy415msu//issues/new?title=Issue%20on%20page%20%2Fcontent/2_oscillations/activity-Lagrange-with-constraints-analysis.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -477,7 +477,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/content/2_oscillations/activity-CoupledOsc-NormalModes.ipynb"
+        <a href="../../_sources/content/2_oscillations/activity-Lagrange-with-constraints-analysis.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -537,25 +537,13 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#guided-lecture-canonical-coupled-oscillators">
-   Guided Lecture: Canonical Coupled Oscillators
+  <a class="reference internal nav-link" href="#last-time">
+   Last time
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#method-1-assume-the-solution">
-     Method 1: Assume the solution
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#method-2-find-the-normal-modes">
-     Method 2: Find the normal modes
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apply">
-   Apply:
+  <a class="reference internal nav-link" href="#numerically-integrate-our-eom">
+   Numerically Integrate our EOM
   </a>
  </li>
 </ul>
@@ -567,7 +555,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Activity: Normal Modes</h1>
+                <h1>Activity: Analyzing Lagrangian Dynamics with Constraints</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -578,25 +566,13 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#guided-lecture-canonical-coupled-oscillators">
-   Guided Lecture: Canonical Coupled Oscillators
+  <a class="reference internal nav-link" href="#last-time">
+   Last time
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#method-1-assume-the-solution">
-     Method 1: Assume the solution
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#method-2-find-the-normal-modes">
-     Method 2: Find the normal modes
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#apply">
-   Apply:
+  <a class="reference internal nav-link" href="#numerically-integrate-our-eom">
+   Numerically Integrate our EOM
   </a>
  </li>
 </ul>
@@ -609,60 +585,73 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="activity-normal-modes">
-<h1>Activity: Normal Modes<a class="headerlink" href="#activity-normal-modes" title="Permalink to this headline">#</a></h1>
-<p>As we begin to work with multi-particle systems, we begin to open the number of degrees of freedom of the system. We increase the complexity of it and the challenge of modeling it. We will increasingly need tools that help us take less tractable issues and make them palatable. One such tool that forms the basis of many others is <strong>Normal Modes</strong>.</p>
-<p>Normal modes are ways of breaking up our understanding of a system into discrete (potentially infinite and hopefully vanishingly small) pieces. This lets us get at the big picture of the system and characterize how much we are neglecting. The concept of normal modes underlies much of the analysis done in quantum mechanics, field theory, fluid mechanics, and signal processing. In fact, numerical routines often make use of forms of these modes to do economize calculations – <em>especially when we move beyond a few hundred bodies in the system</em>. This stuff is part and parcel of most research in physics. For example, how we understand the <a class="reference external" href="https://en.wikipedia.org/wiki/Cosmic_background_radiation">Cosmic Background Radiation</a> relies on a <a class="reference external" href="https://www.quantamagazine.org/how-ancient-light-reveals-the-universes-contents-20200128/">normal mode like analysis</a>.</p>
-<section id="guided-lecture-canonical-coupled-oscillators">
-<h2>Guided Lecture: Canonical Coupled Oscillators<a class="headerlink" href="#guided-lecture-canonical-coupled-oscillators" title="Permalink to this headline">#</a></h2>
-<p>There is still plenty of room for pencil and paper. We will explore this numerically later.</p>
-<p>We will start with a form of guided lecture and build the understanding of these methods together. Then you will apply what you learned to a new system.</p>
-<p>Let’s assume you have a chain of two mass connected by springs (all the same <span class="math notranslate nohighlight">\(k\)</span>) as below.</p>
-<img src='https://www.entropy.energy/static/resources/coupled-oscillators/two-coupled-gliders-diagram.png' alt='Coupled Oscillator set up. Two oscillators connected by three springs in a horizontal line.' width=800px/>
-<section id="method-1-assume-the-solution">
-<h3>Method 1: Assume the solution<a class="headerlink" href="#method-1-assume-the-solution" title="Permalink to this headline">#</a></h3>
-<p><strong>✅ Do this</strong></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="activity-analyzing-lagrangian-dynamics-with-constraints">
+<h1>Activity: Analyzing Lagrangian Dynamics with Constraints<a class="headerlink" href="#activity-analyzing-lagrangian-dynamics-with-constraints" title="Permalink to this headline">#</a></h1>
+<p>One of the strengths of Lagrangian dynamics is that you do not have to have a mathematical description of the forces for all space and time. We can see that in this upside-down ice cream cone problem. How would you write the force of the cone for all space and time?</p>
+<p><em>Answer:</em> :shrugs:</p>
+<p><img alt="Rubric" src="../../_images/cylindrical_cone_mass.jpg" /></p>
+<section id="last-time">
+<h2>Last time<a class="headerlink" href="#last-time" title="Permalink to this headline">#</a></h2>
+<p>We used Lagrangian Analysis to produce the following differential equations:</p>
+<div class="math notranslate nohighlight">
+\[m\ddot{r} = (mr^2\dot{\theta}-mg\cot\alpha)\cos^2\alpha\]</div>
+<div class="math notranslate nohighlight">
+\[\dfrac{d}{dt}\left(mr^2\dot{\theta}\right) = 0\]</div>
+<p>We made a note that the second one tells about conservation of angular momentum in the <span class="math notranslate nohighlight">\(z\)</span>-direction.</p>
+<p>Let’s write this a bit different, so we can integrate the situation:</p>
+<div class="math notranslate nohighlight">
+\[m\ddot{r} = (mr^2\dot{\theta}-mg\cot\alpha)\cos^2\alpha\]</div>
+<div class="math notranslate nohighlight">
+\[2mr\dot{r}\dot{\theta}+mr^2\ddot{\theta} = 0\]</div>
+<p>Now we need to write this as a set of first order differential equations. Let <span class="math notranslate nohighlight">\(v=\dot{r}\)</span> and <span class="math notranslate nohighlight">\(\omega=\dot{\theta}\)</span>. Then we get the following four equations</p>
+<div class="math notranslate nohighlight">
+\[\dot{r} = v\]</div>
+<div class="math notranslate nohighlight">
+\[\dot{v} = \left(r^2\omega-g\cot\alpha\right)\cos^2\alpha\]</div>
+<div class="math notranslate nohighlight">
+\[\dot{\theta} = \omega\]</div>
+<div class="math notranslate nohighlight">
+\[\dot{\omega} = -2\dfrac{v\omega}{r}\]</div>
+</section>
+<section id="numerically-integrate-our-eom">
+<h2>Numerically Integrate our EOM<a class="headerlink" href="#numerically-integrate-our-eom" title="Permalink to this headline">#</a></h2>
+<p>Now we have four 1st order, coupled, nonlinear differential equations that describe the motion of this bead. We are going to solve for <span class="math notranslate nohighlight">\(r(t)\)</span> and <span class="math notranslate nohighlight">\(\theta(t)\)</span> for a given choice of <span class="math notranslate nohighlight">\(\alpha\)</span>. This will produce a solution for <span class="math notranslate nohighlight">\(z(t) = \dfrac{r(t)}{\tan\alpha}\)</span>.  Let’s pick some initial conditions and build a numerical model.</p>
+<p>Using the integrator of your choice, numerically integrate and plot (in 3d) the motion of the bead for the following conditions:</p>
 <ol class="simple">
-<li><p>Displace the left mass by <span class="math notranslate nohighlight">\(x_1\)</span> and the right mass by <span class="math notranslate nohighlight">\(x_2\)</span> at <span class="math notranslate nohighlight">\(t=0\)</span>. Write down the pair of second order linear differential equations that describes the motion of this system.</p></li>
-<li><p>Assume the solutions to both will be simply oscillatory (e.g., sinusoidal). Plug the general solutions into your differential equation and find the particular solutions. Can you determine the oscillatory behavior of each solution?</p></li>
-<li><p>Pick numbers for your unknowns (e.g., <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, <span class="math notranslate nohighlight">\(k\)</span>) and plot your position vs. time solutions. Does this picture help determine the motion? Is it purely sinusoidal?</p></li>
+<li><p>Bead starts from rest and is let go</p></li>
+<li><p>Bead starts at a given height and is given a low speed (less than needed to orbit)</p></li>
+<li><p>Bead starts at a given height and is given a low speed (more than needed to orbit)</p></li>
+<li><p>Can you find a flat horizontal orbit?</p></li>
 </ol>
+<p>We have written the code below so that you could use odeint if you choose.</p>
+<p>The goals for this work is to:</p>
+<ol class="simple">
+<li><p>Integrate the equations of motion numerically.</p></li>
+<li><p>Plot the motion in various ways (2D slices and 3D space)</p></li>
+</ol>
+<p>We can then use those elements to extract some physics.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits</span> <span class="kn">import</span> <span class="n">mplot3d</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span>
+
+<span class="k">def</span> <span class="nf">BeadStuckOnCone</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mf">9.8</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">):</span>
+    
+    <span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">omega</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="n">dxdt</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">omega</span><span class="o">-</span><span class="n">g</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">alpha</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">v</span><span class="o">*</span><span class="n">omega</span><span class="o">/</span><span class="n">r</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">dxdt</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="mf">9.8</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span>
+
+<span class="n">y0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.0565</span><span class="p">]</span>  
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">1001</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="method-2-find-the-normal-modes">
-<h3>Method 2: Find the normal modes<a class="headerlink" href="#method-2-find-the-normal-modes" title="Permalink to this headline">#</a></h3>
-<p><strong>✅ Do this</strong></p>
-<ol class="simple">
-<li><p>Displace the left mass by <span class="math notranslate nohighlight">\(x_1\)</span> and the right mass by <span class="math notranslate nohighlight">\(x_2\)</span> at <span class="math notranslate nohighlight">\(t=0\)</span>. Again, write down the pair of second order linear differential equations that describes the motion of this system.</p></li>
-<li><p>Rework the differential equation into a matrix description: <span class="math notranslate nohighlight">\(\ddot{\mathbf{x}} = \pmb{A} \mathbf{x}\)</span>. Why can you do this? When can you not do this? Or rather what about the differential equation lets us do this?</p></li>
-<li><p>Find the determinant of the coefficient matrix <span class="math notranslate nohighlight">\(\pmb{A}\)</span>, and use that to determine the oscillation frequencies.</p></li>
-<li><p>Plot the normal mode solutions (remember we assume sinusoidal normal modes); there should be two.</p></li>
-</ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code here</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="apply">
-<h2>Apply:<a class="headerlink" href="#apply" title="Permalink to this headline">#</a></h2>
-<p>Consider two vertical pendulums of length <span class="math notranslate nohighlight">\(l\)</span> connected via their masses <span class="math notranslate nohighlight">\(M\)</span> by a weak spring <span class="math notranslate nohighlight">\(k\)</span>. By weak, we mean that the spring constant is small. See below for a canonical setup:</p>
-<img src="http://www.maths.surrey.ac.uk/explore/michaelspages/coupled/coupled_diag.jpg" />
-<p><strong>✅ Do this</strong></p>
-<ol class="simple">
-<li><p>In this limit, write down the pair of second order linear differential equations for the horizontal motion of each pendulum bob around its equilibrium.</p></li>
-<li><p>Find and describe the normal modes. Use plots of your choosing to explain what you found.</p></li>
-<li><p>Can you build up particular solutions from sums and differences of normal modes?</p></li>
-</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code here</span>
@@ -700,17 +689,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="readings-coupled-oscillators.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="activity-Lagrange-with-constraints.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Notes: Coupled Oscillators</p>
+            <p class="prev-next-title">Activity: Lagrangian Dynamics with Constraints</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="activity-Lagrange-reminders.html" title="next page">
+    <a class='right-next' id="next-link" href="../X_additional_pages/references-page.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Activity: Lagrangian Dynamics</p>
+        <p class="prev-next-title">Works Cited</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

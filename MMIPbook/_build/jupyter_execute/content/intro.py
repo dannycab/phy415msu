@@ -10,6 +10,13 @@
 # `````{admonition} Updates
 # :class: tip
 # 
+# **7 October 2022**
+# 
+# * This week, we will return to coupled oscillations to set us up for waves. The [reading](2_oscillations/readings-waves) focuses on the 1D Wave Equation. We will likely start that work on Thursday after we finish up with $N$ coupled oscillators.
+#     * I will post expanded instructions for project 2 this weekend.
+#     * We will have your grades for project 1 done by Monday.
+# 
+# 
 # **2 October 2022**
 # 
 # * This week, we will finish up with [Lagrangian Analysis](2_oscillations/readings-lagrangian-dynamics) and shift back into how that analysis sets us up for modeling

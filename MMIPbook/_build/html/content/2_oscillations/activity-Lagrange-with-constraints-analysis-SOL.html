@@ -178,12 +178,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../1_modeling/activity-what_is_a_model.html">
-     Activity: What is a Model?
+     01 Sept 22 - Activity: What is a Model?
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../1_modeling/notes-what_is_a_model.html">
-     Notes: What is a Model?
+     01 Sept 22 - Notes: What is a Model?
     </a>
    </li>
   </ul>
@@ -255,7 +255,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="activity-Lagrange-with-constraints-analysis.html">
-     Activity: Analyzing Lagrangian Dynamics with Constraints
+     10/6/22 Activity: Analyzing Lagrangian Dynamics with Constraints
     </a>
    </li>
   </ul>
@@ -540,6 +540,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#start-your-analysis">
+   Start your analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#numerically-integrate-our-eom">
    Numerically Integrate our EOM
   </a>
@@ -566,6 +571,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#last-time">
    Last time
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#start-your-analysis">
+   Start your analysis
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -611,9 +621,105 @@ title="Print to PDF"
 <div class="math notranslate nohighlight">
 \[\dot{\theta} = \omega\]</div>
 </section>
+<section id="start-your-analysis">
+<h2>Start your analysis<a class="headerlink" href="#start-your-analysis" title="Permalink to this headline">#</a></h2>
+<p>Now we have four 1st order, coupled, nonlinear differential equations that describe the motion of this bead. We are going to solve for <span class="math notranslate nohighlight">\(r(t)\)</span> and <span class="math notranslate nohighlight">\(\theta(t)\)</span> for a given choice of <span class="math notranslate nohighlight">\(\alpha\)</span>. This will produce a solution for <span class="math notranslate nohighlight">\(z(t) = \dfrac{r(t)}{\tan\alpha}\)</span>. We can investigate phase space, but you will have to look at slices of it and try to make sense of different projections. Let’s start with the doing the following three tasks:</p>
+<p>We will construct phase space diagrams for <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<ol class="simple">
+<li><p>You will have to use numpy.meshgrid for four variables. If you put in four variables, then you will get out ordered groups of the four variables.</p></li>
+<li><p>You need to define a function that returns the four changes of the four variables (remember we had to take the ordered pairs and then compute the arrows)</p></li>
+<li><p>Plot a 2d slice (e.g., <span class="math notranslate nohighlight">\(r\)</span> vs <span class="math notranslate nohighlight">\(v\)</span>)</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Your code here</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">THETA</span><span class="p">,</span> <span class="n">OMEGA</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">omega</span><span class="p">)</span> 
+
+<span class="k">def</span> <span class="nf">Deriv</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">THETA</span><span class="p">,</span> <span class="n">OMEGA</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">):</span>
+    
+    <span class="n">g</span><span class="o">=</span><span class="mf">9.8</span>
+
+    <span class="n">RDOT</span><span class="p">,</span> <span class="n">VDOT</span><span class="p">,</span> <span class="n">THETADOT</span><span class="p">,</span> <span class="n">OMEGADOT</span> <span class="o">=</span> <span class="p">[</span><span class="n">V</span><span class="p">,</span> <span class="p">(</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">OMEGA</span><span class="o">-</span><span class="n">g</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">alpha</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">OMEGA</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">V</span><span class="o">*</span><span class="n">OMEGA</span><span class="o">/</span><span class="n">R</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">VDOT</span><span class="p">,</span> <span class="n">RDOT</span><span class="p">,</span> <span class="n">THETADOT</span><span class="p">,</span> <span class="n">OMEGADOT</span>
+
+
+<span class="k">def</span> <span class="nf">ComputeBeadPhase</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">THETA</span><span class="p">,</span> <span class="n">OMEGA</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">):</span>
+
+    
+    <span class="c1">## Prep the arrays with zeros at the right size</span>
+    <span class="n">rdot</span><span class="p">,</span> <span class="n">vdot</span><span class="p">,</span> <span class="n">thetadot</span><span class="p">,</span> <span class="n">omegadot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">R</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">V</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">THETA</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">OMEGA</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+    <span class="c1">## Set the limits of the loop based on how </span>
+    <span class="c1">## many points in the arrays we have</span>
+    <span class="n">rlim</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">vlim</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">thetalim</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">omegalim</span> <span class="o">=</span> <span class="n">R</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="c1">## Calculate the changes at each location and add them to the arrays</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rlim</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">vlim</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">thetalim</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">omegalim</span><span class="p">):</span>
+                    <span class="n">rloc</span> <span class="o">=</span> <span class="n">R</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">]</span>
+                    <span class="n">vloc</span> <span class="o">=</span> <span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">]</span>
+                    <span class="n">thetaloc</span> <span class="o">=</span> <span class="n">THETA</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">]</span>
+                    <span class="n">omegaloc</span> <span class="o">=</span> <span class="n">OMEGA</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">]</span>
+                    <span class="n">rdot</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">],</span> <span class="n">vdot</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">],</span> <span class="n">thetadot</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">],</span> <span class="n">omegadot</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">]</span> <span class="o">=</span> <span class="n">Deriv</span><span class="p">(</span><span class="n">rloc</span><span class="p">,</span> <span class="n">vloc</span><span class="p">,</span> <span class="n">thetaloc</span><span class="p">,</span> <span class="n">omegaloc</span><span class="p">)</span>
+            
+    <span class="k">return</span> <span class="n">rdot</span><span class="p">,</span> <span class="n">vdot</span><span class="p">,</span> <span class="n">thetadot</span><span class="p">,</span> <span class="n">omegadot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rdot</span><span class="p">,</span> <span class="n">vdot</span><span class="p">,</span> <span class="n">thetadot</span><span class="p">,</span> <span class="n">omegadot</span> <span class="o">=</span> <span class="n">ComputeBeadPhase</span><span class="p">(</span><span class="n">R</span><span class="p">,</span><span class="n">V</span><span class="p">,</span><span class="n">THETA</span><span class="p">,</span><span class="n">OMEGA</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,:,:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2],
+       [1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2],
+       [1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2],
+       [1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2],
+       [1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2],
+       [1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2],
+       [1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2],
+       [1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2],
+       [1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2],
+       [1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2, 1.2]])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="numerically-integrate-our-eom">
 <h2>Numerically Integrate our EOM<a class="headerlink" href="#numerically-integrate-our-eom" title="Permalink to this headline">#</a></h2>
-<p>Now we have four 1st order, coupled, nonlinear differential equations that describe the motion of this bead. We are going to solve for <span class="math notranslate nohighlight">\(r(t)\)</span> and <span class="math notranslate nohighlight">\(\theta(t)\)</span> for a given choice of <span class="math notranslate nohighlight">\(\alpha\)</span>. This will produce a solution for <span class="math notranslate nohighlight">\(z(t) = \dfrac{r(t)}{\tan\alpha}\)</span>.  Let’s pick some initial conditions and build a numerical model.</p>
+<p>Ok, now that you have looked at the phase space as discuss possible motion that could occur. Let’s pick some initial conditions and build a numerical model.</p>
 <p>Using the integrator of your choice, numerically integrate and plot (in 3d) the motion of the bead for the following conditions:</p>
 <ol class="simple">
 <li><p>Bead starts from rest and is let go</p></li>
@@ -621,71 +727,16 @@ title="Print to PDF"
 <li><p>Bead starts at a given height and is given a low speed (more than needed to orbit)</p></li>
 <li><p>Can you find a flat horizontal orbit?</p></li>
 </ol>
-<p>We have written the code below so that you could use odeint if you choose. This system is very sensitive, so I’ve given you a set of initial conditions in the right scale for the problem.</p>
-<p>The goals for this work is to:</p>
-<ol class="simple">
-<li><p>Integrate the equations of motion numerically.</p></li>
-<li><p>Plot the motion in various ways (2D slices and 3D space)</p></li>
-</ol>
-<p>We can then use those elements to extract some physics.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">mpl_toolkits</span> <span class="kn">import</span> <span class="n">mplot3d</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span>
-
-<span class="k">def</span> <span class="nf">BeadStuckOnCone</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mf">9.8</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;BeadStuckOnCone computes the derivatives for the</span>
-<span class="sd">    bead stuck on a straight sided cone problem. The order</span>
-<span class="sd">    of the variables x are r, rdot (v), theta, thetadot (omega).</span>
-<span class="sd">    It returns rdot, rdoubledot (vdot), thetadot, and </span>
-<span class="sd">    thetadoubledot (omegadot)&#39;&#39;&#39;</span>
-    
-    <span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">omega</span> <span class="o">=</span> <span class="n">x</span>
-    <span class="n">dxdt</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">omega</span><span class="o">-</span><span class="n">g</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">alpha</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">v</span><span class="o">*</span><span class="n">omega</span><span class="o">/</span><span class="n">r</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">dxdt</span>
-
-<span class="c1">## Coonstants for the problem</span>
-<span class="n">g</span> <span class="o">=</span> <span class="mf">9.8</span>
-<span class="n">alpha</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span>
-
-<span class="c1">## Initial Conditions</span>
-<span class="n">y0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.0565</span><span class="p">]</span>  
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">1001</span><span class="p">)</span>
-
-<span class="n">sol</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">BeadStuckOnCone</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">alpha</span><span class="p">))</span>
-
-<span class="n">r</span> <span class="o">=</span> <span class="n">sol</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
-<span class="n">theta</span> <span class="o">=</span> <span class="n">sol</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
-
-<span class="n">x</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">r</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/caballero/opt/anaconda3/envs/teaching/lib/python3.10/site-packages/scipy/integrate/odepack.py:247: ODEintWarning: Excess work done on this call (perhaps wrong Dfun type). Run with full_output = 1 to get quantitative information.
-  warnings.warn(warning_msg, ODEintWarning)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">view_init</span><span class="p">(</span><span class="n">azim</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">elev</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter3D</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x114e175b0&gt;
-</pre></div>
-</div>
-<img alt="../../_images/activity-Lagrange-with-constraints-analysis-SOL_5_1.png" src="../../_images/activity-Lagrange-with-constraints-analysis-SOL_5_1.png" />
 </div>
 </div>
 </section>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Activity: Analyzing Lagrangian Dynamics with Constraints &#8212; Mathematical Modeling in Physics</title>
+    <title>10/6/22 Activity: Analyzing Lagrangian Dynamics with Constraints &#8212; Mathematical Modeling in Physics</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -180,12 +180,12 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../1_modeling/activity-what_is_a_model.html">
-     Activity: What is a Model?
+     01 Sept 22 - Activity: What is a Model?
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../1_modeling/notes-what_is_a_model.html">
-     Notes: What is a Model?
+     01 Sept 22 - Notes: What is a Model?
     </a>
    </li>
   </ul>
@@ -257,7 +257,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Activity: Analyzing Lagrangian Dynamics with Constraints
+     10/6/22 Activity: Analyzing Lagrangian Dynamics with Constraints
     </a>
    </li>
   </ul>
@@ -545,6 +545,18 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#numerically-integrate-our-eom">
    Numerically Integrate our EOM
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis-of-the-energy">
+     Analysis of the Energy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#angular-momentum-analysis">
+   Angular Momentum Analysis
+  </a>
  </li>
 </ul>
 
@@ -555,7 +567,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Activity: Analyzing Lagrangian Dynamics with Constraints</h1>
+                <h1>10/6/22 Activity: Analyzing Lagrangian Dynamics with Constraints</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -574,6 +586,18 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#numerically-integrate-our-eom">
    Numerically Integrate our EOM
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis-of-the-energy">
+     Analysis of the Energy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#angular-momentum-analysis">
+   Angular Momentum Analysis
+  </a>
  </li>
 </ul>
 
@@ -586,7 +610,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="activity-analyzing-lagrangian-dynamics-with-constraints">
-<h1>Activity: Analyzing Lagrangian Dynamics with Constraints<a class="headerlink" href="#activity-analyzing-lagrangian-dynamics-with-constraints" title="Permalink to this headline">#</a></h1>
+<h1>10/6/22 Activity: Analyzing Lagrangian Dynamics with Constraints<a class="headerlink" href="#activity-analyzing-lagrangian-dynamics-with-constraints" title="Permalink to this headline">#</a></h1>
 <p>One of the strengths of Lagrangian dynamics is that you do not have to have a mathematical description of the forces for all space and time. We can see that in this upside-down ice cream cone problem. How would you write the force of the cone for all space and time?</p>
 <p><em>Answer:</em> :shrugs:</p>
 <p><img alt="Rubric" src="../../_images/cylindrical_cone_mass.jpg" /></p>
@@ -600,14 +624,14 @@ title="Print to PDF"
 <p>We made a note that the second one tells about conservation of angular momentum in the <span class="math notranslate nohighlight">\(z\)</span>-direction.</p>
 <p>Let’s write this a bit different, so we can integrate the situation:</p>
 <div class="math notranslate nohighlight">
-\[m\ddot{r} = (mr^2\dot{\theta}-mg\cot\alpha)\cos^2\alpha\]</div>
+\[m\ddot{r} = (mr\dot{\theta}^2-mg\cot\alpha)\cos^2\alpha\]</div>
 <div class="math notranslate nohighlight">
 \[2mr\dot{r}\dot{\theta}+mr^2\ddot{\theta} = 0\]</div>
 <p>Now we need to write this as a set of first order differential equations. Let <span class="math notranslate nohighlight">\(v=\dot{r}\)</span> and <span class="math notranslate nohighlight">\(\omega=\dot{\theta}\)</span>. Then we get the following four equations</p>
 <div class="math notranslate nohighlight">
 \[\dot{r} = v\]</div>
 <div class="math notranslate nohighlight">
-\[\dot{v} = \left(r^2\omega-g\cot\alpha\right)\cos^2\alpha\]</div>
+\[\dot{v} = \left(r\omega^2-g\cot\alpha\right)\cos^2\alpha\]</div>
 <div class="math notranslate nohighlight">
 \[\dot{\theta} = \omega\]</div>
 <div class="math notranslate nohighlight">
@@ -636,27 +660,180 @@ title="Print to PDF"
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">mpl_toolkits</span> <span class="kn">import</span> <span class="n">mplot3d</span>
 <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;text.usetex&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
 
 <span class="k">def</span> <span class="nf">BeadStuckOnCone</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="mf">9.8</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span><span class="p">):</span>
     
     <span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">theta</span><span class="p">,</span> <span class="n">omega</span> <span class="o">=</span> <span class="n">x</span>
-    <span class="n">dxdt</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">omega</span><span class="o">-</span><span class="n">g</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">alpha</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">v</span><span class="o">*</span><span class="n">omega</span><span class="o">/</span><span class="n">r</span><span class="p">]</span>
+    <span class="n">dxdt</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">omega</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="n">g</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">alpha</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">v</span><span class="o">*</span><span class="n">omega</span><span class="o">/</span><span class="n">r</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">dxdt</span>
 
 <span class="n">g</span> <span class="o">=</span> <span class="mf">9.8</span>
 <span class="n">alpha</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span>
 
 <span class="n">y0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.0565</span><span class="p">]</span>  
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">1001</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">1001</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span><span class="n">BeadStuckOnCone</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">sol</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">vr</span> <span class="o">=</span> <span class="n">sol</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">sol</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="n">sol</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">r</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpl_toolkits</span> <span class="kn">import</span> <span class="n">mplot3d</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter3D</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x166ef27d0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/activity-Lagrange-with-constraints-analysis_6_1.png" src="../../_images/activity-Lagrange-with-constraints-analysis_6_1.png" />
+</div>
+</div>
+<section id="analysis-of-the-energy">
+<h3>Analysis of the Energy<a class="headerlink" href="#analysis-of-the-energy" title="Permalink to this headline">#</a></h3>
+<p>We know that this is a system that should conserve energy. There’s no dissipation and there’s only conservatives forces acting to change the speed of the object. The contact forces only change direction, so the system is “conservative”.</p>
+<p>Let’s compute the energy:</p>
+<div class="math notranslate nohighlight">
+\[T = \dfrac{m}{2}\left(\dot{r}^2 + r^2\dot{\theta}^2 + \dot{z}^2\right) = \dfrac{m}{2}\left(\dot{r}^2\csc^2\alpha + r^2\dot{\theta}^2\right)\]</div>
+<div class="math notranslate nohighlight">
+\[U = mgz = mgr\cot\alpha\]</div>
+<p>We have all these quantities except <span class="math notranslate nohighlight">\(m\)</span>. Let’s divide it out for just set it to 1. The code below computes and plots the energies.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>## Kinetic
+T = 0.5*(vr**2/np.cos(alpha)**2+(r*omega)**2)
+
+## Potetial
+U = g*r/np.tan(alpha)``
+
+## Total
+E=T+U
+
+ax = plt.figure(figsize=(12,8))
+plt.plot(t, T, label=&#39;Kinetic&#39;)
+plt.plot(t, U, label=&#39;Potential&#39;)
+plt.plot(t, E, label=&#39;Total&#39;)
+plt.axis([0, 200, 0, 100])
+plt.legend()
+plt.xlabel(&#39;time&#39;)
+plt.ylabel(&#39;Energy/mass&#39;);
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  Input In [4]
+    U = g*r/np.tan(alpha)``
+                         ^
+SyntaxError: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="angular-momentum-analysis">
+<h2>Angular Momentum Analysis<a class="headerlink" href="#angular-momentum-analysis" title="Permalink to this headline">#</a></h2>
+<p>We argued that the equation
+$<span class="math notranslate nohighlight">\(\dfrac{d}{dt}\left(mr^2\dot{\theta}\right) = 0\)</span>$
+was a statement of conservation of the z-component of angular momentum.</p>
+<p>Recall that angular momentum is a vector quantity and can be conserved in total, but also a given component might be conserved while others are not. Let’s compute the angular momentum and see what the deal is. This will involve taken cross products in cylindrical coordinates (which also obey the right hand rule!).</p>
+<p>Starting with the classical relationship:</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{\mathbf{L}}{m} = \mathbf{r} \times \mathbf{v}\]</div>
+<p>We can write down position and velocity vectors in general:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{r} = r\hat{r} + z\hat{z}\]</div>
+<div class="math notranslate nohighlight">
+\[\mathbf{v} = v_r\hat{r} + v_{\theta}\hat{\theta} + v_z \hat{z}\]</div>
+<p>Let’s take the cross product:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{r} \times \mathbf{v} = \left(r\hat{r} + z\hat{z}\right) \times
+\left( v_r\hat{r} + v_{\theta}\hat{\theta} + v_z \hat{z} \right)\]</div>
+<p>Which is</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{\mathbf{L}}{m} = \mathbf{r} \times \mathbf{v} = -(z v_{\theta})\hat{r} + (z v_r -r v_z)\hat{\theta} + rv_{\theta}\hat{z}\]</div>
+<p>Or:</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{L_r}{m} = -(z v_{\theta})\]</div>
+<div class="math notranslate nohighlight">
+\[\dfrac{L_{\theta}}{m} = (z v_r -r v_z)\]</div>
+<div class="math notranslate nohighlight">
+\[\dfrac{L_z}{m} = rv_{\theta}\]</div>
+<p>Yep, <span class="math notranslate nohighlight">\(L_z\)</span> just pops out:</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{L_z}{m} = rv_{\theta} = r^2\dot{\theta}\]</div>
+<div class="math notranslate nohighlight">
+\[L_z = m r^2\dot{\theta}\]</div>
+<p>A good physics question is ‘why?’</p>
+<p>Let’s plot it</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># CONSERVED! </span>
+<span class="c1"># Lz Angular momentum</span>
+
+<span class="n">Lz</span> <span class="o">=</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">omega</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">Lz</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$L_z/m$&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$L_z/m$&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/activity-Lagrange-with-constraints-analysis_10_1.png" src="../../_images/activity-Lagrange-with-constraints-analysis_10_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># All the Angular momentum is conserved!</span>
+
+<span class="n">Lr</span> <span class="o">=</span> <span class="o">-</span><span class="n">r</span><span class="o">*</span><span class="n">omega</span><span class="o">*</span><span class="n">z</span>
+<span class="n">Ltheta</span> <span class="o">=</span> <span class="n">z</span><span class="o">*</span><span class="n">vr</span><span class="o">-</span><span class="n">r</span><span class="o">*</span><span class="n">vr</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
+<span class="n">Lz</span> <span class="o">=</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">omega</span>
+
+<span class="n">Ltotal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Lr</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">Ltheta</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">Lz</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Lr</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$L_r/m$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">Ltheta</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$L_{\theta}/m$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Lz</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$L_z/m$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Ltotal</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$L_</span><span class="si">{tot}</span><span class="s1">/m$&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$L/m$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x169b8bd00&gt;
+</pre></div>
+</div>
+<img alt="../../_images/activity-Lagrange-with-constraints-analysis_11_1.png" src="../../_images/activity-Lagrange-with-constraints-analysis_11_1.png" />
 </div>
 </div>
 </section>

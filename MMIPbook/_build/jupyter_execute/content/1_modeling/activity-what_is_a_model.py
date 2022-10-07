@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Activity: What is a Model?
+# # 01 Sept 22 - Activity: What is a Model?
 # 
 # ## Notes
 # - *Class Meeting:* 01 Sept 22

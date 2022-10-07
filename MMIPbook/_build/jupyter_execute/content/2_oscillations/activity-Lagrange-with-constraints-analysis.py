@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Activity: Analyzing Lagrangian Dynamics with Constraints
+# # 10/6/22 Activity: Analyzing Lagrangian Dynamics with Constraints
 # 
 # One of the strengths of Lagrangian dynamics is that you do not have to have a mathematical description of the forces for all space and time. We can see that in this upside-down ice cream cone problem. How would you write the force of the cone for all space and time?
 # 
@@ -22,7 +22,7 @@
 
 # Let's write this a bit different, so we can integrate the situation:
 # 
-# $$m\ddot{r} = (mr^2\dot{\theta}-mg\cot\alpha)\cos^2\alpha$$
+# $$m\ddot{r} = (mr\dot{\theta}^2-mg\cot\alpha)\cos^2\alpha$$
 # 
 # $$2mr\dot{r}\dot{\theta}+mr^2\ddot{\theta} = 0$$
 # 
@@ -30,7 +30,7 @@
 
 # $$\dot{r} = v$$
 # 
-# $$\dot{v} = \left(r^2\omega-g\cot\alpha\right)\cos^2\alpha$$
+# $$\dot{v} = \left(r\omega^2-g\cot\alpha\right)\cos^2\alpha$$
 # 
 # $$\dot{\theta} = \omega$$
 # 
@@ -63,22 +63,161 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits import mplot3d
 from scipy.integrate import odeint
+plt.rcParams['text.usetex'] = True
+
 
 def BeadStuckOnCone(x, t, g=9.8, alpha=np.pi/3):
     
     r, v, theta, omega = x
-    dxdt = [v, (r**2*omega-g/np.tan(alpha))*np.cos(alpha)**2, omega, -2*v*omega/r]
+    dxdt = [v, (r*omega**2-g/np.tan(alpha))*np.cos(alpha)**2, omega, -2*v*omega/r]
     return dxdt
 
 g = 9.8
 alpha = np.pi/3
 
 y0 = [10,0,0,0.0565]  
-t = np.linspace(0,100,1001)
+t = np.linspace(0,200,1001)
 
 
 # In[2]:
 
 
-## your code here
+sol = odeint(BeadStuckOnCone, y0,t)
+r = sol[:,0]
+vr = sol[:,1]
+theta = sol[:,2]
+omega = sol[:,3]
+x = r*np.cos(theta)
+y = r*np.sin(theta)
+z = r/np.tan(alpha)
+
+
+# In[3]:
+
+
+from mpl_toolkits import mplot3d
+fig = plt.figure(figsize=(10,10))
+ax = plt.axes(projection='3d')
+ax.scatter3D(x, y, z)
+
+
+# ### Analysis of the Energy
+# 
+# We know that this is a system that should conserve energy. There's no dissipation and there's only conservatives forces acting to change the speed of the object. The contact forces only change direction, so the system is "conservative".
+# 
+# Let's compute the energy:
+# 
+# $$T = \dfrac{m}{2}\left(\dot{r}^2 + r^2\dot{\theta}^2 + \dot{z}^2\right) = \dfrac{m}{2}\left(\dot{r}^2\csc^2\alpha + r^2\dot{\theta}^2\right)$$
+# 
+# $$U = mgz = mgr\cot\alpha$$
+# 
+# We have all these quantities except $m$. Let's divide it out for just set it to 1. The code below computes and plots the energies.
+
+# In[4]:
+
+
+## Kinetic
+T = 0.5*(vr**2/np.cos(alpha)**2+(r*omega)**2)
+
+## Potetial
+U = g*r/np.tan(alpha)``
+
+## Total
+E=T+U
+
+ax = plt.figure(figsize=(12,8))
+plt.plot(t, T, label='Kinetic')
+plt.plot(t, U, label='Potential')
+plt.plot(t, E, label='Total')
+plt.axis([0, 200, 0, 100])
+plt.legend()
+plt.xlabel('time')
+plt.ylabel('Energy/mass');
+
+
+# ## Angular Momentum Analysis
+# 
+# We argued that the equation 
+# $$\dfrac{d}{dt}\left(mr^2\dot{\theta}\right) = 0$$
+# was a statement of conservation of the z-component of angular momentum.
+# 
+# Recall that angular momentum is a vector quantity and can be conserved in total, but also a given component might be conserved while others are not. Let's compute the angular momentum and see what the deal is. This will involve taken cross products in cylindrical coordinates (which also obey the right hand rule!).
+# 
+# Starting with the classical relationship:
+# 
+# $$\dfrac{\mathbf{L}}{m} = \mathbf{r} \times \mathbf{v}$$
+# 
+# We can write down position and velocity vectors in general:
+# 
+# $$\mathbf{r} = r\hat{r} + z\hat{z}$$
+# $$\mathbf{v} = v_r\hat{r} + v_{\theta}\hat{\theta} + v_z \hat{z}$$
+# 
+# Let's take the cross product:
+# 
+# $$\mathbf{r} \times \mathbf{v} = \left(r\hat{r} + z\hat{z}\right) \times
+# \left( v_r\hat{r} + v_{\theta}\hat{\theta} + v_z \hat{z} \right)$$
+# 
+# Which is
+# 
+# $$\dfrac{\mathbf{L}}{m} = \mathbf{r} \times \mathbf{v} = -(z v_{\theta})\hat{r} + (z v_r -r v_z)\hat{\theta} + rv_{\theta}\hat{z}$$
+# 
+# Or:
+# 
+# $$\dfrac{L_r}{m} = -(z v_{\theta})$$
+# 
+# $$\dfrac{L_{\theta}}{m} = (z v_r -r v_z)$$
+# 
+# $$\dfrac{L_z}{m} = rv_{\theta}$$
+# 
+# Yep, $L_z$ just pops out:
+# 
+# $$\dfrac{L_z}{m} = rv_{\theta} = r^2\dot{\theta}$$
+# 
+# $$L_z = m r^2\dot{\theta}$$
+# 
+# A good physics question is 'why?'
+# 
+# Let's plot it
+
+# In[75]:
+
+
+# CONSERVED! 
+# Lz Angular momentum
+
+Lz = r**2*omega
+
+plt.plot(t,Lz)
+plt.axis([0, 200, 0, 10])
+plt.xlabel('t')
+plt.ylabel(r'$L_z/m$')
+
+
+# In[82]:
+
+
+# All the Angular momentum is conserved!
+
+Lr = -r*omega*z
+Ltheta = z*vr-r*vr/np.tan(alpha)
+Lz = r**2*omega
+
+Ltotal = np.sqrt(Lr**2+Ltheta**2+Lz**2)
+
+ax = plt.figure(figsize=(12,8))
+plt.plot(t, Lr, label=r'$L_r/m$')
+plt.plot(t,Ltheta, label=r'$L_{\theta}/m$')
+plt.plot(t, Lz, label=r'$L_z/m$')
+plt.plot(t, Ltotal, label=r'$L_{tot}/m$')
+
+plt.axis([0, 200, -10, 10])
+plt.xlabel('t')
+plt.ylabel(r'$L/m$')
+plt.legend()
+
+
+# In[ ]:
+
+
+
 

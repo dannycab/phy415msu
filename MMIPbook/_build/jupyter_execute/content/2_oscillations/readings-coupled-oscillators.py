@@ -3,7 +3,7 @@
 
 # Book Reading: Crawford, Waves, Secs 1.4-1.5
 # 
-# # Notes: Coupled Oscillators
+# # 27 Sept 22 - Notes: Coupled Oscillators
 # 
 # Single particle dynamics like the SHO and other singular point particle motion (e.g., basic kinematics, charges in fields modeled without interactions) are helpful in building our intutiion of how physics _should_ work. We can track the position, velocity, and other dynamical quantities for these singular particles. We can determine how the act on and interact with their surroundings. We can find points of stasis (stable and unstable points); we can find different families of solutions (orbits vs runaway behavior); we can predict the motion of those particles with numerical routines.
 # 

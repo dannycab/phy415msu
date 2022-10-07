@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Notes: Coupled Oscillators &#8212; Mathematical Modeling in Physics</title>
+    <title>27 Sept 22 - Notes: Coupled Oscillators &#8212; Mathematical Modeling in Physics</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Activity: Normal Modes" href="activity-CoupledOsc-NormalModes.html" />
-    <link rel="prev" title="Activity: ODE Palooza" href="activity-ODE_palooza.html" />
+    <link rel="next" title="27 Sept 22 - Activity: Normal Modes" href="activity-CoupledOsc-NormalModes.html" />
+    <link rel="prev" title="15 Sept 22 - Activity: ODE Palooza" href="activity-ODE_palooza.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -202,62 +202,62 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="activity-SHO_and_dynamical_systems.html">
-     Activity: Investigating the Simple Harmonic Oscillator
+     06 Sept 22 - Activity: Investigating the Simple Harmonic Oscillator
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="notes-SHO_and_dynamical_systems.html">
-     Notes: The SHO and Phase Portraits
+     06 Sept 22 - Notes: The SHO and Phase Portraits
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="activity-SHO_and_Large_Angles.html">
-     Activity: Large Angle Pendulum
+     08 Sept 22 - Activity: Large Angle Pendulum
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="readings-numerical_integration_1d.html">
-     Notes: Numerical Integration in 1D
+     13 Sept 22 - Notes: Numerical Integration in 1D
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="activity-ODE-numerical.html">
-     Activity: Integrating ODEs Numerically
+     13 Sept 22 - Activity: Integrating ODEs Numerically
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="activity-ODE_palooza.html">
-     Activity: ODE Palooza
+     15 Sept 22 - Activity: ODE Palooza
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Notes: Coupled Oscillators
+     27 Sept 22 - Notes: Coupled Oscillators
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="activity-CoupledOsc-NormalModes.html">
-     Activity: Normal Modes
+     27 Sept 22 - Activity: Normal Modes
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="activity-Lagrange-reminders.html">
-     Activity: Lagrangian Dynamics
+     29 Sept 22 - Activity: Lagrangian Dynamics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="readings-lagrangian-dynamics.html">
-     Notes: Lagrangian Dynamics
+     4 Oct 22 - Notes: Lagrangian Dynamics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="activity-Lagrange-with-constraints.html">
-     Activity: Lagrangian Dynamics with Constraints
+     4 Oct 22 - Activity: Lagrangian Dynamics with Constraints
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="activity-Lagrange-with-constraints-analysis.html">
-     10/6/22 Activity: Analyzing Lagrangian Dynamics with Constraints
+     06 Oct 22 - Activity: Analyzing Lagrangian Dynamics with Constraints
     </a>
    </li>
   </ul>
@@ -577,7 +577,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Notes: Coupled Oscillators</h1>
+                <h1>27 Sept 22 - Notes: Coupled Oscillators</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -630,8 +630,8 @@ title="Print to PDF"
               <div>
                 
   <p>Book Reading: Crawford, Waves, Secs 1.4-1.5</p>
-<section class="tex2jax_ignore mathjax_ignore" id="notes-coupled-oscillators">
-<h1>Notes: Coupled Oscillators<a class="headerlink" href="#notes-coupled-oscillators" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="sept-22-notes-coupled-oscillators">
+<h1>27 Sept 22 - Notes: Coupled Oscillators<a class="headerlink" href="#sept-22-notes-coupled-oscillators" title="Permalink to this headline">#</a></h1>
 <p>Single particle dynamics like the SHO and other singular point particle motion (e.g., basic kinematics, charges in fields modeled without interactions) are helpful in building our intutiion of how physics <em>should</em> work. We can track the position, velocity, and other dynamical quantities for these singular particles. We can determine how the act on and interact with their surroundings. We can find points of stasis (stable and unstable points); we can find different families of solutions (orbits vs runaway behavior); we can predict the motion of those particles with numerical routines.</p>
 <p>But what happens when we introduce a second particle? And we let it interact with the first particle. We have substantially opened the degrees of freedom (a way to characterize the complexity of our system) that our system has. We will see how these systems become expanded and how their dynamics becomes richer and more interesting.</p>
 <p>The canonical complication is the coupled oscillators, which will form the basis of our initial study, much like the SHO formed our initial work for dynamical models using ODEs. The setup appears below:</p>
@@ -800,13 +800,13 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Activity: ODE Palooza</p>
+            <p class="prev-next-title">15 Sept 22 - Activity: ODE Palooza</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="activity-CoupledOsc-NormalModes.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Activity: Normal Modes</p>
+        <p class="prev-next-title">27 Sept 22 - Activity: Normal Modes</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Activity: Integrating ODEs Numerically
+# # 13 Sept 22 - Activity: Integrating ODEs Numerically
 # 
 # One of the most important skills to learn in theoretical physics is to be able to solve non-analytical problems. At this point it is impossible to conduct modern physics work without the use of a computer. In this activity, we will begin to make use of the computer as a tool for doing science we can't do without it. 
 # 

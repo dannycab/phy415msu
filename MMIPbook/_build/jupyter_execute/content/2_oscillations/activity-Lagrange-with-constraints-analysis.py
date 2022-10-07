@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # 10/6/22 Activity: Analyzing Lagrangian Dynamics with Constraints
+# # 06 Oct 22 - Activity: Analyzing Lagrangian Dynamics with Constraints
 # 
 # One of the strengths of Lagrangian dynamics is that you do not have to have a mathematical description of the forces for all space and time. We can see that in this upside-down ice cream cone problem. How would you write the force of the cone for all space and time?
 # 
@@ -22,7 +22,7 @@
 
 # Let's write this a bit different, so we can integrate the situation:
 # 
-# $$m\ddot{r} = (mr\dot{\theta}^2-mg\cot\alpha)\cos^2\alpha$$
+# $$m\ddot{r} = (mr^2\dot{\theta}-mg\cot\alpha)\cos^2\alpha$$
 # 
 # $$2mr\dot{r}\dot{\theta}+mr^2\ddot{\theta} = 0$$
 # 
@@ -30,7 +30,7 @@
 
 # $$\dot{r} = v$$
 # 
-# $$\dot{v} = \left(r\omega^2-g\cot\alpha\right)\cos^2\alpha$$
+# $$\dot{v} = \left(r^2\omega-g\cot\alpha\right)\cos^2\alpha$$
 # 
 # $$\dot{\theta} = \omega$$
 # 
@@ -120,7 +120,7 @@ ax.scatter3D(x, y, z)
 T = 0.5*(vr**2/np.cos(alpha)**2+(r*omega)**2)
 
 ## Potetial
-U = g*r/np.tan(alpha)``
+U = g*r/np.tan(alpha)
 
 ## Total
 E=T+U
@@ -179,7 +179,7 @@ plt.ylabel('Energy/mass');
 # 
 # Let's plot it
 
-# In[75]:
+# In[5]:
 
 
 # CONSERVED! 
@@ -193,7 +193,7 @@ plt.xlabel('t')
 plt.ylabel(r'$L_z/m$')
 
 
-# In[82]:
+# In[6]:
 
 
 # All the Angular momentum is conserved!

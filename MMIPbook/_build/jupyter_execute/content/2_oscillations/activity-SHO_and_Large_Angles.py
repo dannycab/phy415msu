@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Activity: Large Angle Pendulum
+# # 08 Sept 22 - Activity: Large Angle Pendulum
 # 
 # Up to now, most of your work with models in physics are those you can solve analytically in terms of known functions. Think about solving differential equations that produce polynomials or sines and cosines. 
 # 

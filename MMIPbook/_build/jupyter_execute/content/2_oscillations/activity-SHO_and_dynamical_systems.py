@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Activity: Investigating the Simple Harmonic Oscillator
+# # 06 Sept 22 - Activity: Investigating the Simple Harmonic Oscillator
 # ## Reminders of the SHO and Introduction to Dynamical Systems
 # 
 # 

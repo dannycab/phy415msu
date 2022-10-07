@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Activity: Lagrangian Dynamics
+# # 29 Sept 22 - Activity: Lagrangian Dynamics
 # 
 # Motivation to be completed later...
 # 
@@ -67,4 +67,10 @@
 
 
 ## your code here
+
+
+# In[ ]:
+
+
+
 

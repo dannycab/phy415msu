@@ -8,7 +8,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-# # Activity: ODE Palooza
+# # 15 Sept 22 - Activity: ODE Palooza
 # 
 # Y'all have worked with several different ODEs. We've learned that we can use phase space to investigate different potential families of solutions. We've learned how to read information from phase space for systems we are familiar with like a falling ball and the SHO. We've also learned how to use numerical integration to find trajectories of the system in time and in phase space. Today, you will investigate a new model. There's quite a few well-known models. 
 # 

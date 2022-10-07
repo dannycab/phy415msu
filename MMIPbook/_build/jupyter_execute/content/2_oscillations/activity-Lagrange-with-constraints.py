@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Activity: Lagrangian Dynamics with Constraints
+# # 4 Oct 22 - Activity: Lagrangian Dynamics with Constraints
 # 
 # One of the strengths of Lagrangian dynamics is that you do not have to have a mathematical description of the forces for all space and time. We can see that in this upside-down ice cream cone problem. How would you write the force of the cone for all space and time?
 # 

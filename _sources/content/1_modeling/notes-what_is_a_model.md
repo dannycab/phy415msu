@@ -1,4 +1,4 @@
-# Notes: What is a Model?
+#  01 Sept 22 - Notes: What is a Model?
 
 These is the summary of the PHY 415 class period on 01 Sept 22. If I missed anything, [send me an message](https://phy415fall2022.slack.com/) on Slack and I will add it here. -DC
 

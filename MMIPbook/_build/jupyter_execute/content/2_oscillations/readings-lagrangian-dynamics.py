@@ -68,27 +68,3 @@ YouTubeVideo("KpLno70oYHE", 800, 600)
 from IPython.display import YouTubeVideo
 YouTubeVideo("zhk9xLjrmi4", 800, 600)
 
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-

@@ -28,13 +28,17 @@
 # 
 # Ok, now we need to find the normal mode amplitudes. That is we assumed sinusoidal oscillations, but at what amplitudes? We will show how to do this with one frequency ($\omega_1$), and then break up the work of the the other two. These frequencies are:
 # 
-# $$\omega_1 = 2\dfrac{k}{m}; \qquad \omega_2 = \left(2-\sqrt{2}\right)\dfrac{k}{m}; \qquad \omega_3 = \left(2+\sqrt{2}\right)\dfrac{k}{m}\qquad$$
+# $$\omega_A = 2\dfrac{k}{m}; \qquad \omega_B = \left(2-\sqrt{2}\right)\dfrac{k}{m}; \qquad \omega_C = \left(2+\sqrt{2}\right)\dfrac{k}{m}\qquad$$
 # 
 # **&#9989; Do this** 
 # 
 # After we do the first one, pick another frequencies and repeat. Answer the follow questions:
 # 
 # 1. What does this motion physically look like? What are the masses doing?
-# 2. How does the frequency of oscillation make sense? Why is it higher or lower than $\omega_1$?
+# 2. How does the frequency of oscillation make sense? Why is it higher or lower than $\omega_A$?
+
+# ## Notes
+# 
+# * [Partial Solution to Activity](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_2_Three_Coupled_Oscillators.pdf)
 
 # 

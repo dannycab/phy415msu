@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>13 Sept 22 - Notes: Numerical Integration in 1D &#8212; Mathematical Modeling in Physics</title>
+    <title>11 Oct 22 - Activity: Normal Modes of 3 Coupled Oscillators &#8212; Mathematical Modeling in Physics</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="13 Sept 22 - Activity: Integrating ODEs Numerically" href="activity-ODE-numerical.html" />
-    <link rel="prev" title="08 Sept 22 - Activity: Large Angle Pendulum" href="activity-SHO_and_Large_Angles.html" />
+    <link rel="next" title="Works Cited" href="../X_additional_pages/references-page.html" />
+    <link rel="prev" title="11 Oct 22 - Oscillations with Many Degrees of Freedom" href="readings-waves.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -215,8 +215,8 @@ const thebe_selector_output = ".output, .cell_output"
      08 Sept 22 - Activity: Large Angle Pendulum
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="readings-numerical_integration_1d.html">
      13 Sept 22 - Notes: Numerical Integration in 1D
     </a>
    </li>
@@ -265,8 +265,8 @@ const thebe_selector_output = ".output, .cell_output"
      11 Oct 22 -  Oscillations with Many Degrees of Freedom
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="activity-3CoupledOsc-NormalModes.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      11 Oct 22 - Activity: Normal Modes of 3 Coupled Oscillators
     </a>
    </li>
@@ -363,7 +363,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/dannycab/phy415msu/main?urlpath=tree/MMIPbook/content/2_oscillations/readings-numerical_integration_1d.ipynb"
+        <a href="https://mybinder.org/v2/gh/dannycab/phy415msu/main?urlpath=tree/MMIPbook/content/2_oscillations/activity-3CoupledOsc-NormalModes.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -381,7 +381,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415msu/&urlpath=tree/phy415msu/MMIPbook/content/2_oscillations/readings-numerical_integration_1d.ipynb&branch=main"
+        <a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415msu/&urlpath=tree/phy415msu/MMIPbook/content/2_oscillations/activity-3CoupledOsc-NormalModes.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -399,7 +399,7 @@ title="Launch on JupyterHub"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/dannycab/phy415msu/blob/main/MMIPbook/content/2_oscillations/readings-numerical_integration_1d.ipynb"
+        <a href="https://colab.research.google.com/github/dannycab/phy415msu/blob/main/MMIPbook/content/2_oscillations/activity-3CoupledOsc-NormalModes.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -459,7 +459,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/dannycab/phy415msu//issues/new?title=Issue%20on%20page%20%2Fcontent/2_oscillations/readings-numerical_integration_1d.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/dannycab/phy415msu//issues/new?title=Issue%20on%20page%20%2Fcontent/2_oscillations/activity-3CoupledOsc-NormalModes.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -487,7 +487,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/content/2_oscillations/readings-numerical_integration_1d.ipynb"
+        <a href="../../_sources/content/2_oscillations/activity-3CoupledOsc-NormalModes.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -547,26 +547,19 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nonlinear-science">
-   Nonlinear Science
+  <a class="reference internal nav-link" href="#three-coupled-oscillators">
+   Three Coupled Oscillators
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#book-readings">
-   Book Readings
+  <a class="reference internal nav-link" href="#finding-the-normal-mode-frequencies">
+   Finding the Normal Mode Frequencies
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#newman-s-computational-physics-chapter-8">
-     Newman’s Computational Physics - Chapter 8
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#strogatz-s-nonlinear-dynamics-and-chaos-chapters-4-and-5">
-     Strogatz’s Nonlinear Dynamics and Chaos - Chapters 4 and 5
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#finding-the-normal-modes-amplitudes">
+   Finding the Normal Modes Amplitudes
+  </a>
  </li>
 </ul>
 
@@ -577,7 +570,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>13 Sept 22 - Notes: Numerical Integration in 1D</h1>
+                <h1>11 Oct 22 - Activity: Normal Modes of 3 Coupled Oscillators</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -588,26 +581,19 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nonlinear-science">
-   Nonlinear Science
+  <a class="reference internal nav-link" href="#three-coupled-oscillators">
+   Three Coupled Oscillators
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#book-readings">
-   Book Readings
+  <a class="reference internal nav-link" href="#finding-the-normal-mode-frequencies">
+   Finding the Normal Mode Frequencies
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#newman-s-computational-physics-chapter-8">
-     Newman’s Computational Physics - Chapter 8
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#strogatz-s-nonlinear-dynamics-and-chaos-chapters-4-and-5">
-     Strogatz’s Nonlinear Dynamics and Chaos - Chapters 4 and 5
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#finding-the-normal-modes-amplitudes">
+   Finding the Normal Modes Amplitudes
+  </a>
  </li>
 </ul>
 
@@ -619,53 +605,38 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="sept-22-notes-numerical-integration-in-1d">
-<h1>13 Sept 22 - Notes: Numerical Integration in 1D<a class="headerlink" href="#sept-22-notes-numerical-integration-in-1d" title="Permalink to this headline">#</a></h1>
-<p>Principal Ideas for this unit will come from <a class="reference external" href="https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/scans/Newman_Ch8_ODEs.pdf">Newman Chapter 8, Section 1</a>, which is the reading assigned below.</p>
-<p>We have seen how we can quickly exhaust our analytical tools when we investigate systems with interesting and complex behavior. We can see much from the perspective of phase space in terms of the qualitatively different behaviors (e.g., oscillations vs rotations, both clockwise and counter-clockwise, in the large angle pendulum). But what if we want to find the specific trajectory of a given set of initial conditions.</p>
-<p>That is we want to be able to take a more general differential equation:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="oct-22-activity-normal-modes-of-3-coupled-oscillators">
+<h1>11 Oct 22 - Activity: Normal Modes of 3 Coupled Oscillators<a class="headerlink" href="#oct-22-activity-normal-modes-of-3-coupled-oscillators" title="Permalink to this headline">#</a></h1>
+<p>Now that we have discussed and built some facility with Lagrangian dynamics, let’s see how using it makes our study of normal modes much simpler than Newtonian mechanics. We will couple this analysis to solving an eigenvalue problem by guessing the form of the solutions. This technique is very common in theoretical physics with different guesses for the solution forms giving rise to different eigenvalue problems (e.g., <a class="reference external" href="https://en.wikipedia.org/wiki/Bessel_function">Bessel functions for 2D surface problems</a> or <a class="reference external" href="https://en.wikipedia.org/wiki/Hermite_polynomials">Hermite polynomials for the Quantum Harmonic Oscillator</a>.</p>
+<section id="three-coupled-oscillators">
+<h2>Three Coupled Oscillators<a class="headerlink" href="#three-coupled-oscillators" title="Permalink to this headline">#</a></h2>
+<p>Consider the setup below consisting of three masses connected by springs to each other. We intend to find the normal modes of the system by denoting each mass’s displacement (<span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, and <span class="math notranslate nohighlight">\(x_3\)</span>).</p>
+<p><img alt="3 Coupled Oscillators" src="../../_images/3_coupled_osc.png" /></p>
+</section>
+<section id="finding-the-normal-mode-frequencies">
+<h2>Finding the Normal Mode Frequencies<a class="headerlink" href="#finding-the-normal-mode-frequencies" title="Permalink to this headline">#</a></h2>
+<p><strong>✅ Do this</strong></p>
+<p>This is not magic as we will see, it follows from our choices of solution. Here’s the steps and what you might notice about them:</p>
+<ol class="simple">
+<li><p>Guess what the normal modes might look like? Write your guesses down; how should the masses move? (It’s ok if you are not sure about all of them, try to determine one of them)</p></li>
+<li><p>Write down the energy for the whole system, <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(U\)</span> (We have done this before, but not for this many particles)</p></li>
+<li><p>Use the Euler-Lagrange Equation to find the equations of motion for <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, and <span class="math notranslate nohighlight">\(x_3\)</span>. (We have done this lots, so make sure it feels solid)</p></li>
+<li><p>Reformulate the equations of motion as a matrix equation <span class="math notranslate nohighlight">\(\ddot{\mathbf{x}} = \mathbf{A} \mathbf{x}\)</span>. What is <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>? (We have done this, but only quickly, so take your time)</p></li>
+<li><p>Consider solutions of the form <span class="math notranslate nohighlight">\(Ce^{i{\omega}t}\)</span>, plug that into <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, and <span class="math notranslate nohighlight">\(x_3\)</span> to show you get <span class="math notranslate nohighlight">\(\mathbf{A}\mathbf{x} = -\omega^2 \mathbf{x}\)</span>. (We have not done this, we just assumed it works! It’s ok if this is annoying, we only have to show it once.)</p></li>
+<li><p>Find the normal mode frequencies by taking the determinant of <span class="math notranslate nohighlight">\(\mathbf{A} - \mathbf{I}\lambda\)</span>. Note that this produces the following definition: <span class="math notranslate nohighlight">\(\lambda = -\omega^2\)</span> (We have not done this together and we can if it’s confusing.)</p></li>
+</ol>
+</section>
+<section id="finding-the-normal-modes-amplitudes">
+<h2>Finding the Normal Modes Amplitudes<a class="headerlink" href="#finding-the-normal-modes-amplitudes" title="Permalink to this headline">#</a></h2>
+<p>Ok, now we need to find the normal mode amplitudes. That is we assumed sinusoidal oscillations, but at what amplitudes? We will show how to do this with one frequency (<span class="math notranslate nohighlight">\(\omega_1\)</span>), and then break up the work of the the other two. These frequencies are:</p>
 <div class="math notranslate nohighlight">
-\[\ddot{x} = f(x,\dot{x},t)\]</div>
-<p>to a solution for all (or some specified amount)of time, <span class="math notranslate nohighlight">\(x(t)\)</span>…in (most) cases…because sometimes integrals don’t converge.</p>
-<p>We can use <strong>numerical integration</strong> to find these trajectories. Below is a video describing 3 coupled ODEs, the <a class="reference external" href="https://en.wikipedia.org/wiki/Lorenz_system">Lorenz equations</a>, that are quite famous. You will be able to model systems like this, but for now think of it as motivation for why we want to learn numerical integration.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
-<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;aAJkLh76QnM&quot;</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="800"
-    height="600"
-    src="https://www.youtube.com/embed/aAJkLh76QnM"
-    frameborder="0"
-    allowfullscreen
-
-></iframe>
-</div></div>
-</div>
-<section id="nonlinear-science">
-<h2>Nonlinear Science<a class="headerlink" href="#nonlinear-science" title="Permalink to this headline">#</a></h2>
-<p>Some of the most interesting ODEs to work with are those that lead to chaos, have interesting behaviors in different parts of phase space, are highly sensitive to initial conditions, or that have complex bound orbits (in real or phase space). This area of study in physics overlaps with a broad interdisciplinary field called <a class="reference external" href="https://en.wikipedia.org/wiki/Nonlinear_system">Nonlinear Science</a>, which studies all manner of systems where the results are not simply proportional to the input features. This work includes theory, applied science, and experimental work. As it is difficult to find truly linear systems in the real world, nonlinear science is quite interdisciplinary with physics research in the areas of <a class="reference external" href="https://complex.umd.edu/research/MHD_dynamos/MHD_dynamos.php">magnetohydrodynamics</a>, <span class="xref myst">fluid mechanics</span>, <a class="reference external" href="https://meche.mit.edu/people/faculty/PEKO&#64;MIT.EDU">bio-inspired design</a>, <a class="reference external" href="https://curtisresearch.gatech.edu/index.php">biophysics (cellular)</a>, <a class="reference external" href="https://crablab.gatech.edu/">biophysics (animal locomotion)</a>, <a class="reference external" href="https://jila.colorado.edu/lewandowski">atomic and molecular physics</a>, and many more fields.</p>
-<p>We will focus on integrating 1 dimensional ODEs (that is, ODEs of only one variable like the SHO). To that end the reding this week aims to inform you with the simplest of the integrators the <a class="reference external" href="https://en.wikipedia.org/wiki/Semi-implicit_Euler_method">Euler-Cromer integration</a> technique. This approach is intuitive, straight-forward, and forms the basis for better and far more accurate methods like <a class="reference external" href="https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods">Runge-Kutta</a>.</p>
-<p>Through this week’s activities, we will introduce several integration methods, but you will learn to use the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html?highlight=odeint">built-in integrator</a> (<code class="docutils literal notranslate"><span class="pre">odeint</span></code>) from scipy, which are more efficient than what we could write ourselves.</p>
-</section>
-<section id="book-readings">
-<h2>Book Readings<a class="headerlink" href="#book-readings" title="Permalink to this headline">#</a></h2>
-<p>These two readings are useful preparation for what we are going to do with numerical integration.</p>
-<section id="newman-s-computational-physics-chapter-8">
-<h3>Newman’s Computational Physics - Chapter 8<a class="headerlink" href="#newman-s-computational-physics-chapter-8" title="Permalink to this headline">#</a></h3>
-<p>The first one is from <a class="reference external" href="https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/scans/Newman_Ch8_ODEs.pdf">Chapter 8 of Mark Newman’s book, Computational Physics</a>, which is an excellent introduction to most of the computational physics approaches we use in physics. It uses Python and modern libraries, which is rare for a computational physics textbook for undergraduate students.</p>
-<p><strong>Read This</strong> Sections 8.1 and 8.1.1. We will discuss and work with ideas from 8.1.2 and 8.1.3, but I don’t expect you to read those in detail. We will discuss how these work and then make use of the <a class="reference external" href="https://docs.scipy.org/doc/scipy/tutorial/integrate.html">built-in integrators from scipy</a>. The core one will be <code class="docutils literal notranslate"><span class="pre">odeint</span></code> <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html?highlight=odeint">(Documentation)</a>.</p>
-</section>
-<section id="strogatz-s-nonlinear-dynamics-and-chaos-chapters-4-and-5">
-<h3>Strogatz’s Nonlinear Dynamics and Chaos - Chapters 4 and 5<a class="headerlink" href="#strogatz-s-nonlinear-dynamics-and-chaos-chapters-4-and-5" title="Permalink to this headline">#</a></h3>
-<p>The second one in from <a class="reference external" href="https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/scans/Strogatz_Integrating_Ch4-5.pdf">Chapters 4 and 5 of Steven Strogatz’s book, Nonlinear Dynamics and Chaos</a>, which is an excellent and broad book covering many science and engineering problems. It is a book that I think every student of physics should read at some point.</p>
-<p><strong>Read This</strong> Section 5.1. We have worked already with these ideas, but we will continue to do so. This is another way to look at what we’ve done, so it’s worth reading another perspective. We will continue to discuss and work with these ideas. You are free to read other parts of this book, but please read 5.1 for class.</p>
-</section>
+\[\omega_1 = 2\dfrac{k}{m}; \qquad \omega_2 = \left(2-\sqrt{2}\right)\dfrac{k}{m}; \qquad \omega_3 = \left(2+\sqrt{2}\right)\dfrac{k}{m}\qquad\]</div>
+<p><strong>✅ Do this</strong></p>
+<p>After we do the first one, pick another frequencies and repeat. Answer the follow questions:</p>
+<ol class="simple">
+<li><p>What does this motion physically look like? What are the masses doing?</p></li>
+<li><p>How does the frequency of oscillation make sense? Why is it higher or lower than <span class="math notranslate nohighlight">\(\omega_1\)</span>?</p></li>
+</ol>
 </section>
 </section>
 
@@ -696,17 +667,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="activity-SHO_and_Large_Angles.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="readings-waves.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">08 Sept 22 - Activity: Large Angle Pendulum</p>
+            <p class="prev-next-title">11 Oct 22 -  Oscillations with Many Degrees of Freedom</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="activity-ODE-numerical.html" title="next page">
+    <a class='right-next' id="next-link" href="../X_additional_pages/references-page.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">13 Sept 22 - Activity: Integrating ODEs Numerically</p>
+        <p class="prev-next-title">Works Cited</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

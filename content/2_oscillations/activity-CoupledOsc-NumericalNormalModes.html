@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>4 Oct 22 - Activity: Lagrangian Dynamics with Constraints &#8212; Mathematical Modeling in Physics</title>
+    <title>13 Oct 22 - Activity: Normal Modes of N Coupled Oscillators &#8212; Mathematical Modeling in Physics</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="06 Oct 22 - Activity: Analyzing Lagrangian Dynamics with Constraints" href="activity-Lagrange-with-constraints-analysis.html" />
-    <link rel="prev" title="4 Oct 22 - Notes: Lagrangian Dynamics" href="readings-lagrangian-dynamics.html" />
+    <link rel="next" title="Works Cited" href="../X_additional_pages/references-page.html" />
+    <link rel="prev" title="11 Oct 22 - Activity: Normal Modes of 3 Coupled Oscillators" href="activity-3CoupledOsc-NormalModes.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -250,8 +250,8 @@ const thebe_selector_output = ".output, .cell_output"
      4 Oct 22 - Notes: Lagrangian Dynamics
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="activity-Lagrange-with-constraints.html">
      4 Oct 22 - Activity: Lagrangian Dynamics with Constraints
     </a>
    </li>
@@ -270,8 +270,8 @@ const thebe_selector_output = ".output, .cell_output"
      11 Oct 22 - Activity: Normal Modes of 3 Coupled Oscillators
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="activity-CoupledOsc-NumericalNormalModes.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      13 Oct 22 - Activity: Normal Modes of N Coupled Oscillators
     </a>
    </li>
@@ -368,7 +368,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/dannycab/phy415msu/main?urlpath=tree/MMIPbook/content/2_oscillations/activity-Lagrange-with-constraints.ipynb"
+        <a href="https://mybinder.org/v2/gh/dannycab/phy415msu/main?urlpath=tree/MMIPbook/content/2_oscillations/activity-CoupledOsc-NumericalNormalModes.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -386,7 +386,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415msu/&urlpath=tree/phy415msu/MMIPbook/content/2_oscillations/activity-Lagrange-with-constraints.ipynb&branch=main"
+        <a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415msu/&urlpath=tree/phy415msu/MMIPbook/content/2_oscillations/activity-CoupledOsc-NumericalNormalModes.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -404,7 +404,7 @@ title="Launch on JupyterHub"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/dannycab/phy415msu/blob/main/MMIPbook/content/2_oscillations/activity-Lagrange-with-constraints.ipynb"
+        <a href="https://colab.research.google.com/github/dannycab/phy415msu/blob/main/MMIPbook/content/2_oscillations/activity-CoupledOsc-NumericalNormalModes.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -464,7 +464,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/dannycab/phy415msu//issues/new?title=Issue%20on%20page%20%2Fcontent/2_oscillations/activity-Lagrange-with-constraints.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/dannycab/phy415msu//issues/new?title=Issue%20on%20page%20%2Fcontent/2_oscillations/activity-CoupledOsc-NumericalNormalModes.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -492,7 +492,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/content/2_oscillations/activity-Lagrange-with-constraints.ipynb"
+        <a href="../../_sources/content/2_oscillations/activity-CoupledOsc-NumericalNormalModes.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -552,18 +552,28 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#starting-with-pencil-and-paper-analytics">
-   Starting with Pencil and Paper Analytics
+  <a class="reference internal nav-link" href="#three-coupled-oscillators">
+   Three Coupled Oscillators
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numerically-analyze-this-system">
-   Numerically analyze this system
+  <a class="reference internal nav-link" href="#finding-the-eigenvalues-and-eigenvectors">
+   Finding the Eigenvalues and Eigenvectors
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#extend-your-analysis">
-   Extend your analysis
+  <a class="reference internal nav-link" href="#plotting-the-modes">
+   Plotting the modes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extending-your-work">
+   Extending your work
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#even-further">
+   Even further
   </a>
  </li>
 </ul>
@@ -575,7 +585,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>4 Oct 22 - Activity: Lagrangian Dynamics with Constraints</h1>
+                <h1>13 Oct 22 - Activity: Normal Modes of N Coupled Oscillators</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -586,18 +596,28 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#starting-with-pencil-and-paper-analytics">
-   Starting with Pencil and Paper Analytics
+  <a class="reference internal nav-link" href="#three-coupled-oscillators">
+   Three Coupled Oscillators
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numerically-analyze-this-system">
-   Numerically analyze this system
+  <a class="reference internal nav-link" href="#finding-the-eigenvalues-and-eigenvectors">
+   Finding the Eigenvalues and Eigenvectors
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#extend-your-analysis">
-   Extend your analysis
+  <a class="reference internal nav-link" href="#plotting-the-modes">
+   Plotting the modes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extending-your-work">
+   Extending your work
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#even-further">
+   Even further
   </a>
  </li>
 </ul>
@@ -610,32 +630,115 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="oct-22-activity-lagrangian-dynamics-with-constraints">
-<h1>4 Oct 22 - Activity: Lagrangian Dynamics with Constraints<a class="headerlink" href="#oct-22-activity-lagrangian-dynamics-with-constraints" title="Permalink to this headline">#</a></h1>
-<p>One of the strengths of Lagrangian dynamics is that you do not have to have a mathematical description of the forces for all space and time. We can see that in this upside-down ice cream cone problem. How would you write the force of the cone for all space and time?</p>
-<p><em>Answer:</em> :shrugs:</p>
-<p><img alt="Rubric" src="../../_images/cylindrical_cone_mass.jpg" /></p>
-<section id="starting-with-pencil-and-paper-analytics">
-<h2>Starting with Pencil and Paper Analytics<a class="headerlink" href="#starting-with-pencil-and-paper-analytics" title="Permalink to this headline">#</a></h2>
-<p>Consider a particle of mass <span class="math notranslate nohighlight">\(m\)</span> constrained to move on the interior surface of a upside down smooth ice cream cone (aligned with the vertical axis) with half-angle <span class="math notranslate nohighlight">\(\alpha\)</span> subject to a gravitational force downward, so that the cone axis and gravity are aligned.</p>
-<ol class="simple">
-<li><p>Using cylindrical coordinates (why?), write down the equation of constraint. Think about where the mass must be if it’s stuck on a cone.</p></li>
-<li><p>Write the energy contributions in cylindrical coordinates. Do this in general first (use Cartesian and convert or start with cylindrical)</p></li>
-<li><p>Pop in the constraint equation. This reduces degrees of freedom (how do you see this?)</p></li>
-<li><p>Form the Lagrangian and find the equations of motion (there are two!)</p></li>
-</ol>
+  <section class="tex2jax_ignore mathjax_ignore" id="oct-22-activity-normal-modes-of-n-coupled-oscillators">
+<h1>13 Oct 22 - Activity: Normal Modes of N Coupled Oscillators<a class="headerlink" href="#oct-22-activity-normal-modes-of-n-coupled-oscillators" title="Permalink to this headline">#</a></h1>
+<p>Now that we have developed solutions for the 3 coupled oscillators, let’s try to reproduce that work numerically and plots the modes to make sense of what they are doing for us.</p>
+<p>We can then apply these tools to <span class="math notranslate nohighlight">\(N\)</span> identically coupled 1D oscillators.</p>
+<section id="three-coupled-oscillators">
+<h2>Three Coupled Oscillators<a class="headerlink" href="#three-coupled-oscillators" title="Permalink to this headline">#</a></h2>
+<p>Consider the setup below consisting of three masses connected by springs to each other. We intend to find the normal modes of the system by denoting each mass’s displacement (<span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, and <span class="math notranslate nohighlight">\(x_3\)</span>).</p>
+<p><img alt="3 Coupled Oscillators" src="../../_images/3_coupled_osc.png" /></p>
+<p>We start by importing the libraries that we need.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy.linalg</span> <span class="k">as</span> <span class="nn">la</span> <span class="c1">## For the numerical eigenvalue methods</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span> <span class="c1">## For symbolic eigenvalue methods</span>
+<span class="n">init_printing</span><span class="p">(</span><span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1">## display nice math</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="numerically-analyze-this-system">
-<h2>Numerically analyze this system<a class="headerlink" href="#numerically-analyze-this-system" title="Permalink to this headline">#</a></h2>
-<p>As a group, perform an analysis of this system (along the lines of what we have done in project 1). It is ok to split up tasks, but share the code and results!</p>
-<p>Try to:</p>
+<section id="finding-the-eigenvalues-and-eigenvectors">
+<h2>Finding the Eigenvalues and Eigenvectors<a class="headerlink" href="#finding-the-eigenvalues-and-eigenvectors" title="Permalink to this headline">#</a></h2>
+<p>We reduced our normal mode problem to the following:</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{A}\mathbf{x} = -\omega^2\mathbf{x}\]</div>
+<p>And earlier we found these eigenvalues and eigenvectors for the 3 Oscillator model:</p>
+<div class="math notranslate nohighlight">
+\[\omega_A = 2\dfrac{k}{m}; \qquad \omega_B = \left(2-\sqrt{2}\right)\dfrac{k}{m}; \qquad \omega_C = \left(2+\sqrt{2}\right)\dfrac{k}{m}\qquad\]</div>
+<p>Python has two main libraries for helping us find these numerically. One is <code class="docutils literal notranslate"><span class="pre">numpy.linalg</span></code>, which is a powerful set of linear algebra tools that are used widely. The other is <code class="docutils literal notranslate"><span class="pre">sympy</span></code>, which is a symbolic calculator like Mathematica. Both will help you find eigenvalues and eigenvectors, but do so in entirely different ways.</p>
 <ul class="simple">
-<li><p>Create a phase space diagram</p></li>
-<li><p>Characterize different motion</p></li>
-<li><p>Numerically integrate the system</p></li>
-<li><p><strong>New to you:</strong> Investigate the energy over time</p></li>
-<li><p><strong>Challenging:</strong> Investigate the z-component of the angular momentum over time</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy.linalg</span></code> will use the common numerical tools that decompose matrices. For example, <a class="reference external" href="https://en.wikipedia.org/wiki/LU_decomposition">LU decomposition</a> is one of the most common techniques to use for symmetric and Hermitian matrices, which are the most common in physics.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sympy</span></code> is a symbolic calculator, that attempts to determine a closed form solution for the eigenvalues. These methods are often proprietary (e.g., Mathematica and Matlab), but the source code for <a class="reference external" href="https://github.com/sympy/sympy">sympy is available to review</a>.</p></li>
 </ul>
+<p>At issue is that each of these methods requires a slight different input. The first method will take a <code class="docutils literal notranslate"><span class="pre">numpy</span></code> matrix, but the second requires a <code class="docutils literal notranslate"><span class="pre">sympy</span></code> matrix, which can we easily constructed from our <code class="docutils literal notranslate"><span class="pre">numpy</span></code> matrix.</p>
+<p>Below, we form both matrices.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">([[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]])</span> <span class="c1">## numpy matrix</span>
+<span class="n">M2</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="n">M</span><span class="p">)</span> <span class="c1">## Take numpy matrix and make it a sympy one</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">M2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-2  1  0]
+ [ 1 -2  1]
+ [ 0  1 -2]]
+Matrix([[-2, 1, 0], [1, -2, 1], [0, 1, -2]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finding eigenvalues with numpy.lingalg is quite simple. We just call <code class="docutils literal notranslate"><span class="pre">eigenvals,</span> <span class="pre">eigenvecs</span> <span class="pre">=</span> <span class="pre">la.eig(M)</span></code>. Note they are numericaly values. Also, these eigenvectors are normalized. Do you notice anything strange?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eigenvals</span><span class="p">,</span> <span class="n">eigenvecs</span> <span class="o">=</span> <span class="n">la</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">M</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eigenvals</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eigenvecs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-3.41421356 -2.         -0.58578644]
+[[ 5.00000000e-01  7.07106781e-01  5.00000000e-01]
+ [-7.07106781e-01 -4.05925293e-16  7.07106781e-01]
+ [ 5.00000000e-01 -7.07106781e-01  5.00000000e-01]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finding the eigenvectors and eigenvalues with <code class="docutils literal notranslate"><span class="pre">sympy</span></code> is just as simple. Notice that these are symbolic and the eigenvectors are NOT normalized.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">M2</span><span class="o">.</span><span class="n">eigenvects</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/activity-CoupledOsc-NumericalNormalModes_7_0.png" src="../../_images/activity-CoupledOsc-NumericalNormalModes_7_0.png" />
+</div>
+</div>
+</section>
+<section id="plotting-the-modes">
+<h2>Plotting the modes<a class="headerlink" href="#plotting-the-modes" title="Permalink to this headline">#</a></h2>
+<p>Awesome. Now we have our modes, but what do they mean? Remember, in a given mode every object oscillates at the mode frequency, just with different amplitudes. That means everyone has the following form:</p>
+<div class="math notranslate nohighlight">
+\[A\cos(\omega t)\]</div>
+<p>just with different <span class="math notranslate nohighlight">\(A\)</span>’s. So plot the motion of each mass in each mode. Make sure you have the right frequencies with the right modes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Analysis and Plotting code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="extending-your-work">
+<h2>Extending your work<a class="headerlink" href="#extending-your-work" title="Permalink to this headline">#</a></h2>
+<p>Given what we have done thus far, you can see that we could easily construct the matrix for a <span class="math notranslate nohighlight">\(N\)</span> dimensional chain of 1D oscillators. So let’s do that.</p>
+<p>Repeat this analysis for a set of <span class="math notranslate nohighlight">\(N\)</span> oscillators. Your code should be able to:</p>
+<ol class="simple">
+<li><p>Take a value of <span class="math notranslate nohighlight">\(N\)</span> and construct the right matrix representation</p></li>
+<li><p>Find the eigenvalues and eigenvectors for this matrix.</p></li>
+<li><p>(BONUS) plots the modes automatically</p></li>
+<li><p>(CHALLENGE) time the execution of the analysis</p></li>
+</ol>
+<p>Be careful not to pick to large of an <span class="math notranslate nohighlight">\(N\)</span> value to work with because you could melt your CPU easily. Make sure your code can do something like <span class="math notranslate nohighlight">\(N=10\)</span>. If you get the timing working, plot time vs number of objects to see how the problem scales with more oscillators.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Your code here</span>
@@ -644,13 +747,9 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="extend-your-analysis">
-<h2>Extend your analysis<a class="headerlink" href="#extend-your-analysis" title="Permalink to this headline">#</a></h2>
-<p>Now allow the bead to roll without slipping inside the cone. How does this change the energy? The equations of constraint?</p>
-<ol class="simple">
-<li><p>Write the energy equations for this new system.</p></li>
-<li><p>Write the equations of constraint for this system.</p></li>
-</ol>
+<section id="even-further">
+<h2>Even further<a class="headerlink" href="#even-further" title="Permalink to this headline">#</a></h2>
+<p>These models can be used with lattices (solid objects). Draw a sketch of 4 oscillators in a plane connected together in a square shape. Write down the energy equations for this system (assume the springs do not move laterally much). What do the EOMs look like?</p>
 </section>
 </section>
 
@@ -681,17 +780,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="readings-lagrangian-dynamics.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="activity-3CoupledOsc-NormalModes.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">4 Oct 22 - Notes: Lagrangian Dynamics</p>
+            <p class="prev-next-title">11 Oct 22 - Activity: Normal Modes of 3 Coupled Oscillators</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="activity-Lagrange-with-constraints-analysis.html" title="next page">
+    <a class='right-next' id="next-link" href="../X_additional_pages/references-page.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">06 Oct 22 - Activity: Analyzing Lagrangian Dynamics with Constraints</p>
+        <p class="prev-next-title">Works Cited</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

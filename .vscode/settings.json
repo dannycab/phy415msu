@@ -1,4 +1,7 @@
 {
     "makefile.extensionOutputFolder": "./.vscode",
-    "liveServer.settings.multiRootWorkspaceName": "phy415msu"
+    "liveServer.settings.multiRootWorkspaceName": "phy415msu",
+    "cSpell.words": [
+        "Mathematica"
+    ]
 }

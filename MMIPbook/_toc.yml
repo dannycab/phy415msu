@@ -32,12 +32,15 @@ chapters:
     - file: content/2_oscillations/readings-lagrangian-dynamics
     - file: content/2_oscillations/activity-Lagrange-with-constraints
     - file: content/2_oscillations/activity-Lagrange-with-constraints-analysis
-    - file: content/2_oscillations/readings-waves
     - file: content/2_oscillations/activity-3CoupledOsc-NormalModes
     - file: content/2_oscillations/activity-CoupledOsc-NumericalNormalModes
+- file: content/3_waves/readings-waves
+  sections:
+    - file: content/3_waves/activity-Waves-MaxwellEqns
 - file: content/X_additional_pages/references-page
 - file: content/0_course/news_archive
 - file: content/0_course/projects/index
   sections:
     - file: content/0_course/projects/project1
     - file: content/0_course/projects/project2
+    - file: content/0_course/projects/project3

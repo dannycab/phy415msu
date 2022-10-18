@@ -10,20 +10,12 @@
 # `````{admonition} Updates
 # :class: tip
 # 
-# **7 October 2022**
+# **18 October 2022**
 # 
-# * This week, we will return to coupled oscillations to set us up for waves. The [reading](2_oscillations/readings-waves) focuses on the 1D Wave Equation. We will likely start that work on Thursday after we finish up with $N$ coupled oscillators.
-#     * I will post expanded instructions for project 2 this weekend.
-#     * We will have your grades for project 1 done by Monday.
-# 
-# 
-# **2 October 2022**
-# 
-# * This week, we will finish up with [Lagrangian Analysis](2_oscillations/readings-lagrangian-dynamics) and shift back into how that analysis sets us up for modeling
-#     * Here are direct links to my handwritten notes on [Coupled Oscillations](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_2_Coupled_Oscillations.pdf) and [Lagrangian Dynamics](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_2_Lagrangian_Dynamics.pdf).
-#     * Peruse these notes, there's no reading this week since we are continuing with the same topic.
-#     * Our goal this week is making sure you all feel comfortable setting up a Lagrangian and doing the analysis of it
-# * [Project 2](0_course/projects/project2) is posted with minor details. We will discuss at the end of Tuesday's class what we think a good model is now.
+# * This week we move into [continuous systems](3_waves/readings-waves) and investigate models of waving phenomenon. Our illustrative case will be [Maxwell's Equations](https://en.wikipedia.org/wiki/Maxwell%27s_equations), but our analysis can be applied to many systems that obey the [wave equation](https://en.wikipedia.org/wiki/Wave_equation).
+#     * Our [first activity](3_waves/activity-Waves-MaxwellEqns) focuses on deriving a wave equation.
+# * [Project 3](0_course/projects/project3) details are available and will focus on normal modes.
+#     * I will post more resources for you soon.
 # 
 # [ARCHIVE](./0_course/news_archive.md)
 # 

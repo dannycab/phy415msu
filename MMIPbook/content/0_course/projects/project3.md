@@ -17,8 +17,14 @@ We have illustrated all of that work in class. So how do we go further? We have 
 
 ## Resources
 
-Adding soon...
+### Potential Projects Ideas
 
+* Coupled linear simple harmonic oscillators moving in the transverse (perpendicular to springs) way (focus on linear restoring)
+* Coupled pendulums in a linear regime (coupled triple oscillator; or coupled horizontally with springs)
+* Coupled LC circuits
+* Models of plasmas oscillations in ionosphere
+* Molecular vibrations (e.g., tri-atomic molecules)
+* **Tough and group worthy** - The Loaded String (A beaded string with a finite number of beads), Piano/guitar harmonics and chords
 
 ## Rubric
 

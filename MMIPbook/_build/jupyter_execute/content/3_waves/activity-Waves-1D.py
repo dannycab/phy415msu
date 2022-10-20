@@ -79,9 +79,9 @@ import matplotlib.animation as animation ## Only if you want
 # 
 # $i\hbar|\psi(t)\rangle = H(t)|\psi(t)\rangle$
 # 
-# where $H(t)$ is the Hamiltonian operator, a representation of the energetics of the system, and $\psi(t)$ is the state of the quantum mechanical system. I put "wave" in quotes, because this equation contains only a single derivative with respect to time unlike the classical wave equation above. However, it is still a linear partial differential equation, and thus superposition continues to be a useful tool. In QM, superposition has deep implications for the nature of particle identity and statistical uncertainty. 
+# where $H(t)$ is the Hamiltonian operator, a representation of the energetics of the system, and $\psi(t)$ is the state of the quantum mechanical system. I put "wave" in quotes, because this equation typically contains only a single derivative with respect to time unlike the classical wave equation above. However, it is still a linear partial differential equation, and thus superposition continues to be a useful tool. In QM, superposition has deep implications for the nature of particle identity and statistical uncertainty. 
 # 
-# We do not solve this problem in general The solutions to this wave equation require knowledge of $V(x)$. Let's look at a particular case of the infinite 1D well. We need some mathematical tools and approaches to make sense of it. It also needs to have a context because typically $H(t)$ should be known.
+# **We do not solve this problem in general.** The solutions to this wave equation require knowledge of $V(x)$. Let's look at a particular case of the infinite 1D well. We need some mathematical tools and approaches to make sense of it. It also needs to have a context because typically $H(t)$ should be known.
 # 
 # Our to this problem is solve for "steady state" solutions, those that do not depend on time. For many quantum systems, the time evolution of these stationary states turns out to be quite simple. Typically it involves multiplying the stationary state by a time evolving phase that is proportional to the energy of the state ($e^{iE_nt/\hbar}$).
 # 
@@ -108,7 +108,6 @@ import matplotlib.animation as animation ## Only if you want
 # And outside the box, $\phi_E(x)$ must vanish because $V(x)=\infty$ there.
 # 
 # Let's solve for $\phi_E(x)$ and $E$ and see what this "wave" equation indicates.
-# 
 # 
 # 
 # 

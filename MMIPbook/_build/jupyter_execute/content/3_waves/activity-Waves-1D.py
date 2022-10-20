@@ -19,7 +19,7 @@
 # 
 # For the 1D wave equation, these functions are [Travelling Wave Solutions](https://en.wikipedia.org/wiki/Periodic_travelling_wave). The describe the simplest motion of a travelling wave: single frequency oscillation over an infinite domain. There's no end points to worry about, and only one frequency. Also, it just moves to the left or to the right. You can probably see how multiple dimensions result in much more complexity. A basic traveling wave solution is:
 # 
-# $$f(z,vt) = A cos(kz-vt+\phi)$$
+# $$f(z,t) = A cos(kz-vt+\phi)$$
 # 
 # You can show that this equation satisfies the wave equation. More importantly, does a linear sum do so?
 # 
@@ -27,7 +27,7 @@
 # 
 # Demonstrate that this proposed general solution:
 # 
-# $$F(z,vt) = \sum_i^n A_i\:cos(k_i z - v t + \phi_i)$$
+# $$F(z,t) = \sum_i^n A_i\:cos(k_i z - v t + \phi_i)$$
 # 
 # solves the wave equation.
 # 
@@ -112,5 +112,14 @@ import matplotlib.animation as animation ## Only if you want
 # 
 # 
 # 
+
+# ## Resources
+# 
+# Much of what we are discussing about waves appears in the following sets of notes:
+# 
+# * [Introduction to Waves](https://dannycaballero.info/phy482msu_s2020/notes/handwritten/09-Introduction_to_waves.pdf)
+# * [Electromagnetic Waves in Vacuum](https://dannycaballero.info/phy482msu_s2020/notes/handwritten/10-Electromagnetic_waves.pdf)
+# * [The Wavefunction](https://dannycaballero.info/phy472msu_s2021/notes/handwritten/04%20-%20Wavefunctions.pdf)
+# * [The 1D Infinite Square Well](https://dannycaballero.info/phy472msu_s2021/notes/handwritten/05%20-%20Infinite%20Square%20Well.pdf)
 
 # 

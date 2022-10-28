@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Works Cited" href="../X_additional_pages/references-page.html" />
+    <link rel="next" title="28 Oct 22 - Deconstructing Signals using Fourier Analysis" href="readings-fft.html" />
     <link rel="prev" title="20 Oct 2022 - 1-Dimensional Travelling Waves" href="activity-Waves-1D.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -295,6 +295,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      27 Oct 2022 - Activity - Deconstructing Waves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="readings-fft.html">
+     28 Oct 22 - Deconstructing Signals using Fourier Analysis
     </a>
    </li>
   </ul>
@@ -594,9 +599,21 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#d">
-   2D
+  <a class="reference internal nav-link" href="#d-integration">
+   1D Integration
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integrals-that-solve-this-problem">
+     Integrals that solve this problem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-integrals-that-solve-this-problem">
+     More integrals that solve this problem
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -633,9 +650,21 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#d">
-   2D
+  <a class="reference internal nav-link" href="#d-integration">
+   1D Integration
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#integrals-that-solve-this-problem">
+     Integrals that solve this problem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-integrals-that-solve-this-problem">
+     More integrals that solve this problem
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -708,7 +737,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x114f8e3b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1158b6080&gt;
 </pre></div>
 </div>
 <img alt="../../_images/activity-Waves-Fouriers_Trick_3_1.png" src="../../_images/activity-Waves-Fouriers_Trick_3_1.png" />
@@ -750,7 +779,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x168d1e7a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1695fa650&gt;
 </pre></div>
 </div>
 <img alt="../../_images/activity-Waves-Fouriers_Trick_6_1.png" src="../../_images/activity-Waves-Fouriers_Trick_6_1.png" />
@@ -761,10 +790,10 @@ title="Print to PDF"
 <h2>Integration Activity<a class="headerlink" href="#integration-activity" title="Permalink to this headline">#</a></h2>
 <p>Consider the Fourier Expansion of your choosing:</p>
 <div class="math notranslate nohighlight">
-\[f(t) = \dfrac{a_0}{2} + \sum_{n=1}^{\infty} \left(a_n sin(\omega_n t) + b_n cos(\omega_n t) \right) \qquad f(t) = \sum_{-\infty}^{+\infty} c_n e^{i\omega_n t}\]</div>
+\[f(t) = \dfrac{a_0}{2} + \sum_{n=1}^{\infty} \left(a_n \sin(\omega_n t) + b_n \cos(\omega_n t) \right) \qquad f(t) = \sum_{-\infty}^{+\infty} c_n e^{i\omega_n t}\]</div>
 <p>In terms of the longest period, <span class="math notranslate nohighlight">\(T_0\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[f(t) = \dfrac{a_0}{2} + \sum_{n=1}^{\infty} \left(a_n sin(\dfrac{2n\pi t}{T_0}) + b_n cos(\dfrac{2n\pi t}{T_0}) \right) \qquad f(t) = \sum_{-\infty}^{+\infty} c_n e^{i\dfrac{2n\pi t}{T_0}}\]</div>
+\[f(t) = \dfrac{a_0}{2} + \sum_{n=1}^{\infty} \left(a_n \sin(\dfrac{2n\pi t}{T_0}) + b_n \cos(\dfrac{2n\pi t}{T_0}) \right) \qquad f(t) = \sum_{-\infty}^{+\infty} c_n e^{i\dfrac{2n\pi t}{T_0}}\]</div>
 <p>Find the expansion coefficients for the following signals (think before you integrate):</p>
 <ol class="simple">
 <li><p><span class="math notranslate nohighlight">\(f(t) = \cos(\omega_0 t)\)</span> here <span class="math notranslate nohighlight">\(\omega_0\)</span> corresponds to the longest known period <span class="math notranslate nohighlight">\(T_0\)</span>.</p></li>
@@ -773,9 +802,63 @@ title="Print to PDF"
 <li><p><span class="math notranslate nohighlight">\(f(t) = 1\)</span> from 0 to <span class="math notranslate nohighlight">\(T_0/2\)</span> and 0 from <span class="math notranslate nohighlight">\(T_0/2\)</span> to <span class="math notranslate nohighlight">\(T_0\)</span> repeating….</p></li>
 </ol>
 </section>
-<section id="d">
-<h2>2D<a class="headerlink" href="#d" title="Permalink to this headline">#</a></h2>
-<p>We will do this together, and I will write it up for you.</p>
+<section id="d-integration">
+<h2>1D Integration<a class="headerlink" href="#d-integration" title="Permalink to this headline">#</a></h2>
+<p>It’s not great doing this by hand. Certainly, we can pick off the first two easily because they match our model easily. What about the 3rd one?</p>
+<div class="math notranslate nohighlight">
+\[f(t) = 2\sin(\omega_0 t+\pi/2) + 3\cos(2*\omega_0t)\]</div>
+<p>It’s clever to change this to a cosine and read off the values:</p>
+<div class="math notranslate nohighlight">
+\[f(t) = 2\sin(\omega_0 t+\pi/2) + 3\cos(2*\omega_0t) = 2\cos(\omega_0 t) + 3\cos(2*\omega_0t)\]</div>
+<p>And thus: <span class="math notranslate nohighlight">\(b_1 = 2\)</span> and <span class="math notranslate nohighlight">\(b_2=3\)</span> and everything else vanishes.</p>
+<p>Can we do the integrals and get the same results? Let’s form the integrals we need to do this. The left hand side uses the real function <span class="math notranslate nohighlight">\(f(t)\)</span>, the right hand side replaces it with the model of <span class="math notranslate nohighlight">\(f(t)\)</span> expanded over sine and cosine harmonics.</p>
+<section id="integrals-that-solve-this-problem">
+<h3>Integrals that solve this problem<a class="headerlink" href="#integrals-that-solve-this-problem" title="Permalink to this headline">#</a></h3>
+<p><strong>We start with the sine function first:</strong></p>
+<div class="math notranslate nohighlight">
+\[\int_0^{T_0}f(t)\sin\left(\dfrac{2m\pi}{T_0}{t}\right)\;dt = \int_0^{T_0} \left(\dfrac{a_0}{2} + \sum_{n=1}^{\infty} \left(a_n \sin(\dfrac{2n\pi t}{T_0}) + b_n \cos(\dfrac{2n\pi t}{T_0}) \right)\right) \sin\left(\dfrac{2m\pi}{T_0}{t}\right)\;dt\]</div>
+<div class="math notranslate nohighlight">
+\[\int_0^{T_0}f(t)\sin\left(\dfrac{2m\pi}{T_0}{t}\right)\;dt = \int_0^{T_0} \left(\dfrac{a_0}{2}\right) \sin\left(\dfrac{2m\pi}{T_0}{t}\right) dt + \int_0^{T_0} \sum_{n=1}^{\infty} a_n sin\left(\dfrac{2n\pi t}{T_0}\right) \sin\left(\dfrac{2m\pi}{T_0}{t}\right) dt + \int_0^{T_0}  \sum_{n=1}^{\infty} b_n cos\left(\dfrac{2n\pi t}{T_0}\right) \sin\left(\dfrac{2m\pi}{T_0}{t}\right) dt \]</div>
+<p>Notice we get three integrals on the right side (where we moved the integral inside the sum as we can do and focus on the <span class="math notranslate nohighlight">\(n\)</span> th term):</p>
+<div class="math notranslate nohighlight">
+\[\int_0^{T_0} \left(\dfrac{a_0}{2}\right) \sin\left(\dfrac{2m\pi}{T_0}{t}\right) dt = 0\qquad \mathrm{(sinusoidal\;over\;the\;standard\;interval)}\]</div>
+<div class="math notranslate nohighlight">
+\[a_n \int_0^{T_0} \sin\left(\dfrac{2n\pi}{T_0}t\right) \sin\left(\dfrac{2m\pi}{T_0}{t}\right) dt = a_n\dfrac{T_0}{2}\;\mathrm{(for\;n=m,\;0\;otherwise)}\]</div>
+<div class="math notranslate nohighlight">
+\[b_n \int_0^{T_0}  \cos\left(\dfrac{2n\pi}{T_0}t\right) \sin\left(\dfrac{2m\pi}{T_0}{t}\right) dt = 0 \]</div>
+<p>The left side uses the real <span class="math notranslate nohighlight">\(f(t)\)</span> (note that when <span class="math notranslate nohighlight">\(n=m\)</span> provides the only nonzero terms):</p>
+<div class="math notranslate nohighlight">
+\[\int_0^{T_0}f(t)\sin\left(\dfrac{2n\pi}{T_0}{t}\right)\;dt = \int_0^{T_0} \left(2\sin(\omega_0 t+\pi/2) + 3\cos(2\omega_0t)\right) \sin\left(\dfrac{2n\pi}{T_0}{t}\right)\;dt\]</div>
+<div class="math notranslate nohighlight">
+\[=\int_0^{T_0} 2\sin(\dfrac{2\pi}{T_0} t+\pi/2) \sin\left(\dfrac{2n\pi}{T_0}{t}\right)\;dt + \int_0^{T_0}  3\cos(2\dfrac{2\pi}{T_0}t) \sin\left(\dfrac{2n\pi}{T_0}{t}\right)\;dt \]</div>
+<div class="math notranslate nohighlight">
+\[=\dfrac{2nT_0\sin^2(n\pi)}{\pi(n^2-1)} + \dfrac{3nT_0\sin^2(n\pi)}{\pi(n^2-4)} = a_n\dfrac{T_0}{2}\]</div>
+<p>Thus, all the <span class="math notranslate nohighlight">\(a_n\)</span>’s are zero as when we combine the two sides we get:</p>
+<div class="math notranslate nohighlight">
+\[a_n\dfrac{T_0}{2} = 0\]</div>
+</section>
+<section id="more-integrals-that-solve-this-problem">
+<h3>More integrals that solve this problem<a class="headerlink" href="#more-integrals-that-solve-this-problem" title="Permalink to this headline">#</a></h3>
+<p><strong>Now the cosine function:</strong></p>
+<div class="math notranslate nohighlight">
+\[\int_0^{T_0}f(t)\sin\left(\dfrac{2m\pi}{T_0}{t}\right)\;dt = \int_0^{T_0} \left(\dfrac{a_0}{2} + \sum_{n=1}^{\infty} \left(a_n \sin(\dfrac{2n\pi t}{T_0}) + b_n \cos(\dfrac{2n\pi t}{T_0}) \right)\right) \cos\left(\dfrac{2m\pi}{T_0}{t}\right)\;dt\]</div>
+<div class="math notranslate nohighlight">
+\[\int_0^{T_0}f(t)\cos\left(\dfrac{2m\pi}{T_0}{t}\right)\;dt = \int_0^{T_0} \left(\dfrac{a_0}{2}\right) \cos\left(\dfrac{2m\pi}{T_0}{t}\right) dt + \int_0^{T_0} \sum_{n=1}^{\infty} a_n \sin\left(\dfrac{2n\pi t}{T_0}\right) \cos\left(\dfrac{2m\pi}{T_0}{t}\right) dt + \int_0^{T_0}  \sum_{n=1}^{\infty} b_n \cos\left(\dfrac{2n\pi t}{T_0}\right) \cos\left(\dfrac{2m\pi}{T_0}{t}\right) dt \]</div>
+<p>Notice we get three integrals on the right side (where we moved the integral inside the sum as we can do and focus on the <span class="math notranslate nohighlight">\(n\)</span> th term):</p>
+<div class="math notranslate nohighlight">
+\[\int_0^{T_0} \left(\dfrac{a_0}{2}\right) \cos\left(\dfrac{2m\pi}{T_0}{t}\right) dt = 0\qquad \mathrm{(sinusoidal\;over\;the\;standard\;interval)}\]</div>
+<div class="math notranslate nohighlight">
+\[a_n \int_0^{T_0} \sin\left(\dfrac{2n\pi}{T_0}t\right) \cos\left(\dfrac{2m\pi}{T_0}{t}\right) dt = 0\]</div>
+<div class="math notranslate nohighlight">
+\[b_n \int_0^{T_0}  \cos\left(\dfrac{2n\pi}{T_0}t\right) \cos\left(\dfrac{2m\pi}{T_0}{t}\right) dt = b_n\dfrac{T_0}{2} \;\mathrm{(for\;n=m,\;0\;otherwise)}\]</div>
+<p>The left side uses the real <span class="math notranslate nohighlight">\(f(t)\)</span> (note that when <span class="math notranslate nohighlight">\(n=m\)</span> provides the only nonzero terms):</p>
+<div class="math notranslate nohighlight">
+\[\int_0^{T_0}f(t)\cos\left(\dfrac{2n\pi}{T_0}{t}\right)\;dt = \int_0^{T_0} \left(2\sin(\omega_0 t+\pi/2) + 3\cos(2\omega_0t)\right) \cos\left(\dfrac{2n\pi}{T_0}{t}\right)\;dt\]</div>
+<div class="math notranslate nohighlight">
+\[=\int_0^{T_0} 2\sin(\dfrac{2\pi}{T_0} t+\pi/2) \cos\left(\dfrac{2n\pi}{T_0}{t}\right)\;dt + \int_0^{T_0}  3\cos(2\dfrac{2\pi}{T_0}t) \cos\left(\dfrac{2n\pi}{T_0}{t}\right)\;dt \]</div>
+<div class="math notranslate nohighlight">
+\[=\dfrac{nT_0\sin(2n\pi)}{\pi(n^2-1)} + \dfrac{3nT_0\sin(2n\pi)}{2\pi(n^2-4)} = b_n\dfrac{T_0}{2}\]</div>
+</section>
 </section>
 </section>
 
@@ -813,10 +896,10 @@ title="Print to PDF"
             <p class="prev-next-title">20 Oct 2022 - 1-Dimensional Travelling Waves</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../X_additional_pages/references-page.html" title="next page">
+    <a class='right-next' id="next-link" href="readings-fft.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Works Cited</p>
+        <p class="prev-next-title">28 Oct 22 - Deconstructing Signals using Fourier Analysis</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

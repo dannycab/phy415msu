@@ -102,11 +102,11 @@ plt.legend()
 # 
 # Consider the Fourier Expansion of your choosing:
 # 
-# $$f(t) = \dfrac{a_0}{2} + \sum_{n=1}^{\infty} \left(a_n sin(\omega_n t) + b_n cos(\omega_n t) \right) \qquad f(t) = \sum_{-\infty}^{+\infty} c_n e^{i\omega_n t}$$
+# $$f(t) = \dfrac{a_0}{2} + \sum_{n=1}^{\infty} \left(a_n \sin(\omega_n t) + b_n \cos(\omega_n t) \right) \qquad f(t) = \sum_{-\infty}^{+\infty} c_n e^{i\omega_n t}$$
 # 
 # In terms of the longest period, $T_0$,
 # 
-# $$f(t) = \dfrac{a_0}{2} + \sum_{n=1}^{\infty} \left(a_n sin(\dfrac{2n\pi t}{T_0}) + b_n cos(\dfrac{2n\pi t}{T_0}) \right) \qquad f(t) = \sum_{-\infty}^{+\infty} c_n e^{i\dfrac{2n\pi t}{T_0}}$$
+# $$f(t) = \dfrac{a_0}{2} + \sum_{n=1}^{\infty} \left(a_n \sin(\dfrac{2n\pi t}{T_0}) + b_n \cos(\dfrac{2n\pi t}{T_0}) \right) \qquad f(t) = \sum_{-\infty}^{+\infty} c_n e^{i\dfrac{2n\pi t}{T_0}}$$
 # 
 # Find the expansion coefficients for the following signals (think before you integrate):
 # 
@@ -117,10 +117,70 @@ plt.legend()
 # 
 # 
 
-# ## 2D
+# ## 1D Integration
 # 
-# We will do this together, and I will write it up for you.
+# It's not great doing this by hand. Certainly, we can pick off the first two easily because they match our model easily. What about the 3rd one?
+# 
+# $$f(t) = 2\sin(\omega_0 t+\pi/2) + 3\cos(2*\omega_0t)$$
+# 
+# It's clever to change this to a cosine and read off the values:
+# 
+# $$f(t) = 2\sin(\omega_0 t+\pi/2) + 3\cos(2*\omega_0t) = 2\cos(\omega_0 t) + 3\cos(2*\omega_0t)$$
+# 
+# And thus: $b_1 = 2$ and $b_2=3$ and everything else vanishes.
+# 
+# Can we do the integrals and get the same results? Let's form the integrals we need to do this. The left hand side uses the real function $f(t)$, the right hand side replaces it with the model of $f(t)$ expanded over sine and cosine harmonics.
 
+# ### Integrals that solve this problem
 # 
+# **We start with the sine function first:**
+# 
+# $$\int_0^{T_0}f(t)\sin\left(\dfrac{2m\pi}{T_0}{t}\right)\;dt = \int_0^{T_0} \left(\dfrac{a_0}{2} + \sum_{n=1}^{\infty} \left(a_n \sin(\dfrac{2n\pi t}{T_0}) + b_n \cos(\dfrac{2n\pi t}{T_0}) \right)\right) \sin\left(\dfrac{2m\pi}{T_0}{t}\right)\;dt$$
+# 
+# $$\int_0^{T_0}f(t)\sin\left(\dfrac{2m\pi}{T_0}{t}\right)\;dt = \int_0^{T_0} \left(\dfrac{a_0}{2}\right) \sin\left(\dfrac{2m\pi}{T_0}{t}\right) dt + \int_0^{T_0} \sum_{n=1}^{\infty} a_n sin\left(\dfrac{2n\pi t}{T_0}\right) \sin\left(\dfrac{2m\pi}{T_0}{t}\right) dt + \int_0^{T_0}  \sum_{n=1}^{\infty} b_n cos\left(\dfrac{2n\pi t}{T_0}\right) \sin\left(\dfrac{2m\pi}{T_0}{t}\right) dt $$
+# 
+# Notice we get three integrals on the right side (where we moved the integral inside the sum as we can do and focus on the $n$ th term):
+# 
+# $$\int_0^{T_0} \left(\dfrac{a_0}{2}\right) \sin\left(\dfrac{2m\pi}{T_0}{t}\right) dt = 0\qquad \mathrm{(sinusoidal\;over\;the\;standard\;interval)}$$
+# 
+# $$a_n \int_0^{T_0} \sin\left(\dfrac{2n\pi}{T_0}t\right) \sin\left(\dfrac{2m\pi}{T_0}{t}\right) dt = a_n\dfrac{T_0}{2}\;\mathrm{(for\;n=m,\;0\;otherwise)}$$
+# 
+# $$b_n \int_0^{T_0}  \cos\left(\dfrac{2n\pi}{T_0}t\right) \sin\left(\dfrac{2m\pi}{T_0}{t}\right) dt = 0 $$
+# 
+# The left side uses the real $f(t)$ (note that when $n=m$ provides the only nonzero terms):
+# 
+# $$\int_0^{T_0}f(t)\sin\left(\dfrac{2n\pi}{T_0}{t}\right)\;dt = \int_0^{T_0} \left(2\sin(\omega_0 t+\pi/2) + 3\cos(2\omega_0t)\right) \sin\left(\dfrac{2n\pi}{T_0}{t}\right)\;dt$$
+# 
+# $$=\int_0^{T_0} 2\sin(\dfrac{2\pi}{T_0} t+\pi/2) \sin\left(\dfrac{2n\pi}{T_0}{t}\right)\;dt + \int_0^{T_0}  3\cos(2\dfrac{2\pi}{T_0}t) \sin\left(\dfrac{2n\pi}{T_0}{t}\right)\;dt $$
+# 
+# $$=\dfrac{2nT_0\sin^2(n\pi)}{\pi(n^2-1)} + \dfrac{3nT_0\sin^2(n\pi)}{\pi(n^2-4)} = a_n\dfrac{T_0}{2}$$
+# 
+# Thus, all the $a_n$'s are zero as when we combine the two sides we get:
+# 
+# $$a_n\dfrac{T_0}{2} = 0$$
+
+# ### More integrals that solve this problem
+# 
+# **Now the cosine function:**
+# 
+# $$\int_0^{T_0}f(t)\sin\left(\dfrac{2m\pi}{T_0}{t}\right)\;dt = \int_0^{T_0} \left(\dfrac{a_0}{2} + \sum_{n=1}^{\infty} \left(a_n \sin(\dfrac{2n\pi t}{T_0}) + b_n \cos(\dfrac{2n\pi t}{T_0}) \right)\right) \cos\left(\dfrac{2m\pi}{T_0}{t}\right)\;dt$$
+# 
+# $$\int_0^{T_0}f(t)\cos\left(\dfrac{2m\pi}{T_0}{t}\right)\;dt = \int_0^{T_0} \left(\dfrac{a_0}{2}\right) \cos\left(\dfrac{2m\pi}{T_0}{t}\right) dt + \int_0^{T_0} \sum_{n=1}^{\infty} a_n \sin\left(\dfrac{2n\pi t}{T_0}\right) \cos\left(\dfrac{2m\pi}{T_0}{t}\right) dt + \int_0^{T_0}  \sum_{n=1}^{\infty} b_n \cos\left(\dfrac{2n\pi t}{T_0}\right) \cos\left(\dfrac{2m\pi}{T_0}{t}\right) dt $$
+# 
+# Notice we get three integrals on the right side (where we moved the integral inside the sum as we can do and focus on the $n$ th term):
+# 
+# $$\int_0^{T_0} \left(\dfrac{a_0}{2}\right) \cos\left(\dfrac{2m\pi}{T_0}{t}\right) dt = 0\qquad \mathrm{(sinusoidal\;over\;the\;standard\;interval)}$$
+# 
+# $$a_n \int_0^{T_0} \sin\left(\dfrac{2n\pi}{T_0}t\right) \cos\left(\dfrac{2m\pi}{T_0}{t}\right) dt = 0$$
+# 
+# $$b_n \int_0^{T_0}  \cos\left(\dfrac{2n\pi}{T_0}t\right) \cos\left(\dfrac{2m\pi}{T_0}{t}\right) dt = b_n\dfrac{T_0}{2} \;\mathrm{(for\;n=m,\;0\;otherwise)}$$
+# 
+# The left side uses the real $f(t)$ (note that when $n=m$ provides the only nonzero terms):
+# 
+# $$\int_0^{T_0}f(t)\cos\left(\dfrac{2n\pi}{T_0}{t}\right)\;dt = \int_0^{T_0} \left(2\sin(\omega_0 t+\pi/2) + 3\cos(2\omega_0t)\right) \cos\left(\dfrac{2n\pi}{T_0}{t}\right)\;dt$$
+# 
+# $$=\int_0^{T_0} 2\sin(\dfrac{2\pi}{T_0} t+\pi/2) \cos\left(\dfrac{2n\pi}{T_0}{t}\right)\;dt + \int_0^{T_0}  3\cos(2\dfrac{2\pi}{T_0}t) \cos\left(\dfrac{2n\pi}{T_0}{t}\right)\;dt $$
+# 
+# $$=\dfrac{nT_0\sin(2n\pi)}{\pi(n^2-1)} + \dfrac{3nT_0\sin(2n\pi)}{2\pi(n^2-4)} = b_n\dfrac{T_0}{2}$$
 
 # 

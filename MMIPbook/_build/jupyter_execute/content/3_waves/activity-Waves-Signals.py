@@ -79,7 +79,7 @@ plt.grid()
 # 
 # Let's first approach this analysis using the analytical tools we have developed.
 # 
-# [Handwritten Notes on Example]()
+# [Handwritten Notes on Example](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_3_Fourier_Example.pdf)
 # 
 # ### Can we do this with more automaticity?
 # 
@@ -87,4 +87,14 @@ plt.grid()
 # 
 # **We will code this initially together**
 
-# `
+# In[3]:
+
+
+## your code here
+
+
+# In[ ]:
+
+
+
+

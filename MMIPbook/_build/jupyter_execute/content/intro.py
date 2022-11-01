@@ -10,6 +10,10 @@
 # `````{admonition} Updates
 # :class: tip
 # 
+# **1 Nov 2022**
+# 
+# * The notes from class with the [Duty Cycle Example are posted](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_3_Fourier_Example.pdf)
+# 
 # **28 Oct 2022**
 # 
 # * We are starting FFT analysis this week, so the [reading focuses on introducing that idea and the code we use](./3_waves/readings-fft). **Use week 8 for the reading form**

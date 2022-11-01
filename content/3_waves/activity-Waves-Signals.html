@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>01 Sept 22 - Notes: What is a Model? &#8212; Mathematical Modeling in Physics</title>
+    <title>01 Nov 2022 - Signal Deconstruction &#8212; Mathematical Modeling in Physics</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,10 +50,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2 - Oscillations" href="../2_oscillations/readings-oscillators.html" />
-    <link rel="prev" title="01 Sept 22 - Activity: What is a Model?" href="activity-what_is_a_model.html" />
+    <link rel="next" title="Works Cited" href="../X_additional_pages/references-page.html" />
+    <link rel="prev" title="28 Oct 22 - Deconstructing Signals using Fourier Analysis" href="readings-fft.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -166,23 +168,23 @@ const thebe_selector_output = ".output, .cell_output"
    Reading Questions Form
   </a>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="what_is_modeling.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../1_modeling/what_is_modeling.html">
    1 - What is Mathematical Modeling?
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="activity-what_is_a_model.html">
+    <a class="reference internal" href="../1_modeling/activity-what_is_a_model.html">
      01 Sept 22 - Activity: What is a Model?
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1_modeling/notes-what_is_a_model.html">
      01 Sept 22 - Notes: What is a Model?
     </a>
    </li>
@@ -270,38 +272,38 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../3_waves/readings-waves.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="readings-waves.html">
    3 - Oscillations with Many Degrees of Freedom
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../3_waves/activity-Waves-MaxwellEqns.html">
+    <a class="reference internal" href="activity-Waves-MaxwellEqns.html">
      18 Oct 2022 - Introduction to Waves
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../3_waves/activity-Waves-1D.html">
+    <a class="reference internal" href="activity-Waves-1D.html">
      20 Oct 2022 - 1-Dimensional Travelling Waves
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../3_waves/activity-Waves-Fouriers_Trick.html">
+    <a class="reference internal" href="activity-Waves-Fouriers_Trick.html">
      27 Oct 2022 - Activity - Deconstructing Waves
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../3_waves/readings-fft.html">
+    <a class="reference internal" href="readings-fft.html">
      28 Oct 22 - Deconstructing Signals using Fourier Analysis
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../3_waves/activity-Waves-Signals.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      01 Nov 2022 - Signal Deconstruction
     </a>
    </li>
@@ -395,6 +397,71 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/dannycab/phy415msu/main?urlpath=tree/MMIPbook/content/3_waves/activity-Waves-Signals.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415msu/&urlpath=tree/phy415msu/MMIPbook/content/3_waves/activity-Waves-Signals.ipynb&branch=main"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on JupyterHub"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="headerbtn__text-container">JupyterHub</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/dannycab/phy415msu/blob/main/MMIPbook/content/3_waves/activity-Waves-Signals.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -434,7 +501,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/dannycab/phy415msu//issues/new?title=Issue%20on%20page%20%2Fcontent/1_modeling/notes-what_is_a_model.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/dannycab/phy415msu//issues/new?title=Issue%20on%20page%20%2Fcontent/3_waves/activity-Waves-Signals.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -462,7 +529,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/content/1_modeling/notes-what_is_a_model.md"
+        <a href="../../_sources/content/3_waves/activity-Waves-Signals.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -473,7 +540,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -522,18 +589,28 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modeling-discussion">
-   Modeling Discussion
+  <a class="reference internal nav-link" href="#dc-offset">
+   DC Offset
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#periodic-models">
+   Periodic Models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-the-duty-cycle">
+   Example: The Duty Cycle
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mathematical-models-in-physics">
-     Mathematical Models in Physics
+    <a class="reference internal nav-link" href="#analytical-approach">
+     Analytical Approach
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#features-of-a-good-mathematical-model">
-     Features of a good mathematical model
+    <a class="reference internal nav-link" href="#can-we-do-this-with-more-automaticity">
+     Can we do this with more automaticity?
     </a>
    </li>
   </ul>
@@ -547,7 +624,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>01 Sept 22 - Notes: What is a Model?</h1>
+                <h1>01 Nov 2022 - Signal Deconstruction</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -558,18 +635,28 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modeling-discussion">
-   Modeling Discussion
+  <a class="reference internal nav-link" href="#dc-offset">
+   DC Offset
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#periodic-models">
+   Periodic Models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-the-duty-cycle">
+   Example: The Duty Cycle
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mathematical-models-in-physics">
-     Mathematical Models in Physics
+    <a class="reference internal nav-link" href="#analytical-approach">
+     Analytical Approach
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#features-of-a-good-mathematical-model">
-     Features of a good mathematical model
+    <a class="reference internal nav-link" href="#can-we-do-this-with-more-automaticity">
+     Can we do this with more automaticity?
     </a>
    </li>
   </ul>
@@ -584,73 +671,88 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="sept-22-notes-what-is-a-model">
-<h1>01 Sept 22 - Notes: What is a Model?<a class="headerlink" href="#sept-22-notes-what-is-a-model" title="Permalink to this headline">#</a></h1>
-<p>These is the summary of the PHY 415 class period on 01 Sept 22. If I missed anything, <a class="reference external" href="https://phy415fall2022.slack.com/">send me an message</a> on Slack and I will add it here. -DC</p>
-<section id="modeling-discussion">
-<h2>Modeling Discussion<a class="headerlink" href="#modeling-discussion" title="Permalink to this headline">#</a></h2>
-<p>We discussed models and modeling extensively today to start to form a functional definition of both. We talked about what the general idea of models and modeling can encompass. Some of the classes major ideas were:</p>
-<ul class="simple">
-<li><p>A model takes <strong>BIG</strong> things and makes them <em>smaller</em> things (approximations and assumptions)</p></li>
-<li><p>A model is only as good as it fits nature/reality/experiment</p></li>
-<li><p>A model is not useful unless <ins>it does something we intended it</ins></p></li>
-<li><p>The best models destroy themselves (i.e., are pushed to their limits and need to be replaced/redeveloped)</p></li>
-</ul>
-<section id="mathematical-models-in-physics">
-<h3>Mathematical Models in Physics<a class="headerlink" href="#mathematical-models-in-physics" title="Permalink to this headline">#</a></h3>
-<p>We narrows our discussion to mathematical models, the focus of this class, and talked about the variety of models the class has used. We had a couple general ideas. A <strong>mathematical model</strong> (in physics) is:</p>
-<ul class="simple">
-<li><p>an equation that has a physics idea behind it</p></li>
-<li><p>the order that you use different mathematical methods to investigate a physics problem</p></li>
-</ul>
-<p>In this discussion, the class brought up several models they had experienced in the past; many of them were from mechanics contexts. And a couple were outside of physics models.</p>
-<p><strong>Physics</strong></p>
-<ul class="simple">
-<li><p>Hooke’s Law</p></li>
-<li><p>Differential equations that describe physical systems</p>
-<ul>
-<li><p>example: the Schrodinger equation</p></li>
-</ul>
-</li>
-<li><p>Taylor expansions</p></li>
-<li><p>Newton’s Laws</p>
-<ul>
-<li><p>Kepler’s Laws</p></li>
-<li><p>Newton’s Law of Gravitation</p></li>
-</ul>
-</li>
-</ul>
-<p><strong>Outside of Physics</strong></p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Zipf%27s_law">Zipf’s Law</a> (linguistics)</p></li>
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Benford%27s_law">Benford’s Law</a> (random numbers)</p></li>
-</ul>
+  <section class="tex2jax_ignore mathjax_ignore" id="nov-2022-signal-deconstruction">
+<h1>01 Nov 2022 - Signal Deconstruction<a class="headerlink" href="#nov-2022-signal-deconstruction" title="Permalink to this headline">#</a></h1>
+<p>We have started to show that we can take waves of any periodicity and deconstruct them to understand their properties. We have only conceptually done so for more general <span class="math notranslate nohighlight">\(V(t)\)</span>’s. We are using <span class="math notranslate nohighlight">\(V(t)\)</span> because everything is a voltage. But now we introduce the toolkit that can help us do this.</p>
+<p>For a given <span class="math notranslate nohighlight">\(V(t)\)</span> with some base periodicity (<span class="math notranslate nohighlight">\(w_0\)</span> or <span class="math notranslate nohighlight">\(T_0\)</span>), really the longest period or lowest frequency in the signal, we can use a Fourier Series to decompose those signals in terms of harmonics (<span class="math notranslate nohighlight">\(n\;\omega_0\)</span>) of the base frequency. The model of this decomposition is given by the <a class="reference external" href="https://en.wikipedia.org/wiki/Fourier_series#Sine-cosine_form">infinite series</a>:</p>
+<p><span class="math notranslate nohighlight">\(f(t) = \dfrac{a_0}{2} + \sum_{n=1}^{\infty} a_n \cos(n\omega_0t) + b_n \sin(n\omega_0t)\)</span></p>
+<p>Or</p>
+<p><span class="math notranslate nohighlight">\(f(t) = \dfrac{a_0}{2} + \sum_{n=1}^{\infty} a_n \cos\left(\dfrac{2n\pi}{T_0}t\right) + b_n \sin\left(\dfrac{2n\pi}{T_0}t\right)\)</span></p>
+<p>By using the <a class="reference external" href="https://en.wikipedia.org/wiki/Orthogonal_functions">orthogonal nature</a> of <span class="math notranslate nohighlight">\(\sin\)</span> and <span class="math notranslate nohighlight">\(\cos\)</span> over one period, we can find the unknown coefficients for a given signal <span class="math notranslate nohighlight">\(V(t)\)</span>.</p>
+<section id="dc-offset">
+<h2>DC Offset<a class="headerlink" href="#dc-offset" title="Permalink to this headline">#</a></h2>
+<p>The first term in the sum is just related to the DC offset, that is the average of the signal over one period. That’s because <span class="math notranslate nohighlight">\(sin\)</span> and <span class="math notranslate nohighlight">\(cos\)</span> don’t shift the average (they have a time average of zero, remember?)</p>
+<p><span class="math notranslate nohighlight">\(\dfrac{a_0}{2} = \dfrac{1}{T_0}\int_{T_0} f(t) dt\)</span></p>
 </section>
-<section id="features-of-a-good-mathematical-model">
-<h3>Features of a good mathematical model<a class="headerlink" href="#features-of-a-good-mathematical-model" title="Permalink to this headline">#</a></h3>
-<p>We then discussed the features that make up a good model in physics. Ideas included aspects of the model and the modeling process as well as social aspects of engaging in science. The list below is from the class’s discussion, where the highlighted words are starting to form the details of our class’s project rubric.</p>
-<p><strong>A good model:</strong></p>
-<ul class="simple">
-<li><p>depends on its intent and how well it does what it we intend it to do</p>
-<ul>
-<li><p>e.g., a model of a galaxy is not useful for modeling the solar system</p></li>
-</ul>
-</li>
-<li><p>predicts or explains something about a physical system - <mark><strong>predictability</strong></mark></p></li>
-<li><p>gives everyone the same results with the same input - <mark><strong>reproducibility</strong></mark></p></li>
-<li><p>balances simplicity and applicability - <mark><strong>parsimonius</strong></mark></p></li>
-<li><p>cannot be biased towards the data (experiment, etc.)</p>
-<ul>
-<li><p>avoid manipulation of the model to fit data</p></li>
-<li><p>overfitting data</p></li>
-</ul>
-</li>
-<li><p>recognizes <mark><strong>limitations</strong></mark> and presents its <mark><strong>assumptions</strong></mark></p></li>
-<li><p>uses input from outside sources (other theories, data, experiments, etc) to confirm/evaluate - <mark><strong>validation</strong></mark></p></li>
-<li><p>can be adjusted for different conditions - <mark><strong>investigatory</strong></mark></p></li>
-<li><p>is <mark><strong>testable</strong></mark> in some way</p></li>
-<li><p>needs to have its results and processes <mark><strong>communicated clearly</strong></mark></p></li>
-</ul>
+<section id="periodic-models">
+<h2>Periodic Models<a class="headerlink" href="#periodic-models" title="Permalink to this headline">#</a></h2>
+<p>For the periodicity, we use “Fourier’s Trick” to determine the value of the coefficients. <em>Note that you need the signal <span class="math notranslate nohighlight">\(V(t)\)</span> to complete this work.</em> And this isn’t a trick, it’s a well-established method.</p>
+<p><span class="math notranslate nohighlight">\(a_n = \dfrac{2}{T_0}\int_{T_0}V(t)\cos(n\omega_0t)\qquad n\neq0\)</span></p>
+<p><span class="math notranslate nohighlight">\(b_n = \dfrac{2}{T_0}\int_{T_0}V(t)\sin(n\omega_0t)\qquad n\neq0\)</span></p>
+<p>Given this, our approximate <span class="math notranslate nohighlight">\(V(t)\)</span> is given up to the <span class="math notranslate nohighlight">\(N\)</span> term is,</p>
+<p><span class="math notranslate nohighlight">\(V(t) \approx \dfrac{a_0}{2} + \sum_{n=1}^{N} a_n \cos(n\omega_0t) + b_n \sin(n\omega_0t)\)</span></p>
+</section>
+<section id="example-the-duty-cycle">
+<h2>Example: The Duty Cycle<a class="headerlink" href="#example-the-duty-cycle" title="Permalink to this headline">#</a></h2>
+<p>There are many signals we could analyze, but one of the common (and more mathematically tractable) ones is the <a class="reference external" href="https://en.wikipedia.org/wiki/Duty_cycle">Duty Cycle</a>. In fact, this signal is in wide use across electrical devices for timed on and off states. Moreover, the behaviors of some neurons and muscle fibers have been shown to approximate duty cycle firing. Synthesizers and electronic music are similar heavy users of <a class="reference external" href="https://en.wikipedia.org/wiki/Pulse-width_modulation">pulse width modulation</a>, which stems from this signal.</p>
+<p>Below, we import a few libraries and plot the duty cycle.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy.signal</span> <span class="k">as</span> <span class="nn">sig</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Setting up a few parameters</span>
+
+<span class="n">V</span> <span class="o">=</span> <span class="mi">5</span>       <span class="c1">## Max Voltage for the cycle</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">1</span>       <span class="c1">## Period of the cycle</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>    <span class="c1">## Number of discrete points in model</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">T</span><span class="o">/</span><span class="n">N</span>    <span class="c1">## Spacing in time between points</span>
+
+<span class="c1">## Create a time array</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="c1">## Plot a 0V-5V duty cycle</span>
+<span class="c1">## We are using the signal library, which will also give </span>
+<span class="c1">## us access to FFT!</span>
+<span class="n">squareWave</span> <span class="o">=</span> <span class="n">V</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="n">V</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">sig</span><span class="o">.</span><span class="n">square</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">squareWave</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (e.g., s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Signal (e.g., V)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/activity-Waves-Signals_3_0.png" src="../../_images/activity-Waves-Signals_3_0.png" />
+</div>
+</div>
+<section id="analytical-approach">
+<h3>Analytical Approach<a class="headerlink" href="#analytical-approach" title="Permalink to this headline">#</a></h3>
+<p>Let’s first approach this analysis using the analytical tools we have developed.</p>
+<p><a class="reference external" href="https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_3_Fourier_Example.pdf">Handwritten Notes on Example</a></p>
+</section>
+<section id="can-we-do-this-with-more-automaticity">
+<h3>Can we do this with more automaticity?<a class="headerlink" href="#can-we-do-this-with-more-automaticity" title="Permalink to this headline">#</a></h3>
+<p>Yes, we can use Python’s <code class="docutils literal notranslate"><span class="pre">fft</span></code> method to help us do this analysis. However, this is a <a class="reference external" href="https://en.wikipedia.org/wiki/Fast_Fourier_transform">Fast Fourier Transform</a>, which we will discuss a bit more later. It is not the same as our Fourier Analysis above, as it uses discrete values, and has a finite windowing effects.</p>
+<p><strong>We will code this initially together</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 </section>
@@ -668,7 +770,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./content/1_modeling"
+            path: "./content/3_waves"
         },
         predefinedOutput: true
     }
@@ -682,17 +784,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="activity-what_is_a_model.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="readings-fft.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">01 Sept 22 - Activity: What is a Model?</p>
+            <p class="prev-next-title">28 Oct 22 - Deconstructing Signals using Fourier Analysis</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../2_oscillations/readings-oscillators.html" title="next page">
+    <a class='right-next' id="next-link" href="../X_additional_pages/references-page.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">2 - Oscillations</p>
+        <p class="prev-next-title">Works Cited</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

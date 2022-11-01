@@ -40,6 +40,7 @@ chapters:
     - file: content/3_waves/activity-Waves-1D
     - file: content/3_waves/activity-Waves-Fouriers_Trick
     - file: content/3_waves/readings-fft
+    - file: content/3_waves/activity-Waves-Signals
 - file: content/X_additional_pages/references-page
 - file: content/0_course/news_archive
 - file: content/0_course/projects/index

@@ -13,6 +13,7 @@
 # **1 Nov 2022**
 # 
 # * The notes from class with the [Duty Cycle Example are posted](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_3_Fourier_Example.pdf)
+#     * I added the [code that we developed in class for the FFT](./3_waves/activity-Waves-Signals.ipynb).
 # 
 # **28 Oct 2022**
 # 

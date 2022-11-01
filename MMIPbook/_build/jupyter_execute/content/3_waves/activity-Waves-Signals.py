@@ -81,16 +81,95 @@ plt.grid()
 # 
 # [Handwritten Notes on Example](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_3_Fourier_Example.pdf)
 # 
-# ### Can we do this with more automaticity?
-# 
-# Yes, we can use Python's `fft` method to help us do this analysis. However, this is a [Fast Fourier Transform](https://en.wikipedia.org/wiki/Fast_Fourier_transform), which we will discuss a bit more later. It is not the same as our Fourier Analysis above, as it uses discrete values, and has a finite windowing effects.
-# 
-# **We will code this initially together**
 
 # In[3]:
 
 
-## your code here
+def ComputeBn(V,n_array):
+    
+    bn_array = (V/(n_array*np.pi))*(np.cos(n_array*np.pi)-1)
+    
+    return bn_array
+
+def ComputeV(V,T,n,t):
+    
+    V_array = np.ones(len(t))*V/2
+
+    for i in range(0,n):
+    
+        V_add = bns[i]*np.sin(2*np.pi*(i+1)/T*t)
+        V_array += V_add
+        
+    return V_array
+
+n = 40
+n_array = np.arange(1, n+1)   
+bns = ComputeBn(V, n_array)
+V_array = ComputeV(V, T, n, t)
+
+fig = plt.figure(figsize=(8,6))
+plt.plot(t, squareWave, label='Real Square Wave')
+plt.plot(t, V_array, label='Approx. Fourier Soln.')
+plt.xlabel('Time')
+plt.ylabel('Signal')
+plt.grid()
+plt.legend()
+
+
+# ### Can we do this with more automaticity?
+# 
+# Yes, we can use Python's `fft` method to help us do this analysis. However, this is a [Fast Fourier Transform](https://en.wikipedia.org/wiki/Fast_Fourier_transform), which we will discuss a bit more later. It is not the same as our Fourier Analysis above, as it uses discrete values, and has a finite windowing effects.
+# 
+# **This is the code we consrtucted together.**
+
+# In[4]:
+
+
+from scipy.fft import fft, ifft, fftfreq ## Import what we need
+
+yf = fft(squareWave)
+xf = fftfreq(N,dt)
+
+## Let's cut out the half we want:
+xf_pos = xf[0:N//2]         ## Returns the positive half of the frequencies
+yf_scaled = 2/N*yf[0:N//2]/5  ## Rescales the FFT and returns only the positive half again
+
+fig=plt.figure(figsize=(12,8))
+plt.plot(xf_pos, np.abs(yf_scaled))
+
+plt.xlabel('freq.')
+plt.ylabel('"Intensity" (A.U.)')
+plt.grid()
+
+
+# In[5]:
+
+
+fig=plt.figure(figsize=(12,8))
+plt.scatter(xf_pos, np.abs(yf_scaled))
+
+plt.xlabel('freq.')
+plt.ylabel('"Intensity" (A.U.)')
+plt.grid()
+plt.axis([0, 100, -0.1, 1.1])
+plt.title('Zoomed In to 100Hz')
+
+
+# In[6]:
+
+
+fig=plt.figure(figsize=(12,8))
+
+plt.scatter(xf_pos, np.abs(yf_scaled), marker='o', s=200)
+
+coeffs = (1/(np.pi*xf_pos[1:])*(np.cos(xf_pos[1:]*np.pi)-1))
+plt.scatter(xf_pos[1:], np.abs(coeffs), marker='x', s=100)
+
+plt.xlabel('freq.')
+plt.ylabel('"Intensity" (A.U.)')
+plt.grid()
+plt.axis([0, 10, -0.1, 1.1])
+plt.title('Zoomed In to 100Hz')
 
 
 # In[ ]:

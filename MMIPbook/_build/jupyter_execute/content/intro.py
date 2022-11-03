@@ -13,6 +13,7 @@
 # **3 Nov 2022**
 # 
 # * [Project 4](./0_course/projects/project4.md) is posted. We are going to try to collect a few more data sets from faculty on campus. But there's lots of data sets on the web!
+# * [Notes: Intro to the FFT](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_3_Introduction_to_FFT.pdf)
 # 
 # **1 Nov 2022**
 # 

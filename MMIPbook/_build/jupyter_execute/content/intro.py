@@ -10,6 +10,10 @@
 # `````{admonition} Updates
 # :class: tip
 # 
+# **3 Nov 2022**
+# 
+# * [Project 4](./0_course/projects/project4.md) is posted. We are going to try to collect a few more data sets from faculty on campus. But there's lots of data sets on the web!
+# 
 # **1 Nov 2022**
 # 
 # * The notes from class with the [Duty Cycle Example are posted](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_3_Fourier_Example.pdf)

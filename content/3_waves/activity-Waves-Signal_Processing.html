@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; Mathematical Modeling in Physics</title>
+    <title>03 Nov 2022 - Signal Processing &#8212; Mathematical Modeling in Physics</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,8 +50,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Works Cited" href="../X_additional_pages/references-page.html" />
+    <link rel="prev" title="01 Nov 2022 - Signal Deconstruction" href="activity-Waves-Signals.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -111,7 +115,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../0_course/syllabus.html">
    0 - Overview of PHY 415
@@ -268,16 +272,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="readings-waves.html">
    3 - Oscillations with Many Degrees of Freedom
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="activity-Waves-MaxwellEqns.html">
      18 Oct 2022 - Introduction to Waves
@@ -301,6 +305,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="activity-Waves-Signals.html">
      01 Nov 2022 - Signal Deconstruction
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     03 Nov 2022 - Signal Processing
     </a>
    </li>
   </ul>
@@ -588,7 +597,58 @@ title="Print to PDF"
         <i class="fas fa-list"></i> Contents
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="simple visible nav section-nav flex-column">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#starting-the-fft">
+   Starting the FFT
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#questions">
+     Questions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multi-frequency-signal">
+   Multi-Frequency signal
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Questions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#noise">
+   Noise
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Questions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#add-noise-to-your-single-frequency-signal">
+   Add noise to your single frequency signal
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#add-noise-to-your-multi-frequency-signal">
+   Add noise to your multi-frequency signal
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#any-signal-noise">
+   Any signal + noise
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -598,7 +658,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><no title></h1>
+                <h1>03 Nov 2022 - Signal Processing</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -607,7 +667,58 @@ title="Print to PDF"
                             <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
-                            <ul class="simple visible nav section-nav flex-column">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#starting-the-fft">
+   Starting the FFT
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#questions">
+     Questions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multi-frequency-signal">
+   Multi-Frequency signal
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Questions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#noise">
+   Noise
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Questions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#add-noise-to-your-single-frequency-signal">
+   Add noise to your single frequency signal
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#add-noise-to-your-multi-frequency-signal">
+   Add noise to your multi-frequency signal
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#any-signal-noise">
+   Any signal + noise
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -618,7 +729,11 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="nov-2022-signal-processing">
+<h1>03 Nov 2022 - Signal Processing<a class="headerlink" href="#nov-2022-signal-processing" title="Permalink to this headline">#</a></h1>
+<p>One of the major activities in physics and astronomy that consumes much of our working hours is processing signals. Like we discussed, most instruments and tools give us a <span class="math notranslate nohighlight">\(V(t)\)</span> over some finite perioid of time. How do we extract information from the signal and make conclusions about that results? One of the most useful tools for extracting information from time series data (data where there’s some temporal aspect to it) is the Fast Fourier Transform (FFT). We introduced it a bit last class, but this time we will systematically investigate its usage and what we try to interpret from the results. We will also do some filtering and signal recovery (inverse FFT).</p>
+<p>The specifics of how an FFT works and how it is different from a Fourier Series analysis is important. We will touch on this after you have more experience with what it does.</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -629,43 +744,74 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<section id="starting-the-fft">
+<h2>Starting the FFT<a class="headerlink" href="#starting-the-fft" title="Permalink to this headline">#</a></h2>
+<p>We will do the first FFT in the code below for a single frequency sinusoidal function. In this example, we know what the FFT should produce (a single peak at the given <span class="math notranslate nohighlight">\(w_A\)</span>).</p>
+<p><span class="math notranslate nohighlight">\(V(t) = A\sin(\omega_At) = A\sin(2\pi f_A t)\)</span></p>
+<p>Here we program the precisely known longest period <span class="math notranslate nohighlight">\(T_0 = \frac{1}{f_A}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="n">T</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="n">T</span><span class="o">/</span><span class="n">N</span>
-<span class="n">tf</span> <span class="o">=</span> <span class="n">T</span>
-<span class="n">VO</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Parameters and setup</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">fA</span> <span class="o">=</span> <span class="mi">50</span>
 
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">tf</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
-<span class="n">V</span> <span class="o">=</span> <span class="n">VO</span><span class="o">*</span><span class="p">(</span><span class="n">sig</span><span class="o">.</span><span class="n">sawtooth</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">/</span><span class="n">T</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">T0</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">fA</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">T0</span><span class="o">/</span><span class="n">N</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">V</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x16d972620&gt;]
-</pre></div>
-</div>
-<img alt="../../_images/activity-Waves-Signal_Processing_1_1.png" src="../../_images/activity-Waves-Signal_Processing_1_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Vf</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">VO</span><span class="p">))</span><span class="o">*</span><span class="n">fft</span><span class="p">(</span><span class="n">V</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span>
-<span class="n">freq</span> <span class="o">=</span> <span class="n">fftfreq</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">dt</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span>
+<span class="c1">## Create time series data (t and V)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">T0</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fA</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Vf</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">1.1</span><span class="p">])</span>
+<span class="c1">## Plot signal</span>
+<span class="n">fig1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">V</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Signal&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Signal (V)&#39;</span><span class="p">)</span>
+
+<span class="c1">## Perform FFT and store the result (notice the normalization!)</span>
+<span class="n">Vf</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">A</span><span class="p">))</span><span class="o">*</span><span class="n">fft</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">fftfreq</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">dt</span><span class="p">)</span>
+
+<span class="n">fig2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="c1">## Plottting the results and zooming in (notice we are plotting only positive frequencies)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">freq</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Vf</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;FFT&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency (Hz)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Intensity (A.U.)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">1.1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/activity-Waves-Signal_Processing_2_0.png" src="../../_images/activity-Waves-Signal_Processing_2_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 300.0, -0.1, 1.1)
+</pre></div>
+</div>
+<img alt="../../_images/activity-Waves-Signal_Processing_3_1.png" src="../../_images/activity-Waves-Signal_Processing_3_1.png" />
+<img alt="../../_images/activity-Waves-Signal_Processing_3_2.png" src="../../_images/activity-Waves-Signal_Processing_3_2.png" />
 </div>
 </div>
+<section id="questions">
+<h3>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">#</a></h3>
+<p>Here’s some investigations to perform with the code above:</p>
+<ol class="simple">
+<li><p>Change the frequency and amplitudes. Do things change?</p></li>
+<li><p>Change <span class="math notranslate nohighlight">\(T_0\)</span> to be some integer value of the current period (e.g., 2<span class="math notranslate nohighlight">\(T_0\)</span>). What happens?</p></li>
+<li><p>Change <span class="math notranslate nohighlight">\(T_0\)</span> to be some non-integer value of the current period (e.g., 3.5<span class="math notranslate nohighlight">\(T_0\)</span>). What happens?</p></li>
+<li><p>Add more data points. Does anything change?</p></li>
+<li><p>What happens if you mess up the normalization <code class="docutils literal notranslate"><span class="pre">2/(N*A))*fft(V)</span></code>? How can we determine this is the correct normalization?</p></li>
+<li><p>Add a phase to the signal. What happens to the FFT?</p></li>
+<li><p>Add a DC offset (a constant value). What happens to the FFT?</p></li>
+</ol>
+</section>
+</section>
+<section id="multi-frequency-signal">
+<h2>Multi-Frequency signal<a class="headerlink" href="#multi-frequency-signal" title="Permalink to this headline">#</a></h2>
+<p>Let’s unpack what happens when there’s multiple frequencies in the signal. Consider some linear combination that looks like:</p>
+<div class="math notranslate nohighlight">
+\[V(t) = \sum_{i=1}^{N} A_n\sin(n \omega_0 t) = \sum_{i=1}^{N} A_n \sin( 2 n \pi f_0 t)\]</div>
+<p>Let’s see what the FFT looks like.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
@@ -673,7 +819,7 @@ title="Print to PDF"
 <span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.2</span>
 
 <span class="n">fA</span> <span class="o">=</span> <span class="mi">50</span>
-<span class="n">fB</span> <span class="o">=</span> <span class="mi">80</span>
+<span class="n">fB</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">fC</span> <span class="o">=</span> <span class="mi">200</span>
 
 <span class="n">T0</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">fA</span>
@@ -683,336 +829,159 @@ title="Print to PDF"
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">T0</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
 <span class="n">V</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fA</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fB</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">C</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fC</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">V</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x16daff7f0&gt;]
-</pre></div>
-</div>
-<img alt="../../_images/activity-Waves-Signal_Processing_3_1.png" src="../../_images/activity-Waves-Signal_Processing_3_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Vf</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">VO</span><span class="p">))</span><span class="o">*</span><span class="n">fft</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
+<span class="c1">## Plot signal</span>
+<span class="n">fig1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">V</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Signal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Signal (V)&#39;</span><span class="p">)</span>
+
+<span class="c1">## Perform FFT and store the result (notice the normalization!)</span>
+<span class="n">Vf</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">A</span><span class="p">))</span><span class="o">*</span><span class="n">fft</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
 <span class="n">freq</span> <span class="o">=</span> <span class="n">fftfreq</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">dt</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">freq</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Vf</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]))</span>
+<span class="n">fig2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="c1">## Plottting the results and zooming in (notice we are plotting only positive frequencies)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">freq</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Vf</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;FFT&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency (Hz)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Intensity (A.U.)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">1.1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 300.0, 0.0, 0.1)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 300.0, -0.1, 1.1)
 </pre></div>
 </div>
-<img alt="../../_images/activity-Waves-Signal_Processing_4_1.png" src="../../_images/activity-Waves-Signal_Processing_4_1.png" />
+<img alt="../../_images/activity-Waves-Signal_Processing_6_1.png" src="../../_images/activity-Waves-Signal_Processing_6_1.png" />
+<img alt="../../_images/activity-Waves-Signal_Processing_6_2.png" src="../../_images/activity-Waves-Signal_Processing_6_2.png" />
 </div>
 </div>
+<section id="id1">
+<h3>Questions<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<p>Here’s some investigations to perform with the code above:</p>
+<ol class="simple">
+<li><p>Change the frequency and amplitudes. How do things change?</p></li>
+<li><p>Change <span class="math notranslate nohighlight">\(T_0\)</span> to be some integer value of the current period (e.g., 2<span class="math notranslate nohighlight">\(T_0\)</span>). What happens?</p></li>
+<li><p>Change <span class="math notranslate nohighlight">\(T_0\)</span> to be some non-integer value of the current period (e.g., 3.5<span class="math notranslate nohighlight">\(T_0\)</span>). What happens?</p></li>
+<li><p>Add more data points. Does anything change?</p></li>
+<li><p>What happens if you mess up the normalization <code class="docutils literal notranslate"><span class="pre">2/(N*A))*fft(V)</span></code>? How can we determine this is the correct normalization?</p></li>
+<li><p>Add a phase to the signal. What happens to the FFT?</p>
+<ol class="simple">
+<li><p>Do this for each one and then together. Does anything change?</p></li>
+</ol>
+</li>
+<li><p>Add a DC offset (a constant value). What happens to the FFT?</p></li>
+</ol>
+</section>
+</section>
+<section id="noise">
+<h2>Noise<a class="headerlink" href="#noise" title="Permalink to this headline">#</a></h2>
+<p>Let’s add some noise to our signal. We never get anything clean from our instruments, sometimes we don’t get a damn thing. But electronic noise, pickup noise, instrument noise, and other sources plague our search for a clear data set. Let’s look at noise itself first. SciPy offers us a whole library of random things. Let’s just use Gaussian noise.</p>
+<p>Gaussian noise is drawn from a random Gaussian distribution. You have two parameters with this kind of noise: <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span>. These are where the center of Gaussian is located (<span class="math notranslate nohighlight">\(\mu\)</span>) and how spread out it is <span class="math notranslate nohighlight">\(\sigma\)</span>. The spread is in units of standard deviation, so <span class="math notranslate nohighlight">\(\sigma = 1\)</span> is a lot of noise. Below we use “zero centered” noise, <span class="math notranslate nohighlight">\(\mu=0\)</span> and plot it. We perform an FFT to see what we get.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">VApprox</span> <span class="o">=</span> <span class="n">ifft</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">VO</span><span class="o">*</span><span class="n">Vf</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">VApprox</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;IFFT&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">V</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;original&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/caballero/opt/anaconda3/envs/teaching/lib/python3.10/site-packages/matplotlib/cbook/__init__.py:1298: ComplexWarning: Casting complex values to real discards the imaginary part
-  return np.asarray(x, float)
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x16dafcd60&gt;
-</pre></div>
-</div>
-<img alt="../../_images/activity-Waves-Signal_Processing_5_2.png" src="../../_images/activity-Waves-Signal_Processing_5_2.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">B</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T0</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">T0</span><span class="o">/</span><span class="n">N</span>
 
 <span class="c1">## Zero centered noise</span>
 <span class="n">mu</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.1</span>
 
-<span class="n">fA</span> <span class="o">=</span> <span class="mi">50</span>
-<span class="n">fB</span> <span class="o">=</span> <span class="mi">80</span>
-<span class="n">fC</span> <span class="o">=</span> <span class="mi">200</span>
-
-<span class="n">T0</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">fA</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="n">T0</span><span class="o">/</span><span class="n">N</span>
-
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">T0</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
-<span class="n">Vdusty</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fA</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fB</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">C</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fC</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">Vdusty</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x16dc82950&gt;]
-</pre></div>
-</div>
-<img alt="../../_images/activity-Waves-Signal_Processing_6_1.png" src="../../_images/activity-Waves-Signal_Processing_6_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Vdustyf</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">VO</span><span class="p">))</span><span class="o">*</span><span class="n">fft</span><span class="p">(</span><span class="n">Vdusty</span><span class="p">)</span>
+<span class="c1">## Plot signal</span>
+<span class="n">fig1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">V</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Signal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Signal (V)&#39;</span><span class="p">)</span>
+
+<span class="c1">## Perform FFT and store the result (notice the normalization!)</span>
+<span class="n">Vf</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">A</span><span class="p">))</span><span class="o">*</span><span class="n">fft</span><span class="p">(</span><span class="n">V</span><span class="p">)</span>
 <span class="n">freq</span> <span class="o">=</span> <span class="n">fftfreq</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">dt</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">freq</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Vdustyf</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]))</span>
+<span class="n">fig2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="c1">## Plottting the results and zooming in (notice we are plotting only positive frequencies)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">freq</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Vf</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;FFT&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<span class="c1">#plt.axis([0,300,0,0.1])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency (Hz)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Intensity (A.U.)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">1.1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/activity-Waves-Signal_Processing_7_0.png" src="../../_images/activity-Waves-Signal_Processing_7_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">freq</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Vdustyf</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 1000.0, 0.0, 0.1)
-</pre></div>
-</div>
-<img alt="../../_images/activity-Waves-Signal_Processing_8_1.png" src="../../_images/activity-Waves-Signal_Processing_8_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">freq</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Vdustyf</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.01</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 1000.0, 0.0, 0.01)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 300.0, -0.1, 1.1)
 </pre></div>
 </div>
 <img alt="../../_images/activity-Waves-Signal_Processing_9_1.png" src="../../_images/activity-Waves-Signal_Processing_9_1.png" />
+<img alt="../../_images/activity-Waves-Signal_Processing_9_2.png" src="../../_images/activity-Waves-Signal_Processing_9_2.png" />
 </div>
 </div>
+<section id="id2">
+<h3>Questions<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>Here’s some investigations to perform with the code above:</p>
+<ol class="simple">
+<li><p>Change the <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(sigma\)</span>. How do things change?</p></li>
+<li><p>Change <span class="math notranslate nohighlight">\(T_0\)</span> to be some integer value of the current period (e.g., 2<span class="math notranslate nohighlight">\(T_0\)</span>). What happens?</p></li>
+<li><p>Change <span class="math notranslate nohighlight">\(T_0\)</span> to be some non-integer value of the current period (e.g., 3.5<span class="math notranslate nohighlight">\(T_0\)</span>). What happens?</p></li>
+<li><p>Add more data points. Does anything change?</p></li>
+<li><p>What happens if you mess up the normalization <code class="docutils literal notranslate"><span class="pre">2/(N*A))*fft(V)</span></code>? How can we determine this is the correct normalization?</p></li>
+<li><p>Overall, what do you notice about the FFT of noise?</p></li>
+</ol>
+</section>
+</section>
+<section id="add-noise-to-your-single-frequency-signal">
+<h2>Add noise to your single frequency signal<a class="headerlink" href="#add-noise-to-your-single-frequency-signal" title="Permalink to this headline">#</a></h2>
+<p>Ok, now you looked a single frequencies, multiple frequencies (albeit integer values), and noise.</p>
+<ol class="simple">
+<li><p>Create a single frequency signal and add noise to it.</p></li>
+<li><p>Perform the FFT.</p></li>
+<li><p>Investigate it systematically. How does the noise affect the FFT? Can we think about removing the noise? Can you come uo with a scheme to do so?</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Kill off anything above 400Hz</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">freq</span><span class="p">[</span><span class="mi">8</span><span class="p">])</span>
-<span class="n">VCleanf</span> <span class="o">=</span> <span class="n">Vdustyf</span>
-<span class="n">VCleanf</span><span class="p">[</span><span class="mi">8</span><span class="p">:]</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="n">VClean</span> <span class="o">=</span> <span class="n">ifft</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">*</span><span class="n">VO</span><span class="o">*</span><span class="n">VCleanf</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">Vdusty</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;dusty&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">VClean</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;cleaned&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code here</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>400.0
-</pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x16d9f56f0&gt;
-</pre></div>
-</div>
-<img alt="../../_images/activity-Waves-Signal_Processing_10_2.png" src="../../_images/activity-Waves-Signal_Processing_10_2.png" />
-</div>
-</div>
+</section>
+<section id="add-noise-to-your-multi-frequency-signal">
+<h2>Add noise to your multi-frequency signal<a class="headerlink" href="#add-noise-to-your-multi-frequency-signal" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>Create a multi-frequency signal (integer <span class="math notranslate nohighlight">\(w_0\)</span>) and add noise to it.</p></li>
+<li><p>Perform the FFT.</p></li>
+<li><p>Investigate it systematically. How does the noise affect the FFT? Can we think about removing the noise? Can you come uo with a scheme to do so?</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">B</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.2</span>
-
-<span class="c1">## Zero centered noise</span>
-<span class="n">mu</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.4</span>
-
-<span class="n">fA</span> <span class="o">=</span> <span class="mi">50</span>
-<span class="n">fB</span> <span class="o">=</span> <span class="mi">80</span>
-<span class="n">fC</span> <span class="o">=</span> <span class="mi">200</span>
-
-<span class="n">T0</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">fA</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="n">T0</span><span class="o">/</span><span class="n">N</span>
-
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">T0</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
-<span class="n">Vdusty</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fA</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fB</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">C</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fC</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">Vdusty</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code here</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x16dd960b0&gt;]
-</pre></div>
 </div>
-<img alt="../../_images/activity-Waves-Signal_Processing_11_1.png" src="../../_images/activity-Waves-Signal_Processing_11_1.png" />
-</div>
-</div>
+</section>
+<section id="any-signal-noise">
+<h2>Any signal + noise<a class="headerlink" href="#any-signal-noise" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>Create a signal  of your choosing (not sinusoial) and add noise to it (later is fine).</p></li>
+<li><p>Perform the FFT.</p></li>
+<li><p>Investigate it systematically. How does the noise affect the FFT? Can we think about removing the noise? Can you come uo with a scheme to do so?</p></li>
+</ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Vdustyf</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">VO</span><span class="p">))</span><span class="o">*</span><span class="n">fft</span><span class="p">(</span><span class="n">Vdusty</span><span class="p">)</span>
-<span class="n">freq</span> <span class="o">=</span> <span class="n">fftfreq</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">dt</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">freq</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Vdustyf</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code here</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/activity-Waves-Signal_Processing_12_0.png" src="../../_images/activity-Waves-Signal_Processing_12_0.png" />
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">freq</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Vdustyf</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 2000.0, 0.0, 0.1)
-</pre></div>
-</div>
-<img alt="../../_images/activity-Waves-Signal_Processing_13_1.png" src="../../_images/activity-Waves-Signal_Processing_13_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">freq</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Vdustyf</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.01</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 2000.0, 0.0, 0.01)
-</pre></div>
-</div>
-<img alt="../../_images/activity-Waves-Signal_Processing_14_1.png" src="../../_images/activity-Waves-Signal_Processing_14_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Kill off anything above 400Hz</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">freq</span><span class="p">[</span><span class="mi">8</span><span class="p">])</span>
-<span class="n">VCleanf</span> <span class="o">=</span> <span class="n">Vdustyf</span>
-<span class="n">VCleanf</span><span class="p">[</span><span class="mi">8</span><span class="p">:]</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="n">VClean</span> <span class="o">=</span> <span class="n">ifft</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">*</span><span class="n">VO</span><span class="o">*</span><span class="n">VCleanf</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">Vdusty</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;dusty&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">VClean</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;cleaned&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>400.0
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x16db71ff0&gt;
-</pre></div>
-</div>
-<img alt="../../_images/activity-Waves-Signal_Processing_15_2.png" src="../../_images/activity-Waves-Signal_Processing_15_2.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">B</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.2</span>
-
-<span class="n">fA</span> <span class="o">=</span> <span class="mi">50</span>
-<span class="n">fB</span> <span class="o">=</span> <span class="mi">80</span>
-<span class="n">fC</span> <span class="o">=</span> <span class="mi">200</span>
-
-<span class="n">phiA</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">phiB</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">phiC</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span>
-
-<span class="n">T0</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">fA</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="n">T0</span><span class="o">/</span><span class="n">N</span>
-
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">T0</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
-<span class="n">Voriginal</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fA</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fB</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">C</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fC</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
-<span class="n">Vshifted</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fA</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="n">phiA</span><span class="p">)</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fB</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="n">phiB</span><span class="p">)</span><span class="o">+</span><span class="n">C</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fC</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="n">phiC</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">Voriginal</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">Vshifted</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;w./ Phase&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x16db722c0&gt;
-</pre></div>
-</div>
-<img alt="../../_images/activity-Waves-Signal_Processing_16_1.png" src="../../_images/activity-Waves-Signal_Processing_16_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Voriginalf</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">VO</span><span class="p">))</span><span class="o">*</span><span class="n">fft</span><span class="p">(</span><span class="n">Voriginal</span><span class="p">)</span>
-<span class="n">Vshiftedf</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">VO</span><span class="p">))</span><span class="o">*</span><span class="n">fft</span><span class="p">(</span><span class="n">Vshifted</span><span class="p">)</span>
-<span class="n">freq</span> <span class="o">=</span> <span class="n">fftfreq</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">dt</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Voriginalf</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Vshiftedf</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 1000.0, 0.0, 0.1)
-</pre></div>
-</div>
-<img alt="../../_images/activity-Waves-Signal_Processing_17_1.png" src="../../_images/activity-Waves-Signal_Processing_17_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">VOG</span> <span class="o">=</span> <span class="n">ifft</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">VO</span><span class="o">*</span><span class="n">Voriginalf</span><span class="p">)</span>
-<span class="n">VSH</span> <span class="o">=</span> <span class="n">ifft</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">VO</span><span class="o">*</span><span class="n">Vshiftedf</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">Voriginal</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">VOG</span><span class="o">+</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Original (IFFT)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">Vshifted</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;w./ Phase&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">VSH</span><span class="o">+</span><span class="mf">2.1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;w./ Phase (IFFT)&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x16df2c190&gt;
-</pre></div>
-</div>
-<img alt="../../_images/activity-Waves-Signal_Processing_18_1.png" src="../../_images/activity-Waves-Signal_Processing_18_1.png" />
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1041,6 +1010,20 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="activity-Waves-Signals.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">01 Nov 2022 - Signal Deconstruction</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../X_additional_pages/references-page.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Works Cited</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

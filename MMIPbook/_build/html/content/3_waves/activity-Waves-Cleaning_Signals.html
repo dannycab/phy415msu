@@ -1,0 +1,1008 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>8 Nov 22 - The Inverse Fourier Transform &#8212; Mathematical Modeling in Physics</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Works Cited" href="../X_additional_pages/references-page.html" />
+    <link rel="prev" title="03 Nov 2022 - Signal Processing" href="activity-Waves-Signal_Processing.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Mathematical Modeling in Physics</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome to Mathematical Modeling in Physics
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../0_course/syllabus.html">
+   0 - Overview of PHY 415
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/goals.html">
+     Course Objectives
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/design.html">
+     Course Design
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/assessments.html">
+     Assessments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/rubric.html">
+     Project Rubrics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/calendar.html">
+     Calendar
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/environment.html">
+     Classroom Environment
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/resources.html">
+     Resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../0_course/reading_questions.html">
+   Reading Questions Form
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../1_modeling/what_is_modeling.html">
+   1 - What is Mathematical Modeling?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1_modeling/activity-what_is_a_model.html">
+     01 Sept 22 - Activity: What is a Model?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../1_modeling/notes-what_is_a_model.html">
+     01 Sept 22 - Notes: What is a Model?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../2_oscillations/readings-oscillators.html">
+   2 - Oscillations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_oscillations/activity-SHO_and_dynamical_systems.html">
+     06 Sept 22 - Activity: Investigating the Simple Harmonic Oscillator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_oscillations/notes-SHO_and_dynamical_systems.html">
+     06 Sept 22 - Notes: The SHO and Phase Portraits
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_oscillations/activity-SHO_and_Large_Angles.html">
+     08 Sept 22 - Activity: Large Angle Pendulum
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_oscillations/readings-numerical_integration_1d.html">
+     13 Sept 22 - Notes: Numerical Integration in 1D
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_oscillations/activity-ODE-numerical.html">
+     13 Sept 22 - Activity: Integrating ODEs Numerically
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_oscillations/activity-ODE_palooza.html">
+     15 Sept 22 - Activity: ODE Palooza
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_oscillations/readings-coupled-oscillators.html">
+     27 Sept 22 - Notes: Coupled Oscillators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_oscillations/activity-CoupledOsc-NormalModes.html">
+     27 Sept 22 - Activity: Normal Modes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_oscillations/activity-Lagrange-reminders.html">
+     29 Sept 22 - Activity: Lagrangian Dynamics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_oscillations/readings-lagrangian-dynamics.html">
+     4 Oct 22 - Notes: Lagrangian Dynamics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_oscillations/activity-Lagrange-with-constraints.html">
+     4 Oct 22 - Activity: Lagrangian Dynamics with Constraints
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_oscillations/activity-Lagrange-with-constraints-analysis.html">
+     06 Oct 22 - Activity: Analyzing Lagrangian Dynamics with Constraints
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_oscillations/activity-3CoupledOsc-NormalModes.html">
+     11 Oct 22 - Activity: Normal Modes of 3 Coupled Oscillators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../2_oscillations/activity-CoupledOsc-NumericalNormalModes.html">
+     13 Oct 22 - Activity: Normal Modes of N Coupled Oscillators
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="readings-waves.html">
+   3 - Oscillations with Many Degrees of Freedom
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="activity-Waves-MaxwellEqns.html">
+     18 Oct 2022 - Introduction to Waves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="activity-Waves-1D.html">
+     20 Oct 2022 - 1-Dimensional Travelling Waves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="activity-Waves-Fouriers_Trick.html">
+     27 Oct 2022 - Activity - Deconstructing Waves
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="readings-fft.html">
+     28 Oct 22 - Deconstructing Signals using Fourier Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="activity-Waves-Signals.html">
+     01 Nov 2022 - Signal Deconstruction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="activity-Waves-Signal_Processing.html">
+     03 Nov 2022 - Signal Processing
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     8 Nov 22 - The Inverse Fourier Transform
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../X_additional_pages/references-page.html">
+   Works Cited
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../0_course/news_archive.html">
+   News Archive
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../0_course/projects/index.html">
+   Projects
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/projects/project1.html">
+     Project 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/projects/project2.html">
+     Project 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/projects/project3.html">
+     Project 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../0_course/projects/project4.html">
+     Project 4
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/dannycab/phy415msu/main?urlpath=tree/MMIPbook/content/3_waves/activity-Waves-Cleaning_Signals.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://jupyterhub.egr.msu.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/dannycab/phy415msu/&urlpath=tree/phy415msu/MMIPbook/content/3_waves/activity-Waves-Cleaning_Signals.ipynb&branch=main"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on JupyterHub"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="headerbtn__text-container">JupyterHub</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/dannycab/phy415msu/blob/main/MMIPbook/content/3_waves/activity-Waves-Cleaning_Signals.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/dannycab/phy415msu/"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/dannycab/phy415msu//issues/new?title=Issue%20on%20page%20%2Fcontent/3_waves/activity-Waves-Cleaning_Signals.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/content/3_waves/activity-Waves-Cleaning_Signals.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cleaning-a-spectrum">
+   Cleaning a spectrum
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#investigate-limits-and-modulations">
+   Investigate Limits and modulations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#real-data">
+   Real data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#activity">
+   Activity
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>8 Nov 22 - The Inverse Fourier Transform</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cleaning-a-spectrum">
+   Cleaning a spectrum
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#investigate-limits-and-modulations">
+   Investigate Limits and modulations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#real-data">
+   Real data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#activity">
+   Activity
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="nov-22-the-inverse-fourier-transform">
+<h1>8 Nov 22 - The Inverse Fourier Transform<a class="headerlink" href="#nov-22-the-inverse-fourier-transform" title="Permalink to this headline">#</a></h1>
+<p>We used the Fourier Transform to find all the frequency compeonents of a signal.</p>
+<div class="math notranslate nohighlight">
+\[f(t) = \sum_{k=-{\infty}}^{\infty} \gamma_k e^{i2\pi k t/T_0}\]</div>
+<p>For a given signal <span class="math notranslate nohighlight">\(V(t)\)</span>, we can find the unknown complex valued coefficients <span class="math notranslate nohighlight">\(\gamma_k\)</span> using the standard integral formulation:</p>
+<div class="math notranslate nohighlight">
+\[\gamma_k = \dfrac{1}{T_0}\int_0^{T_0} V(t) e^{-i2\pi k t/T_0} dt\]</div>
+<p>This integral cannot be computed in general, but needs to have the <span class="math notranslate nohighlight">\(V(t)\)</span> either as a function or data. In the case of data or a non-integrable function a <a class="reference external" href="https://en.wikipedia.org/wiki/Discrete_Fourier_transform">Discrete Fourier Transform</a> (<span class="math notranslate nohighlight">\(T_0\)</span> broken into <span class="math notranslate nohighlight">\(N\)</span> discrete chunks) is used to compute the integrals (e.g., using Trapezoidal method or Simpson’s rule).</p>
+<div class="math notranslate nohighlight">
+\[c_k = \dfrac{1}{N} \sum_{n=0}^{N-1}V(t_n)e^{-i2\pi k n/N}\]</div>
+<p>I use <span class="math notranslate nohighlight">\(c_k\)</span> to indicate it’s the discrete and approximate value of <span class="math notranslate nohighlight">\(\gamma_k\)</span>. That is we’d hope as <span class="math notranslate nohighlight">\(N \rightarrow \infty\)</span> that <span class="math notranslate nohighlight">\(c_k \rightarrow \gamma_k\)</span>.</p>
+<p>We can recover the original signal <span class="math notranslate nohighlight">\(V(t)\)</span> from these frequency components using the <a class="reference external" href="https://en.wikipedia.org/wiki/Discrete_Fourier_transform#Inverse_transform">Inverse (Discrete) Fourier Transform</a>. This transform is written mathematically below:</p>
+<div class="math notranslate nohighlight">
+\[V(t) = \dfrac{1}{N}\sum_{k=0}^{N-1}c_ke^{i 2\pi kn/N}\]</div>
+<p>Both of these discrete approaches appear in the <code class="docutils literal notranslate"><span class="pre">scipy</span></code> library: <code class="docutils literal notranslate"><span class="pre">fft</span></code> and <code class="docutils literal notranslate"><span class="pre">ifft</span></code>. It might not seem obvious why we would need these tools. If we have <span class="math notranslate nohighlight">\(V(t)\)</span>, why would we ever need to transform the signal and transform it back?</p>
+<p>One of the most important aspects of real data is noise. Sometimes we want it, sometimes we need to have it in an experiment, most of the times, we don’t! Let’s get rid of noise from a constructed spectrum.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.fft</span> <span class="kn">import</span> <span class="n">fft</span><span class="p">,</span> <span class="n">ifft</span><span class="p">,</span> <span class="n">fftfreq</span>
+<span class="kn">import</span> <span class="nn">scipy.signal</span> <span class="k">as</span> <span class="nn">sig</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<section id="cleaning-a-spectrum">
+<h2>Cleaning a spectrum<a class="headerlink" href="#cleaning-a-spectrum" title="Permalink to this headline">#</a></h2>
+<p>Let’s start with a constructed spectrum before we analyze real data. Check out the signal below. This could be thought of a transiting planet eclipsing a local star, a voltage measurement from a defect in a STM sample, really anything. There’s lots of signals that look like this!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.2</span>
+
+<span class="c1">## Zero centered noise</span>
+<span class="n">mu</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.1</span>
+
+<span class="n">fA</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">fB</span> <span class="o">=</span> <span class="mi">80</span>
+<span class="n">fC</span> <span class="o">=</span> <span class="mi">200</span>
+
+<span class="n">T0</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">fA</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">T0</span><span class="o">/</span><span class="n">N</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">T0</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
+<span class="n">Vdusty</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fA</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">B</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fB</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">C</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">fC</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span><span class="n">sigma</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">Vdusty</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Voltage&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/activity-Waves-Cleaning_Signals_3_0.png" src="../../_images/activity-Waves-Cleaning_Signals_3_0.png" />
+</div>
+</div>
+<p>Let’s perform the FFT and look at it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Vdustyf</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="p">))</span><span class="o">*</span><span class="n">fft</span><span class="p">(</span><span class="n">Vdusty</span><span class="p">)</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">fftfreq</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">dt</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">freq</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Vdustyf</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Freq.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amp&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/activity-Waves-Cleaning_Signals_5_0.png" src="../../_images/activity-Waves-Cleaning_Signals_5_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">freq</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Vdustyf</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Freq.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amp&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 1000.0, 0.0, 1.0)
+</pre></div>
+</div>
+<img alt="../../_images/activity-Waves-Cleaning_Signals_6_1.png" src="../../_images/activity-Waves-Cleaning_Signals_6_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">freq</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Vdustyf</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Freq.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amp&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.6</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 500.0, 0.0, 0.6)
+</pre></div>
+</div>
+<img alt="../../_images/activity-Waves-Cleaning_Signals_7_1.png" src="../../_images/activity-Waves-Cleaning_Signals_7_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">freq</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Vdustyf</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Freq.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amp&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">500</span><span class="p">,</span><span class="mi">25000</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.02</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(500.0, 25000.0, 0.0, 0.02)
+</pre></div>
+</div>
+<img alt="../../_images/activity-Waves-Cleaning_Signals_8_1.png" src="../../_images/activity-Waves-Cleaning_Signals_8_1.png" />
+</div>
+</div>
+<p>Looks like a lot of noise at high frequencies. Let’s get rid of it. Remember there’s negative frequencies! Those are important to recovering everything.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Vdustyf</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Freq.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amp&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-1000.0, 1000.0, 0.0, 1.0)
+</pre></div>
+</div>
+<img alt="../../_images/activity-Waves-Cleaning_Signals_10_1.png" src="../../_images/activity-Waves-Cleaning_Signals_10_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Kill off anything above 400Hz (just set them to zero)</span>
+
+<span class="n">VCleanf</span> <span class="o">=</span> <span class="n">Vdustyf</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1">## Your line of code here</span>
+
+<span class="n">VClean</span> <span class="o">=</span> <span class="n">ifft</span><span class="p">(</span><span class="n">N</span><span class="o">*</span><span class="n">VCleanf</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">Vdusty</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;dusty&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">VClean</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;cleaned (shifted up)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x16b1ff130&gt;
+</pre></div>
+</div>
+<img alt="../../_images/activity-Waves-Cleaning_Signals_11_1.png" src="../../_images/activity-Waves-Cleaning_Signals_11_1.png" />
+</div>
+</div>
+</section>
+<section id="investigate-limits-and-modulations">
+<h2>Investigate Limits and modulations<a class="headerlink" href="#investigate-limits-and-modulations" title="Permalink to this headline">#</a></h2>
+<p>We have developed a very simple approach (we set all high frequencies to zero). But this is more general!</p>
+<ol class="simple">
+<li><p>Take FFT of signal <span class="math notranslate nohighlight">\(V(t)\)</span></p></li>
+<li><p>Manipulate FFT</p></li>
+<li><p>Take IFFT to get processed signal <span class="math notranslate nohighlight">\(V'(t)\)</span></p></li>
+</ol>
+<p>Let’s see how many ways we can do this wrong, and what the limits are. Try the following:</p>
+<ol class="simple">
+<li><p>Replace the IFFT call to use the real values only of the signal, how about only positive frequencies?</p></li>
+<li><p>Add a phase constant to the signal and try to recover the signal again. If you take only real values or positive frequencies what happens to the IFFT? What information are we losing?</p></li>
+<li><p>Modulate the FFT with a function (that is chose to make some other cool transform on the FFT (not just zeroing out)), what happens to the IFFT?</p></li>
+<li><p>What other cool stuff can you do?</p></li>
+</ol>
+</section>
+<section id="real-data">
+<h2>Real data<a class="headerlink" href="#real-data" title="Permalink to this headline">#</a></h2>
+<p>Let’s bring in a audio signal. This will play it. It’s a D Power Chord.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install playsound
+<span class="kn">from</span> <span class="nn">playsound</span> <span class="kn">import</span> <span class="n">playsound</span>
+<span class="n">playsound</span><span class="p">(</span><span class="s1">&#39;data/D_PowerChords_95_SP.wav&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: playsound in /Users/caballero/opt/anaconda3/envs/teaching/lib/python3.10/site-packages (1.3.0)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s read the file into an array and plot it. Notice there are two channels.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.io</span> <span class="kn">import</span> <span class="n">wavfile</span>
+<span class="n">samplerate</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">wavfile</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;data/D_PowerChords_95_SP.wav&#39;</span><span class="p">);</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;number of channels = </span><span class="si">{</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">length</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">samplerate</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;length = </span><span class="si">{</span><span class="n">length</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>number of channels = 2
+length = 0.8224716553287982s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/5_/9z7lhk0s2y95hvkzs6lzdvvc0000gn/T/ipykernel_59118/242547925.py:2: WavFileWarning: Chunk (non-data) not understood, skipping it.
+  samplerate, data = wavfile.read(&#39;data/D_PowerChords_95_SP.wav&#39;);
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Left channel&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Right channel&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Time [s]&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Amplitude&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/activity-Waves-Cleaning_Signals_17_0.png" src="../../_images/activity-Waves-Cleaning_Signals_17_0.png" />
+</div>
+</div>
+</section>
+<section id="activity">
+<h2>Activity<a class="headerlink" href="#activity" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>Construct an FFT of this signal</p></li>
+<li><p>Manipulate it in some way</p></li>
+<li><p>Reconstruct the signal</p></li>
+<li><p>(Challenge) Write it out as a wave file and let’s hear it!</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/3_waves"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="activity-Waves-Signal_Processing.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">03 Nov 2022 - Signal Processing</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../X_additional_pages/references-page.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Works Cited</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Danny Caballero<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

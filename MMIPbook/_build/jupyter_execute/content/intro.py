@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# 
+
 # # Welcome to Mathematical Modeling in Physics
 # 
 # PHY 415, called, "Mathematical Methods for Physicists" is a course the brings together many of the mathematical approaches that we commonly use in physics and apply them to variety of problems. In this course, we will take a modeling-based approach where we focus on the mathematical descriptions of physical phenomenon and determine what mathematical and analytical approaches are useful in exploring those models.

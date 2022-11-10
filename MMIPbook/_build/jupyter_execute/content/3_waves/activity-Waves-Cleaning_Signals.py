@@ -139,6 +139,8 @@ plt.axis([-1000,1000,0,1])
 VCleanf = Vdustyf.copy()
 
 ## Your line of code here
+# VCleanf[freq > 200] = 0
+# VCleanf[freq < -200] = 0
 
 VClean = ifft(N*VCleanf)
 

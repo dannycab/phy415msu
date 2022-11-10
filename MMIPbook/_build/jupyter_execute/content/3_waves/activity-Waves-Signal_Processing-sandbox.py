@@ -134,8 +134,6 @@ plt.axis([0,1000,0,0.01])
 # In[11]:
 
 
-## Kill off anything above 400Hz
-
 print(freq[8])
 VCleanf = Vdustyf
 VCleanf[8:] = 0

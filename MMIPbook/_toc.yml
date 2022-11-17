@@ -45,6 +45,9 @@ chapters:
     - file: content/3_waves/activity-Waves-Cleaning_Signals
     - file: content/3_waves/activity-FFT-applications
     - file: content/3_waves/notes-Wave-image_2d
+- file: content/4_randomness/readings_randomness
+  sections:
+    - file: content/4_randomness/activity_radioactive_decay
 - file: content/X_additional_pages/references-page
 - file: content/0_course/news_archive
 - file: content/0_course/projects/index

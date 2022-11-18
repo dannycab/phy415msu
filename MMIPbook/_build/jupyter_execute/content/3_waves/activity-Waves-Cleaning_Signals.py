@@ -180,7 +180,7 @@ playsound('data/D_PowerChords_95_SP.wav')
 
 # Let's read the file into an array and plot it. Notice there are two channels.
 
-# In[16]:
+# In[10]:
 
 
 from scipy.io import wavfile
@@ -191,7 +191,7 @@ length = data.shape[0] / samplerate
 print(f"length = {length}s")
 
 
-# In[17]:
+# In[11]:
 
 
 time = np.linspace(0., length, data.shape[0])

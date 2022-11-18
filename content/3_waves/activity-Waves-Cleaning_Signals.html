@@ -875,7 +875,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x11b90b2b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x165b44250&gt;
 </pre></div>
 </div>
 <img alt="../../_images/activity-Waves-Cleaning_Signals_11_1.png" src="../../_images/activity-Waves-Cleaning_Signals_11_1.png" />
@@ -910,129 +910,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting playsound
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading playsound-1.3.0.tar.gz (7.7 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25hBuilding wheels for collected packages: playsound
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for playsound (setup.py) ... ?25l-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> \
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25h  Created wheel for playsound: filename=playsound-1.3.0-py3-none-any.whl size=7020 sha256=85a1a8b564c8888a120227ff2efa2038a3823f55696e5ab397d1aed5412f3b47
-  Stored in directory: /Users/caballero/Library/Caches/pip/wheels/90/89/ed/2d643f4226fc8c7c9156fc28abd8051e2d2c0de37ae51ac45c
-Successfully built playsound
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: playsound
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed playsound-1.3.0
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>playsound is relying on a python 2 subprocess. Please use `pip3 install PyObjC` if you want playsound to run more efficiently.
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="nn">Input In [9],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;pip install playsound&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">playsound</span> <span class="kn">import</span> <span class="n">playsound</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">playsound</span><span class="p">(</span><span class="s1">&#39;data/D_PowerChords_95_SP.wav&#39;</span><span class="p">)</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/teaching/lib/python3.10/site-packages/playsound.py:244,</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(sound, block)</span>
-<span class="g g-Whitespace">    </span><span class="mi">242</span>         <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">243</span>             <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;playsound is relying on a python 2 subprocess. Please use `pip3 install PyObjC` if you want playsound to run more efficiently.&quot;</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">244</span>             <span class="n">playsound</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">sound</span><span class="p">,</span> <span class="n">block</span> <span class="o">=</span> <span class="kc">True</span><span class="p">:</span> <span class="n">_playsoundAnotherPython</span><span class="p">(</span><span class="s1">&#39;/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python&#39;</span><span class="p">,</span> <span class="n">sound</span><span class="p">,</span> <span class="n">block</span><span class="p">,</span> <span class="n">macOS</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">245</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">246</span>     <span class="n">playsound</span> <span class="o">=</span> <span class="n">_playsoundNix</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/teaching/lib/python3.10/site-packages/playsound.py:229,</span> in <span class="ni">_playsoundAnotherPython</span><span class="nt">(otherPython, sound, block, macOS)</span>
-<span class="g g-Whitespace">    </span><span class="mi">227</span> <span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">228</span> <span class="k">if</span> <span class="n">block</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">229</span>     <span class="n">t</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/teaching/lib/python3.10/site-packages/playsound.py:218,</span> in <span class="ni">_playsoundAnotherPython.&lt;locals&gt;.PropogatingThread.join</span><span class="nt">(self, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">216</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">217</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">exc</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">218</span>     <span class="k">raise</span> <span class="bp">self</span><span class="o">.</span><span class="n">exc</span>
-<span class="g g-Whitespace">    </span><span class="mi">219</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">ret</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/teaching/lib/python3.10/site-packages/playsound.py:211,</span> in <span class="ni">_playsoundAnotherPython.&lt;locals&gt;.PropogatingThread.run</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">209</span> <span class="bp">self</span><span class="o">.</span><span class="n">exc</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">    </span><span class="mi">210</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">211</span>     <span class="bp">self</span><span class="o">.</span><span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_target</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_args</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">212</span> <span class="k">except</span> <span class="ne">BaseException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">213</span>     <span class="bp">self</span><span class="o">.</span><span class="n">exc</span> <span class="o">=</span> <span class="n">e</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/teaching/lib/python3.10/site-packages/playsound.py:226,</span> in <span class="ni">_playsoundAnotherPython.&lt;locals&gt;.&lt;lambda&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">223</span>     <span class="k">raise</span> <span class="n">PlaysoundException</span><span class="p">(</span><span class="s1">&#39;Cannot find a sound with filename: &#39;</span> <span class="o">+</span> <span class="n">sound</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">225</span> <span class="n">playsoundPath</span> <span class="o">=</span> <span class="n">abspath</span><span class="p">(</span><span class="n">getsourcefile</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="mi">0</span><span class="p">))</span>
-<span class="ne">--&gt; </span><span class="mi">226</span> <span class="n">t</span> <span class="o">=</span> <span class="n">PropogatingThread</span><span class="p">(</span><span class="n">target</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">check_call</span><span class="p">([</span><span class="n">otherPython</span><span class="p">,</span> <span class="n">playsoundPath</span><span class="p">,</span> <span class="n">_handlePathOSX</span><span class="p">(</span><span class="n">sound</span><span class="p">)</span> <span class="k">if</span> <span class="n">macOS</span> <span class="k">else</span> <span class="n">sound</span><span class="p">]))</span>
-<span class="g g-Whitespace">    </span><span class="mi">227</span> <span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">228</span> <span class="k">if</span> <span class="n">block</span><span class="p">:</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/teaching/lib/python3.10/subprocess.py:364,</span> in <span class="ni">check_call</span><span class="nt">(*popenargs, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">354</span> <span class="k">def</span> <span class="nf">check_call</span><span class="p">(</span><span class="o">*</span><span class="n">popenargs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">355</span>     <span class="sd">&quot;&quot;&quot;Run command with arguments.  Wait for command to complete.  If</span>
-<span class="g g-Whitespace">    </span><span class="mi">356</span><span class="sd">     the exit code was zero then return, otherwise raise</span>
-<span class="g g-Whitespace">    </span><span class="mi">357</span><span class="sd">     CalledProcessError.  The CalledProcessError object will have the</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">362</span><span class="sd">     check_call([&quot;ls&quot;, &quot;-l&quot;])</span>
-<span class="g g-Whitespace">    </span><span class="mi">363</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">364</span>     <span class="n">retcode</span> <span class="o">=</span> <span class="n">call</span><span class="p">(</span><span class="o">*</span><span class="n">popenargs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">365</span>     <span class="k">if</span> <span class="n">retcode</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">366</span>         <span class="n">cmd</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;args&quot;</span><span class="p">)</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/teaching/lib/python3.10/subprocess.py:345,</span> in <span class="ni">call</span><span class="nt">(timeout, *popenargs, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">337</span> <span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="o">*</span><span class="n">popenargs</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">338</span>     <span class="sd">&quot;&quot;&quot;Run command with arguments.  Wait for command to complete or</span>
-<span class="g g-Whitespace">    </span><span class="mi">339</span><span class="sd">     timeout, then return the returncode attribute.</span>
-<span class="g g-Whitespace">    </span><span class="mi">340</span><span class="sd"> </span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">343</span><span class="sd">     retcode = call([&quot;ls&quot;, &quot;-l&quot;])</span>
-<span class="g g-Whitespace">    </span><span class="mi">344</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">345</span>     <span class="k">with</span> <span class="n">Popen</span><span class="p">(</span><span class="o">*</span><span class="n">popenargs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">as</span> <span class="n">p</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">346</span>         <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">347</span>             <span class="k">return</span> <span class="n">p</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/teaching/lib/python3.10/subprocess.py:969,</span> in <span class="ni">Popen.__init__</span><span class="nt">(self, args, bufsize, executable, stdin, stdout, stderr, preexec_fn, close_fds, shell, cwd, env, universal_newlines, startupinfo, creationflags, restore_signals, start_new_session, pass_fds, user, group, extra_groups, encoding, errors, text, umask, pipesize)</span>
-<span class="g g-Whitespace">    </span><span class="mi">965</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">text_mode</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">966</span>             <span class="bp">self</span><span class="o">.</span><span class="n">stderr</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">TextIOWrapper</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stderr</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">967</span>                     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span> <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">969</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_execute_child</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">executable</span><span class="p">,</span> <span class="n">preexec_fn</span><span class="p">,</span> <span class="n">close_fds</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">970</span>                         <span class="n">pass_fds</span><span class="p">,</span> <span class="n">cwd</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">971</span>                         <span class="n">startupinfo</span><span class="p">,</span> <span class="n">creationflags</span><span class="p">,</span> <span class="n">shell</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">972</span>                         <span class="n">p2cread</span><span class="p">,</span> <span class="n">p2cwrite</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">973</span>                         <span class="n">c2pread</span><span class="p">,</span> <span class="n">c2pwrite</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">974</span>                         <span class="n">errread</span><span class="p">,</span> <span class="n">errwrite</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">975</span>                         <span class="n">restore_signals</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">976</span>                         <span class="n">gid</span><span class="p">,</span> <span class="n">gids</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">umask</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">977</span>                         <span class="n">start_new_session</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">978</span> <span class="k">except</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">979</span>     <span class="c1"># Cleanup if the child failed starting.</span>
-<span class="g g-Whitespace">    </span><span class="mi">980</span>     <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">filter</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stdin</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stderr</span><span class="p">)):</span>
-
-<span class="nn">File ~/opt/anaconda3/envs/teaching/lib/python3.10/subprocess.py:1845,</span> in <span class="ni">Popen._execute_child</span><span class="nt">(self, args, executable, preexec_fn, close_fds, pass_fds, cwd, env, startupinfo, creationflags, shell, p2cread, p2cwrite, c2pread, c2pwrite, errread, errwrite, restore_signals, gid, gids, uid, umask, start_new_session)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1843</span>     <span class="k">if</span> <span class="n">errno_num</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1844</span>         <span class="n">err_msg</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">strerror</span><span class="p">(</span><span class="n">errno_num</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1845</span>     <span class="k">raise</span> <span class="n">child_exception_type</span><span class="p">(</span><span class="n">errno_num</span><span class="p">,</span> <span class="n">err_msg</span><span class="p">,</span> <span class="n">err_filename</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1846</span> <span class="k">raise</span> <span class="n">child_exception_type</span><span class="p">(</span><span class="n">err_msg</span><span class="p">)</span>
-
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: playsound in /Users/caballero/opt/anaconda3/envs/teaching/lib/python3.10/site-packages (1.3.0)
 </pre></div>
 </div>
 </div>
@@ -1054,7 +932,7 @@ Successfully built playsound
 length = 0.8224716553287982s
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/5_/9z7lhk0s2y95hvkzs6lzdvvc0000gn/T/ipykernel_60208/242547925.py:2: WavFileWarning: Chunk (non-data) not understood, skipping it.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/5_/9z7lhk0s2y95hvkzs6lzdvvc0000gn/T/ipykernel_7111/242547925.py:2: WavFileWarning: Chunk (non-data) not understood, skipping it.
   samplerate, data = wavfile.read(&#39;data/D_PowerChords_95_SP.wav&#39;);
 </pre></div>
 </div>

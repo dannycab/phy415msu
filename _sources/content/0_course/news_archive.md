@@ -2,6 +2,20 @@
 
 *appears in reverse chronological order*
 
+**3 Nov 2022**
+
+* [Project 4](./0_course/projects/project4.md) is posted. We are going to try to collect a few more data sets from faculty on campus. But there's lots of data sets on the web!
+* [Notes: Intro to the FFT](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_3_Introduction_to_FFT.pdf)
+
+**1 Nov 2022**
+
+* The notes from class with the [Duty Cycle Example are posted](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_3_Fourier_Example.pdf)
+    * I added the [code that we developed in class for the FFT](./3_waves/activity-Waves-Signals.ipynb).
+
+**28 Oct 2022**
+
+* We are starting FFT analysis this week, so the [reading focuses on introducing that idea and the code we use](./3_waves/readings-fft). **Use week 8 for the reading form**
+
 **18 October 2022**
 
 * This week we move into [continuous systems](3_waves/readings-waves) and investigate models of waving phenomenon. Our illustrative case will be [Maxwell's Equations](https://en.wikipedia.org/wiki/Maxwell%27s_equations), but our analysis can be applied to many systems that obey the [wave equation](https://en.wikipedia.org/wiki/Wave_equation).

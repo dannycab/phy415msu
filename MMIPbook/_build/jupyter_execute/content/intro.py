@@ -12,19 +12,9 @@
 # `````{admonition} Updates
 # :class: tip
 # 
-# **3 Nov 2022**
+# **22 Nov 2022**
 # 
-# * [Project 4](./0_course/projects/project4.md) is posted. We are going to try to collect a few more data sets from faculty on campus. But there's lots of data sets on the web!
-# * [Notes: Intro to the FFT](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_3_Introduction_to_FFT.pdf)
-# 
-# **1 Nov 2022**
-# 
-# * The notes from class with the [Duty Cycle Example are posted](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_3_Fourier_Example.pdf)
-#     * I added the [code that we developed in class for the FFT](./3_waves/activity-Waves-Signals.ipynb).
-# 
-# **28 Oct 2022**
-# 
-# * We are starting FFT analysis this week, so the [reading focuses on introducing that idea and the code we use](./3_waves/readings-fft). **Use week 8 for the reading form**
+# * [Project 5](./0_course/projects/project5.md) is posted. It allows you to define your project inclduing expanding on or redoing an old project.
 # 
 # [ARCHIVE](./0_course/news_archive.md)
 # 

@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Works Cited" href="../X_additional_pages/references-page.html" />
@@ -648,6 +650,11 @@ title="Print to PDF"
    Markov Chain Monte Carlo
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistical-mechanics">
+   Statistical Mechanics
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -672,6 +679,11 @@ title="Print to PDF"
    Markov Chain Monte Carlo
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statistical-mechanics">
+   Statistical Mechanics
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -692,6 +704,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
 <span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;12eZWG0Z5gY&quot;</span><span class="p">,</span> <span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">)</span>
+<span class="c1">## If embed doesn&#39;t work just click to go to YouTube</span>
 </pre></div>
 </div>
 </div>
@@ -707,6 +720,27 @@ title="Print to PDF"
 ></iframe>
 </div></div>
 </div>
+</section>
+<section id="statistical-mechanics">
+<h2>Statistical Mechanics<a class="headerlink" href="#statistical-mechanics" title="Permalink to this headline">#</a></h2>
+<p>MCMC is used in lots of statistical mechanics problems because they are fundamentally probabilistic by nature. Starting with the “chance” of finding our system in a given state (with known energy, <span class="math notranslate nohighlight">\(E_i\)</span>) at a known temperature (T) given by the Boltzmann factor:</p>
+<div class="math notranslate nohighlight">
+\[e^{-E_i/{k_b T}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(k_b\)</span> is the Boltzmann constant. Through this, we developed a statistical model where we found that the normalized probability of finding your system in a state <span class="math notranslate nohighlight">\(s\)</span> with energy <span class="math notranslate nohighlight">\(E_s\)</span> (just using the <span class="math notranslate nohighlight">\(s\)</span> to indicate a state) is given by:</p>
+<div class="math notranslate nohighlight">
+\[P(s) = \dfrac{1}{Z} e^{-E_s/{k_b T}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(Z\)</span> is the partition function, a constant for a given temperature that normalizes our calculation. It is a sum over all states:</p>
+<div class="math notranslate nohighlight">
+\[Z = \sum_s e^{-E_s/{k_b T}}\]</div>
+<p>Our analysis relied on the development of a statistical theory of mechanics, and we illustrated it with an ideal gas. Notes appear below:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_4_Intro_to_Stat_Mech.pdf">Introduction to Stat. Mech.</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_4_Ideal_Gas_Model.pdf">The Ideal Gas</a></p></li>
+</ul>
+<p>Because <span class="math notranslate nohighlight">\(P(S)\)</span> is a probability we can use it find average values (expectation values) of a thermodynamic system. We did this for energy using the thermodynamic relations in the notes. But we can also use statistical properties to find the same. For example, finding the expected internal energy of a system, <span class="math notranslate nohighlight">\(\langle U \rangle\)</span>, just involves adding up all the possible energy states multiplied by their probabilities!</p>
+<div class="math notranslate nohighlight">
+\[\langle U \rangle = \sum_s E_s P(s)\]</div>
+<p>When these sums are really hard to compute because there’s lots of states or only a few that contribute substantially (as in the case for large systems), we can use selective sampling, which is the basis for MCMC. We will discuss that conceptually in class before using MCMC.</p>
 </section>
 </section>
 

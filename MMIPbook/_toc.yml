@@ -49,6 +49,7 @@ chapters:
   sections:
     - file: content/4_randomness/activity_radioactive_decay
     - file: content/4_randomness/activity_ideal_gas
+    - file: content/4_randomness/readings_mcmc
 - file: content/X_additional_pages/references-page
 - file: content/0_course/news_archive
 - file: content/0_course/projects/index

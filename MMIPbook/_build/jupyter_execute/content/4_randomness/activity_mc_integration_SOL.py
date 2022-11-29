@@ -16,7 +16,7 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 
 # ## Finding Pi
 # 
-# This is a classic use of Monte Carlo integration dating back to XXXX when it was conceived by YYYY. Effectively, we can assume there's a constant (undetermined) that links that the area of a circle and the radius squared. 
+# This is a classic use of Monte Carlo integration that illustrates many of the concepts of the technique. Effectively, we can assume there's a constant (undetermined) that links that the area of a circle and the radius squared. 
 # 
 # $$A_{circle} = c r^2$$
 # 
@@ -120,12 +120,6 @@ print(pi_estimate)
 # In[8]:
 
 
-## your code here
-
-
-# In[9]:
-
-
 def FindPi(ndrops):
     
     drops = np.zeros([ndrops,2])
@@ -143,10 +137,10 @@ def FindPi(ndrops):
     return 4*len(drops[insideCurve])/len(drops)
 
 
-# In[10]:
+# In[9]:
 
 
-N = 5000
+N = 10000
 estimates = np.zeros((N,1))
 
 for i in range(1,N):
@@ -154,12 +148,26 @@ for i in range(1,N):
     estimates[i] = FindPi(i)
 
 
-# In[11]:
+# In[10]:
 
 
 plt.figure(figsize=(8,6))
 plt.plot(estimates)
 plt.axhline(np.pi, 0, N, c='C1')
+
+
+# ### Let's compute pi
+# 
+# Ok we can see from the plot that roughly from 2500 to 10000 steps we have something reasonably converged. Let's grab those values and get an estimate of pi.
+
+# In[11]:
+
+
+start = 2500
+pi_avg=np.average(estimates[start:])
+pi_stddev=np.std(estimates[start:])
+
+print('Our estimate is:', pi_avg, '+/-', pi_stddev)
 
 
 # ## Finding the values of integrals
@@ -173,10 +181,198 @@ plt.axhline(np.pi, 0, N, c='C1')
 # * Find the number of drops needed to make a reasonable estimate.
 # * Use the long term behavior (plot it?) to estimate the value and uncertainty in the integral
 
+# ### Method 1, use symmetry
+# 
+# Because we know that the integral of sine over one-half interval is the same, we can instead just solve the problem between 0 and $\pi$. The result is then the sum of the two, which we expect to be zero and we force by doing only half. So the estimate we really seek is what is the integral from 0 to $\pi$.
+# 
+# $$\int_0^{\pi} \sin(x) dx = 2$$
+
 # In[12]:
 
 
-## your code here
+x=np.arange(0.0001, np.pi, 0.0001)
+y = np.sin(x)
+
+ndrops = 500
+drops = np.zeros([ndrops,2])
+
+for i in range(ndrops):
+
+    xrand = random.random()*np.pi
+    yrand = random.random()
+
+    drops[i] = xrand,yrand
+        
+ytest = np.sin(drops[:,0])
+below_test = drops[:,1] < ytest
+
+plt.plot(x, y)
+plt.scatter(drops[~below_test,0],drops[~below_test,1], c='C1')
+plt.scatter(drops[below_test,0],drops[below_test,1], color='C2')
+
+L = max(x)
+H = max(y)
+
+area = H*L
+proportion = len(drops[below_test,:])/len(drops)
+
+print('Our estimate:', proportion*area)
+
+
+# In[13]:
+
+
+def FindSine(ndrops):
+    
+    drops = np.zeros([ndrops,2])
+
+    for i in range(ndrops):
+    
+        xrand = random.random()*np.pi
+        yrand = random.random()
+    
+        drops[i] = xrand,yrand
+
+    ytest = np.sin(drops[:,0])
+    below_test = drops[:,1] < ytest
+    
+    L = np.pi
+    H = 1
+
+    area = H*L
+    proportion = len(drops[below_test,:])/len(drops)
+    
+    return area*proportion
+
+
+# In[14]:
+
+
+N = 5000
+estimates = np.zeros((N,1))
+
+for i in range(1,N):
+    
+    estimates[i] = FindSine(i)
+
+
+# In[15]:
+
+
+plt.figure(figsize=(8,6))
+plt.plot(estimates)
+plt.axhline(2, 0, N, c='C1')
+
+
+# ### Method 2; using windows
+# 
+# Instead of assuming symmetric, we can use logical binaries to window our data. That is find windows of positive and negative values of the function to compute integrals seperately and then add together. Below we use that technique.
+
+# In[16]:
+
+
+x=np.arange(0.0001, 2*np.pi, 0.0001)
+y = np.sin(x)
+
+ndrops = 5000
+drops = np.zeros([ndrops,2])
+
+for i in range(ndrops):
+
+    xrand = random.random()*2*np.pi
+    yrand = (random.random()-0.5)*2
+
+    drops[i] = xrand,yrand
+
+less_than_pi = (drops[:,0] < np.pi) ##First half
+above_zero = (drops[:,1] > 0) ## Points below zero
+less_than_val = (drops[:,1] < np.sin(drops[:,0])) ## below positive curve
+
+first_window = np.logical_and(less_than_pi, above_zero)
+second_window = np.logical_and(~less_than_pi, ~above_zero)
+
+plt.plot(x, y)
+plt.scatter(drops[first_window,0],drops[first_window,1], c='C1')
+plt.scatter(drops[second_window,0],drops[second_window,1], color='C2')
+
+
+# In[17]:
+
+
+first_set = np.logical_and(first_window, less_than_val)
+second_set = np.logical_and(second_window, ~less_than_val)
+
+plt.plot(x, y)
+plt.scatter(drops[first_set,0],drops[first_set,1], c='C1')
+plt.scatter(drops[second_set,0],drops[second_set,1], color='C2')
+
+
+# In[18]:
+
+
+I1 = len(drops[first_set])/len(drops[first_window])
+print('proportion of window 1:', I1)
+
+I2 = len(drops[second_set])/len(drops[second_window])
+print('proportion of window 2:', I2)
+
+print("proportion of total area (should be near zero):", I1-I2)
+
+
+# In[19]:
+
+
+def ComputeSine(ndrops):
+    
+    
+    x = np.arange(0.0001, 2*np.pi, 0.0001)
+    y = np.sin(x)
+
+    drops = np.zeros([ndrops,2])
+
+    for i in range(ndrops):
+
+        xrand = random.random()*2*np.pi
+        yrand = (random.random()-0.5)*2
+
+        drops[i] = xrand,yrand
+
+    less_than_pi = (drops[:,0] < np.pi) ##First half
+    above_zero = (drops[:,1] > 0) ## Points below zero
+    less_than_val = (drops[:,1] < np.sin(drops[:,0])) ## below positive curve
+
+    first_window = np.logical_and(less_than_pi, above_zero)
+    second_window = np.logical_and(~less_than_pi, ~above_zero)
+    
+    first_set = np.logical_and(first_window, less_than_val)
+    second_set = np.logical_and(second_window, ~less_than_val)
+    
+    I1 = len(drops[first_set])/len(drops[first_window])
+    I2 = len(drops[second_set])/len(drops[second_window])
+
+    return I2-I1
+
+
+# In[20]:
+
+
+Nmin = 100 ## Had to be kind of big to make sure you get a random point in all four regions.
+Nmax = 5000
+
+estimates = np.zeros([Nmax,1])
+
+for i in range(Nmin,Nmax):
+    
+    estimates[i] = ComputeSine(i)
+
+
+# In[21]:
+
+
+plt.figure(figsize=(8,8))
+plt.plot(estimates)
+plt.axis([0, N, -1, 1])
+plt.grid()
 
 
 # ## A Pathologically Terrible Integral
@@ -187,7 +383,7 @@ plt.axhline(np.pi, 0, N, c='C1')
 # 
 # Let's plot this son of gun.
 
-# In[13]:
+# In[22]:
 
 
 x = np.arange(0.00001,2,0.00001)
@@ -201,7 +397,7 @@ plt.grid()
 
 # Let's zoom in on one of the wings, and we can see the problem. The integral varies wildly!
 
-# In[14]:
+# In[23]:
 
 
 x = np.arange(0.00001,2,0.00001)
@@ -217,7 +413,7 @@ plt.grid()
 # 
 # Following the same approach estimate the value of the integral for this function and the uncertainty in your estimate.
 
-# In[15]:
+# In[24]:
 
 
 ## your code here

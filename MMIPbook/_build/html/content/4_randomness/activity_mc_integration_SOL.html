@@ -54,6 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Works Cited" href="../X_additional_pages/references-page.html" />
+    <link rel="prev" title="29 Nov 22 Monte Carlo Integration" href="activity_mc_integration.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -113,7 +115,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../0_course/syllabus.html">
    0 - Overview of PHY 415
@@ -327,16 +329,16 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="readings_randomness.html">
    4 Random Processes
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="activity_radioactive_decay.html">
      17 Nov 22 - Introduction to Random Processes
@@ -354,6 +356,11 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="activity_mc_integration.html">
+     29 Nov 22 Monte Carlo Integration
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      29 Nov 22 Monte Carlo Integration
     </a>
    </li>
@@ -669,6 +676,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#seeking-convergence">
    Seeking Convergence
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#let-s-compute-pi">
+     Let’s compute pi
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#finding-the-values-of-integrals">
@@ -678,6 +692,16 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#integrating-sine">
      Integrating sine
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#method-1-use-symmetry">
+     Method 1, use symmetry
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#method-2-using-windows">
+     Method 2; using windows
     </a>
    </li>
   </ul>
@@ -732,6 +756,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#seeking-convergence">
    Seeking Convergence
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#let-s-compute-pi">
+     Let’s compute pi
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#finding-the-values-of-integrals">
@@ -741,6 +772,16 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#integrating-sine">
      Integrating sine
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#method-1-use-symmetry">
+     Method 1, use symmetry
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#method-2-using-windows">
+     Method 2; using windows
     </a>
    </li>
   </ul>
@@ -780,7 +821,7 @@ title="Print to PDF"
 </div>
 <section id="finding-pi">
 <h2>Finding Pi<a class="headerlink" href="#finding-pi" title="Permalink to this headline">#</a></h2>
-<p>This is a classic use of Monte Carlo integration dating back to XXXX when it was conceived by YYYY. Effectively, we can assume there’s a constant (undetermined) that links that the area of a circle and the radius squared.</p>
+<p>This is a classic use of Monte Carlo integration that illustrates many of the concepts of the technique. Effectively, we can assume there’s a constant (undetermined) that links that the area of a circle and the radius squared.</p>
 <div class="math notranslate nohighlight">
 \[A_{circle} = c r^2\]</div>
 <p>We assume it’s radius squared as a test because we know that boxes go like length times width and a sqaure with side length <span class="math notranslate nohighlight">\(r\)</span> has:</p>
@@ -883,7 +924,7 @@ $<span class="math notranslate nohighlight">\(\dfrac{A_{circle}}{A_{square}} = \
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.184
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.128
 </pre></div>
 </div>
 </div>
@@ -893,13 +934,6 @@ $<span class="math notranslate nohighlight">\(\dfrac{A_{circle}}{A_{square}} = \
 <section id="seeking-convergence">
 <h2>Seeking Convergence<a class="headerlink" href="#seeking-convergence" title="Permalink to this headline">#</a></h2>
 <p>So the estimate was probably not great. But we can make it better by choosing more drops. So rewrite this approach a function where you can send the number of drops in and return the estimate of pi. Then use it to plot this estimate over many choices of N. Show what the value converges to.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code here</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">FindPi</span><span class="p">(</span><span class="n">ndrops</span><span class="p">):</span>
@@ -923,7 +957,7 @@ $<span class="math notranslate nohighlight">\(\dfrac{A_{circle}}{A_{square}} = \
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">5000</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">10000</span>
 <span class="n">estimates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
@@ -942,12 +976,32 @@ $<span class="math notranslate nohighlight">\(\dfrac{A_{circle}}{A_{square}} = \
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x11753a4a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x10f7aa0e0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/activity_mc_integration_SOL_16_1.png" src="../../_images/activity_mc_integration_SOL_16_1.png" />
+<img alt="../../_images/activity_mc_integration_SOL_15_1.png" src="../../_images/activity_mc_integration_SOL_15_1.png" />
 </div>
 </div>
+<section id="let-s-compute-pi">
+<h3>Let’s compute pi<a class="headerlink" href="#let-s-compute-pi" title="Permalink to this headline">#</a></h3>
+<p>Ok we can see from the plot that roughly from 2500 to 10000 steps we have something reasonably converged. Let’s grab those values and get an estimate of pi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="mi">2500</span>
+<span class="n">pi_avg</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">estimates</span><span class="p">[</span><span class="n">start</span><span class="p">:])</span>
+<span class="n">pi_stddev</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">estimates</span><span class="p">[</span><span class="n">start</span><span class="p">:])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Our estimate is:&#39;</span><span class="p">,</span> <span class="n">pi_avg</span><span class="p">,</span> <span class="s1">&#39;+/-&#39;</span><span class="p">,</span> <span class="n">pi_stddev</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Our estimate is: 3.141546235054938 +/- 0.021950679260512754
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="finding-the-values-of-integrals">
 <h2>Finding the values of integrals<a class="headerlink" href="#finding-the-values-of-integrals" title="Permalink to this headline">#</a></h2>
@@ -959,11 +1013,242 @@ $<span class="math notranslate nohighlight">\(\dfrac{A_{circle}}{A_{square}} = \
 <li><p>Find the number of drops needed to make a reasonable estimate.</p></li>
 <li><p>Use the long term behavior (plot it?) to estimate the value and uncertainty in the integral</p></li>
 </ul>
+</section>
+<section id="method-1-use-symmetry">
+<h3>Method 1, use symmetry<a class="headerlink" href="#method-1-use-symmetry" title="Permalink to this headline">#</a></h3>
+<p>Because we know that the integral of sine over one-half interval is the same, we can instead just solve the problem between 0 and <span class="math notranslate nohighlight">\(\pi\)</span>. The result is then the sum of the two, which we expect to be zero and we force by doing only half. So the estimate we really seek is what is the integral from 0 to <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\int_0^{\pi} \sin(x) dx = 2\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">0.0001</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">ndrops</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">drops</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">ndrops</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ndrops</span><span class="p">):</span>
+
+    <span class="n">xrand</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+    <span class="n">yrand</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+
+    <span class="n">drops</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xrand</span><span class="p">,</span><span class="n">yrand</span>
+        
+<span class="n">ytest</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">drops</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">below_test</span> <span class="o">=</span> <span class="n">drops</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">ytest</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">drops</span><span class="p">[</span><span class="o">~</span><span class="n">below_test</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">drops</span><span class="p">[</span><span class="o">~</span><span class="n">below_test</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">drops</span><span class="p">[</span><span class="n">below_test</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">drops</span><span class="p">[</span><span class="n">below_test</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">)</span>
+
+<span class="n">L</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">H</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">area</span> <span class="o">=</span> <span class="n">H</span><span class="o">*</span><span class="n">L</span>
+<span class="n">proportion</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">drops</span><span class="p">[</span><span class="n">below_test</span><span class="p">,:])</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">drops</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Our estimate:&#39;</span><span class="p">,</span> <span class="n">proportion</span><span class="o">*</span><span class="n">area</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Our estimate: 2.035691999986267
+</pre></div>
+</div>
+<img alt="../../_images/activity_mc_integration_SOL_20_1.png" src="../../_images/activity_mc_integration_SOL_20_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">FindSine</span><span class="p">(</span><span class="n">ndrops</span><span class="p">):</span>
+    
+    <span class="n">drops</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">ndrops</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ndrops</span><span class="p">):</span>
+    
+        <span class="n">xrand</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+        <span class="n">yrand</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+    
+        <span class="n">drops</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xrand</span><span class="p">,</span><span class="n">yrand</span>
+
+    <span class="n">ytest</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">drops</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">below_test</span> <span class="o">=</span> <span class="n">drops</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">ytest</span>
+    
+    <span class="n">L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+    <span class="n">H</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="n">area</span> <span class="o">=</span> <span class="n">H</span><span class="o">*</span><span class="n">L</span>
+    <span class="n">proportion</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">drops</span><span class="p">[</span><span class="n">below_test</span><span class="p">,:])</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">drops</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">area</span><span class="o">*</span><span class="n">proportion</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">5000</span>
+<span class="n">estimates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+    
+    <span class="n">estimates</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">FindSine</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">estimates</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x117edcc70&gt;
+</pre></div>
+</div>
+<img alt="../../_images/activity_mc_integration_SOL_23_1.png" src="../../_images/activity_mc_integration_SOL_23_1.png" />
+</div>
+</div>
+</section>
+<section id="method-2-using-windows">
+<h3>Method 2; using windows<a class="headerlink" href="#method-2-using-windows" title="Permalink to this headline">#</a></h3>
+<p>Instead of assuming symmetric, we can use logical binaries to window our data. That is find windows of positive and negative values of the function to compute integrals seperately and then add together. Below we use that technique.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">0.0001</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">ndrops</span> <span class="o">=</span> <span class="mi">5000</span>
+<span class="n">drops</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">ndrops</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ndrops</span><span class="p">):</span>
+
+    <span class="n">xrand</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+    <span class="n">yrand</span> <span class="o">=</span> <span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span>
+
+    <span class="n">drops</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xrand</span><span class="p">,</span><span class="n">yrand</span>
+
+<span class="n">less_than_pi</span> <span class="o">=</span> <span class="p">(</span><span class="n">drops</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="c1">##First half</span>
+<span class="n">above_zero</span> <span class="o">=</span> <span class="p">(</span><span class="n">drops</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">## Points below zero</span>
+<span class="n">less_than_val</span> <span class="o">=</span> <span class="p">(</span><span class="n">drops</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">drops</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]))</span> <span class="c1">## below positive curve</span>
+
+<span class="n">first_window</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">less_than_pi</span><span class="p">,</span> <span class="n">above_zero</span><span class="p">)</span>
+<span class="n">second_window</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="o">~</span><span class="n">less_than_pi</span><span class="p">,</span> <span class="o">~</span><span class="n">above_zero</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">drops</span><span class="p">[</span><span class="n">first_window</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">drops</span><span class="p">[</span><span class="n">first_window</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">drops</span><span class="p">[</span><span class="n">second_window</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">drops</span><span class="p">[</span><span class="n">second_window</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1180047c0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/activity_mc_integration_SOL_25_1.png" src="../../_images/activity_mc_integration_SOL_25_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_set</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">first_window</span><span class="p">,</span> <span class="n">less_than_val</span><span class="p">)</span>
+<span class="n">second_set</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">second_window</span><span class="p">,</span> <span class="o">~</span><span class="n">less_than_val</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">drops</span><span class="p">[</span><span class="n">first_set</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">drops</span><span class="p">[</span><span class="n">first_set</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">drops</span><span class="p">[</span><span class="n">second_set</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">drops</span><span class="p">[</span><span class="n">second_set</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x118053dc0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/activity_mc_integration_SOL_26_1.png" src="../../_images/activity_mc_integration_SOL_26_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">I1</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">drops</span><span class="p">[</span><span class="n">first_set</span><span class="p">])</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">drops</span><span class="p">[</span><span class="n">first_window</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;proportion of window 1:&#39;</span><span class="p">,</span> <span class="n">I1</span><span class="p">)</span>
+
+<span class="n">I2</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">drops</span><span class="p">[</span><span class="n">second_set</span><span class="p">])</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">drops</span><span class="p">[</span><span class="n">second_window</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;proportion of window 2:&#39;</span><span class="p">,</span> <span class="n">I2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;proportion of total area (should be near zero):&quot;</span><span class="p">,</span> <span class="n">I1</span><span class="o">-</span><span class="n">I2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>proportion of window 1: 0.6476810414971521
+proportion of window 2: 0.65
+proportion of total area (should be near zero): -0.002318958502847912
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ComputeSine</span><span class="p">(</span><span class="n">ndrops</span><span class="p">):</span>
+    
+    
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">0.0001</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="n">drops</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">ndrops</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ndrops</span><span class="p">):</span>
+
+        <span class="n">xrand</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+        <span class="n">yrand</span> <span class="o">=</span> <span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span>
+
+        <span class="n">drops</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">xrand</span><span class="p">,</span><span class="n">yrand</span>
+
+    <span class="n">less_than_pi</span> <span class="o">=</span> <span class="p">(</span><span class="n">drops</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="c1">##First half</span>
+    <span class="n">above_zero</span> <span class="o">=</span> <span class="p">(</span><span class="n">drops</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">## Points below zero</span>
+    <span class="n">less_than_val</span> <span class="o">=</span> <span class="p">(</span><span class="n">drops</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">drops</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]))</span> <span class="c1">## below positive curve</span>
+
+    <span class="n">first_window</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">less_than_pi</span><span class="p">,</span> <span class="n">above_zero</span><span class="p">)</span>
+    <span class="n">second_window</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="o">~</span><span class="n">less_than_pi</span><span class="p">,</span> <span class="o">~</span><span class="n">above_zero</span><span class="p">)</span>
+    
+    <span class="n">first_set</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">first_window</span><span class="p">,</span> <span class="n">less_than_val</span><span class="p">)</span>
+    <span class="n">second_set</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">second_window</span><span class="p">,</span> <span class="o">~</span><span class="n">less_than_val</span><span class="p">)</span>
+    
+    <span class="n">I1</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">drops</span><span class="p">[</span><span class="n">first_set</span><span class="p">])</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">drops</span><span class="p">[</span><span class="n">first_window</span><span class="p">])</span>
+    <span class="n">I2</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">drops</span><span class="p">[</span><span class="n">second_set</span><span class="p">])</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">drops</span><span class="p">[</span><span class="n">second_window</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">I2</span><span class="o">-</span><span class="n">I1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Nmin</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1">## Had to be kind of big to make sure you get a random point in all four regions.</span>
+<span class="n">Nmax</span> <span class="o">=</span> <span class="mi">5000</span>
+
+<span class="n">estimates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">Nmax</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Nmin</span><span class="p">,</span><span class="n">Nmax</span><span class="p">):</span>
+    
+    <span class="n">estimates</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">ComputeSine</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">estimates</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/activity_mc_integration_SOL_30_0.png" src="../../_images/activity_mc_integration_SOL_30_0.png" />
 </div>
 </div>
 </section>
@@ -987,7 +1272,7 @@ $<span class="math notranslate nohighlight">\(\dfrac{A_{circle}}{A_{square}} = \
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/activity_mc_integration_SOL_20_0.png" src="../../_images/activity_mc_integration_SOL_20_0.png" />
+<img alt="../../_images/activity_mc_integration_SOL_32_0.png" src="../../_images/activity_mc_integration_SOL_32_0.png" />
 </div>
 </div>
 <p>Let’s zoom in on one of the wings, and we can see the problem. The integral varies wildly!</p>
@@ -1004,7 +1289,7 @@ $<span class="math notranslate nohighlight">\(\dfrac{A_{circle}}{A_{square}} = \
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/activity_mc_integration_SOL_22_0.png" src="../../_images/activity_mc_integration_SOL_22_0.png" />
+<img alt="../../_images/activity_mc_integration_SOL_34_0.png" src="../../_images/activity_mc_integration_SOL_34_0.png" />
 </div>
 </div>
 </section>
@@ -1048,6 +1333,20 @@ $<span class="math notranslate nohighlight">\(\dfrac{A_{circle}}{A_{square}} = \
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="activity_mc_integration.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">29 Nov 22 Monte Carlo Integration</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../X_additional_pages/references-page.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Works Cited</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>

@@ -738,8 +738,147 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## your code here</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">countWays</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+    
+    <span class="c1">## numpy.float128 makes sure the data structure can </span>
+    <span class="c1">## take on the largest possible values before overflow</span>
+    
+    <span class="n">numerator</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float128</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">q</span><span class="o">+</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">denominator</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float128</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">q</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">float128</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+    
+    <span class="k">return</span> <span class="n">numerator</span><span class="o">/</span><span class="n">denominator</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count2Atoms</span><span class="p">(</span><span class="n">qtot</span><span class="p">,</span><span class="n">q1</span><span class="p">,</span><span class="n">Ntot</span><span class="p">,</span><span class="n">N1</span><span class="p">):</span>
+    
+    <span class="n">q2</span> <span class="o">=</span> <span class="n">qtot</span> <span class="o">-</span> <span class="n">q1</span>
+    <span class="n">N2</span> <span class="o">=</span> <span class="n">Ntot</span> <span class="o">-</span> <span class="n">N1</span>
+    
+    <span class="n">omega1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float128</span><span class="p">(</span><span class="n">countWays</span><span class="p">(</span><span class="n">q1</span><span class="p">,</span><span class="n">N1</span><span class="p">))</span>
+    <span class="n">omega2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float128</span><span class="p">(</span><span class="n">countWays</span><span class="p">(</span><span class="n">q2</span><span class="p">,</span><span class="n">N2</span><span class="p">))</span>
+    
+    <span class="k">return</span> <span class="n">omega1</span><span class="p">,</span> <span class="n">omega2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">float128</span><span class="p">(</span><span class="n">omega1</span><span class="o">*</span><span class="n">omega2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qtot</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">q1</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">Ntot</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">N1</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="n">count2Atoms</span><span class="p">(</span><span class="n">qtot</span><span class="p">,</span><span class="n">q1</span><span class="p">,</span><span class="n">Ntot</span><span class="p">,</span><span class="n">N1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1.0198941040598721679e+45,
+ 2.210645331716475554e+75,
+ 2.2546241399851137457e+120)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sweep</span><span class="p">(</span><span class="n">qtot</span><span class="p">,</span><span class="n">Ntot</span><span class="p">,</span><span class="n">N1</span><span class="p">):</span>
+    
+    <span class="n">N2</span> <span class="o">=</span> <span class="n">Ntot</span> <span class="o">-</span> <span class="n">N1</span>
+    
+    <span class="n">omega1ways</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">qtot</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">omega2ways</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">qtot</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">totalways</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">qtot</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="nb">float</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">qtot</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        
+        <span class="n">omega1</span><span class="p">,</span> <span class="n">omega2</span><span class="p">,</span> <span class="n">omegatot</span> <span class="o">=</span> <span class="n">count2Atoms</span><span class="p">(</span><span class="n">qtot</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">Ntot</span><span class="p">,</span><span class="n">N1</span><span class="p">)</span>
+        <span class="n">omega1ways</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">omega1</span>
+        <span class="n">omega2ways</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">omega2</span>
+        <span class="n">totalways</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">omegatot</span>
+        
+    <span class="k">return</span> <span class="n">omega1ways</span><span class="p">,</span> <span class="n">omega2ways</span><span class="p">,</span> <span class="n">totalways</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qtot</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">Ntot</span> <span class="o">=</span> <span class="mi">80</span>
+<span class="n">N1</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="n">omega1</span><span class="p">,</span> <span class="n">omega2</span><span class="p">,</span> <span class="n">omegatot</span> <span class="o">=</span> <span class="n">sweep</span><span class="p">(</span><span class="n">qtot</span><span class="p">,</span> <span class="n">Ntot</span><span class="p">,</span> <span class="n">N1</span><span class="p">)</span>
+
+<span class="n">q1vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">qtot</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q1vals</span><span class="p">,</span><span class="n">omegatot</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Counts&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;q1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/activity_thermal_contact_7_0.png" src="../../_images/activity_thermal_contact_7_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q1vals</span><span class="p">,</span><span class="n">omegatot</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">omegatot</span><span class="p">));</span> <span class="c1">#Rescaled to see the probability</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Probability&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;q1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/activity_thermal_contact_8_0.png" src="../../_images/activity_thermal_contact_8_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">omega1</span><span class="p">)</span>
+<span class="n">S2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">omega2</span><span class="p">)</span>
+<span class="n">Stot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">omegatot</span><span class="p">)</span>
+
+<span class="n">Smax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">Stot</span><span class="p">)</span>
+<span class="n">qmax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">Stot</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q1vals</span><span class="p">,</span> <span class="n">S1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;System 1 Entropy&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q1vals</span><span class="p">,</span> <span class="n">S2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;System 2 Entropy&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">q1vals</span><span class="p">,</span> <span class="n">Stot</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Total Entropy&#39;</span><span class="p">);</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">qmax</span><span class="p">,</span> <span class="n">Smax</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Max Tot. Entropy&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Entropy/k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;q1&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x115f64580&gt;
+</pre></div>
+</div>
+<img alt="../../_images/activity_thermal_contact_9_1.png" src="../../_images/activity_thermal_contact_9_1.png" />
 </div>
 </div>
 </section>
@@ -754,16 +893,16 @@ title="Print to PDF"
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "teaching"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "teaching",
             path: "./content/4_randomness"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'teaching'</script>
 
               </div>
               

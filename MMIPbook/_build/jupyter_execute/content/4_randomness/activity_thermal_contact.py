@@ -36,6 +36,123 @@
 
 
 ## your code here
+import numpy as np
+import matplotlib.pyplot as plt
 
 
-# 
+# In[2]:
+
+
+def countWays(q,N):
+    
+    ## numpy.float128 makes sure the data structure can 
+    ## take on the largest possible values before overflow
+    
+    numerator = np.float128(np.math.factorial(q+N-1))
+    denominator = np.float128(np.math.factorial(q))/np.float128(np.math.factorial(N-1))
+    
+    return numerator/denominator
+
+
+# In[3]:
+
+
+def count2Atoms(qtot,q1,Ntot,N1):
+    
+    q2 = qtot - q1
+    N2 = Ntot - N1
+    
+    omega1 = np.float128(countWays(q1,N1))
+    omega2 = np.float128(countWays(q2,N2))
+    
+    return omega1, omega2, np.float128(omega1*omega2)
+
+
+# In[4]:
+
+
+qtot = 40
+q1 = 20
+Ntot = 50
+N1 = 20
+
+count2Atoms(qtot,q1,Ntot,N1)
+
+
+# In[5]:
+
+
+def sweep(qtot,Ntot,N1):
+    
+    N2 = Ntot - N1
+    
+    omega1ways = np.zeros([qtot+1,1],float)
+    omega2ways = np.zeros([qtot+1,1],float)
+    totalways = np.zeros([qtot+1,1],float)
+    
+    for i in range(qtot+1):
+        
+        omega1, omega2, omegatot = count2Atoms(qtot,i,Ntot,N1)
+        omega1ways[i] = omega1
+        omega2ways[i] = omega2
+        totalways[i] = omegatot
+        
+    return omega1ways, omega2ways, totalways
+
+
+# In[6]:
+
+
+qtot = 500
+Ntot = 80
+N1 = 50
+
+omega1, omega2, omegatot = sweep(qtot, Ntot, N1)
+
+q1vals = np.arange(0,qtot+1,1)
+
+plt.plot(q1vals,omegatot);
+plt.ylabel('Counts')
+plt.xlabel('q1')
+plt.grid()
+
+
+# In[7]:
+
+
+plt.plot(q1vals,omegatot/sum(omegatot)); #Rescaled to see the probability
+plt.ylabel('Probability')
+plt.xlabel('q1')
+plt.grid()
+
+
+# In[8]:
+
+
+S1 = np.log(omega1)
+S2 = np.log(omega2)
+Stot = np.log(omegatot)
+
+Smax = np.max(Stot)
+qmax = np.argmax(Stot)
+
+plt.figure(figsize=(8,6))
+
+plt.plot(q1vals, S1, label='System 1 Entropy');
+plt.plot(q1vals, S2, label='System 2 Entropy');
+plt.plot(q1vals, Stot, label='Total Entropy');
+
+plt.scatter(qmax, Smax, c='r', marker='s', label='Max Tot. Entropy')
+
+plt.ylabel('Entropy/k')
+plt.xlabel('q1')
+
+plt.grid()
+plt.legend(loc=4)
+
+
+# In[ ]:
+
+
+
+

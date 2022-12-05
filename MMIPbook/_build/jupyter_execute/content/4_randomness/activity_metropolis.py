@@ -3,7 +3,7 @@
 
 # # 6 Dec 2022 - Modeling the Ideal Gas
 # 
-# As we developed from [lecture](LINK TO NOTES), we can sample the Boltzmann distribution by constructing a sample of it through a Markov Chain and computing the value of the quantity of interest and adding it up.
+# As we developed from [lecture](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_4_Markov_Chain.pdf), we can sample the Boltzmann distribution by constructing a sample of it through a Markov Chain and computing the value of the quantity of interest and adding it up.
 # 
 # $$\sum_{chain} X_i \approx \langle X \rangle$$
 # 

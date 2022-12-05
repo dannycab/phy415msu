@@ -12,17 +12,9 @@
 # `````{admonition} Updates
 # :class: tip
 # 
-# **27 Nov 2022**
+# **5 Dec 2022**
 # 
-# * Hope y'all had a great break!
-# * notes from Tuesday's class before break are posted:
-#     * [Introduction to Stat. Mech.](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_4_Intro_to_Stat_Mech.pdf)
-#     * [The Ideal Gas](https://github.com/dannycab/phy415msu/blob/main/MMIPbook/assets/pdfs/notes/Notes_4_Ideal_Gas_Model.pdf)
-# * We are going to work with Markov Chain Monte Carlo for the rest of the semester. There's a little discussion of it here with a conceptual video. [MCMC Reading](./4_randomness/readings_mcmc.ipynb)
-# 
-# **22 Nov 2022**
-# 
-# * [Project 5](./0_course/projects/project5.md) is posted. It allows you to define your project including expanding on or redoing an old project.
+# * [Project 6](./0_course/projects/project6.md) is posted. It focuses on Monte Carlo simulations. It is due Dec 16th, Friday of finals week.
 # 
 # [ARCHIVE](./0_course/news_archive.md)
 # 

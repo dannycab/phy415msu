@@ -45,7 +45,7 @@ init_printing(use_unicode=True)  ## display nice math
 # Below, we form both matrices.
 # 
 
-# In[2]:
+# In[6]:
 
 
 M = np.matrix([[-2, 1, 0], [1, -2, 1], [0, 1, -2]]) ## numpy matrix
@@ -57,7 +57,7 @@ print(M2)
 # Finding eigenvalues with numpy.lingalg is quite simple. We just call `eigenvals, eigenvecs = la.eig(M)`. Note they are numericaly values. Also, these eigenvectors are normalized. Do you notice anything strange?
 # 
 
-# In[3]:
+# In[7]:
 
 
 eigenvals, eigenvecs = la.eig(M)
@@ -67,7 +67,7 @@ print(eigenvecs)
 
 # Finding the eigenvectors and eigenvalues with `sympy` is just as simple. Notice that these are symbolic and the eigenvectors are NOT normalized.
 
-# In[4]:
+# In[8]:
 
 
 M2.eigenvects()
@@ -81,7 +81,7 @@ M2.eigenvects()
 # 
 # just with different $A$'s. So plot the motion of each mass in each mode. Make sure you have the right frequencies with the right modes.
 
-# In[5]:
+# In[9]:
 
 
 ## Analysis and Plotting code here
@@ -101,7 +101,7 @@ M2.eigenvects()
 # Be careful not to pick to large of an $N$ value to work with because you could melt your CPU easily. Make sure your code can do something like $N=10$. If you get the timing working, plot time vs number of objects to see how the problem scales with more oscillators.
 # 
 
-# In[6]:
+# In[ ]:
 
 
 ## Your code here

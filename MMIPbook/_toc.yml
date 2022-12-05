@@ -53,6 +53,7 @@ chapters:
     - file: content/4_randomness/activity_mc_integration
     - file: content/4_randomness/activity_mc_integration_SOL
     - file: content/4_randomness/activity_thermal_contact
+    - file: content/4_randomness/activity_metropolis
 - file: content/X_additional_pages/references-page
 - file: content/0_course/news_archive
 - file: content/0_course/projects/index

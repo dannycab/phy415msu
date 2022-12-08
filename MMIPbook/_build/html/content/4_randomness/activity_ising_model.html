@@ -693,9 +693,9 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cellLength</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="n">simulationSteps</span> <span class="o">=</span> <span class="mi">100000</span>
+<span class="n">simulationSteps</span> <span class="o">=</span> <span class="mi">1000000</span>
 <span class="n">couplingConstant</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1">## J</span>
-<span class="n">temperature</span> <span class="o">=</span> <span class="mf">2.0</span>
+<span class="n">temperature</span> <span class="o">=</span> <span class="mf">1.0</span>
 
 <span class="k">def</span> <span class="nf">calculateEnergy</span><span class="p">(</span><span class="n">spinArray</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Calculate all the pairwise energy interactions and sum them up</span>
@@ -706,7 +706,7 @@ title="Print to PDF"
     
     <span class="n">totalInteractionEnergy</span> <span class="o">=</span> <span class="n">rowNeighborInteractionEnergy</span><span class="o">+</span><span class="n">columnNeighborInteractionEnergy</span>
     
-    <span class="k">return</span> <span class="o">-</span><span class="n">couplingConstant</span><span class="o">*</span><span class="n">totalInteractionEnergyamek</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">couplingConstant</span><span class="o">*</span><span class="n">totalInteractionEnergy</span>
 
 <span class="c1">## Create an empty square array</span>
 <span class="n">spinArray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">([</span><span class="n">cellLength</span><span class="p">,</span><span class="n">cellLength</span><span class="p">],</span> <span class="nb">int</span><span class="p">)</span>
@@ -732,24 +732,10 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 29&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span>             <span class="n">spinArray</span><span class="p">[</span><span class="n">row</span><span class="p">,</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="c1"># Calculate the initial energy and magnetization        </span>
-<span class="ne">---&gt; </span><span class="mi">29</span> <span class="n">energyAtStep</span> <span class="o">=</span> <span class="n">calculateEnergy</span><span class="p">(</span><span class="n">spinArray</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">30</span> <span class="n">magnetizationAtStep</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">spinArray</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="c1">## Show the spin array </span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span> <span class="c1">## Black is spin up and white is spin down</span>
-
-<span class="nn">Input In [2],</span> in <span class="ni">calculateEnergy</span><span class="nt">(spinArray)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">columnNeighborInteractionEnergy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">spinArray</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="n">cellLength</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">spinArray</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:</span><span class="n">cellLength</span><span class="p">])</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">totalInteractionEnergy</span> <span class="o">=</span> <span class="n">rowNeighborInteractionEnergy</span><span class="o">+</span><span class="n">columnNeighborInteractionEnergy</span>
-<span class="ne">---&gt; </span><span class="mi">15</span> <span class="k">return</span> <span class="o">-</span><span class="n">couplingConstant</span><span class="o">*</span><span class="n">totalInteractionEnergyamek</span>
-
-<span class="ne">NameError</span>: name &#39;totalInteractionEnergyamek&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 20.0, 0.0, 20.0)
 </pre></div>
 </div>
+<img alt="../../_images/activity_ising_model_2_1.png" src="../../_images/activity_ising_model_2_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -762,16 +748,21 @@ title="Print to PDF"
 <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">simulationSteps</span><span class="p">):</span>
     
     <span class="c1">## Store the magnetization at this step</span>
+    <span class="n">magnetizationArray</span><span class="p">[</span><span class="n">step</span><span class="p">]</span> <span class="o">=</span> <span class="n">magnetizationAtStep</span>
     
     <span class="c1">## Store the energy before swapping the spin randomly</span>
+    <span class="n">oldEnergy</span> <span class="o">=</span> <span class="n">energyAtStep</span>
     
     <span class="c1">## Select a spin from the cell</span>
+    <span class="n">ithSpin</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="n">cellLength</span><span class="p">)</span>
+    <span class="n">jthSpin</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="n">cellLength</span><span class="p">)</span>
     
     <span class="c1">## Flip the spin of that one site</span>
+    <span class="n">spinArray</span><span class="p">[</span><span class="n">ithSpin</span><span class="p">,</span><span class="n">jthSpin</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">spinArray</span><span class="p">[</span><span class="n">ithSpin</span><span class="p">,</span><span class="n">jthSpin</span><span class="p">]</span>
     
     <span class="c1">## Calculate the energy after that change</span>
-    <span class="c1">## Calculate the change in energy </span>
-    
+    <span class="n">energyAtStep</span> <span class="o">=</span> <span class="n">calculateEnergy</span><span class="p">(</span><span class="n">spinArray</span><span class="p">)</span>
+    <span class="n">deltaE</span> <span class="o">=</span> <span class="n">energyAtStep</span> <span class="o">-</span> <span class="n">oldEnergy</span>
     
     <span class="c1">## If the change resulted in an increase in the total energy,</span>
     <span class="c1">## evaluate whether to accept the value or not</span>
@@ -783,12 +774,42 @@ title="Print to PDF"
         <span class="c1">## reverse the change to the spin, and recalculate the energy</span>
         <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span><span class="o">&gt;</span><span class="n">probabilityOfFlip</span><span class="p">:</span>
             
+            <span class="n">spinArray</span><span class="p">[</span><span class="n">ithSpin</span><span class="p">,</span><span class="n">jthSpin</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">spinArray</span><span class="p">[</span><span class="n">ithSpin</span><span class="p">,</span><span class="n">jthSpin</span><span class="p">]</span>
+            <span class="n">energyAtStep</span> <span class="o">=</span> <span class="n">oldEnergy</span>
             <span class="k">continue</span>
         
-    <span class="c1">## Sum up the magnetization at that step    </span>
-    
+    <span class="n">magnetizationAtStep</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">spinArray</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">));</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">pcolor</span><span class="p">(</span><span class="n">spinArray</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Greys&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;square&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/activity_ising_model_4_0.png" src="../../_images/activity_ising_model_4_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">magnetizationArray</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Magnetization&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Simulation Steps&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Simulation Steps&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/activity_ising_model_5_1.png" src="../../_images/activity_ising_model_5_1.png" />
 </div>
 </div>
 </section>

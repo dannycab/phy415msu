@@ -17,9 +17,9 @@ import random as random
 
 
 cellLength = 20
-simulationSteps = 100000
+simulationSteps = 1000000
 couplingConstant = 1.0 ## J
-temperature = 2.0
+temperature = 1.0
 
 def calculateEnergy(spinArray):
     '''Calculate all the pairwise energy interactions and sum them up
@@ -30,7 +30,7 @@ def calculateEnergy(spinArray):
     
     totalInteractionEnergy = rowNeighborInteractionEnergy+columnNeighborInteractionEnergy
     
-    return -couplingConstant*totalInteractionEnergyamek
+    return -couplingConstant*totalInteractionEnergy
 
 ## Create an empty square array
 spinArray = np.empty([cellLength,cellLength], int)
@@ -54,7 +54,7 @@ c = plt.pcolor(spinArray, cmap='Greys')
 plt.axis('square')
 
 
-# In[31]:
+# In[3]:
 
 
 ## Hold onto the values of the magnetization 
@@ -65,16 +65,21 @@ magnetizationArray = np.zeros(simulationSteps)
 for step in range(simulationSteps):
     
     ## Store the magnetization at this step
+    magnetizationArray[step] = magnetizationAtStep
     
     ## Store the energy before swapping the spin randomly
+    oldEnergy = energyAtStep
     
     ## Select a spin from the cell
+    ithSpin = random.randrange(cellLength)
+    jthSpin = random.randrange(cellLength)
     
     ## Flip the spin of that one site
+    spinArray[ithSpin,jthSpin] = -spinArray[ithSpin,jthSpin]
     
     ## Calculate the energy after that change
-    ## Calculate the change in energy 
-    
+    energyAtStep = calculateEnergy(spinArray)
+    deltaE = energyAtStep - oldEnergy
     
     ## If the change resulted in an increase in the total energy,
     ## evaluate whether to accept the value or not
@@ -86,10 +91,29 @@ for step in range(simulationSteps):
         ## reverse the change to the spin, and recalculate the energy
         if random.random()>probabilityOfFlip:
             
+            spinArray[ithSpin,jthSpin] = -spinArray[ithSpin,jthSpin]
+            energyAtStep = oldEnergy
             continue
         
-    ## Sum up the magnetization at that step    
-    
+    magnetizationAtStep = np.sum(spinArray)
+
+
+# In[4]:
+
+
+plt.figure(figsize=(8,8));
+c = plt.pcolor(spinArray, cmap='Greys');
+plt.axis('square');
+
+
+# In[5]:
+
+
+plt.figure(figsize=(8,6))
+
+plt.plot(magnetizationArray)
+plt.ylabel('Magnetization')
+plt.xlabel('Simulation Steps')
 
 
 # In[ ]:

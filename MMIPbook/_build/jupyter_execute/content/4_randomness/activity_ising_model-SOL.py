@@ -12,10 +12,10 @@ import random as random
 # In[2]:
 
 
-cellLength = 50
+cellLength = 20
 simulationSteps = 1000000
 couplingConstant = 1.0 ## J
-temperature = 2.0
+temperature = 1.0
 
 def calculateEnergy(spinArray):
     '''Calculate all the pairwise energy interactions and sum them up
